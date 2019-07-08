@@ -125,7 +125,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ba8-oa-y2S">
                                                         <rect key="frame" x="0.0" y="97" width="118" height="24"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My expenses" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ph2-a6-Z2k">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Net salary" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ph2-a6-Z2k">
                                                                 <rect key="frame" x="0.0" y="0.0" width="118" height="24"/>
                                                                 <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="11"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -165,7 +165,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lcV-8E-Km8">
                                                         <rect key="frame" x="0.0" y="97" width="118" height="24"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My expenses" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pB-TX-aWw">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Historical" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pB-TX-aWw">
                                                                 <rect key="frame" x="0.0" y="0.0" width="118" height="24"/>
                                                                 <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="11"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -196,20 +196,67 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ra-4O-sej">
+                                <rect key="frame" x="32" y="508" width="256" height="44"/>
+                                <string key="text">Just for reminder, first day of every month the expenses will be erased, and all values will be calculated and the history update it too.</string>
+                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DXu-6h-yv5">
+                                <rect key="frame" x="0.0" y="64" width="320" height="98.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bank" translatesAutoresizingMaskIntoConstraints="NO" id="Ah1-Z7-PZU">
+                                        <rect key="frame" x="62.5" y="17" width="64" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="64" id="lr3-Sf-2mV"/>
+                                            <constraint firstAttribute="height" constant="64" id="rMb-BP-3fB"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spending Control" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Cw-gL-LzM">
+                                        <rect key="frame" x="134.5" y="38.5" width="185.5" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="textColor" red="0.1215686275" green="0.47450980390000003" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Ah1-Z7-PZU" firstAttribute="centerX" secondItem="DXu-6h-yv5" secondAttribute="centerX" multiplier="0.59" id="QHk-nb-iKd"/>
+                                    <constraint firstItem="Ah1-Z7-PZU" firstAttribute="centerY" secondItem="DXu-6h-yv5" secondAttribute="centerY" id="auW-NJ-VM7"/>
+                                    <constraint firstItem="4Cw-gL-LzM" firstAttribute="centerY" secondItem="DXu-6h-yv5" secondAttribute="centerY" id="i65-Zm-fIw"/>
+                                    <constraint firstItem="4Cw-gL-LzM" firstAttribute="leading" secondItem="Ah1-Z7-PZU" secondAttribute="trailing" constant="8" id="mgU-9x-nU8"/>
+                                    <constraint firstAttribute="trailing" secondItem="4Cw-gL-LzM" secondAttribute="trailing" id="rT1-hs-Gjg"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="9Ra-4O-sej" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Sf-Y4-wE3"/>
+                            <constraint firstItem="DXu-6h-yv5" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="1u6-M9-xyj"/>
                             <constraint firstItem="nCi-WK-RkL" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="2It-GX-QIL"/>
                             <constraint firstItem="BYC-aV-CdX" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.7" id="7q4-uy-WcL"/>
                             <constraint firstItem="nCi-WK-RkL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.19" id="AWh-kW-tem"/>
+                            <constraint firstItem="9Ra-4O-sej" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="Hv1-3C-VrB"/>
+                            <constraint firstItem="BYC-aV-CdX" firstAttribute="top" secondItem="DXu-6h-yv5" secondAttribute="bottom" constant="8" id="N7K-pK-YpB"/>
                             <constraint firstItem="nCi-WK-RkL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VDR-b0-1yz"/>
+                            <constraint firstItem="DXu-6h-yv5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ZDf-pl-VZD"/>
                             <constraint firstItem="BYC-aV-CdX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aYG-70-Bq8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9Ra-4O-sej" secondAttribute="bottom" constant="16" id="dlq-bF-SAr"/>
+                            <constraint firstItem="DXu-6h-yv5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="es9-IN-s98"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BYC-aV-CdX" secondAttribute="bottom" id="fN5-Zi-UlQ"/>
+                            <constraint firstItem="9Ra-4O-sej" firstAttribute="top" secondItem="nCi-WK-RkL" secondAttribute="bottom" constant="32" id="gdl-M0-k3G"/>
                             <constraint firstItem="BYC-aV-CdX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qGv-YO-e8s"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Personal Financial Health" id="ub4-Of-OVc"/>
+                    <connections>
+                        <outlet property="availableFundsView" destination="rsk-ek-kfW" id="MsX-nx-qqd"/>
+                        <outlet property="historicalView" destination="CaO-hg-le1" id="4GR-V3-f5t"/>
+                        <outlet property="myExpensesView" destination="ned-ZV-dMw" id="3fC-kq-EpC"/>
+                        <outlet property="netSalaryView" destination="UfJ-9H-Tkl" id="rgf-kr-VQU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -241,6 +288,7 @@
     </scenes>
     <resources>
         <image name="RectangleDashboard" width="319" height="436"/>
+        <image name="bank" width="32" height="32"/>
         <image name="history" width="25.600000381469727" height="25.600000381469727"/>
         <image name="money" width="25.600000381469727" height="25.600000381469727"/>
         <image name="money-bag" width="24" height="24"/>
