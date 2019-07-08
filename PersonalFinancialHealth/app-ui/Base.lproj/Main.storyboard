@@ -21,10 +21,188 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RectangleDashboard" translatesAutoresizingMaskIntoConstraints="NO" id="BYC-aV-CdX">
                                 <rect key="frame" x="0.0" y="170.5" width="320" height="397.5"/>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="nCi-WK-RkL">
+                                <rect key="frame" x="32" y="199.5" width="256" height="276.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="r7r-RV-D2v">
+                                        <rect key="frame" x="0.0" y="0.0" width="256" height="121.5"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rsk-ek-kfW">
+                                                <rect key="frame" x="0.0" y="0.0" width="118" height="121.5"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="money-bag" translatesAutoresizingMaskIntoConstraints="NO" id="paK-o0-EIg">
+                                                        <rect key="frame" x="43" y="45" width="32" height="32"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="32" id="XWo-QL-aXg"/>
+                                                            <constraint firstAttribute="width" constant="32" id="dwe-NU-rQK"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3lM-tg-V6u">
+                                                        <rect key="frame" x="0.0" y="97" width="118" height="24.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available funds" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0J-tk-jEd">
+                                                                <rect key="frame" x="0.0" y="0.0" width="118" height="24.5"/>
+                                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="11"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.050980392156862744" green="0.3529411764705882" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstItem="l0J-tk-jEd" firstAttribute="width" secondItem="3lM-tg-V6u" secondAttribute="width" id="LJ8-5N-8Bd"/>
+                                                            <constraint firstItem="l0J-tk-jEd" firstAttribute="centerY" secondItem="3lM-tg-V6u" secondAttribute="centerY" id="TZd-M9-y0E"/>
+                                                            <constraint firstItem="l0J-tk-jEd" firstAttribute="centerX" secondItem="3lM-tg-V6u" secondAttribute="centerX" id="UeG-DN-hbV"/>
+                                                            <constraint firstItem="l0J-tk-jEd" firstAttribute="height" secondItem="3lM-tg-V6u" secondAttribute="height" id="qhC-Nm-S5Q"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.1215686275" green="0.47450980390000003" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="rsk-ek-kfW" secondAttribute="height" multiplier="110:113" id="FC2-UV-gGw"/>
+                                                    <constraint firstItem="3lM-tg-V6u" firstAttribute="height" secondItem="rsk-ek-kfW" secondAttribute="height" multiplier="0.2" id="M20-3K-Sxm"/>
+                                                    <constraint firstItem="3lM-tg-V6u" firstAttribute="width" secondItem="rsk-ek-kfW" secondAttribute="width" id="T5n-Td-two"/>
+                                                    <constraint firstItem="paK-o0-EIg" firstAttribute="centerY" secondItem="rsk-ek-kfW" secondAttribute="centerY" id="g9Q-nC-xQl"/>
+                                                    <constraint firstItem="paK-o0-EIg" firstAttribute="centerX" secondItem="rsk-ek-kfW" secondAttribute="centerX" id="rhq-xs-Gve"/>
+                                                    <constraint firstAttribute="bottom" secondItem="3lM-tg-V6u" secondAttribute="bottom" id="sNI-pX-Cuc"/>
+                                                    <constraint firstItem="3lM-tg-V6u" firstAttribute="centerX" secondItem="rsk-ek-kfW" secondAttribute="centerX" id="ujc-Ut-iO2"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ned-ZV-dMw">
+                                                <rect key="frame" x="138" y="0.0" width="118" height="121.5"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="money" translatesAutoresizingMaskIntoConstraints="NO" id="VBo-mj-1Rk">
+                                                        <rect key="frame" x="43" y="45" width="32" height="32"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="32" id="QcF-OQ-65v"/>
+                                                            <constraint firstAttribute="height" constant="32" id="bmz-GX-pTB"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eB4-Te-fqc">
+                                                        <rect key="frame" x="0.0" y="97" width="118" height="24.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My expenses" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqy-zz-KbT">
+                                                                <rect key="frame" x="0.0" y="0.0" width="118" height="24.5"/>
+                                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="11"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.050980392159999999" green="0.35294117650000001" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstItem="aqy-zz-KbT" firstAttribute="centerY" secondItem="eB4-Te-fqc" secondAttribute="centerY" id="0us-hd-x7j"/>
+                                                            <constraint firstItem="aqy-zz-KbT" firstAttribute="height" secondItem="eB4-Te-fqc" secondAttribute="height" id="2Ir-z8-GbA"/>
+                                                            <constraint firstItem="aqy-zz-KbT" firstAttribute="width" secondItem="eB4-Te-fqc" secondAttribute="width" id="gjE-oZ-Kd6"/>
+                                                            <constraint firstItem="aqy-zz-KbT" firstAttribute="centerX" secondItem="eB4-Te-fqc" secondAttribute="centerX" id="nqt-I9-dbx"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.12156862745098039" green="0.47450980392156861" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="eB4-Te-fqc" firstAttribute="centerX" secondItem="ned-ZV-dMw" secondAttribute="centerX" id="03c-Ap-VPm"/>
+                                                    <constraint firstAttribute="bottom" secondItem="eB4-Te-fqc" secondAttribute="bottom" id="16y-gT-rtc"/>
+                                                    <constraint firstItem="VBo-mj-1Rk" firstAttribute="centerX" secondItem="ned-ZV-dMw" secondAttribute="centerX" id="WLc-iZ-viE"/>
+                                                    <constraint firstItem="eB4-Te-fqc" firstAttribute="height" secondItem="ned-ZV-dMw" secondAttribute="height" multiplier="0.2" id="bEk-PI-0m6"/>
+                                                    <constraint firstItem="eB4-Te-fqc" firstAttribute="width" secondItem="ned-ZV-dMw" secondAttribute="width" id="c2a-kk-Yf0"/>
+                                                    <constraint firstAttribute="width" secondItem="ned-ZV-dMw" secondAttribute="height" multiplier="110:113" id="ixH-PT-aYL"/>
+                                                    <constraint firstItem="VBo-mj-1Rk" firstAttribute="centerY" secondItem="ned-ZV-dMw" secondAttribute="centerY" id="xsm-ms-7p5"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9U7-4K-34C">
+                                        <rect key="frame" x="0.0" y="155.5" width="256" height="121"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UfJ-9H-Tkl">
+                                                <rect key="frame" x="0.0" y="0.0" width="118" height="121"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="salary" translatesAutoresizingMaskIntoConstraints="NO" id="Sag-cK-rkd">
+                                                        <rect key="frame" x="43" y="44.5" width="32" height="32"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="32" id="1iR-r9-hRb"/>
+                                                            <constraint firstAttribute="width" constant="32" id="PfR-bq-q1S"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ba8-oa-y2S">
+                                                        <rect key="frame" x="0.0" y="97" width="118" height="24"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My expenses" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ph2-a6-Z2k">
+                                                                <rect key="frame" x="0.0" y="0.0" width="118" height="24"/>
+                                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="11"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.050980392159999999" green="0.35294117650000001" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstItem="ph2-a6-Z2k" firstAttribute="centerY" secondItem="ba8-oa-y2S" secondAttribute="centerY" id="5a6-dn-B0w"/>
+                                                            <constraint firstItem="ph2-a6-Z2k" firstAttribute="width" secondItem="ba8-oa-y2S" secondAttribute="width" id="JIz-uj-USF"/>
+                                                            <constraint firstItem="ph2-a6-Z2k" firstAttribute="centerX" secondItem="ba8-oa-y2S" secondAttribute="centerX" id="b5c-d1-yVy"/>
+                                                            <constraint firstItem="ph2-a6-Z2k" firstAttribute="height" secondItem="ba8-oa-y2S" secondAttribute="height" id="pHz-f4-mgi"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.1215686275" green="0.47450980390000003" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="ba8-oa-y2S" firstAttribute="height" secondItem="UfJ-9H-Tkl" secondAttribute="height" multiplier="0.2" id="25J-Sx-WDQ"/>
+                                                    <constraint firstItem="Sag-cK-rkd" firstAttribute="centerX" secondItem="UfJ-9H-Tkl" secondAttribute="centerX" id="2Up-Kn-deN"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ba8-oa-y2S" secondAttribute="bottom" id="2fk-jC-NYS"/>
+                                                    <constraint firstItem="Sag-cK-rkd" firstAttribute="centerY" secondItem="UfJ-9H-Tkl" secondAttribute="centerY" id="FVi-pq-QEX"/>
+                                                    <constraint firstItem="ba8-oa-y2S" firstAttribute="centerX" secondItem="UfJ-9H-Tkl" secondAttribute="centerX" id="ICU-M7-aFm"/>
+                                                    <constraint firstAttribute="width" secondItem="UfJ-9H-Tkl" secondAttribute="height" multiplier="110:113" id="Kfg-Lb-kpK"/>
+                                                    <constraint firstItem="ba8-oa-y2S" firstAttribute="width" secondItem="UfJ-9H-Tkl" secondAttribute="width" id="mO0-kN-R25"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CaO-hg-le1">
+                                                <rect key="frame" x="138" y="0.0" width="118" height="121"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="history" translatesAutoresizingMaskIntoConstraints="NO" id="tQH-v2-sgE">
+                                                        <rect key="frame" x="43" y="44.5" width="32" height="32"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="32" id="32d-uH-Vtk"/>
+                                                            <constraint firstAttribute="height" constant="32" id="468-Dz-38W"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lcV-8E-Km8">
+                                                        <rect key="frame" x="0.0" y="97" width="118" height="24"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My expenses" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pB-TX-aWw">
+                                                                <rect key="frame" x="0.0" y="0.0" width="118" height="24"/>
+                                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="11"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.050980392159999999" green="0.35294117650000001" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstItem="1pB-TX-aWw" firstAttribute="width" secondItem="lcV-8E-Km8" secondAttribute="width" id="IT7-oj-fp1"/>
+                                                            <constraint firstItem="1pB-TX-aWw" firstAttribute="centerX" secondItem="lcV-8E-Km8" secondAttribute="centerX" id="OV8-ge-SHY"/>
+                                                            <constraint firstItem="1pB-TX-aWw" firstAttribute="height" secondItem="lcV-8E-Km8" secondAttribute="height" id="YrU-kQ-xFt"/>
+                                                            <constraint firstItem="1pB-TX-aWw" firstAttribute="centerY" secondItem="lcV-8E-Km8" secondAttribute="centerY" id="q3D-U0-LqY"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.1215686275" green="0.47450980390000003" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="tQH-v2-sgE" firstAttribute="centerY" secondItem="CaO-hg-le1" secondAttribute="centerY" id="1Cq-xc-U6t"/>
+                                                    <constraint firstItem="lcV-8E-Km8" firstAttribute="centerX" secondItem="CaO-hg-le1" secondAttribute="centerX" id="2xf-lX-If1"/>
+                                                    <constraint firstItem="lcV-8E-Km8" firstAttribute="width" secondItem="CaO-hg-le1" secondAttribute="width" id="3i4-gw-g5m"/>
+                                                    <constraint firstAttribute="width" secondItem="CaO-hg-le1" secondAttribute="height" multiplier="110:113" id="8ti-yc-klo"/>
+                                                    <constraint firstAttribute="bottom" secondItem="lcV-8E-Km8" secondAttribute="bottom" id="HLC-rS-fJh"/>
+                                                    <constraint firstItem="lcV-8E-Km8" firstAttribute="height" secondItem="CaO-hg-le1" secondAttribute="height" multiplier="0.2" id="KBH-x7-yf9"/>
+                                                    <constraint firstItem="tQH-v2-sgE" firstAttribute="centerX" secondItem="CaO-hg-le1" secondAttribute="centerX" id="Vxq-RH-laJ"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="nCi-WK-RkL" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="2It-GX-QIL"/>
                             <constraint firstItem="BYC-aV-CdX" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.7" id="7q4-uy-WcL"/>
+                            <constraint firstItem="nCi-WK-RkL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.19" id="AWh-kW-tem"/>
+                            <constraint firstItem="nCi-WK-RkL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VDR-b0-1yz"/>
                             <constraint firstItem="BYC-aV-CdX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aYG-70-Bq8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BYC-aV-CdX" secondAttribute="bottom" id="fN5-Zi-UlQ"/>
                             <constraint firstItem="BYC-aV-CdX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qGv-YO-e8s"/>
@@ -63,5 +241,9 @@
     </scenes>
     <resources>
         <image name="RectangleDashboard" width="319" height="436"/>
+        <image name="history" width="25.600000381469727" height="25.600000381469727"/>
+        <image name="money" width="25.600000381469727" height="25.600000381469727"/>
+        <image name="money-bag" width="24" height="24"/>
+        <image name="salary" width="25.600000381469727" height="25.600000381469727"/>
     </resources>
 </document>
