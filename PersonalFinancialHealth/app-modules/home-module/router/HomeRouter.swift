@@ -1,15 +1,15 @@
 import Foundation
 import UIKit
 
-class HomeRouter:PresenterToRouterProtocol{
+class HomeRouter: PresenterToRouterProtocol{
     
     static func createModule() -> HomeViewController {
         
         let view = mainstoryboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
         
-        let presenter: ViewToPresenterProtocol & InteractorToPresenterProtocol = HomePresenter()
-        let interactor: PresenterToInteractorProtocol = HomeInteractor()
-        let router:PresenterToRouterProtocol = HomeRouter()
+//        let presenter: ViewToPresenterProtocol & InteractorToPresenterProtocol = HomePresenter()
+//        let interactor: PresenterToInteractorProtocol = HomeInteractor()
+//        let router:PresenterToRouterProtocol = HomeRouter()
         
 //        view.presenter = presenter
 //        presenter.view = view

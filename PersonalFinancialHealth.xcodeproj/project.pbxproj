@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6317066322CE331A002259C2 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317066222CE331A002259C2 /* UIColor.swift */; };
+		6317066622CE819F002259C2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317066522CE819F002259C2 /* BaseViewController.swift */; };
 		6391370122CBE3470018B65F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391370022CBE3470018B65F /* AppDelegate.swift */; };
 		6391370322CBE3470018B65F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391370222CBE3470018B65F /* HomeViewController.swift */; };
 		6391370622CBE3470018B65F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6391370422CBE3470018B65F /* Main.storyboard */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6317066222CE331A002259C2 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		6317066522CE819F002259C2 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		639136FD22CBE3470018B65F /* PersonalFinancialHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalFinancialHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6391370022CBE3470018B65F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6391370222CBE3470018B65F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +51,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6317066122CE32FA002259C2 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				6317066222CE331A002259C2 /* UIColor.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		6317066422CE8177002259C2 /* baseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6317066522CE819F002259C2 /* BaseViewController.swift */,
+			);
+			path = baseViewController;
+			sourceTree = "<group>";
+		};
 		639136F422CBE3470018B65F = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +116,8 @@
 		6391371422CBE5BE0018B65F /* common-utils */ = {
 			isa = PBXGroup;
 			children = (
+				6317066422CE8177002259C2 /* baseViewController */,
+				6317066122CE32FA002259C2 /* Color */,
 				63F6C7E822CC6090003B7FA6 /* router */,
 			);
 			path = "common-utils";
@@ -261,6 +283,8 @@
 				6391372922CBE7CF0018B65F /* HomeModel.swift in Sources */,
 				6391370322CBE3470018B65F /* HomeViewController.swift in Sources */,
 				6391372822CBE7CF0018B65F /* HomeProtocols.swift in Sources */,
+				6317066322CE331A002259C2 /* UIColor.swift in Sources */,
+				6317066622CE819F002259C2 /* BaseViewController.swift in Sources */,
 				6391370122CBE3470018B65F /* AppDelegate.swift in Sources */,
 				6391372B22CBE7CF0018B65F /* HomePresenter.swift in Sources */,
 				6391372522CBE7CF0018B65F /* HomeInteractor.swift in Sources */,
