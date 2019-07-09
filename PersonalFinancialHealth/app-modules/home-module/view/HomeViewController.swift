@@ -29,17 +29,17 @@ extension HomeViewController {
     }
 
     private func addGesture(view: UIView) {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapToNewPage(_:)))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapToNewScreen(_:)))
         view.addGestureRecognizer(tapGesture)
     }
     
-    @objc private func tapToNewPage(_ sender: Any) {
+    @objc private func tapToNewScreen(_ sender: Any) {
     guard let tapGesture = sender as? UITapGestureRecognizer,
     let attachedView = tapGesture.view else { return }
-    redirectToNewPageBy(index: attachedView.tag)
+    redirectToNewScreenBy(index: attachedView.tag)
     }
     
-    private func redirectToNewPageBy(index: Int) {
+    private func redirectToNewScreenBy(index: Int) {
         switch index {
         case 0:
             print("availableFunds")

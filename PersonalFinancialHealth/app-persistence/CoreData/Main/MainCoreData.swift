@@ -27,5 +27,27 @@ class MainCoreData {
             throw ErrorCoreData.notSave
         }
     }
-}
+    
+    func fetchEntities<T: NSManagedObject>(entity: T.Type, predicate: NSPredicate? = nil, sortDescriptor: [NSSortDescriptor]? = nil) -> [T]? {
+        var results: [T]?
+        
+        if let fetchRequest: NSFetchRequest<T> = T.fetchRequest() as? NSFetchRequest<T> {
+            do {
+                if let predicate = predicate {
+                    fetchRequest.predicate = predicate
+                }
+                
+                if let sortDescriptor = sortDescriptor {
+                    fetchRequest.sortDescriptors = sortDescriptor
+                }
+                results = try context.fetch(fetchRequest)
+            } catch  {
+                assert(false, error.localizedDescription)
+            }
+        } else {
+            assert(false,"Error: cast to NSFetchRequest<T> failed")
+            
+        }
+        return results
+    }}
 

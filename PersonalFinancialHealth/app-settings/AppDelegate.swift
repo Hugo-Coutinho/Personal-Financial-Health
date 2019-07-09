@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Coordinator.navController = UINavigationController()
-        Coordinator.setVisiblePage(vc: HomeRouter.createModule())
+        Coordinator.setVisibleScreen(vc: HomeRouter.createModule())
         return true
     }
 
