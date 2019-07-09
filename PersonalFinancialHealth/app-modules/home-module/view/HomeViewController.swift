@@ -3,7 +3,6 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    
     // MARK: - OUTLETS -
     @IBOutlet weak var availableFundsView: UIView!
     @IBOutlet weak var myExpensesView: UIView!

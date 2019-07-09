@@ -19,6 +19,13 @@
 		6391372922CBE7CF0018B65F /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391372022CBE7CF0018B65F /* HomeModel.swift */; };
 		6391372A22CBE7CF0018B65F /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391372222CBE7CF0018B65F /* HomeRouter.swift */; };
 		6391372B22CBE7CF0018B65F /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391372422CBE7CF0018B65F /* HomePresenter.swift */; };
+		63B56C7222D5041000D14C24 /* Financial.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63B56C7022D5041000D14C24 /* Financial.xcdatamodeld */; };
+		63B56C7522D5085E00D14C24 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B56C7422D5085E00D14C24 /* Constant.swift */; };
+		63B56C7722D5095500D14C24 /* MainCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B56C7622D5095500D14C24 /* MainCoreData.swift */; };
+		63B56C7B22D509F100D14C24 /* ExpenseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B56C7A22D509F100D14C24 /* ExpenseManager.swift */; };
+		63B56C7D22D50AB500D14C24 /* Historical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B56C7C22D50AB500D14C24 /* Historical.swift */; };
+		63B56C7F22D50B7800D14C24 /* PreSetExpenseName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B56C7E22D50B7700D14C24 /* PreSetExpenseName.swift */; };
+		63B56C8122D50BAE00D14C24 /* PreSetExpensePrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B56C8022D50BAE00D14C24 /* PreSetExpensePrice.swift */; };
 		63F6C7EA22CC60A7003B7FA6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F6C7E922CC60A7003B7FA6 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +44,13 @@
 		6391372022CBE7CF0018B65F /* HomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		6391372222CBE7CF0018B65F /* HomeRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		6391372422CBE7CF0018B65F /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		63B56C7122D5041000D14C24 /* Financial.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Financial.xcdatamodel; sourceTree = "<group>"; };
+		63B56C7422D5085E00D14C24 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		63B56C7622D5095500D14C24 /* MainCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoreData.swift; sourceTree = "<group>"; };
+		63B56C7A22D509F100D14C24 /* ExpenseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseManager.swift; sourceTree = "<group>"; };
+		63B56C7C22D50AB500D14C24 /* Historical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Historical.swift; sourceTree = "<group>"; };
+		63B56C7E22D50B7700D14C24 /* PreSetExpenseName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreSetExpenseName.swift; sourceTree = "<group>"; };
+		63B56C8022D50BAE00D14C24 /* PreSetExpensePrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreSetExpensePrice.swift; sourceTree = "<group>"; };
 		63F6C7E922CC60A7003B7FA6 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +100,7 @@
 		639136FF22CBE3470018B65F /* PersonalFinancialHealth */ = {
 			isa = PBXGroup;
 			children = (
+				63B56C6D22D4DA9400D14C24 /* app-persistence */,
 				6391371322CBE5880018B65F /* app-ui */,
 				6391371222CBE5770018B65F /* app-icons */,
 				6391371522CBE5CB0018B65F /* app-settings */,
@@ -116,6 +131,7 @@
 		6391371422CBE5BE0018B65F /* common-utils */ = {
 			isa = PBXGroup;
 			children = (
+				63B56C7322D5078400D14C24 /* Constant */,
 				6317066422CE8177002259C2 /* baseViewController */,
 				6317066122CE32FA002259C2 /* Color */,
 				63F6C7E822CC6090003B7FA6 /* router */,
@@ -200,6 +216,59 @@
 			path = presenter;
 			sourceTree = "<group>";
 		};
+		63B56C6D22D4DA9400D14C24 /* app-persistence */ = {
+			isa = PBXGroup;
+			children = (
+				63B56C6E22D4DAE100D14C24 /* Database */,
+				63B56C6F22D4DAE800D14C24 /* CoreData */,
+			);
+			path = "app-persistence";
+			sourceTree = "<group>";
+		};
+		63B56C6E22D4DAE100D14C24 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				63B56C7022D5041000D14C24 /* Financial.xcdatamodeld */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		63B56C6F22D4DAE800D14C24 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				63B56C7822D5098F00D14C24 /* Main */,
+				63B56C7922D509AE00D14C24 /* Manager */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		63B56C7322D5078400D14C24 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				63B56C7422D5085E00D14C24 /* Constant.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		63B56C7822D5098F00D14C24 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				63B56C7622D5095500D14C24 /* MainCoreData.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		63B56C7922D509AE00D14C24 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				63B56C7A22D509F100D14C24 /* ExpenseManager.swift */,
+				63B56C7C22D50AB500D14C24 /* Historical.swift */,
+				63B56C7E22D50B7700D14C24 /* PreSetExpenseName.swift */,
+				63B56C8022D50BAE00D14C24 /* PreSetExpensePrice.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		63F6C7E822CC6090003B7FA6 /* router */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,16 +348,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63B56C7722D5095500D14C24 /* MainCoreData.swift in Sources */,
 				6391372A22CBE7CF0018B65F /* HomeRouter.swift in Sources */,
 				6391372922CBE7CF0018B65F /* HomeModel.swift in Sources */,
 				6391370322CBE3470018B65F /* HomeViewController.swift in Sources */,
 				6391372822CBE7CF0018B65F /* HomeProtocols.swift in Sources */,
+				63B56C7D22D50AB500D14C24 /* Historical.swift in Sources */,
+				63B56C7222D5041000D14C24 /* Financial.xcdatamodeld in Sources */,
 				6317066322CE331A002259C2 /* UIColor.swift in Sources */,
 				6317066622CE819F002259C2 /* BaseViewController.swift in Sources */,
+				63B56C7B22D509F100D14C24 /* ExpenseManager.swift in Sources */,
 				6391370122CBE3470018B65F /* AppDelegate.swift in Sources */,
 				6391372B22CBE7CF0018B65F /* HomePresenter.swift in Sources */,
 				6391372522CBE7CF0018B65F /* HomeInteractor.swift in Sources */,
 				63F6C7EA22CC60A7003B7FA6 /* Coordinator.swift in Sources */,
+				63B56C8122D50BAE00D14C24 /* PreSetExpensePrice.swift in Sources */,
+				63B56C7F22D50B7800D14C24 /* PreSetExpenseName.swift in Sources */,
+				63B56C7522D5085E00D14C24 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +564,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		63B56C7022D5041000D14C24 /* Financial.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				63B56C7122D5041000D14C24 /* Financial.xcdatamodel */,
+			);
+			currentVersion = 63B56C7122D5041000D14C24 /* Financial.xcdatamodel */;
+			path = Financial.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 639136F522CBE3470018B65F /* Project object */;
 }
