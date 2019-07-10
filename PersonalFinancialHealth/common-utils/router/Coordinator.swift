@@ -15,24 +15,26 @@ class Coordinator {
     // MARK: - DECLARATIONS
     public static var navController: UINavigationController? = nil
     
-    
-    public class func setVisibleScreen<T>(vc: T) where T : UIViewController {
+    // MARK: - PUBLIC FUNCTIONS
+    public class func setVisibleScreen<T>(vc: T, hidesBackButton: Bool) where T : UIViewController {
         guard let nav = navController else { return }
         guard !nav.viewControllers.isEmpty,
-            nav.viewControllers.contains(vc),
-            let vcIndex = nav.viewControllers.firstIndex(where: { $0 is T }) else { pushNewScreen(vc: vc); return }
-        swapScreen(vc: vc, pageIndex: vcIndex)
+            nav.viewControllers.filter({ $0 is T }).count > 0,
+            let vcIndex = nav.viewControllers.firstIndex(where: { $0 is T })
+            else { pushNewScreen(vc: vc, hidesBackButton: hidesBackButton); return }
+        let topIndex = nav.viewControllers.firstIndex(of: nav.viewControllers.last!)!
+        swapScreen(vcIndex: vcIndex, topIndex: topIndex, hidesBackButton: hidesBackButton)
     }
 }
 
 
 // MARK: - AUX FUNCTIONS
 extension Coordinator {
-    private class func pushNewScreen<T>(vc: T) where T : UIViewController {
-        navController!.pushViewController(vc, animated: true)
+    private class func pushNewScreen<T>(vc: T, hidesBackButton: Bool) where T : UIViewController {
+        navController!.pushViewController(vc, animated: false)
     }
     
-    private class func swapScreen<T>(vc: T, pageIndex: Int) where T : UIViewController {
-        navController!.viewControllers.swapAt(pageIndex, 0)
+    private class func swapScreen(vcIndex: Int, topIndex: Int, hidesBackButton: Bool) {
+        navController!.viewControllers.swapAt(vcIndex, topIndex)
     }
 }

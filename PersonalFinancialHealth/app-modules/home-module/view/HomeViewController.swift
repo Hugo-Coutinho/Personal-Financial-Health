@@ -15,6 +15,11 @@ extension HomeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
+        Coordinator.navController = self.navigationController
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.configureNavigationItem(hidesBackButton: true)
     }
 }
 
@@ -44,7 +49,7 @@ extension HomeViewController {
         case 0:
             print("availableFunds")
         case 1:
-            print("expenses")
+            Coordinator.setVisibleScreen(vc: ExpenseRouter.createModule(), hidesBackButton: false)
         case 2:
             print("net salary")
         case 3:
