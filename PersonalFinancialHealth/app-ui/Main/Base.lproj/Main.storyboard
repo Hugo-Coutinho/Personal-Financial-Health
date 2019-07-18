@@ -281,33 +281,44 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="301.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ue-jD-PTE">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cbK-E0-edZ">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="301.5"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oLp-nI-YUA">
-                                                <rect key="frame" x="8" y="0.0" width="320" height="301.5"/>
-                                            </stackView>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Ue-jD-PTE">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="301.5"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="oLp-nI-YUA">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="301.5"/>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="oLp-nI-YUA" firstAttribute="top" secondItem="4Ue-jD-PTE" secondAttribute="top" id="034-W6-4VB"/>
+                                                    <constraint firstItem="oLp-nI-YUA" firstAttribute="leading" secondItem="4Ue-jD-PTE" secondAttribute="leading" id="KTu-oJ-xQP"/>
+                                                    <constraint firstAttribute="trailing" secondItem="oLp-nI-YUA" secondAttribute="trailing" id="TVM-CS-ksr"/>
+                                                    <constraint firstItem="oLp-nI-YUA" firstAttribute="width" secondItem="4Ue-jD-PTE" secondAttribute="width" id="lo3-OI-g7b"/>
+                                                    <constraint firstAttribute="bottom" secondItem="oLp-nI-YUA" secondAttribute="bottom" id="oix-Ze-LGX"/>
+                                                </constraints>
+                                            </scrollView>
                                         </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="oLp-nI-YUA" firstAttribute="width" secondItem="4Ue-jD-PTE" secondAttribute="width" id="5KK-me-EJa"/>
-                                            <constraint firstAttribute="bottom" secondItem="oLp-nI-YUA" secondAttribute="bottom" constant="8" id="7Md-qQ-iCc"/>
-                                            <constraint firstItem="oLp-nI-YUA" firstAttribute="leading" secondItem="4Ue-jD-PTE" secondAttribute="leading" constant="8" id="8be-qe-ENV"/>
-                                            <constraint firstItem="oLp-nI-YUA" firstAttribute="height" secondItem="4Ue-jD-PTE" secondAttribute="height" id="B9Y-Ob-4E2"/>
-                                            <constraint firstItem="oLp-nI-YUA" firstAttribute="top" secondItem="4Ue-jD-PTE" secondAttribute="top" id="oph-qe-Hsn"/>
-                                            <constraint firstAttribute="trailing" secondItem="oLp-nI-YUA" secondAttribute="trailing" constant="8" id="ozq-uL-ayW"/>
+                                            <constraint firstItem="4Ue-jD-PTE" firstAttribute="leading" secondItem="cbK-E0-edZ" secondAttribute="leading" id="Twf-DI-cOq"/>
+                                            <constraint firstAttribute="trailing" secondItem="4Ue-jD-PTE" secondAttribute="trailing" id="cHo-4Y-z7b"/>
+                                            <constraint firstAttribute="bottom" secondItem="4Ue-jD-PTE" secondAttribute="bottom" id="k4Z-Vj-o8C"/>
+                                            <constraint firstItem="4Ue-jD-PTE" firstAttribute="top" secondItem="cbK-E0-edZ" secondAttribute="top" id="yHn-JF-FoJ"/>
                                         </constraints>
-                                    </scrollView>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="p9k-Fb-3Ob" firstAttribute="centerY" secondItem="A2t-YT-fdp" secondAttribute="centerY" id="1er-I0-xzT"/>
-                                    <constraint firstItem="4Ue-jD-PTE" firstAttribute="centerY" secondItem="A2t-YT-fdp" secondAttribute="centerY" id="KiT-i9-hvW"/>
+                                    <constraint firstItem="cbK-E0-edZ" firstAttribute="centerY" secondItem="A2t-YT-fdp" secondAttribute="centerY" id="BgH-dU-zG7"/>
+                                    <constraint firstItem="cbK-E0-edZ" firstAttribute="height" secondItem="A2t-YT-fdp" secondAttribute="height" id="Ql2-Wn-4xP"/>
                                     <constraint firstItem="p9k-Fb-3Ob" firstAttribute="centerX" secondItem="A2t-YT-fdp" secondAttribute="centerX" id="RJB-vs-nvO"/>
-                                    <constraint firstItem="4Ue-jD-PTE" firstAttribute="width" secondItem="A2t-YT-fdp" secondAttribute="width" id="SDq-7L-uqV"/>
-                                    <constraint firstItem="4Ue-jD-PTE" firstAttribute="height" secondItem="A2t-YT-fdp" secondAttribute="height" id="Z2f-f5-0UN"/>
-                                    <constraint firstItem="4Ue-jD-PTE" firstAttribute="centerX" secondItem="A2t-YT-fdp" secondAttribute="centerX" id="Zvx-cK-SAL"/>
+                                    <constraint firstItem="cbK-E0-edZ" firstAttribute="centerX" secondItem="A2t-YT-fdp" secondAttribute="centerX" id="Vol-PV-tzX"/>
                                     <constraint firstItem="p9k-Fb-3Ob" firstAttribute="width" secondItem="A2t-YT-fdp" secondAttribute="width" id="b6a-vj-HDR"/>
                                     <constraint firstItem="p9k-Fb-3Ob" firstAttribute="height" secondItem="A2t-YT-fdp" secondAttribute="height" id="cKB-gS-Qux"/>
+                                    <constraint firstItem="cbK-E0-edZ" firstAttribute="width" secondItem="A2t-YT-fdp" secondAttribute="width" id="yNg-bk-Jym"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pT2-1n-Q5X">
@@ -340,6 +351,7 @@
                     <navigationItem key="navigationItem" title="My Expenses" id="9I9-Ti-VTC"/>
                     <connections>
                         <outlet property="emptyView" destination="p9k-Fb-3Ob" id="rZk-bA-8aK"/>
+                        <outlet property="expenseView" destination="cbK-E0-edZ" id="2OE-bF-dZr"/>
                         <outlet property="mainStackView" destination="oLp-nI-YUA" id="1bI-Fw-0Lr"/>
                     </connections>
                 </viewController>

@@ -14,4 +14,8 @@ enum Constant {
         static let sortDescriptor = ""
         static let container = "Financial"
     }
+    
+    enum View {
+        static let expenseView = "ExpenseView"
+    }
 }
