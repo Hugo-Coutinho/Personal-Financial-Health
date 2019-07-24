@@ -1,17 +1,17 @@
 //
-//  ExpenseView.swift
+//  ExpenseBodyView.swift
 //  PersonalFinancialHealth
 //
-//  Created by BRQ on 22/07/19.
+//  Created by BRQ on 20/07/19.
 //  Copyright © 2019 BRQ. All rights reserved.
 //
 
 import UIKit
 
-class ExpenseView: UIView {
-
+class ExpenseBodyView: UIView {
     
-    @IBOutlet weak var stackViewSection: UIStackView!
+    
+    
     
     override func awakeFromNib() {
     }

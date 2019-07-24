@@ -16,6 +16,7 @@ enum Constant {
     }
     
     enum View {
-        static let expenseView = "ExpenseView"
+        static let expenseHeader = "ExpenseHeaderView"
+        static let expenseBody = "ExpenseBodyView"
     }
 }

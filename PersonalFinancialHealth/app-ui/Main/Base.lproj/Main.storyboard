@@ -287,15 +287,14 @@
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Ue-jD-PTE">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="301.5"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="oLp-nI-YUA">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="301.5"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="oLp-nI-YUA">
+                                                        <rect key="frame" x="16" y="0.0" width="288" height="301.5"/>
                                                     </stackView>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="oLp-nI-YUA" firstAttribute="top" secondItem="4Ue-jD-PTE" secondAttribute="top" id="034-W6-4VB"/>
-                                                    <constraint firstItem="oLp-nI-YUA" firstAttribute="leading" secondItem="4Ue-jD-PTE" secondAttribute="leading" id="KTu-oJ-xQP"/>
-                                                    <constraint firstAttribute="trailing" secondItem="oLp-nI-YUA" secondAttribute="trailing" id="TVM-CS-ksr"/>
-                                                    <constraint firstItem="oLp-nI-YUA" firstAttribute="width" secondItem="4Ue-jD-PTE" secondAttribute="width" id="lo3-OI-g7b"/>
+                                                    <constraint firstItem="oLp-nI-YUA" firstAttribute="centerX" secondItem="4Ue-jD-PTE" secondAttribute="centerX" id="L7Q-OU-XQL"/>
+                                                    <constraint firstItem="oLp-nI-YUA" firstAttribute="width" secondItem="4Ue-jD-PTE" secondAttribute="width" multiplier="0.9" id="lo3-OI-g7b"/>
                                                     <constraint firstAttribute="bottom" secondItem="oLp-nI-YUA" secondAttribute="bottom" id="oix-Ze-LGX"/>
                                                 </constraints>
                                             </scrollView>
@@ -332,7 +331,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="pT2-1n-Q5X" firstAttribute="leading" secondItem="Cbs-HE-5YN" secondAttribute="leading" constant="137" id="4Wd-t5-f7N"/>
                             <constraint firstItem="A2t-YT-fdp" firstAttribute="width" secondItem="05m-g4-fSb" secondAttribute="width" id="4zH-uP-M42"/>
@@ -357,7 +356,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ryX-aq-qH5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1939" y="33"/>
+            <point key="canvasLocation" x="2214" y="22"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DcJ-oo-iYa">
