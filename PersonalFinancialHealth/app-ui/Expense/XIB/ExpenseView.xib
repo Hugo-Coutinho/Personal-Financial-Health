@@ -116,7 +116,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="2X8-eJ-Rk5">
-                            <rect key="frame" x="161.5" y="26.5" width="33" height="15"/>
+                            <rect key="frame" x="161.5" y="26" width="35.5" height="16"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="2X8-eJ-Rk5" secondAttribute="height" multiplier="11:5" id="Gra-Cm-zpV"/>
                             </constraints>
@@ -124,7 +124,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sr2-RD-ExE">
-                            <rect key="frame" x="202.5" y="24" width="63" height="20"/>
+                            <rect key="frame" x="205" y="24" width="63" height="20"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 20,00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="CB3-aU-O3Q">
                                     <rect key="frame" x="0.0" y="0.0" width="63" height="20"/>
@@ -165,7 +165,7 @@
                         <constraint firstItem="wbi-th-HEf" firstAttribute="width" secondItem="GrM-ig-XAV" secondAttribute="width" id="foC-cr-Jnc"/>
                         <constraint firstAttribute="bottom" secondItem="mDv-dl-mYu" secondAttribute="bottom" id="gkd-nV-hgn"/>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="274" id="ifI-BF-LNm"/>
-                        <constraint firstItem="2X8-eJ-Rk5" firstAttribute="width" secondItem="GrM-ig-XAV" secondAttribute="width" multiplier="0.12" id="kHP-bI-Zqi"/>
+                        <constraint firstItem="2X8-eJ-Rk5" firstAttribute="width" secondItem="GrM-ig-XAV" secondAttribute="width" multiplier="0.13" id="kHP-bI-Zqi"/>
                         <constraint firstItem="Uam-D3-HYi" firstAttribute="height" secondItem="GrM-ig-XAV" secondAttribute="height" id="nxj-qu-v6h"/>
                         <constraint firstItem="SSu-uf-AjC" firstAttribute="width" secondItem="GrM-ig-XAV" secondAttribute="width" multiplier="0.414" id="opR-Zl-A6l"/>
                         <constraint firstAttribute="trailing" secondItem="0aY-Fz-oLY" secondAttribute="trailing" id="pKl-Yl-xAL"/>
