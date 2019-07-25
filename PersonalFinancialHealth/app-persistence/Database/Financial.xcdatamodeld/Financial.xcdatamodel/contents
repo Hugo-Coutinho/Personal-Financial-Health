@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Expense" representedClassName="Expense" syncable="YES" codeGenerationType="class">
-        <attribute name="data" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="expenseType" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -21,8 +21,8 @@
     </entity>
     <elements>
         <element name="Expense" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Historical" positionX="-18" positionY="45" width="128" height="105"/>
         <element name="PreSetExpenseName" positionX="-54" positionY="27" width="128" height="60"/>
         <element name="PreSetExpensePrice" positionX="-36" positionY="36" width="128" height="60"/>
-        <element name="Historical" positionX="-18" positionY="45" width="128" height="105"/>
     </elements>
 </model>
