@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="290" height="68"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GrM-ig-XAV" userLabel="Section">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GrM-ig-XAV" userLabel="Section">
                     <rect key="frame" x="8" y="0.0" width="274" height="68"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mDv-dl-mYu" userLabel="BottomRow">
@@ -51,10 +51,10 @@
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="1"/>
+                                    <real key="value" value="0.0"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                    <real key="value" value="1"/>
+                                    <real key="value" value="0.0"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                     <real key="value" value="1"/>
@@ -63,7 +63,7 @@
                                     <real key="value" value="1"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                    <size key="value" width="0.0" height="0.0"/>
+                                    <size key="value" width="1" height="1"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
@@ -75,10 +75,10 @@
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="1"/>
+                                    <real key="value" value="0.0"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                    <real key="value" value="1"/>
+                                    <real key="value" value="0.0"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                     <real key="value" value="1"/>
@@ -87,7 +87,7 @@
                                     <real key="value" value="1"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                    <size key="value" width="0.0" height="0.0"/>
+                                    <size key="value" width="1" height="1"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
@@ -115,29 +115,37 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2X8-eJ-Rk5">
-                            <rect key="frame" x="154" y="26" width="33" height="15"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="2X8-eJ-Rk5">
+                            <rect key="frame" x="161.5" y="26.5" width="33" height="15"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="15" id="jFf-Xw-0Fu"/>
-                                <constraint firstAttribute="width" constant="33" id="qpw-bD-cDi"/>
+                                <constraint firstAttribute="width" secondItem="2X8-eJ-Rk5" secondAttribute="height" multiplier="11:5" id="Gra-Cm-zpV"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sr2-RD-ExE">
-                            <rect key="frame" x="195" y="24" width="63" height="20"/>
+                            <rect key="frame" x="202.5" y="24" width="63" height="20"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="R$ 20,00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CB3-aU-O3Q">
-                                    <rect key="frame" x="-2" y="2" width="67" height="20"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 20,00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="CB3-aU-O3Q">
+                                    <rect key="frame" x="0.0" y="0.0" width="63" height="20"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                             <color key="backgroundColor" red="0.33333333329999998" green="0.69803921570000005" blue="0.20784313730000001" alpha="0.45000000000000001" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="CB3-aU-O3Q" firstAttribute="height" secondItem="Sr2-RD-ExE" secondAttribute="height" id="7hK-Fi-5q6"/>
+                                <constraint firstItem="CB3-aU-O3Q" firstAttribute="centerY" secondItem="Sr2-RD-ExE" secondAttribute="centerY" id="ZXg-U7-WKl"/>
+                                <constraint firstItem="CB3-aU-O3Q" firstAttribute="centerX" secondItem="Sr2-RD-ExE" secondAttribute="centerX" id="aeT-LW-2Yv"/>
+                                <constraint firstItem="CB3-aU-O3Q" firstAttribute="width" secondItem="Sr2-RD-ExE" secondAttribute="width" id="gxg-yF-bOA"/>
+                                <constraint firstAttribute="width" secondItem="Sr2-RD-ExE" secondAttribute="height" multiplier="63:20" id="pqS-Wb-slD"/>
+                            </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily expenses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSu-uf-AjC">
-                            <rect key="frame" x="16" y="24" width="114" height="20"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily expenses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="SSu-uf-AjC">
+                            <rect key="frame" x="16" y="24" width="113.5" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="SSu-uf-AjC" secondAttribute="height" multiplier="113:20" id="m2Q-p5-VmN"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -145,28 +153,28 @@
                     <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="0aY-Fz-oLY" firstAttribute="centerY" secondItem="GrM-ig-XAV" secondAttribute="centerY" id="9EM-7Q-9Eg"/>
-                        <constraint firstAttribute="trailing" secondItem="Sr2-RD-ExE" secondAttribute="trailing" constant="16" id="EAD-eJ-PWU"/>
-                        <constraint firstItem="Sr2-RD-ExE" firstAttribute="leading" secondItem="2X8-eJ-Rk5" secondAttribute="trailing" constant="8" id="G4A-iS-7Wi"/>
                         <constraint firstItem="mDv-dl-mYu" firstAttribute="centerX" secondItem="GrM-ig-XAV" secondAttribute="centerX" id="JNS-bW-vg3"/>
                         <constraint firstItem="Uam-D3-HYi" firstAttribute="leading" secondItem="GrM-ig-XAV" secondAttribute="leading" id="JkW-hL-Z45"/>
+                        <constraint firstItem="Sr2-RD-ExE" firstAttribute="leading" secondItem="2X8-eJ-Rk5" secondAttribute="trailing" constant="8" id="LQw-mX-Bzy"/>
                         <constraint firstItem="Uam-D3-HYi" firstAttribute="centerY" secondItem="GrM-ig-XAV" secondAttribute="centerY" id="MCM-Xp-cVv"/>
                         <constraint firstItem="mDv-dl-mYu" firstAttribute="width" secondItem="GrM-ig-XAV" secondAttribute="width" id="VP8-5J-Zvu"/>
-                        <constraint firstItem="SSu-uf-AjC" firstAttribute="leading" secondItem="GrM-ig-XAV" secondAttribute="leading" constant="16" id="Yd8-fr-WtC"/>
+                        <constraint firstItem="Sr2-RD-ExE" firstAttribute="centerY" secondItem="GrM-ig-XAV" secondAttribute="centerY" id="VTB-Kt-WLq"/>
                         <constraint firstItem="wbi-th-HEf" firstAttribute="centerX" secondItem="GrM-ig-XAV" secondAttribute="centerX" id="f6o-Wi-yA3"/>
+                        <constraint firstItem="Sr2-RD-ExE" firstAttribute="width" secondItem="GrM-ig-XAV" secondAttribute="width" multiplier="0.23" id="fAv-23-7zf"/>
                         <constraint firstItem="wbi-th-HEf" firstAttribute="top" secondItem="GrM-ig-XAV" secondAttribute="top" id="fN4-DQ-LDo"/>
                         <constraint firstItem="wbi-th-HEf" firstAttribute="width" secondItem="GrM-ig-XAV" secondAttribute="width" id="foC-cr-Jnc"/>
                         <constraint firstAttribute="bottom" secondItem="mDv-dl-mYu" secondAttribute="bottom" id="gkd-nV-hgn"/>
-                        <constraint firstItem="SSu-uf-AjC" firstAttribute="centerY" secondItem="GrM-ig-XAV" secondAttribute="centerY" id="hOq-z3-nao"/>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="274" id="ifI-BF-LNm"/>
-                        <constraint firstItem="2X8-eJ-Rk5" firstAttribute="leading" secondItem="SSu-uf-AjC" secondAttribute="trailing" constant="24" id="jc0-Rf-M3q"/>
-                        <constraint firstItem="SSu-uf-AjC" firstAttribute="top" secondItem="GrM-ig-XAV" secondAttribute="top" constant="24" id="kMz-cb-pZo"/>
+                        <constraint firstItem="2X8-eJ-Rk5" firstAttribute="width" secondItem="GrM-ig-XAV" secondAttribute="width" multiplier="0.12" id="kHP-bI-Zqi"/>
                         <constraint firstItem="Uam-D3-HYi" firstAttribute="height" secondItem="GrM-ig-XAV" secondAttribute="height" id="nxj-qu-v6h"/>
-                        <constraint firstItem="2X8-eJ-Rk5" firstAttribute="top" secondItem="GrM-ig-XAV" secondAttribute="top" constant="26" id="oyG-dn-AgX"/>
+                        <constraint firstItem="SSu-uf-AjC" firstAttribute="width" secondItem="GrM-ig-XAV" secondAttribute="width" multiplier="0.414" id="opR-Zl-A6l"/>
                         <constraint firstAttribute="trailing" secondItem="0aY-Fz-oLY" secondAttribute="trailing" id="pKl-Yl-xAL"/>
                         <constraint firstItem="0aY-Fz-oLY" firstAttribute="height" secondItem="GrM-ig-XAV" secondAttribute="height" id="sXU-tc-GS7"/>
+                        <constraint firstItem="2X8-eJ-Rk5" firstAttribute="leading" secondItem="SSu-uf-AjC" secondAttribute="trailing" constant="32" id="t12-tp-X16"/>
+                        <constraint firstItem="2X8-eJ-Rk5" firstAttribute="centerY" secondItem="GrM-ig-XAV" secondAttribute="centerY" id="tBH-Tv-yWA"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="52" id="txD-3r-eBv"/>
-                        <constraint firstItem="SSu-uf-AjC" firstAttribute="bottom" secondItem="Sr2-RD-ExE" secondAttribute="bottom" id="uYx-s4-S7f"/>
-                        <constraint firstItem="SSu-uf-AjC" firstAttribute="top" secondItem="Sr2-RD-ExE" secondAttribute="top" id="xrl-Uh-UaL"/>
+                        <constraint firstItem="SSu-uf-AjC" firstAttribute="centerY" secondItem="GrM-ig-XAV" secondAttribute="centerY" id="u4K-T3-tMA"/>
+                        <constraint firstItem="SSu-uf-AjC" firstAttribute="leading" secondItem="GrM-ig-XAV" secondAttribute="leading" constant="16" id="wyw-Be-6HO"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -186,7 +194,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sEc-SC-AWc" userLabel="Item_background">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sEc-SC-AWc" userLabel="Item_background">
                     <rect key="frame" x="8" y="0.0" width="274" height="68"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sW8-sf-rVq" userLabel="Item">
@@ -354,11 +362,10 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <variation key="default">
-                <mask key="subviews">
-                    <exclude reference="GrM-ig-XAV"/>
-                </mask>
-            </variation>
+            <connections>
+                <outlet property="itemView" destination="sEc-SC-AWc" id="awG-SQ-Ufh"/>
+                <outlet property="sectionView" destination="GrM-ig-XAV" id="CeZ-0C-qa3"/>
+            </connections>
             <point key="canvasLocation" x="140.80000000000001" y="335.5322338830585"/>
         </view>
     </objects>

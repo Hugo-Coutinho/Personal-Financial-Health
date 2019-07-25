@@ -10,9 +10,11 @@ import UIKit
 
 class ExpenseView: UIView {
 
-    
-    @IBOutlet weak var stackViewSection: UIStackView!
+    @IBOutlet weak var sectionView: UIView!
+    @IBOutlet weak var itemView: UIView!
     
     override func awakeFromNib() {
+        self.itemView.isHidden = true
+        self.sectionView.isHidden = true
     }
 }
