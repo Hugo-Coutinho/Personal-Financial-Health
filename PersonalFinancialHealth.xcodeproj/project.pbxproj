@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		63081A1D22E563A10014EC95 /* ExpenseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63081A1C22E563A10014EC95 /* ExpenseView.xib */; };
 		6317066322CE331A002259C2 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317066222CE331A002259C2 /* UIColor.swift */; };
+		6327628422F4B1C00032DC03 /* ExpenseFormView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6327628322F4B1C00032DC03 /* ExpenseFormView.xib */; };
+		6327628622F4B1F70032DC03 /* ExpenseFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327628522F4B1F70032DC03 /* ExpenseFormView.swift */; };
+		6327628A22F78B5A0032DC03 /* ExpenseListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6327628922F78B5A0032DC03 /* ExpenseListView.xib */; };
+		6327628C22F78B730032DC03 /* ExpenseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327628B22F78B730032DC03 /* ExpenseListView.swift */; };
+		63335C2A22F4844000FB302F /* ExpenseContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63335C2922F4844000FB302F /* ExpenseContainerView.xib */; };
+		63335C2C22F4845E00FB302F /* ExpenseContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63335C2B22F4845E00FB302F /* ExpenseContainerView.swift */; };
 		633BE5A022E2C3070033E8B3 /* ExpenseBodyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 633BE59F22E2C3070033E8B3 /* ExpenseBodyView.xib */; };
 		633BE5A222E2C33B0033E8B3 /* ExpenseBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633BE5A122E2C33B0033E8B3 /* ExpenseBodyView.swift */; };
-		637B0BB722D638A600FF8BD0 /* ExpenseHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 637B0BB622D638A600FF8BD0 /* ExpenseHeaderView.xib */; };
-		637B0BB922D6394B00FF8BD0 /* ExpenseHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B0BB822D6394B00FF8BD0 /* ExpenseHeaderView.swift */; };
 		637B0BBC22D647A200FF8BD0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B0BBB22D647A200FF8BD0 /* UIView.swift */; };
 		6391370122CBE3470018B65F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391370022CBE3470018B65F /* AppDelegate.swift */; };
 		6391370322CBE3470018B65F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391370222CBE3470018B65F /* HomeViewController.swift */; };
@@ -33,7 +36,6 @@
 		63B56C7F22D50B7800D14C24 /* PreSetExpenseName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B56C7E22D50B7700D14C24 /* PreSetExpenseName.swift */; };
 		63B56C8122D50BAE00D14C24 /* PreSetExpensePrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B56C8022D50BAE00D14C24 /* PreSetExpensePrice.swift */; };
 		63B56C8422D5142900D14C24 /* BLFinancial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B56C8322D5142900D14C24 /* BLFinancial.swift */; };
-		63C83A1D22E66A9200498CFB /* ExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C83A1C22E66A9200498CFB /* ExpenseView.swift */; };
 		63CE3FCA22D51E54000E90ED /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE3FC922D51E54000E90ED /* UIStoryboard.swift */; };
 		63CE3FCC22D51F2B000E90ED /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE3FCB22D51F2B000E90ED /* String.swift */; };
 		63CE3FD422D54111000E90ED /* ExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE3FD322D54111000E90ED /* ExpenseViewController.swift */; };
@@ -41,12 +43,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		63081A1C22E563A10014EC95 /* ExpenseView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseView.xib; sourceTree = "<group>"; };
 		6317066222CE331A002259C2 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		6327628322F4B1C00032DC03 /* ExpenseFormView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseFormView.xib; sourceTree = "<group>"; };
+		6327628522F4B1F70032DC03 /* ExpenseFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseFormView.swift; sourceTree = "<group>"; };
+		6327628922F78B5A0032DC03 /* ExpenseListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseListView.xib; sourceTree = "<group>"; };
+		6327628B22F78B730032DC03 /* ExpenseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseListView.swift; sourceTree = "<group>"; };
+		63335C2922F4844000FB302F /* ExpenseContainerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseContainerView.xib; sourceTree = "<group>"; };
+		63335C2B22F4845E00FB302F /* ExpenseContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseContainerView.swift; sourceTree = "<group>"; };
 		633BE59F22E2C3070033E8B3 /* ExpenseBodyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseBodyView.xib; sourceTree = "<group>"; };
 		633BE5A122E2C33B0033E8B3 /* ExpenseBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseBodyView.swift; sourceTree = "<group>"; };
-		637B0BB622D638A600FF8BD0 /* ExpenseHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseHeaderView.xib; sourceTree = "<group>"; };
-		637B0BB822D6394B00FF8BD0 /* ExpenseHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseHeaderView.swift; sourceTree = "<group>"; };
 		637B0BBB22D647A200FF8BD0 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		639136FD22CBE3470018B65F /* PersonalFinancialHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalFinancialHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6391370022CBE3470018B65F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,7 +74,6 @@
 		63B56C7E22D50B7700D14C24 /* PreSetExpenseName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreSetExpenseName.swift; sourceTree = "<group>"; };
 		63B56C8022D50BAE00D14C24 /* PreSetExpensePrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreSetExpensePrice.swift; sourceTree = "<group>"; };
 		63B56C8322D5142900D14C24 /* BLFinancial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLFinancial.swift; sourceTree = "<group>"; };
-		63C83A1C22E66A9200498CFB /* ExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseView.swift; sourceTree = "<group>"; };
 		63CE3FC922D51E54000E90ED /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
 		63CE3FCB22D51F2B000E90ED /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		63CE3FD322D54111000E90ED /* ExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewController.swift; sourceTree = "<group>"; };
@@ -90,9 +94,10 @@
 		633BE59E22E2C2E80033E8B3 /* XIB */ = {
 			isa = PBXGroup;
 			children = (
-				637B0BB622D638A600FF8BD0 /* ExpenseHeaderView.xib */,
 				633BE59F22E2C3070033E8B3 /* ExpenseBodyView.xib */,
-				63081A1C22E563A10014EC95 /* ExpenseView.xib */,
+				63335C2922F4844000FB302F /* ExpenseContainerView.xib */,
+				6327628322F4B1C00032DC03 /* ExpenseFormView.xib */,
+				6327628922F78B5A0032DC03 /* ExpenseListView.xib */,
 			);
 			path = XIB;
 			sourceTree = "<group>";
@@ -376,9 +381,10 @@
 			isa = PBXGroup;
 			children = (
 				63CE3FD322D54111000E90ED /* ExpenseViewController.swift */,
-				637B0BB822D6394B00FF8BD0 /* ExpenseHeaderView.swift */,
 				633BE5A122E2C33B0033E8B3 /* ExpenseBodyView.swift */,
-				63C83A1C22E66A9200498CFB /* ExpenseView.swift */,
+				63335C2B22F4845E00FB302F /* ExpenseContainerView.swift */,
+				6327628522F4B1F70032DC03 /* ExpenseFormView.swift */,
+				6327628B22F78B730032DC03 /* ExpenseListView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -456,11 +462,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63081A1D22E563A10014EC95 /* ExpenseView.xib in Resources */,
 				6391370822CBE3490018B65F /* Assets.xcassets in Resources */,
 				633BE5A022E2C3070033E8B3 /* ExpenseBodyView.xib in Resources */,
+				6327628422F4B1C00032DC03 /* ExpenseFormView.xib in Resources */,
+				6327628A22F78B5A0032DC03 /* ExpenseListView.xib in Resources */,
+				63335C2A22F4844000FB302F /* ExpenseContainerView.xib in Resources */,
 				6391370622CBE3470018B65F /* Main.storyboard in Resources */,
-				637B0BB722D638A600FF8BD0 /* ExpenseHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,20 +482,21 @@
 				63B56C7722D5095500D14C24 /* MainCoreData.swift in Sources */,
 				639FA05422D612B200983497 /* ExpenseRouter.swift in Sources */,
 				6391372A22CBE7CF0018B65F /* HomeRouter.swift in Sources */,
+				6327628622F4B1F70032DC03 /* ExpenseFormView.swift in Sources */,
 				6391372922CBE7CF0018B65F /* HomeModel.swift in Sources */,
-				63C83A1D22E66A9200498CFB /* ExpenseView.swift in Sources */,
 				63CE3FD422D54111000E90ED /* ExpenseViewController.swift in Sources */,
 				6391370322CBE3470018B65F /* HomeViewController.swift in Sources */,
 				6391372822CBE7CF0018B65F /* HomeProtocols.swift in Sources */,
 				63B56C7D22D50AB500D14C24 /* Historical.swift in Sources */,
-				637B0BB922D6394B00FF8BD0 /* ExpenseHeaderView.swift in Sources */,
 				63CE3FCA22D51E54000E90ED /* UIStoryboard.swift in Sources */,
 				63B56C7222D5041000D14C24 /* Financial.xcdatamodeld in Sources */,
 				6317066322CE331A002259C2 /* UIColor.swift in Sources */,
+				6327628C22F78B730032DC03 /* ExpenseListView.swift in Sources */,
 				63B56C7B22D509F100D14C24 /* ExpenseManager.swift in Sources */,
 				6391370122CBE3470018B65F /* AppDelegate.swift in Sources */,
 				639FA05622D6337C00983497 /* UIViewController.swift in Sources */,
 				637B0BBC22D647A200FF8BD0 /* UIView.swift in Sources */,
+				63335C2C22F4845E00FB302F /* ExpenseContainerView.swift in Sources */,
 				6391372B22CBE7CF0018B65F /* HomePresenter.swift in Sources */,
 				6391372522CBE7CF0018B65F /* HomeInteractor.swift in Sources */,
 				63B56C8422D5142900D14C24 /* BLFinancial.swift in Sources */,
