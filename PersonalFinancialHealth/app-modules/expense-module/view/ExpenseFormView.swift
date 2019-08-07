@@ -12,6 +12,7 @@ import UIKit
 class ExpenseFormView: UIView {
 
     @IBOutlet weak var monthsPickView: UIPickerView!
+    @IBOutlet weak var constantExpensePickerView: UIView!
     
     override func awakeFromNib() {
         self.monthsPickView.delegate = self

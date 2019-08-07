@@ -28,6 +28,7 @@
 		6391372B22CBE7CF0018B65F /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391372422CBE7CF0018B65F /* HomePresenter.swift */; };
 		639FA05422D612B200983497 /* ExpenseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639FA05322D612B200983497 /* ExpenseRouter.swift */; };
 		639FA05622D6337C00983497 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639FA05522D6337C00983497 /* UIViewController.swift */; };
+		63A56BB422FA6A0F008C7093 /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A56BB322FA6A0F008C7093 /* StackViewController.swift */; };
 		63B56C7222D5041000D14C24 /* Financial.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63B56C7022D5041000D14C24 /* Financial.xcdatamodeld */; };
 		63B56C7522D5085E00D14C24 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B56C7422D5085E00D14C24 /* Constant.swift */; };
 		63B56C7722D5095500D14C24 /* MainCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B56C7622D5095500D14C24 /* MainCoreData.swift */; };
@@ -66,6 +67,7 @@
 		6391372422CBE7CF0018B65F /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		639FA05322D612B200983497 /* ExpenseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseRouter.swift; sourceTree = "<group>"; };
 		639FA05522D6337C00983497 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		63A56BB322FA6A0F008C7093 /* StackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewController.swift; sourceTree = "<group>"; };
 		63B56C7122D5041000D14C24 /* Financial.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Financial.xcdatamodel; sourceTree = "<group>"; };
 		63B56C7422D5085E00D14C24 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		63B56C7622D5095500D14C24 /* MainCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoreData.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 		6391371422CBE5BE0018B65F /* common-utils */ = {
 			isa = PBXGroup;
 			children = (
+				63A56BB222FA698E008C7093 /* StackViewController */,
 				63CE3FC822D51E3E000E90ED /* Extension */,
 				63B56C8222D5126200D14C24 /* BusinessLogic */,
 				63B56C7322D5078400D14C24 /* Constant */,
@@ -260,6 +263,14 @@
 				6391372422CBE7CF0018B65F /* HomePresenter.swift */,
 			);
 			path = presenter;
+			sourceTree = "<group>";
+		};
+		63A56BB222FA698E008C7093 /* StackViewController */ = {
+			isa = PBXGroup;
+			children = (
+				63A56BB322FA6A0F008C7093 /* StackViewController.swift */,
+			);
+			path = StackViewController;
 			sourceTree = "<group>";
 		};
 		63B56C6D22D4DA9400D14C24 /* app-persistence */ = {
@@ -495,6 +506,7 @@
 				63B56C7B22D509F100D14C24 /* ExpenseManager.swift in Sources */,
 				6391370122CBE3470018B65F /* AppDelegate.swift in Sources */,
 				639FA05622D6337C00983497 /* UIViewController.swift in Sources */,
+				63A56BB422FA6A0F008C7093 /* StackViewController.swift in Sources */,
 				637B0BBC22D647A200FF8BD0 /* UIView.swift in Sources */,
 				63335C2C22F4845E00FB302F /* ExpenseContainerView.swift in Sources */,
 				6391372B22CBE7CF0018B65F /* HomePresenter.swift in Sources */,

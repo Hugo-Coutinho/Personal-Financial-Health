@@ -10,8 +10,7 @@ import Foundation
 import UIKit
 
 class ExpenseListView: UIView {
-    
-    
+
     @IBOutlet weak var sectionView: UIView!
     @IBOutlet weak var itemView: UIView!
     

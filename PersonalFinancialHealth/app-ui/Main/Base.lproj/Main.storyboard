@@ -276,7 +276,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aFY-0h-wuP">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CfN-2T-4Yh">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CfN-2T-4Yh" customClass="StackViewController" customModule="PersonalFinancialHealth" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                             </stackView>
                                         </subviews>
@@ -310,7 +310,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="My Expenses" id="7hF-Hs-GOW"/>
                     <connections>
-                        <outlet property="mainStackView" destination="CfN-2T-4Yh" id="rwN-93-NvI"/>
+                        <outlet property="mainStackView" destination="CfN-2T-4Yh" id="Ugk-bE-vnG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fgk-ut-DFm" userLabel="First Responder" sceneMemberID="firstResponder"/>

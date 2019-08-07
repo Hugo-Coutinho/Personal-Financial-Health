@@ -19,22 +19,20 @@ class Coordinator {
     public class func setVisibleScreen<T>(vc: T) where T : UIViewController {
         guard let nav = navController else { return }
         guard !nav.viewControllers.isEmpty,
-            nav.viewControllers.filter({ $0 is T }).count > 0,
-            let vcIndex = nav.viewControllers.firstIndex(where: { $0 is T })
+            nav.viewControllers.filter({ $0 is T }).count > 0
             else { pushNewScreen(vc: vc); return }
-        let topIndex = nav.viewControllers.firstIndex(of: nav.viewControllers.last!)!
-        swapScreen(vcIndex: vcIndex, topIndex: topIndex)
+        swapScreen(vc: vc)
     }
 }
-
 
 // MARK: - AUX FUNCTIONS
 extension Coordinator {
     private class func pushNewScreen<T>(vc: T) where T : UIViewController {
-        navController!.pushViewController(vc, animated: false)
+        navController!.pushViewController(vc, animated: true)
     }
     
-    private class func swapScreen(vcIndex: Int, topIndex: Int) {
-        navController!.viewControllers.swapAt(vcIndex, topIndex)
+    private class func swapScreen<T>(vc: T) where T : UIViewController {
+        navController!.viewControllers.removeAll(where: { $0 is T })
+        navController!.pushViewController(vc, animated: true)
     }
 }
