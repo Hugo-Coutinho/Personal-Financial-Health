@@ -14,8 +14,6 @@
 		6327628C22F78B730032DC03 /* ExpenseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327628B22F78B730032DC03 /* ExpenseListView.swift */; };
 		63335C2A22F4844000FB302F /* ExpenseContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63335C2922F4844000FB302F /* ExpenseContainerView.xib */; };
 		63335C2C22F4845E00FB302F /* ExpenseContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63335C2B22F4845E00FB302F /* ExpenseContainerView.swift */; };
-		633BE5A022E2C3070033E8B3 /* ExpenseBodyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 633BE59F22E2C3070033E8B3 /* ExpenseBodyView.xib */; };
-		633BE5A222E2C33B0033E8B3 /* ExpenseBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633BE5A122E2C33B0033E8B3 /* ExpenseBodyView.swift */; };
 		637B0BBC22D647A200FF8BD0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B0BBB22D647A200FF8BD0 /* UIView.swift */; };
 		6391370122CBE3470018B65F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391370022CBE3470018B65F /* AppDelegate.swift */; };
 		6391370322CBE3470018B65F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391370222CBE3470018B65F /* HomeViewController.swift */; };
@@ -51,8 +49,6 @@
 		6327628B22F78B730032DC03 /* ExpenseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseListView.swift; sourceTree = "<group>"; };
 		63335C2922F4844000FB302F /* ExpenseContainerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseContainerView.xib; sourceTree = "<group>"; };
 		63335C2B22F4845E00FB302F /* ExpenseContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseContainerView.swift; sourceTree = "<group>"; };
-		633BE59F22E2C3070033E8B3 /* ExpenseBodyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseBodyView.xib; sourceTree = "<group>"; };
-		633BE5A122E2C33B0033E8B3 /* ExpenseBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseBodyView.swift; sourceTree = "<group>"; };
 		637B0BBB22D647A200FF8BD0 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		639136FD22CBE3470018B65F /* PersonalFinancialHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalFinancialHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6391370022CBE3470018B65F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,12 +92,85 @@
 		633BE59E22E2C2E80033E8B3 /* XIB */ = {
 			isa = PBXGroup;
 			children = (
-				633BE59F22E2C3070033E8B3 /* ExpenseBodyView.xib */,
-				63335C2922F4844000FB302F /* ExpenseContainerView.xib */,
-				6327628322F4B1C00032DC03 /* ExpenseFormView.xib */,
-				6327628922F78B5A0032DC03 /* ExpenseListView.xib */,
+				6350AD7D22FB8B4F00433C70 /* Container */,
 			);
 			path = XIB;
+			sourceTree = "<group>";
+		};
+		6350AD7D22FB8B4F00433C70 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				6350AD7E22FB8B6700433C70 /* Main */,
+				6350AD8022FB8B7D00433C70 /* List */,
+				6350AD7F22FB8B7700433C70 /* Form */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		6350AD7E22FB8B6700433C70 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				63335C2922F4844000FB302F /* ExpenseContainerView.xib */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		6350AD7F22FB8B7700433C70 /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				6327628322F4B1C00032DC03 /* ExpenseFormView.xib */,
+			);
+			path = Form;
+			sourceTree = "<group>";
+		};
+		6350AD8022FB8B7D00433C70 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				6327628922F78B5A0032DC03 /* ExpenseListView.xib */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		6350AD8122FB8BD400433C70 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				63CE3FD322D54111000E90ED /* ExpenseViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		6350AD8222FB8BE500433C70 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				6327628B22F78B730032DC03 /* ExpenseListView.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		6350AD8322FB8BEC00433C70 /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				6327628522F4B1F70032DC03 /* ExpenseFormView.swift */,
+			);
+			path = Form;
+			sourceTree = "<group>";
+		};
+		6350AD8422FB8C2100433C70 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				6350AD8522FB8C3500433C70 /* Main */,
+				6350AD8222FB8BE500433C70 /* List */,
+				6350AD8322FB8BEC00433C70 /* Form */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		6350AD8522FB8C3500433C70 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				63335C2B22F4845E00FB302F /* ExpenseContainerView.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		637B0BB322D6383A00FF8BD0 /* Main */ = {
@@ -391,11 +460,8 @@
 		63CE3FD222D540E3000E90ED /* view */ = {
 			isa = PBXGroup;
 			children = (
-				63CE3FD322D54111000E90ED /* ExpenseViewController.swift */,
-				633BE5A122E2C33B0033E8B3 /* ExpenseBodyView.swift */,
-				63335C2B22F4845E00FB302F /* ExpenseContainerView.swift */,
-				6327628522F4B1F70032DC03 /* ExpenseFormView.swift */,
-				6327628B22F78B730032DC03 /* ExpenseListView.swift */,
+				6350AD8122FB8BD400433C70 /* Main */,
+				6350AD8422FB8C2100433C70 /* Container */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -474,7 +540,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6391370822CBE3490018B65F /* Assets.xcassets in Resources */,
-				633BE5A022E2C3070033E8B3 /* ExpenseBodyView.xib in Resources */,
 				6327628422F4B1C00032DC03 /* ExpenseFormView.xib in Resources */,
 				6327628A22F78B5A0032DC03 /* ExpenseListView.xib in Resources */,
 				63335C2A22F4844000FB302F /* ExpenseContainerView.xib in Resources */,
@@ -513,7 +578,6 @@
 				6391372522CBE7CF0018B65F /* HomeInteractor.swift in Sources */,
 				63B56C8422D5142900D14C24 /* BLFinancial.swift in Sources */,
 				63F6C7EA22CC60A7003B7FA6 /* Coordinator.swift in Sources */,
-				633BE5A222E2C33B0033E8B3 /* ExpenseBodyView.swift in Sources */,
 				63B56C8122D50BAE00D14C24 /* PreSetExpensePrice.swift in Sources */,
 				63B56C7F22D50B7800D14C24 /* PreSetExpenseName.swift in Sources */,
 				63B56C7522D5085E00D14C24 /* Constant.swift in Sources */,
