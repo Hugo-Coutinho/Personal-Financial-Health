@@ -13,6 +13,17 @@ extension UIView {
     class func instanceFromNib(nibName: String) -> UIView {
         return UINib(nibName: nibName, bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
     }
+    
+    class func BlurView() -> UIView {
+        let blurEffect = UIBlurEffect(style: .regular)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.translatesAutoresizingMaskIntoConstraints = false
+        blurView.backgroundColor = UIColor.skyBlue()
+        blurView.alpha = 0.6
+        blurView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.width).isActive = true
+        blurView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.height).isActive = true
+        return blurView
+    }
 }
 
 extension UIView {

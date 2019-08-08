@@ -27,11 +27,8 @@ extension ExpenseViewController {
         self.configureNavigationItem(hidesBackButton: false)
         self.mainStackView.dataSource = self
         self.mainStackView.initialize()
-//        let expenseFormView = ExpenseFormView.instanceFromNib(nibName: "ExpenseFormView")
-//        self.mainStackView.addArrangedSubview(expenseFormView)
-//                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.didSelectView))
-//                expenseFormView.addGestureRecognizer(tapGesture)
-//        self.mainStackView.addArrangedSubview(expenseFormView)
+        let blur = ExpenseFormView.instanceFromNib(nibName: "PopupMenu")
+        self.view.insertSubview(blur, at: self.view.subviews.count + 1)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,6 +56,6 @@ extension ExpenseViewController: StackViewDataSource {
     }
     
     func stackView(_ stackView: UIStackView, numberOfRowsInSection section: Int) -> Int {
-        return 11
+        return 1
     }
 }

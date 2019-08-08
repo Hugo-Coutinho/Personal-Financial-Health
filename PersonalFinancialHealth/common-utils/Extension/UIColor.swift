@@ -11,6 +11,6 @@ import UIKit
 
 extension UIColor {
     class func skyBlue() -> UIColor { // #009ACD
-        return UIColor(red: 0/255, green: 154/255, blue: 205/255, alpha: 1.0)
+        return UIColor(red: 0/255, green: 154/255, blue: 205/255, alpha: 0.97)
     }
 }

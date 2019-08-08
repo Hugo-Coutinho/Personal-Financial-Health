@@ -14,6 +14,8 @@
 		6327628C22F78B730032DC03 /* ExpenseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327628B22F78B730032DC03 /* ExpenseListView.swift */; };
 		63335C2A22F4844000FB302F /* ExpenseContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63335C2922F4844000FB302F /* ExpenseContainerView.xib */; };
 		63335C2C22F4845E00FB302F /* ExpenseContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63335C2B22F4845E00FB302F /* ExpenseContainerView.swift */; };
+		6350AD8922FB8CFB00433C70 /* PopupMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6350AD8822FB8CFB00433C70 /* PopupMenu.xib */; };
+		6350AD8B22FB95D600433C70 /* PopupMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6350AD8A22FB95D600433C70 /* PopupMenu.swift */; };
 		637B0BBC22D647A200FF8BD0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B0BBB22D647A200FF8BD0 /* UIView.swift */; };
 		6391370122CBE3470018B65F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391370022CBE3470018B65F /* AppDelegate.swift */; };
 		6391370322CBE3470018B65F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391370222CBE3470018B65F /* HomeViewController.swift */; };
@@ -49,6 +51,8 @@
 		6327628B22F78B730032DC03 /* ExpenseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseListView.swift; sourceTree = "<group>"; };
 		63335C2922F4844000FB302F /* ExpenseContainerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseContainerView.xib; sourceTree = "<group>"; };
 		63335C2B22F4845E00FB302F /* ExpenseContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseContainerView.swift; sourceTree = "<group>"; };
+		6350AD8822FB8CFB00433C70 /* PopupMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupMenu.xib; sourceTree = "<group>"; };
+		6350AD8A22FB95D600433C70 /* PopupMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupMenu.swift; sourceTree = "<group>"; };
 		637B0BBB22D647A200FF8BD0 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		639136FD22CBE3470018B65F /* PersonalFinancialHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalFinancialHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6391370022CBE3470018B65F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 		633BE59E22E2C2E80033E8B3 /* XIB */ = {
 			isa = PBXGroup;
 			children = (
+				6350AD8722FB8CE800433C70 /* PopupMenu */,
 				6350AD7D22FB8B4F00433C70 /* Container */,
 			);
 			path = XIB;
@@ -171,6 +176,15 @@
 				63335C2B22F4845E00FB302F /* ExpenseContainerView.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		6350AD8722FB8CE800433C70 /* PopupMenu */ = {
+			isa = PBXGroup;
+			children = (
+				6350AD8822FB8CFB00433C70 /* PopupMenu.xib */,
+				6350AD8A22FB95D600433C70 /* PopupMenu.swift */,
+			);
+			path = PopupMenu;
 			sourceTree = "<group>";
 		};
 		637B0BB322D6383A00FF8BD0 /* Main */ = {
@@ -542,6 +556,7 @@
 				6391370822CBE3490018B65F /* Assets.xcassets in Resources */,
 				6327628422F4B1C00032DC03 /* ExpenseFormView.xib in Resources */,
 				6327628A22F78B5A0032DC03 /* ExpenseListView.xib in Resources */,
+				6350AD8922FB8CFB00433C70 /* PopupMenu.xib in Resources */,
 				63335C2A22F4844000FB302F /* ExpenseContainerView.xib in Resources */,
 				6391370622CBE3470018B65F /* Main.storyboard in Resources */,
 			);
@@ -572,6 +587,7 @@
 				6391370122CBE3470018B65F /* AppDelegate.swift in Sources */,
 				639FA05622D6337C00983497 /* UIViewController.swift in Sources */,
 				63A56BB422FA6A0F008C7093 /* StackViewController.swift in Sources */,
+				6350AD8B22FB95D600433C70 /* PopupMenu.swift in Sources */,
 				637B0BBC22D647A200FF8BD0 /* UIView.swift in Sources */,
 				63335C2C22F4845E00FB302F /* ExpenseContainerView.swift in Sources */,
 				6391372B22CBE7CF0018B65F /* HomePresenter.swift in Sources */,
