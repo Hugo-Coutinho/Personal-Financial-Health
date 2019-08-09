@@ -139,7 +139,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UIF-mR-TrT" userLabel="Header">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="lfE-IY-nSi">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="lfE-IY-nSi">
                                                     <rect key="frame" x="16" y="8" width="24" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="lfE-IY-nSi" secondAttribute="height" multiplier="1:1" id="J37-Nk-den"/>
@@ -256,6 +256,8 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="constantExpensePickerView" destination="66K-F9-FWO" id="iuA-Zu-n7n"/>
+                <outlet property="headerConstantExpenseView" destination="UIF-mR-TrT" id="riU-Jn-qMB"/>
+                <outlet property="ivDownArrow" destination="lfE-IY-nSi" id="wxR-04-mhI"/>
                 <outlet property="monthsPickView" destination="M1U-Im-Bs5" id="SeY-Av-wrn"/>
             </connections>
             <point key="canvasLocation" x="69.375" y="327.46478873239437"/>

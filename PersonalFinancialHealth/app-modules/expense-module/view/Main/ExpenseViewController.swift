@@ -26,9 +26,10 @@ extension ExpenseViewController {
         super.viewDidLoad()
         self.configureNavigationItem(hidesBackButton: false)
         self.mainStackView.dataSource = self
+        self.mainStackView.delegate = self
         self.mainStackView.initialize()
-        let blur = ExpenseFormView.instanceFromNib(nibName: "PopupMenu")
-        self.view.insertSubview(blur, at: self.view.subviews.count + 1)
+//        let blur = ExpenseFormView.instanceFromNib(nibName: "PopupMenu")
+//        self.view.insertSubview(blur, at: self.view.subviews.count + 1)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,6 +57,15 @@ extension ExpenseViewController: StackViewDataSource {
     }
     
     func stackView(_ stackView: UIStackView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 11
+    }
+}
+
+// MARK: - STACKVIEW DATASOURCE -
+extension ExpenseViewController: StackViewDelegate {
+    func stackView(_ stackView: UIStackView, didSelectRowAt index: Int, view: UIView) {
+        if index == 0 {
+            (view as! ExpenseFormView).ConstantExpenseVisibility()
+        }
     }
 }

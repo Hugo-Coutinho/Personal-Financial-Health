@@ -15,7 +15,7 @@ class ExpenseListView: UIView {
     @IBOutlet weak var itemView: UIView!
     
     override func awakeFromNib() {
-        self.sectionView.isHidden = true
+        self.sectionView.isHidden = false
         self.itemView.isHidden = true
     }
 }

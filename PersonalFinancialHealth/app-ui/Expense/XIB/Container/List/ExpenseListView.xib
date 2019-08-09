@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hK9-Zw-zD6" userLabel="Section">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hK9-Zw-zD6" userLabel="Section">
                     <rect key="frame" x="8" y="0.0" width="304" height="68"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tnW-f1-N3f" userLabel="BottomRow">
