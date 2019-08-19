@@ -50,22 +50,36 @@ extension ExpenseViewController {
 // MARK: - STACKVIEW DATASOURCE -
 extension ExpenseViewController: StackViewDataSource {
     func stackView(_ stackView: UIStackView, viewForRowAt index: Int) -> UIView {
-        if index == 0 {
-         return ExpenseFormView.instanceFromNib(nibName: "ExpenseFormView")
+        switch index {
+        case 0:
+            return ExpenseFormView.instanceFromNib(nibName: "ExpenseFormView")
+        case 1:
+            return ExpenseFormView.instanceFromNib(nibName: "ExpenseFormView", index: 1)
+        case 2:
+            return ExpenseFormView.instanceFromNib(nibName: "ExpenseFormView", index: 2)
+        case 3:
+            return ExpenseFormView.instanceFromNib(nibName: "ExpenseFormView", index: 3)
+        default:
+            return UIView()
         }
-        return ExpenseContainerView.instanceFromNib(nibName: "ExpenseContainerView")
     }
     
     func stackView(_ stackView: UIStackView, numberOfRowsInSection section: Int) -> Int {
-        return 11
+        return 4
     }
 }
 
 // MARK: - STACKVIEW DATASOURCE -
 extension ExpenseViewController: StackViewDelegate {
     func stackView(_ stackView: UIStackView, didSelectRowAt index: Int, view: UIView) {
-        if index == 0 {
-            (view as! ExpenseFormView).ConstantExpenseVisibility()
+        if index == 1 {
+            if self.mainStackView.viewWithTag(2) != nil {
+                (self.mainStackView.arrangedSubviews[1] as? ConstantCollapseView)?.closeConstantExpense()
+            self.mainStackView.removeChild(at: 2)
+            } else {
+                (self.mainStackView.arrangedSubviews[1] as? ConstantCollapseView)?.openConstantExpense()
+                self.mainStackView.addChildView(childView: ExpenseFormView.instanceFromNib(nibName: "ExpenseFormView", index: 2), at: 2)
+            }
         }
     }
 }

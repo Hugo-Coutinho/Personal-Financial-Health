@@ -9,27 +9,90 @@
 import Foundation
 import UIKit
 
+
 class ExpenseFormView: UIView {
     
-    @IBOutlet weak var monthsPickView: UIPickerView!
-    @IBOutlet weak var constantExpensePickerView: UIView!
-    @IBOutlet weak var headerConstantExpenseView: UIView!
-    @IBOutlet weak var ivDownArrow: UIImageView!
     
-    private lazy var constantViewIsOpen: Bool = false
+    @IBOutlet weak var formStackView: UIStackView!
     
-    override func awakeFromNib() {
-        self.constantExpensePickerView.isHidden = true
-        self.monthsPickView.delegate = self
-        self.monthsPickView.dataSource = self
+    override func layoutSubviews() {
+        self.addConstraint(NSLayoutConstraint(item: self,
+                                              attribute: .height,
+                                              relatedBy: .equal,
+                                              toItem: self.formStackView,
+                                              attribute: .width,
+                                              multiplier: 2.0 / 4.0,
+                                              constant: 0))
     }
 }
 
-extension ExpenseFormView: UIPickerViewDelegate {
+class ConstantCollapseView: UIView {
+    
+    // MARK: - OUTLET -
+    @IBOutlet weak var ivDownArrow: UIImageView!
+    @IBOutlet weak var constantCollapseView: UIView!
+    
+    
+    override func layoutSubviews() {
+        self.ivDownArrow.isHidden = false
+        self.closeConstantExpense()
+        self.addConstraint(NSLayoutConstraint(item: self,
+                                              attribute: .height,
+                                              relatedBy: .equal,
+                                              toItem: self.constantCollapseView,
+                                              attribute: .width,
+                                              multiplier: 1.0 / 7.0,
+                                              constant: 0))
+    }
+    
+    func closeConstantExpense() {
+        UIView.animate(withDuration:0.2, animations: { () -> Void in
+            self.ivDownArrow.transform = CGAffineTransform(rotationAngle: CGFloat(CGFloat(Double.pi)))
+
+        })
+        UIView.animate(withDuration: 0.2, delay: 0.15, options: .curveEaseIn, animations: { () -> Void in
+            self.ivDownArrow.transform = CGAffineTransform(rotationAngle: CGFloat(CGFloat(Double.pi * 2)))
+        }) { (isAnimationComplete) in
+        }
+    }
+    
+     func openConstantExpense() {
+        UIView.animate(withDuration:0.2, animations: { () -> Void in
+            self.ivDownArrow.transform = CGAffineTransform(rotationAngle: CGFloat(CGFloat(Double.pi)))
+        })
+        UIView.animate(withDuration: 0.2, delay: 0.15, options: .curveEaseIn, animations: { () -> Void in
+            self.ivDownArrow.transform = CGAffineTransform(rotationAngle: CGFloat(CGFloat(Double.pi)))
+        }) { (isAnimationComplete) in
+        }
+    }
+}
+
+
+class ConstantPickerView: UIView {
+    
+    // MARK: - OUTLET -
+    @IBOutlet weak var monthsPickerView: UIPickerView!
+    @IBOutlet weak var constantPickerView: UIView!
+    
+    // MARK: - OVERRIDE -
+    override func layoutSubviews() {
+        self.monthsPickerView.delegate = self
+        self.monthsPickerView.dataSource = self
+        self.addConstraint(NSLayoutConstraint(item: self,
+                                              attribute: .height,
+                                              relatedBy: .equal,
+                                              toItem: self.constantPickerView,
+                                              attribute: .width,
+                                              multiplier: 5.0 / 14.0,
+                                              constant: 0))
+    }
+}
+
+extension ConstantPickerView: UIPickerViewDelegate {
     
 }
 
-extension ExpenseFormView: UIPickerViewDataSource {
+extension ConstantPickerView: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -43,41 +106,19 @@ extension ExpenseFormView: UIPickerViewDataSource {
     }
 }
 
-extension ExpenseFormView {
-    func ConstantExpenseVisibility() {
-        guard !self.constantViewIsOpen else { self.closeConstantExpense(); return }
-        self.openConstantExpense()
-    }
+class ConfirmView: UIView {
     
-    func closeConstantExpense() {
-        UIView.animate(withDuration:0.2, animations: { () -> Void in
-            self.ivDownArrow.transform = CGAffineTransform(rotationAngle: CGFloat(CGFloat(Double.pi)))
-            self.constantExpensePickerView.alpha = 1
-        })
-        UIView.animate(withDuration: 0.2, delay: 0.15, options: .curveEaseIn, animations: { () -> Void in
-            self.ivDownArrow.transform = CGAffineTransform(rotationAngle: CGFloat(CGFloat(Double.pi * 2)))
-            self.constantExpensePickerView.alpha = 0.7
-        }) { (isAnimationComplete) in
-            self.constantExpensePickerView.alpha = 0.3
-        }
-        self.constantExpensePickerView.isHidden = true
-        self.constantExpensePickerView.alpha = 0
-        self.constantViewIsOpen = false
-    }
+    @IBOutlet weak var confirmView: UIView!
     
-    private func openConstantExpense() {
-        self.constantExpensePickerView.isHidden = false
-        UIView.animate(withDuration:0.2, animations: { () -> Void in
-            self.ivDownArrow.transform = CGAffineTransform(rotationAngle: CGFloat(CGFloat(Double.pi)))
-            self.constantExpensePickerView.alpha = 0
-        })
-        UIView.animate(withDuration: 0.2, delay: 0.15, options: .curveEaseIn, animations: { () -> Void in
-            self.ivDownArrow.transform = CGAffineTransform(rotationAngle: CGFloat(CGFloat(Double.pi)))
-            self.constantExpensePickerView.alpha = 0.5
-        }) { (isAnimationComplete) in
-            self.constantExpensePickerView.alpha = 1
-        }
-        self.constantViewIsOpen = true
+    
+    override func layoutSubviews() {
+        self.addConstraint(NSLayoutConstraint(item: self,
+                                              attribute: .height,
+                                              relatedBy: .equal,
+                                              toItem: self.confirmView,
+                                              attribute: .width,
+                                              multiplier: 5.0 / 25.0,
+                                              constant: 0))
     }
 }
 

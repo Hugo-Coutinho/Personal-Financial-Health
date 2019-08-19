@@ -14,6 +14,10 @@ extension UIView {
         return UINib(nibName: nibName, bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
     }
     
+    class func instanceFromNib(nibName: String, index: Int) -> UIView {
+        return UINib(nibName: nibName, bundle: nil).instantiate(withOwner: nil, options: nil)[index] as! UIView
+    }
+    
     class func BlurView() -> UIView {
         let blurEffect = UIBlurEffect(style: .regular)
         let blurView = UIVisualEffectView(effect: blurEffect)

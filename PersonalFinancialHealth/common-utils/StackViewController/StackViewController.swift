@@ -89,6 +89,20 @@ extension StackViewController {
 
 // MARK: - DELEGATE METHODS -
 extension StackViewController {
+    public func addChildView(childView: UIView, at rowIndex: Int) {
+        childView.tag = rowIndex
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.selectView))
+        childView.addGestureRecognizer(tapGesture)
+        childView.alpha = 0.2
+        UIView.animate(withDuration: 0.4,
+                       animations: {
+                        childView.alpha = 0.4
+        self.insertArrangedSubview(childView, at: rowIndex)
+        }) { (animationCompleted) in
+            self.arrangedSubviews[rowIndex].alpha = 1
+        }
+    }
+    
     @objc private func selectView(_ sender: AnyObject) {
         let senderTag = sender.view.tag
         guard let arrangedSubview = self.arrangedSubviews.filter({$0.tag == senderTag}).first else { return }
@@ -101,14 +115,12 @@ extension StackViewController {
     }
     
     public func removeChild(at index: Int) {
-        guard let child = self.parentViewController.children.filter({$0.view.tag == index}).first else { return }
+        guard let child = self.arrangedSubviews.filter({$0.tag == index}).first else { return }
         UIView.animate(withDuration: 0.4, animations: {
-            child.view.alpha = 0
+            child.alpha = 0
         }, completion: { animationCompleted in
-            child.willMove(toParent: nil)
-            self.removeArrangedSubview(child.view)
-            child.view.removeFromSuperview()
-            child.removeFromParent()
+            self.removeArrangedSubview(child)
+            child.removeFromSuperview()
         })
     }
     
