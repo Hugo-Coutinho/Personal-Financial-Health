@@ -9,23 +9,18 @@
 import Foundation
 import UIKit
 
-
+// MARK: - EXPENSE FORM VIEW -
 class ExpenseFormView: UIView {
     
     
     @IBOutlet weak var formStackView: UIStackView!
     
     override func layoutSubviews() {
-        self.addConstraint(NSLayoutConstraint(item: self,
-                                              attribute: .height,
-                                              relatedBy: .equal,
-                                              toItem: self.formStackView,
-                                              attribute: .width,
-                                              multiplier: 2.0 / 4.0,
-                                              constant: 0))
+        self.addConstraint(configureAspectRatio(toItem: self.formStackView, multiplierFirst: 2.0, multiplierSecond: 4.0))
     }
 }
 
+// MARK: - CONSTANT COLLAPSE VIEW -
 class ConstantCollapseView: UIView {
     
     // MARK: - OUTLET -
@@ -35,21 +30,11 @@ class ConstantCollapseView: UIView {
     
     override func layoutSubviews() {
         self.ivDownArrow.isHidden = false
-        self.closeConstantExpense()
-        self.addConstraint(NSLayoutConstraint(item: self,
-                                              attribute: .height,
-                                              relatedBy: .equal,
-                                              toItem: self.constantCollapseView,
-                                              attribute: .width,
-                                              multiplier: 1.0 / 7.0,
-                                              constant: 0))
+        self.openConstantExpense()
+        self.addConstraint(configureAspectRatio(toItem: self.constantCollapseView, multiplierFirst: 1.0, multiplierSecond: 7.0))
     }
     
     func closeConstantExpense() {
-        UIView.animate(withDuration:0.2, animations: { () -> Void in
-            self.ivDownArrow.transform = CGAffineTransform(rotationAngle: CGFloat(CGFloat(Double.pi)))
-
-        })
         UIView.animate(withDuration: 0.2, delay: 0.15, options: .curveEaseIn, animations: { () -> Void in
             self.ivDownArrow.transform = CGAffineTransform(rotationAngle: CGFloat(CGFloat(Double.pi * 2)))
         }) { (isAnimationComplete) in
@@ -67,7 +52,7 @@ class ConstantCollapseView: UIView {
     }
 }
 
-
+// MARK: - CONSTANT PICKER VIEW -
 class ConstantPickerView: UIView {
     
     // MARK: - OUTLET -
@@ -78,13 +63,7 @@ class ConstantPickerView: UIView {
     override func layoutSubviews() {
         self.monthsPickerView.delegate = self
         self.monthsPickerView.dataSource = self
-        self.addConstraint(NSLayoutConstraint(item: self,
-                                              attribute: .height,
-                                              relatedBy: .equal,
-                                              toItem: self.constantPickerView,
-                                              attribute: .width,
-                                              multiplier: 5.0 / 14.0,
-                                              constant: 0))
+        self.addConstraint(configureAspectRatio(toItem: self.constantPickerView, multiplierFirst: 5.0, multiplierSecond: 14.0))
     }
 }
 
@@ -106,19 +85,16 @@ extension ConstantPickerView: UIPickerViewDataSource {
     }
 }
 
+// MARK: - CONFIRM VIEW -
 class ConfirmView: UIView {
     
     @IBOutlet weak var confirmView: UIView!
+    @IBOutlet weak var confirmButton: UIButton!
     
     
     override func layoutSubviews() {
-        self.addConstraint(NSLayoutConstraint(item: self,
-                                              attribute: .height,
-                                              relatedBy: .equal,
-                                              toItem: self.confirmView,
-                                              attribute: .width,
-                                              multiplier: 5.0 / 25.0,
-                                              constant: 0))
+       self.addConstraint(configureAspectRatio(toItem: self.confirmView, multiplierFirst: 5.0, multiplierSecond: 25.0))
+        self.confirmButton.layer.cornerRadius = self.confirmButton.layer.bounds.size.height / 2
     }
 }
 

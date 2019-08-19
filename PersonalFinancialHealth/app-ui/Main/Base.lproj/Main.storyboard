@@ -297,7 +297,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Lzi-3k-WJn" firstAttribute="bottom" secondItem="cqp-lA-EP6" secondAttribute="bottom" id="1xj-hX-VjS"/>
                             <constraint firstAttribute="trailing" secondItem="Lzi-3k-WJn" secondAttribute="trailing" id="aUT-lP-m2c"/>
@@ -315,7 +315,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fgk-ut-DFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4204" y="445"/>
+            <point key="canvasLocation" x="2286" y="33"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DcJ-oo-iYa">

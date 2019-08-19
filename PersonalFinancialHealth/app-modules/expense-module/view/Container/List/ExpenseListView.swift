@@ -9,13 +9,16 @@
 import Foundation
 import UIKit
 
-class ExpenseListView: UIView {
+class ExpenseListSectionView: UIView {
 
     @IBOutlet weak var sectionView: UIView!
-    @IBOutlet weak var itemView: UIView!
     
-    override func awakeFromNib() {
-        self.sectionView.isHidden = false
-        self.itemView.isHidden = true
-    }
+}
+
+class ExpenseListItemView: UIView {
+
+}
+
+class ExpenseListSubItemView: UIView {
+    
 }

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UIView {
+public extension UIView {
     class func instanceFromNib(nibName: String) -> UIView {
         return UINib(nibName: nibName, bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
     }
@@ -27,6 +27,16 @@ extension UIView {
         blurView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.width).isActive = true
         blurView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.height).isActive = true
         return blurView
+    }
+
+    open func configureAspectRatio(toItem  item: UIView, multiplierFirst: Float, multiplierSecond: Float) -> NSLayoutConstraint {
+            return NSLayoutConstraint(item: self,
+            attribute: .height,
+            relatedBy: .equal,
+            toItem: item,
+            attribute: .width,
+            multiplier: CGFloat(multiplierFirst) / CGFloat(multiplierSecond),
+            constant: 0)
     }
 }
 

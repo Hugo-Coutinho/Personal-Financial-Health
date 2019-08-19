@@ -14,8 +14,7 @@ class ExpenseContainerView: UIView {
     @IBOutlet weak var containerStackView: UIStackView!
     
     override func awakeFromNib() {
-        let expenseView = ExpenseListView.instanceFromNib(nibName: "ExpenseListView")
-        (expenseView as? ExpenseListView)?.itemView.isHidden = false
+        let expenseView = ExpenseListSectionView.instanceFromNib(nibName: "ExpenseListView")
         self.containerStackView.addArrangedSubview(expenseView)
     }
 }

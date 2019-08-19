@@ -253,10 +253,10 @@
                             <state key="normal" title="Button"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="10"/>
+                                    <real key="value" value="4"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                    <real key="value" value="3"/>
+                                    <real key="value" value="1"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                     <real key="value" value="1"/>
@@ -290,6 +290,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="confirmButton" destination="2KH-Wk-8fx" id="Pj8-Xa-7ol"/>
                 <outlet property="confirmView" destination="xTq-k1-QTG" id="mxU-OG-ERE"/>
             </connections>
             <point key="canvasLocation" x="-998" y="571"/>

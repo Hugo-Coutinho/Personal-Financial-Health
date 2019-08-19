@@ -36,14 +36,9 @@ extension ExpenseViewController {
         self.mainStackView.axis = .vertical
         self.mainStackView.alignment = .fill
         self.mainStackView.distribution = .fill
-        self.mainStackView.spacing = 0
+        self.mainStackView.spacing = 8
         self.mainStackView.translatesAutoresizingMaskIntoConstraints = false
         self.mainStackView.layoutIfNeeded()
-    }
-    
-    @objc private func didSelectView(_ sender: AnyObject) {
-        let expensesList = ExpenseContainerView.instanceFromNib(nibName: "ExpenseContainerView")
-        self.mainStackView.addArrangedSubview(expensesList)
     }
 }
 
@@ -60,12 +55,12 @@ extension ExpenseViewController: StackViewDataSource {
         case 3:
             return ExpenseFormView.instanceFromNib(nibName: "ExpenseFormView", index: 3)
         default:
-            return UIView()
+            return ExpenseContainerView.instanceFromNib(nibName: "ExpenseContainerView")
         }
     }
     
     func stackView(_ stackView: UIStackView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 15
     }
 }
 
