@@ -206,11 +206,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DXu-6h-yv5">
                                 <rect key="frame" x="0.0" y="64" width="320" height="98.5"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bank" translatesAutoresizingMaskIntoConstraints="NO" id="Ah1-Z7-PZU">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bank" translatesAutoresizingMaskIntoConstraints="NO" id="Ah1-Z7-PZU">
                                         <rect key="frame" x="62.5" y="17" width="64" height="64"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="64" id="lr3-Sf-2mV"/>
-                                            <constraint firstAttribute="height" constant="64" id="rMb-BP-3fB"/>
+                                            <constraint firstAttribute="width" secondItem="Ah1-Z7-PZU" secondAttribute="height" multiplier="1:1" id="6Fz-EI-qHE"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spending Control" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Cw-gL-LzM">
@@ -227,6 +226,7 @@
                                     <constraint firstItem="4Cw-gL-LzM" firstAttribute="centerY" secondItem="DXu-6h-yv5" secondAttribute="centerY" id="i65-Zm-fIw"/>
                                     <constraint firstItem="4Cw-gL-LzM" firstAttribute="leading" secondItem="Ah1-Z7-PZU" secondAttribute="trailing" constant="8" id="mgU-9x-nU8"/>
                                     <constraint firstAttribute="trailing" secondItem="4Cw-gL-LzM" secondAttribute="trailing" id="rT1-hs-Gjg"/>
+                                    <constraint firstItem="Ah1-Z7-PZU" firstAttribute="width" secondItem="DXu-6h-yv5" secondAttribute="width" multiplier="0.2" id="wuz-Jq-AZ7"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -311,11 +311,12 @@
                     <navigationItem key="navigationItem" title="My Expenses" id="7hF-Hs-GOW"/>
                     <connections>
                         <outlet property="mainStackView" destination="CfN-2T-4Yh" id="Ugk-bE-vnG"/>
+                        <outlet property="scrollView" destination="Lzi-3k-WJn" id="NXL-Ku-auT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fgk-ut-DFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2286" y="33"/>
+            <point key="canvasLocation" x="2475" y="33"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DcJ-oo-iYa">

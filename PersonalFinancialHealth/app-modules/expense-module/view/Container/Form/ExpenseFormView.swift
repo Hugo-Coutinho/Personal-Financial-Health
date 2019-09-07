@@ -12,8 +12,10 @@ import UIKit
 // MARK: - EXPENSE FORM VIEW -
 class ExpenseFormView: UIView {
     
-    
     @IBOutlet weak var formStackView: UIStackView!
+    
+    
+    
     
     override func layoutSubviews() {
         self.addConstraint(configureAspectRatio(toItem: self.formStackView, multiplierFirst: 2.0, multiplierSecond: 4.0))

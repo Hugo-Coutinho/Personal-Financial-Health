@@ -16,6 +16,8 @@
 		6327628C22F78B730032DC03 /* ExpenseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327628B22F78B730032DC03 /* ExpenseListView.swift */; };
 		63335C2A22F4844000FB302F /* ExpenseContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63335C2922F4844000FB302F /* ExpenseContainerView.xib */; };
 		63335C2C22F4845E00FB302F /* ExpenseContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63335C2B22F4845E00FB302F /* ExpenseContainerView.swift */; };
+		63347B2523105F2D006CA2CC /* ExpenseListContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63347B2423105F2D006CA2CC /* ExpenseListContainerView.xib */; };
+		63347B2923106011006CA2CC /* ExpenseListContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63347B2823106011006CA2CC /* ExpenseListContainerView.swift */; };
 		6350AD8922FB8CFB00433C70 /* PopupMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6350AD8822FB8CFB00433C70 /* PopupMenu.xib */; };
 		6350AD8B22FB95D600433C70 /* PopupMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6350AD8A22FB95D600433C70 /* PopupMenu.swift */; };
 		637B0BBC22D647A200FF8BD0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B0BBB22D647A200FF8BD0 /* UIView.swift */; };
@@ -55,6 +57,8 @@
 		6327628B22F78B730032DC03 /* ExpenseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseListView.swift; sourceTree = "<group>"; };
 		63335C2922F4844000FB302F /* ExpenseContainerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseContainerView.xib; sourceTree = "<group>"; };
 		63335C2B22F4845E00FB302F /* ExpenseContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseContainerView.swift; sourceTree = "<group>"; };
+		63347B2423105F2D006CA2CC /* ExpenseListContainerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseListContainerView.xib; sourceTree = "<group>"; };
+		63347B2823106011006CA2CC /* ExpenseListContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseListContainerView.swift; sourceTree = "<group>"; };
 		6350AD8822FB8CFB00433C70 /* PopupMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupMenu.xib; sourceTree = "<group>"; };
 		6350AD8A22FB95D600433C70 /* PopupMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupMenu.swift; sourceTree = "<group>"; };
 		637B0BBB22D647A200FF8BD0 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -105,6 +109,38 @@
 			path = Edit;
 			sourceTree = "<group>";
 		};
+		63347B2223105E9B006CA2CC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				63347B2423105F2D006CA2CC /* ExpenseListContainerView.xib */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		63347B2323105ED8006CA2CC /* List */ = {
+			isa = PBXGroup;
+			children = (
+				6327628922F78B5A0032DC03 /* ExpenseListView.xib */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		63347B2623105FCB006CA2CC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				63347B2823106011006CA2CC /* ExpenseListContainerView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		63347B2723105FEA006CA2CC /* List */ = {
+			isa = PBXGroup;
+			children = (
+				6327628B22F78B730032DC03 /* ExpenseListView.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
 		633BE59E22E2C2E80033E8B3 /* XIB */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,7 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				6350AD7E22FB8B6700433C70 /* Main */,
-				6350AD8022FB8B7D00433C70 /* List */,
+				6350AD8022FB8B7D00433C70 /* List Container */,
 				6350AD7F22FB8B7700433C70 /* Form */,
 			);
 			path = Container;
@@ -140,12 +176,13 @@
 			path = Form;
 			sourceTree = "<group>";
 		};
-		6350AD8022FB8B7D00433C70 /* List */ = {
+		6350AD8022FB8B7D00433C70 /* List Container */ = {
 			isa = PBXGroup;
 			children = (
-				6327628922F78B5A0032DC03 /* ExpenseListView.xib */,
+				63347B2223105E9B006CA2CC /* Main */,
+				63347B2323105ED8006CA2CC /* List */,
 			);
-			path = List;
+			path = "List Container";
 			sourceTree = "<group>";
 		};
 		6350AD8122FB8BD400433C70 /* Main */ = {
@@ -156,12 +193,13 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		6350AD8222FB8BE500433C70 /* List */ = {
+		6350AD8222FB8BE500433C70 /* List Container */ = {
 			isa = PBXGroup;
 			children = (
-				6327628B22F78B730032DC03 /* ExpenseListView.swift */,
+				63347B2623105FCB006CA2CC /* Main */,
+				63347B2723105FEA006CA2CC /* List */,
 			);
-			path = List;
+			path = "List Container";
 			sourceTree = "<group>";
 		};
 		6350AD8322FB8BEC00433C70 /* Form */ = {
@@ -177,7 +215,7 @@
 			children = (
 				6350AD8522FB8C3500433C70 /* Main */,
 				63AE89C022FC683B00FE3D6A /* PopupMenu */,
-				6350AD8222FB8BE500433C70 /* List */,
+				6350AD8222FB8BE500433C70 /* List Container */,
 				6350AD8322FB8BEC00433C70 /* Form */,
 			);
 			path = Container;
@@ -592,6 +630,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6391370822CBE3490018B65F /* Assets.xcassets in Resources */,
+				63347B2523105F2D006CA2CC /* ExpenseListContainerView.xib in Resources */,
 				6327628422F4B1C00032DC03 /* ExpenseFormView.xib in Resources */,
 				6327628A22F78B5A0032DC03 /* ExpenseListView.xib in Resources */,
 				6350AD8922FB8CFB00433C70 /* PopupMenu.xib in Resources */,
@@ -609,6 +648,7 @@
 			files = (
 				63CE3FCC22D51F2B000E90ED /* String.swift in Sources */,
 				63B56C7722D5095500D14C24 /* MainCoreData.swift in Sources */,
+				63347B2923106011006CA2CC /* ExpenseListContainerView.swift in Sources */,
 				639FA05422D612B200983497 /* ExpenseRouter.swift in Sources */,
 				6391372A22CBE7CF0018B65F /* HomeRouter.swift in Sources */,
 				6327628622F4B1F70032DC03 /* ExpenseFormView.swift in Sources */,

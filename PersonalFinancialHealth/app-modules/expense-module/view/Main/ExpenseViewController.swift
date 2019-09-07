@@ -12,6 +12,7 @@ class ExpenseViewController: UIViewController {
     
     // MARK: - OUTLETS -
     @IBOutlet weak var mainStackView: StackViewController!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     // MARK: - CONSTANTS -
     
@@ -30,15 +31,25 @@ extension ExpenseViewController {
         self.mainStackView.initialize()
 //        let blur = ExpenseFormView.instanceFromNib(nibName: "PopupMenu")
 //        self.view.insertSubview(blur, at: self.view.subviews.count + 1)
+        self.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         self.mainStackView.axis = .vertical
         self.mainStackView.alignment = .fill
         self.mainStackView.distribution = .fill
         self.mainStackView.spacing = 8
         self.mainStackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        
+        //let currentHeight = self.view.bounds.height
+        //let newHeight = (currentHeight + self.mainStackView.frame.height)
+        
+        
         self.mainStackView.layoutIfNeeded()
+        self.view.layoutIfNeeded()
     }
 }
 
@@ -55,12 +66,12 @@ extension ExpenseViewController: StackViewDataSource {
         case 3:
             return ExpenseFormView.instanceFromNib(nibName: "ExpenseFormView", index: 3)
         default:
-            return ExpenseContainerView.instanceFromNib(nibName: "ExpenseContainerView")
+            return ExpenseListContainerView.instanceFromNib(nibName: "ExpenseListContainerView")
         }
     }
     
     func stackView(_ stackView: UIStackView, numberOfRowsInSection section: Int) -> Int {
-        return 15
+        return 5
     }
 }
 
@@ -70,11 +81,13 @@ extension ExpenseViewController: StackViewDelegate {
         if index == 1 {
             if self.mainStackView.viewWithTag(2) != nil {
                 (self.mainStackView.arrangedSubviews[1] as? ConstantCollapseView)?.closeConstantExpense()
-            self.mainStackView.removeChild(at: 2)
+                self.mainStackView.removeChild(at: 2)
             } else {
                 (self.mainStackView.arrangedSubviews[1] as? ConstantCollapseView)?.openConstantExpense()
                 self.mainStackView.addChildView(childView: ExpenseFormView.instanceFromNib(nibName: "ExpenseFormView", index: 2), at: 2)
             }
+        } else if let containerView = (self.mainStackView.arrangedSubviews[index] as? ExpenseListContainerView) {
+            print(containerView.frame.height)
         }
     }
 }

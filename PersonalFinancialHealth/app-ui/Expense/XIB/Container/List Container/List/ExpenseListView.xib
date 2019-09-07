@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -196,20 +195,19 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="hK9-Zw-zD6" firstAttribute="centerX" secondItem="k8a-4h-Zvu" secondAttribute="centerX" id="CFS-GP-UVd"/>
-                <constraint firstItem="k8a-4h-Zvu" firstAttribute="bottom" secondItem="hK9-Zw-zD6" secondAttribute="bottom" id="DA5-VU-rxN"/>
-                <constraint firstItem="hK9-Zw-zD6" firstAttribute="width" secondItem="k8a-4h-Zvu" secondAttribute="width" multiplier="0.9" id="f6a-wh-xws"/>
-                <constraint firstItem="hK9-Zw-zD6" firstAttribute="top" secondItem="k8a-4h-Zvu" secondAttribute="top" id="wFl-qO-ThD"/>
+                <constraint firstItem="hK9-Zw-zD6" firstAttribute="centerX" secondItem="VGc-pE-R89" secondAttribute="centerX" id="CFS-GP-UVd"/>
+                <constraint firstAttribute="bottom" secondItem="hK9-Zw-zD6" secondAttribute="bottom" id="DA5-VU-rxN"/>
+                <constraint firstItem="hK9-Zw-zD6" firstAttribute="width" secondItem="VGc-pE-R89" secondAttribute="width" multiplier="0.9" id="f6a-wh-xws"/>
+                <constraint firstItem="hK9-Zw-zD6" firstAttribute="top" secondItem="VGc-pE-R89" secondAttribute="top" id="wFl-qO-ThD"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="k8a-4h-Zvu"/>
             <connections>
                 <outlet property="sectionView" destination="hK9-Zw-zD6" id="rzx-pg-6sE"/>
             </connections>
             <point key="canvasLocation" x="126" y="320"/>
         </view>
         <view contentMode="scaleToFill" restorationIdentifier="ExpenseListItemView" id="1eQ-Jp-YFk" userLabel="Expense List Item View" customClass="ExpenseListItemView" customModule="PersonalFinancialHealth" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="162"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lu5-22-sgs" userLabel="Item_background">
@@ -272,10 +270,10 @@
                                         <constraint firstAttribute="width" secondItem="eNk-wg-tWV" secondAttribute="height" multiplier="1:1" id="toQ-YO-rle"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Launch time" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="t7c-Tm-qbS">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Launch time" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="t7c-Tm-qbS">
                                     <rect key="frame" x="82" y="23.5" width="94.5" height="21"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" secondItem="t7c-Tm-qbS" secondAttribute="height" multiplier="9:2" id="NBL-rG-0Kq"/>
+                                        <constraint firstAttribute="width" secondItem="t7c-Tm-qbS" secondAttribute="height" multiplier="9:2" priority="800" id="NBL-rG-0Kq"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <nil key="highlightedColor"/>
@@ -355,27 +353,37 @@
                         <constraint firstItem="lOK-Aa-CXD" firstAttribute="width" secondItem="Lu5-22-sgs" secondAttribute="width" id="4Hi-Uc-2lj"/>
                         <constraint firstItem="Xor-CQ-MmU" firstAttribute="height" secondItem="Lu5-22-sgs" secondAttribute="height" id="9zs-c9-Clh"/>
                         <constraint firstItem="Xor-CQ-MmU" firstAttribute="centerY" secondItem="Lu5-22-sgs" secondAttribute="centerY" id="DLu-A1-6UT"/>
-                        <constraint firstAttribute="height" constant="68" id="LPU-Wu-3x0"/>
                         <constraint firstItem="Nbs-ik-3nU" firstAttribute="height" secondItem="Lu5-22-sgs" secondAttribute="height" id="M1d-NV-JTr"/>
                         <constraint firstAttribute="trailing" secondItem="Xor-CQ-MmU" secondAttribute="trailing" id="VQE-Ne-txt"/>
                         <constraint firstItem="Nbs-ik-3nU" firstAttribute="centerY" secondItem="Lu5-22-sgs" secondAttribute="centerY" id="gH0-5y-Fep"/>
                         <constraint firstItem="lOK-Aa-CXD" firstAttribute="centerY" secondItem="Lu5-22-sgs" secondAttribute="centerY" id="heG-DI-UtI"/>
+                        <constraint firstAttribute="width" secondItem="Lu5-22-sgs" secondAttribute="height" multiplier="72:17" id="hpA-Nj-0xx"/>
                         <constraint firstItem="lOK-Aa-CXD" firstAttribute="centerX" secondItem="Lu5-22-sgs" secondAttribute="centerX" id="sGW-z7-0Xp"/>
                         <constraint firstItem="Nbs-ik-3nU" firstAttribute="leading" secondItem="Lu5-22-sgs" secondAttribute="leading" id="yx6-dM-sGK"/>
                         <constraint firstItem="lOK-Aa-CXD" firstAttribute="height" secondItem="Lu5-22-sgs" secondAttribute="height" id="zbp-AT-oXW"/>
                     </constraints>
                 </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Twv-9M-ENo" userLabel="Sub Item Stack View">
+                    <rect key="frame" x="16" y="76" width="288" height="86"/>
+                </stackView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="Lu5-22-sgs" firstAttribute="width" secondItem="KRy-jb-FVg" secondAttribute="width" multiplier="0.9" id="9ok-3Z-128"/>
-                <constraint firstItem="Lu5-22-sgs" firstAttribute="centerX" secondItem="KRy-jb-FVg" secondAttribute="centerX" id="H83-a3-hqE"/>
-                <constraint firstItem="Lu5-22-sgs" firstAttribute="bottom" secondItem="KRy-jb-FVg" secondAttribute="bottom" id="ctt-VI-j8E"/>
-                <constraint firstItem="Lu5-22-sgs" firstAttribute="top" secondItem="KRy-jb-FVg" secondAttribute="top" id="nD2-Ng-JGT"/>
+                <constraint firstItem="Twv-9M-ENo" firstAttribute="top" secondItem="Lu5-22-sgs" secondAttribute="bottom" constant="8" id="6Qr-Pp-Oqm"/>
+                <constraint firstItem="Lu5-22-sgs" firstAttribute="width" secondItem="1eQ-Jp-YFk" secondAttribute="width" multiplier="0.9" id="9ok-3Z-128"/>
+                <constraint firstItem="Lu5-22-sgs" firstAttribute="centerX" secondItem="1eQ-Jp-YFk" secondAttribute="centerX" id="H83-a3-hqE"/>
+                <constraint firstItem="Twv-9M-ENo" firstAttribute="width" secondItem="1eQ-Jp-YFk" secondAttribute="width" multiplier="0.9" id="Mi9-hw-sxn"/>
+                <constraint firstItem="Twv-9M-ENo" firstAttribute="centerX" secondItem="1eQ-Jp-YFk" secondAttribute="centerX" id="Pp6-N9-gRP"/>
+                <constraint firstItem="Lu5-22-sgs" firstAttribute="top" secondItem="1eQ-Jp-YFk" secondAttribute="top" id="uIT-JM-4pk"/>
+                <constraint firstAttribute="bottom" secondItem="Twv-9M-ENo" secondAttribute="bottom" priority="250" id="xyI-po-Xyb"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="KRy-jb-FVg"/>
-            <point key="canvasLocation" x="125" y="444"/>
+            <connections>
+                <outlet property="itemBackgroundView" destination="Lu5-22-sgs" id="lK9-rM-GPD"/>
+                <outlet property="itemText" destination="t7c-Tm-qbS" id="Fw6-dh-sSA"/>
+                <outlet property="subItemStackView" destination="Twv-9M-ENo" id="p1i-Qd-wLl"/>
+            </connections>
+            <point key="canvasLocation" x="124.8" y="626.08695652173913"/>
         </view>
         <view contentMode="scaleToFill" restorationIdentifier="ExpenseListSubItemView" id="A76-Ul-OWX" userLabel="Expense List Sub Item View" customClass="ExpenseListSubItemView" customModule="PersonalFinancialHealth" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
@@ -462,14 +470,14 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="2oc-rP-DGR" firstAttribute="height" secondItem="Wux-Sz-kgg" secondAttribute="height" id="DyC-Wx-fbl"/>
-                <constraint firstItem="2oc-rP-DGR" firstAttribute="centerX" secondItem="Wux-Sz-kgg" secondAttribute="centerX" id="Nfp-0R-fpq"/>
-                <constraint firstItem="2oc-rP-DGR" firstAttribute="centerY" secondItem="Wux-Sz-kgg" secondAttribute="centerY" id="UZX-5z-2OP"/>
-                <constraint firstItem="2oc-rP-DGR" firstAttribute="width" secondItem="Wux-Sz-kgg" secondAttribute="width" multiplier="0.9" id="ulX-FW-Rmd"/>
+                <constraint firstItem="2oc-rP-DGR" firstAttribute="centerX" secondItem="A76-Ul-OWX" secondAttribute="centerX" id="Nfp-0R-fpq"/>
+                <constraint firstItem="2oc-rP-DGR" firstAttribute="centerY" secondItem="A76-Ul-OWX" secondAttribute="centerY" id="UZX-5z-2OP"/>
+                <constraint firstAttribute="bottom" secondItem="2oc-rP-DGR" secondAttribute="bottom" id="fZH-0c-TdB"/>
+                <constraint firstItem="2oc-rP-DGR" firstAttribute="top" secondItem="A76-Ul-OWX" secondAttribute="top" id="kRn-3v-f0Y"/>
+                <constraint firstItem="2oc-rP-DGR" firstAttribute="width" secondItem="A76-Ul-OWX" secondAttribute="width" multiplier="0.9" id="ulX-FW-Rmd"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="Wux-Sz-kgg"/>
-            <point key="canvasLocation" x="125" y="556"/>
+            <point key="canvasLocation" x="125" y="450"/>
         </view>
     </objects>
     <resources>
