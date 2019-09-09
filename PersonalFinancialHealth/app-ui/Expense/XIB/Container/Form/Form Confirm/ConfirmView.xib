@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="ConfirmView" insetsLayoutMarginsFromSafeArea="NO" id="2uO-ib-bZj" userLabel="Confirm View" customClass="ConfirmView" customModule="PersonalFinancialHealth" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qyw-AX-2iP" userLabel="Confirm View">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHz-cg-670">
+                            <rect key="frame" x="32" y="0.0" width="256" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="dHz-cg-670" secondAttribute="height" multiplier="128:25" id="X59-BF-SvZ"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="4"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                    <size key="value" width="1" height="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" red="0.0" green="0.60392156860000001" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="dHz-cg-670" firstAttribute="centerY" secondItem="qyw-AX-2iP" secondAttribute="centerY" id="2v2-gJ-oE5"/>
+                        <constraint firstItem="dHz-cg-670" firstAttribute="centerX" secondItem="qyw-AX-2iP" secondAttribute="centerX" id="4Yf-to-fe9"/>
+                        <constraint firstItem="dHz-cg-670" firstAttribute="width" secondItem="qyw-AX-2iP" secondAttribute="width" multiplier="0.8" id="Awq-8e-zoy"/>
+                        <constraint firstAttribute="width" secondItem="qyw-AX-2iP" secondAttribute="height" multiplier="32:5" id="GUO-p3-XHM"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="qyw-AX-2iP" firstAttribute="centerY" secondItem="2uO-ib-bZj" secondAttribute="centerY" id="BMD-NW-PUO"/>
+                <constraint firstItem="qyw-AX-2iP" firstAttribute="centerX" secondItem="2uO-ib-bZj" secondAttribute="centerX" id="QGA-md-yfq"/>
+                <constraint firstItem="qyw-AX-2iP" firstAttribute="width" secondItem="2uO-ib-bZj" secondAttribute="width" id="fcF-zc-rVc"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="xmn-wk-Qu0"/>
+            <connections>
+                <outlet property="confirmButton" destination="dHz-cg-670" id="DKg-JA-pfQ"/>
+                <outlet property="confirmView" destination="qyw-AX-2iP" id="dVr-9i-WtP"/>
+            </connections>
+            <point key="canvasLocation" x="-998" y="571"/>
+        </view>
+    </objects>
+</document>

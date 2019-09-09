@@ -60,11 +60,11 @@ extension ExpenseViewController: StackViewDataSource {
         case 0:
             return ExpenseFormView.instanceFromNib(nibName: "ExpenseFormView")
         case 1:
-            return ExpenseFormView.instanceFromNib(nibName: "ExpenseFormView", index: 1)
+            return ConstantCollapseView.instanceFromNib(nibName: "ConstantCollapseView")
         case 2:
-            return ExpenseFormView.instanceFromNib(nibName: "ExpenseFormView", index: 2)
+            return ConstantPickerView.instanceFromNib(nibName: "ConstantPickerView")
         case 3:
-            return ExpenseFormView.instanceFromNib(nibName: "ExpenseFormView", index: 3)
+            return ConfirmView.instanceFromNib(nibName: "ConfirmView")
         default:
             return ExpenseListContainerView.instanceFromNib(nibName: "ExpenseListContainerView")
         }
@@ -84,7 +84,7 @@ extension ExpenseViewController: StackViewDelegate {
                 self.mainStackView.removeChild(at: 2)
             } else {
                 (self.mainStackView.arrangedSubviews[1] as? ConstantCollapseView)?.openConstantExpense()
-                self.mainStackView.addChildView(childView: ExpenseFormView.instanceFromNib(nibName: "ExpenseFormView", index: 2), at: 2)
+                self.mainStackView.addChildView(childView: ConstantPickerView.instanceFromNib(nibName: "ConstantPickerView"), at: 2)
             }
         } else if let containerView = (self.mainStackView.arrangedSubviews[index] as? ExpenseListContainerView) {
             print(containerView.frame.height)

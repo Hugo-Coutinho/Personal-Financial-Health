@@ -10,8 +10,6 @@
 		63106E9E22FD04970059D21E /* PopupSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63106E9D22FD04970059D21E /* PopupSelectView.swift */; };
 		63106EA122FD0EAC0059D21E /* PopupEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63106EA022FD0EAC0059D21E /* PopupEditView.swift */; };
 		6317066322CE331A002259C2 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317066222CE331A002259C2 /* UIColor.swift */; };
-		6327628422F4B1C00032DC03 /* ExpenseFormView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6327628322F4B1C00032DC03 /* ExpenseFormView.xib */; };
-		6327628622F4B1F70032DC03 /* ExpenseFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327628522F4B1F70032DC03 /* ExpenseFormView.swift */; };
 		63335C2A22F4844000FB302F /* ExpenseContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63335C2922F4844000FB302F /* ExpenseContainerView.xib */; };
 		63335C2C22F4845E00FB302F /* ExpenseContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63335C2B22F4845E00FB302F /* ExpenseContainerView.swift */; };
 		63347B2523105F2D006CA2CC /* ExpenseListContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63347B2423105F2D006CA2CC /* ExpenseListContainerView.xib */; };
@@ -48,6 +46,14 @@
 		63CE3FCA22D51E54000E90ED /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE3FC922D51E54000E90ED /* UIStoryboard.swift */; };
 		63CE3FCC22D51F2B000E90ED /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE3FCB22D51F2B000E90ED /* String.swift */; };
 		63CE3FD422D54111000E90ED /* ExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE3FD322D54111000E90ED /* ExpenseViewController.swift */; };
+		63EA77092326962E00DADC63 /* ExpenseFormView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EA77082326962E00DADC63 /* ExpenseFormView.xib */; };
+		63EA770B2326966900DADC63 /* ConstantCollapseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EA770A2326966900DADC63 /* ConstantCollapseView.xib */; };
+		63EA770D2326999000DADC63 /* ConstantPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EA770C2326999000DADC63 /* ConstantPickerView.xib */; };
+		63EA770F232699E600DADC63 /* ConfirmView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EA770E232699E600DADC63 /* ConfirmView.xib */; };
+		63EA77152326A1AD00DADC63 /* ExpenseFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA77142326A1AD00DADC63 /* ExpenseFormView.swift */; };
+		63EA77172326A1EA00DADC63 /* ConstantCollapseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA77162326A1EA00DADC63 /* ConstantCollapseView.swift */; };
+		63EA77192326A23F00DADC63 /* ConstantPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA77182326A23F00DADC63 /* ConstantPickerView.swift */; };
+		63EA771B2326A29800DADC63 /* ConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA771A2326A29800DADC63 /* ConfirmView.swift */; };
 		63F6C7EA22CC60A7003B7FA6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F6C7E922CC60A7003B7FA6 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,8 +61,6 @@
 		63106E9D22FD04970059D21E /* PopupSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupSelectView.swift; sourceTree = "<group>"; };
 		63106EA022FD0EAC0059D21E /* PopupEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupEditView.swift; sourceTree = "<group>"; };
 		6317066222CE331A002259C2 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		6327628322F4B1C00032DC03 /* ExpenseFormView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseFormView.xib; sourceTree = "<group>"; };
-		6327628522F4B1F70032DC03 /* ExpenseFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseFormView.swift; sourceTree = "<group>"; };
 		63335C2922F4844000FB302F /* ExpenseContainerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseContainerView.xib; sourceTree = "<group>"; };
 		63335C2B22F4845E00FB302F /* ExpenseContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseContainerView.swift; sourceTree = "<group>"; };
 		63347B2423105F2D006CA2CC /* ExpenseListContainerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseListContainerView.xib; sourceTree = "<group>"; };
@@ -95,6 +99,14 @@
 		63CE3FC922D51E54000E90ED /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
 		63CE3FCB22D51F2B000E90ED /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		63CE3FD322D54111000E90ED /* ExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewController.swift; sourceTree = "<group>"; };
+		63EA77082326962E00DADC63 /* ExpenseFormView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseFormView.xib; sourceTree = "<group>"; };
+		63EA770A2326966900DADC63 /* ConstantCollapseView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConstantCollapseView.xib; sourceTree = "<group>"; };
+		63EA770C2326999000DADC63 /* ConstantPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConstantPickerView.xib; sourceTree = "<group>"; };
+		63EA770E232699E600DADC63 /* ConfirmView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmView.xib; sourceTree = "<group>"; };
+		63EA77142326A1AD00DADC63 /* ExpenseFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseFormView.swift; sourceTree = "<group>"; };
+		63EA77162326A1EA00DADC63 /* ConstantCollapseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantCollapseView.swift; sourceTree = "<group>"; };
+		63EA77182326A23F00DADC63 /* ConstantPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantPickerView.swift; sourceTree = "<group>"; };
+		63EA771A2326A29800DADC63 /* ConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmView.swift; sourceTree = "<group>"; };
 		63F6C7E922CC60A7003B7FA6 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -180,7 +192,10 @@
 		6350AD7F22FB8B7700433C70 /* Form */ = {
 			isa = PBXGroup;
 			children = (
-				6327628322F4B1C00032DC03 /* ExpenseFormView.xib */,
+				63EA77032326957800DADC63 /* Form Fields */,
+				63EA77042326958A00DADC63 /* Form Constant Collapse */,
+				63EA7706232695CE00DADC63 /* Form Constant PickerView */,
+				63EA7707232695F000DADC63 /* Form Confirm */,
 			);
 			path = Form;
 			sourceTree = "<group>";
@@ -214,7 +229,10 @@
 		6350AD8322FB8BEC00433C70 /* Form */ = {
 			isa = PBXGroup;
 			children = (
-				6327628522F4B1F70032DC03 /* ExpenseFormView.swift */,
+				63EA771023269A1100DADC63 /* Form Fields */,
+				63EA771123269A1700DADC63 /* Form Constant Collapse */,
+				63EA771223269A2100DADC63 /* Form Constant PickerView */,
+				63EA77132326A14A00DADC63 /* Form Confirm Button */,
 			);
 			path = Form;
 			sourceTree = "<group>";
@@ -639,6 +657,70 @@
 			path = protocols;
 			sourceTree = "<group>";
 		};
+		63EA77032326957800DADC63 /* Form Fields */ = {
+			isa = PBXGroup;
+			children = (
+				63EA77082326962E00DADC63 /* ExpenseFormView.xib */,
+			);
+			path = "Form Fields";
+			sourceTree = "<group>";
+		};
+		63EA77042326958A00DADC63 /* Form Constant Collapse */ = {
+			isa = PBXGroup;
+			children = (
+				63EA770A2326966900DADC63 /* ConstantCollapseView.xib */,
+			);
+			path = "Form Constant Collapse";
+			sourceTree = "<group>";
+		};
+		63EA7706232695CE00DADC63 /* Form Constant PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				63EA770C2326999000DADC63 /* ConstantPickerView.xib */,
+			);
+			path = "Form Constant PickerView";
+			sourceTree = "<group>";
+		};
+		63EA7707232695F000DADC63 /* Form Confirm */ = {
+			isa = PBXGroup;
+			children = (
+				63EA770E232699E600DADC63 /* ConfirmView.xib */,
+			);
+			path = "Form Confirm";
+			sourceTree = "<group>";
+		};
+		63EA771023269A1100DADC63 /* Form Fields */ = {
+			isa = PBXGroup;
+			children = (
+				63EA77142326A1AD00DADC63 /* ExpenseFormView.swift */,
+			);
+			path = "Form Fields";
+			sourceTree = "<group>";
+		};
+		63EA771123269A1700DADC63 /* Form Constant Collapse */ = {
+			isa = PBXGroup;
+			children = (
+				63EA77162326A1EA00DADC63 /* ConstantCollapseView.swift */,
+			);
+			path = "Form Constant Collapse";
+			sourceTree = "<group>";
+		};
+		63EA771223269A2100DADC63 /* Form Constant PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				63EA77182326A23F00DADC63 /* ConstantPickerView.swift */,
+			);
+			path = "Form Constant PickerView";
+			sourceTree = "<group>";
+		};
+		63EA77132326A14A00DADC63 /* Form Confirm Button */ = {
+			isa = PBXGroup;
+			children = (
+				63EA771A2326A29800DADC63 /* ConfirmView.swift */,
+			);
+			path = "Form Confirm Button";
+			sourceTree = "<group>";
+		};
 		63F6C7E822CC6090003B7FA6 /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -707,9 +789,12 @@
 			files = (
 				6391370822CBE3490018B65F /* Assets.xcassets in Resources */,
 				63347B2523105F2D006CA2CC /* ExpenseListContainerView.xib in Resources */,
-				6327628422F4B1C00032DC03 /* ExpenseFormView.xib in Resources */,
 				6350AD8922FB8CFB00433C70 /* PopupMenu.xib in Resources */,
 				63335C2A22F4844000FB302F /* ExpenseContainerView.xib in Resources */,
+				63EA770F232699E600DADC63 /* ConfirmView.xib in Resources */,
+				63EA770B2326966900DADC63 /* ConstantCollapseView.xib in Resources */,
+				63EA770D2326999000DADC63 /* ConstantPickerView.xib in Resources */,
+				63EA77092326962E00DADC63 /* ExpenseFormView.xib in Resources */,
 				63B6C4A42323EAE300BA16ED /* ExpenseListItemView.xib in Resources */,
 				63B6C4A72323EB7400BA16ED /* ExpenseListSubItemView.xib in Resources */,
 				6391370622CBE3470018B65F /* Main.storyboard in Resources */,
@@ -726,10 +811,10 @@
 			files = (
 				63CE3FCC22D51F2B000E90ED /* String.swift in Sources */,
 				63B56C7722D5095500D14C24 /* MainCoreData.swift in Sources */,
+				63EA771B2326A29800DADC63 /* ConfirmView.swift in Sources */,
 				63347B2923106011006CA2CC /* ExpenseListContainerView.swift in Sources */,
 				639FA05422D612B200983497 /* ExpenseRouter.swift in Sources */,
 				6391372A22CBE7CF0018B65F /* HomeRouter.swift in Sources */,
-				6327628622F4B1F70032DC03 /* ExpenseFormView.swift in Sources */,
 				6391372922CBE7CF0018B65F /* HomeModel.swift in Sources */,
 				63106E9E22FD04970059D21E /* PopupSelectView.swift in Sources */,
 				63CE3FD422D54111000E90ED /* ExpenseViewController.swift in Sources */,
@@ -745,6 +830,7 @@
 				6391370122CBE3470018B65F /* AppDelegate.swift in Sources */,
 				639FA05622D6337C00983497 /* UIViewController.swift in Sources */,
 				63B6C49D2323E70300BA16ED /* ExpenseListSubItemView.swift in Sources */,
+				63EA77152326A1AD00DADC63 /* ExpenseFormView.swift in Sources */,
 				63A56BB422FA6A0F008C7093 /* StackViewController.swift in Sources */,
 				6350AD8B22FB95D600433C70 /* PopupMenu.swift in Sources */,
 				637B0BBC22D647A200FF8BD0 /* UIView.swift in Sources */,
@@ -753,10 +839,12 @@
 				6391372522CBE7CF0018B65F /* HomeInteractor.swift in Sources */,
 				63B56C8422D5142900D14C24 /* BLFinancial.swift in Sources */,
 				63B6C4992323E41A00BA16ED /* ExpenseListSectionView.swift in Sources */,
+				63EA77192326A23F00DADC63 /* ConstantPickerView.swift in Sources */,
 				63F6C7EA22CC60A7003B7FA6 /* Coordinator.swift in Sources */,
 				63B56C8122D50BAE00D14C24 /* PreSetExpensePrice.swift in Sources */,
 				63B56C7F22D50B7800D14C24 /* PreSetExpenseName.swift in Sources */,
 				63B56C7522D5085E00D14C24 /* Constant.swift in Sources */,
+				63EA77172326A1EA00DADC63 /* ConstantCollapseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
