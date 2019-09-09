@@ -31,7 +31,7 @@ class ExpenseListContainerView: UIView {
 
     public func appendViews() {
         self.listContainerStackView.arrangedSubviews.forEach({ $0.removeFromSuperview() })
-        let item = ExpenseListItemView.instanceFromNib(nibName: "ExpenseListView", index: 1)
+        let item = ExpenseListItemView.instanceFromNib(nibName: "ExpenseListItemView")
         (item as? ExpenseListItemView)?.configureSubItems()
         self.listContainerStackView.addArrangedSubview(item)
         

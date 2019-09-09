@@ -15,7 +15,7 @@ class ExpenseContainerView: UIView {
     
     override func awakeFromNib() {
         self.containerStackView.arrangedSubviews.forEach({ $0.removeFromSuperview() })
-        let expenseView = ExpenseListItemView.instanceFromNib(nibName: "ExpenseListView", index: 1)
+        let expenseView = ExpenseListItemView.instanceFromNib(nibName: "ExpenseListItemView")
         self.containerStackView.addArrangedSubview(expenseView)
     }
 }
