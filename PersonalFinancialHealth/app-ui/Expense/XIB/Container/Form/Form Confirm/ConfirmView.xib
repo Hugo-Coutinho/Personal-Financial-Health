@@ -24,7 +24,7 @@
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="dHz-cg-670" secondAttribute="height" multiplier="128:25" id="X59-BF-SvZ"/>
                             </constraints>
-                            <state key="normal" title="Button"/>
+                            <state key="normal" title="New Expense"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                     <real key="value" value="4"/>

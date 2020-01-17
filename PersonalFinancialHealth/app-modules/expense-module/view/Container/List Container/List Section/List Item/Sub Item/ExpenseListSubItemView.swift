@@ -10,7 +10,5 @@ import UIKit
 
 class ExpenseListSubItemView: UIView {
     override func layoutSubviews() {
-        //        let aspect = configureAspectRatio(toItem: self, multiplierFirst: 25.0, multiplierSecond: 144.0)
-        //        self.addConstraint(aspect)
     }
 }

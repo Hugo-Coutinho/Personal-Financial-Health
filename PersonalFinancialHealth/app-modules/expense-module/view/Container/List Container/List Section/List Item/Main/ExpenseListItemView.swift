@@ -12,32 +12,31 @@ class ExpenseListItemView: UIView {
     
     @IBOutlet weak var itemText: UILabel!
     @IBOutlet weak var itemBackgroundView: UIView!
-    @IBOutlet weak var subItemStackView: UIStackView!
+    @IBOutlet weak var subItemMainStackView: StackViewController!
     
     override func layoutSubviews() {
         self.itemText.text = "GAME"
+        self.subItemMainStackView.delegate = self
+        self.subItemMainStackView.dataSource = self
+        self.subItemMainStackView.initialize()
     }
     
     public func configureSubItems() {
-        let subItem = ExpenseListSubItemView.instanceFromNib(nibName: "ExpenseListSubItemView")
-        let subItem2 = ExpenseListSubItemView.instanceFromNib(nibName: "ExpenseListSubItemView")
-        let subItem3 = ExpenseListSubItemView.instanceFromNib(nibName: "ExpenseListSubItemView")
-        let subItem4 = ExpenseListSubItemView.instanceFromNib(nibName: "ExpenseListSubItemView")
-        let subItem5 = ExpenseListSubItemView.instanceFromNib(nibName: "ExpenseListSubItemView")
-        let subItem6 = ExpenseListSubItemView.instanceFromNib(nibName: "ExpenseListSubItemView")
-        
-        self.subItemStackView.addArrangedSubview(subItem)
-        self.subItemStackView.addArrangedSubview(subItem2)
-        self.subItemStackView.addArrangedSubview(subItem3)
-        self.subItemStackView.addArrangedSubview(subItem4)
-        self.subItemStackView.addArrangedSubview(subItem5)
-        self.subItemStackView.addArrangedSubview(subItem6)
         self.layoutIfNeeded()
-        self.subItemStackView.layoutIfNeeded()
-        
-        
-        //        let currentHeight = self.frame.height
-        //        let newHeight = (currentHeight + self.subItemStackView.frame.height)
-        //        self.heightAnchor.constraint(equalToConstant: newHeight).isActive = true
+        self.subItemMainStackView.layoutIfNeeded()
     }
+}
+
+extension ExpenseListItemView: StackViewDataSource {
+    func stackView(_ stackView: UIStackView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func stackView(_ stackView: UIStackView, viewForRowAt index: Int) -> UIView {
+        return ExpenseListSubItemView.instanceFromNib(nibName: "ExpenseListSubItemView")
+    }
+}
+
+extension ExpenseListItemView: StackViewDelegate {
+
 }

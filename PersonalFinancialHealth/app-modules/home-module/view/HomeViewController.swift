@@ -14,7 +14,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupView()
+        self.setupViewAddingGestureToHomeOptions()    
         Coordinator.navController = self.navigationController
     }
     
@@ -26,7 +26,7 @@ extension HomeViewController {
 
 // MARK: - AUX METHODS -
 extension HomeViewController {
-    private func setupView() {
+    private func setupViewAddingGestureToHomeOptions() {
         self.addGesture(view: self.availableFundsView)
         self.addGesture(view: self.myExpensesView)
         self.addGesture(view: self.netSalaryView)

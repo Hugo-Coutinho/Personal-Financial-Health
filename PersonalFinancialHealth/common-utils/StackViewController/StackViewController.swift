@@ -31,8 +31,6 @@ class StackViewController: UIStackView {
     @IBOutlet weak var dataSource: StackViewDataSource?
     @IBOutlet weak var delegate: StackViewDelegate?
     
-    private lazy var parentViewController = UIViewController()
-    
     public func initialize() {
         self.setupStackView()
     }
@@ -41,10 +39,7 @@ class StackViewController: UIStackView {
 // MARK: - DATASOURCE METHODS-
 extension StackViewController {
     private func setupStackView() {
-        if let parentViewController = self.dataSource as? UIViewController {
-            self.parentViewController = parentViewController
             self.setupChildren()
-        }
     }
     
     private func setupChildren() {

@@ -169,7 +169,7 @@
                         <constraint firstItem="PuI-UI-Qny" firstAttribute="width" secondItem="x4q-5D-fmI" secondAttribute="width" id="yVm-k6-4fL"/>
                     </constraints>
                 </view>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YUj-q8-iyC" userLabel="Sub Item Stack View">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YUj-q8-iyC" userLabel="Sub Item Stack View" customClass="StackViewController" customModule="PersonalFinancialHealth" customModuleProvider="target">
                     <rect key="frame" x="16" y="76" width="288" height="86"/>
                 </stackView>
             </subviews>
@@ -188,7 +188,7 @@
             <connections>
                 <outlet property="itemBackgroundView" destination="x4q-5D-fmI" id="yiA-Qx-tRd"/>
                 <outlet property="itemText" destination="x8p-je-1m2" id="6Ha-DP-d8I"/>
-                <outlet property="subItemStackView" destination="YUj-q8-iyC" id="qJc-oj-ows"/>
+                <outlet property="subItemMainStackView" destination="YUj-q8-iyC" id="aon-Qm-q5x"/>
             </connections>
             <point key="canvasLocation" x="124.8" y="626.08695652173913"/>
         </view>
