@@ -13,7 +13,7 @@ class PreSetExpensePriceManager {
     
     // MARK: - DECLARATIONS -
     private var fetchRequest:NSFetchRequest<PreSetExpensePrice> = PreSetExpensePrice.fetchRequest()
-    private var sortDescriptor = NSSortDescriptor(key: Constant.Persistence.sortDescriptor, ascending: true)
+    private var sortDescriptor = NSSortDescriptor(key: Constant.persistence.sortDescriptor, ascending: true)
 }
 
 // MARK: - DATABASE FUNCTIONS

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		63106E9E22FD04970059D21E /* PopupSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63106E9D22FD04970059D21E /* PopupSelectView.swift */; };
 		63106EA122FD0EAC0059D21E /* PopupEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63106EA022FD0EAC0059D21E /* PopupEditView.swift */; };
+		6316141523D208B600C9E9C9 /* ConstantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6316141423D208B600C9E9C9 /* ConstantView.swift */; };
+		6316141823D2095F00C9E9C9 /* ConstantPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6316141723D2095F00C9E9C9 /* ConstantPersistence.swift */; };
+		6316141D23D20A1500C9E9C9 /* ConstantExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6316141C23D20A1500C9E9C9 /* ConstantExpenseView.swift */; };
 		6317066322CE331A002259C2 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317066222CE331A002259C2 /* UIColor.swift */; };
 		63335C2A22F4844000FB302F /* ExpenseContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63335C2922F4844000FB302F /* ExpenseContainerView.xib */; };
 		63335C2C22F4845E00FB302F /* ExpenseContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63335C2B22F4845E00FB302F /* ExpenseContainerView.swift */; };
@@ -60,6 +63,9 @@
 /* Begin PBXFileReference section */
 		63106E9D22FD04970059D21E /* PopupSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupSelectView.swift; sourceTree = "<group>"; };
 		63106EA022FD0EAC0059D21E /* PopupEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupEditView.swift; sourceTree = "<group>"; };
+		6316141423D208B600C9E9C9 /* ConstantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantView.swift; sourceTree = "<group>"; };
+		6316141723D2095F00C9E9C9 /* ConstantPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantPersistence.swift; sourceTree = "<group>"; };
+		6316141C23D20A1500C9E9C9 /* ConstantExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantExpenseView.swift; sourceTree = "<group>"; };
 		6317066222CE331A002259C2 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		63335C2922F4844000FB302F /* ExpenseContainerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseContainerView.xib; sourceTree = "<group>"; };
 		63335C2B22F4845E00FB302F /* ExpenseContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseContainerView.swift; sourceTree = "<group>"; };
@@ -127,6 +133,55 @@
 				63106EA022FD0EAC0059D21E /* PopupEditView.swift */,
 			);
 			path = Edit;
+			sourceTree = "<group>";
+		};
+		6316141223D2088A00C9E9C9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				63B56C7422D5085E00D14C24 /* Constant.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		6316141323D208A000C9E9C9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6316141A23D209AF00C9E9C9 /* Main */,
+				6316141B23D209EC00C9E9C9 /* Expense */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6316141623D2094E00C9E9C9 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				6316141923D209A800C9E9C9 /* Main */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		6316141923D209A800C9E9C9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				6316141723D2095F00C9E9C9 /* ConstantPersistence.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		6316141A23D209AF00C9E9C9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				6316141423D208B600C9E9C9 /* ConstantView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		6316141B23D209EC00C9E9C9 /* Expense */ = {
+			isa = PBXGroup;
+			children = (
+				6316141C23D20A1500C9E9C9 /* ConstantExpenseView.swift */,
+			);
+			path = Expense;
 			sourceTree = "<group>";
 		};
 		63347B2223105E9B006CA2CC /* Main */ = {
@@ -488,7 +543,9 @@
 		63B56C7322D5078400D14C24 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
-				63B56C7422D5085E00D14C24 /* Constant.swift */,
+				6316141223D2088A00C9E9C9 /* Main */,
+				6316141623D2094E00C9E9C9 /* Persistence */,
+				6316141323D208A000C9E9C9 /* View */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -809,12 +866,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6316141523D208B600C9E9C9 /* ConstantView.swift in Sources */,
 				63CE3FCC22D51F2B000E90ED /* String.swift in Sources */,
 				63B56C7722D5095500D14C24 /* MainCoreData.swift in Sources */,
 				63EA771B2326A29800DADC63 /* ConfirmView.swift in Sources */,
 				63347B2923106011006CA2CC /* ExpenseListContainerView.swift in Sources */,
 				639FA05422D612B200983497 /* ExpenseRouter.swift in Sources */,
 				6391372A22CBE7CF0018B65F /* HomeRouter.swift in Sources */,
+				6316141D23D20A1500C9E9C9 /* ConstantExpenseView.swift in Sources */,
 				6391372922CBE7CF0018B65F /* HomeModel.swift in Sources */,
 				63106E9E22FD04970059D21E /* PopupSelectView.swift in Sources */,
 				63CE3FD422D54111000E90ED /* ExpenseViewController.swift in Sources */,
@@ -826,6 +885,7 @@
 				63CE3FCA22D51E54000E90ED /* UIStoryboard.swift in Sources */,
 				63B56C7222D5041000D14C24 /* Financial.xcdatamodeld in Sources */,
 				6317066322CE331A002259C2 /* UIColor.swift in Sources */,
+				6316141823D2095F00C9E9C9 /* ConstantPersistence.swift in Sources */,
 				63B56C7B22D509F100D14C24 /* ExpenseManager.swift in Sources */,
 				6391370122CBE3470018B65F /* AppDelegate.swift in Sources */,
 				639FA05622D6337C00983497 /* UIViewController.swift in Sources */,

@@ -18,3 +18,10 @@ class ExpenseFormView: UIView {
         self.addConstraint(configureAspectRatio(toItem: self.formStackView, multiplierFirst: 2.0, multiplierSecond: 4.0))
     }
 }
+
+// MARK: - IMPLEMENTS PROTOCOL EXPENSE SUBVIEWS -
+extension ExpenseFormView: IExpenseSubView {
+    func instanceExpenseSubViewFromNib() -> UIView {
+        return ExpenseFormView.instanceFromNib(nibName: Constant.view.expenseView.expenseFormView)
+    }
+}

@@ -28,15 +28,19 @@ class ExpenseListContainerView: UIView {
         self.listContainerStackView.layoutIfNeeded()
         self.layoutIfNeeded()
     }
-
+    
     public func appendViews() {
         self.listContainerStackView.arrangedSubviews.forEach({ $0.removeFromSuperview() })
         let item = ExpenseListItemView.instanceFromNib(nibName: "ExpenseListItemView")
         (item as? ExpenseListItemView)?.configureSubItems()
         self.listContainerStackView.addArrangedSubview(item)
-        
-//        self.heightAnchor.constraint(equalToConstant: self.listContainerStackView.frame.height).isActive = true
-//        self.layoutIfNeeded()
-//        self.listContainerStackView.layoutIfNeeded()
     }
 }
+
+// MARK: - IMPLEMENTS PROTOCOL EXPENSE SUBVIEWS -
+extension ExpenseListContainerView: IExpenseSubView {
+    func instanceExpenseSubViewFromNib() -> UIView {
+        return ExpenseListContainerView.instanceFromNib(nibName: Constant.view.expenseView.expenseListcontainer)
+    }
+}
+

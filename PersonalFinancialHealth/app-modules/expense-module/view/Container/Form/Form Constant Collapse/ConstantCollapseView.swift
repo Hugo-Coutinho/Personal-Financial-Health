@@ -39,3 +39,10 @@ class ConstantCollapseView: UIView {
         }
     }
 }
+
+// MARK: - IMPLEMENTS PROTOCOL EXPENSE SUBVIEWS -
+extension ConstantCollapseView: IExpenseSubView {
+    func instanceExpenseSubViewFromNib() -> UIView {
+        return ConstantCollapseView.instanceFromNib(nibName: Constant.view.expenseView.expenseCollapseView)
+    }
+}

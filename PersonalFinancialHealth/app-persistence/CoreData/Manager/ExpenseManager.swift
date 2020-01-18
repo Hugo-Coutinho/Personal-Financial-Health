@@ -12,7 +12,7 @@ import CoreData
 class ExpenseManager {
     // MARK: - DECLARATIONS -
     private var fetchRequest:NSFetchRequest<Expense> = Expense.fetchRequest()
-    private var sortDescriptor = NSSortDescriptor(key: Constant.Persistence.sortDescriptor, ascending: true)
+    private var sortDescriptor = NSSortDescriptor(key: Constant.persistence.sortDescriptor, ascending: true)
 }
 
 // MARK: - DATABASE FUNCTIONS

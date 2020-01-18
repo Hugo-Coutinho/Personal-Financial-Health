@@ -22,3 +22,10 @@ class ConfirmView: UIView {
     }
 }
 
+// MARK: - IMPLEMENTS PROTOCOL EXPENSE SUBVIEWS -
+extension ConfirmView: IExpenseSubView {
+    func instanceExpenseSubViewFromNib() -> UIView {
+        return ConfirmView.instanceFromNib(nibName: Constant.view.expenseView.expenseConfirmButton)
+    }
+}
+

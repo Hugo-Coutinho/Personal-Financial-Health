@@ -41,3 +41,10 @@ extension ConstantPickerView: UIPickerViewDataSource {
     }
 }
 
+// MARK: - IMPLEMENTS PROTOCOL EXPENSE SUBVIEWS -
+extension ConstantPickerView: IExpenseSubView {
+    func instanceExpenseSubViewFromNib() -> UIView {
+        return ConstantPickerView.instanceFromNib(nibName: Constant.view.expenseView.expensePickerView)
+    }
+}
+
