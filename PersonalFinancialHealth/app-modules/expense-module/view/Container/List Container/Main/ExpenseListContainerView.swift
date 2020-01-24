@@ -11,29 +11,28 @@ import UIKit
 class ExpenseListContainerView: UIView {
     
     // MARK: - OUTLET -
-    @IBOutlet weak var listContainerStackView: UIStackView!
+    @IBOutlet weak var listContainerStackView: StackViewController!
+    
+    // MARK: - OUTLET -
+    private lazy var arrangedSubviews: [UIView] = [
+    ExpenseListItemView.instanceFromNib(nibName: Constant.view.expenseView.expenseListItem)
+    ]
     
     // MARK: - OVERRIDE -
     override func awakeFromNib() {
-        self.appendViews()
-        self.backgroundColor = .red
+        self.listContainerStackView.dataSource = self
+        self.listContainerStackView.initialize()
+    }
+}
+
+// MARK: - STACKVIEW DATASOURCE -
+extension ExpenseListContainerView: StackViewDataSource {
+    func stackView(_ stackView: UIStackView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
     
-    override func layoutSubviews() {
-        self.listContainerStackView.axis = .vertical
-        self.listContainerStackView.alignment = .fill
-        self.listContainerStackView.distribution = .fill
-        self.listContainerStackView.spacing = 0
-        self.listContainerStackView.translatesAutoresizingMaskIntoConstraints = false
-        self.listContainerStackView.layoutIfNeeded()
-        self.layoutIfNeeded()
-    }
-    
-    public func appendViews() {
-        self.listContainerStackView.arrangedSubviews.forEach({ $0.removeFromSuperview() })
-        let item = ExpenseListItemView.instanceFromNib(nibName: "ExpenseListItemView")
-        (item as? ExpenseListItemView)?.configureSubItems()
-        self.listContainerStackView.addArrangedSubview(item)
+    func stackView(_ stackView: UIStackView, viewForRowAt index: Int) -> UIView {
+        return self.arrangedSubviews[0]
     }
 }
 

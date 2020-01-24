@@ -16,4 +16,6 @@ enum ConstantExpenseView {
     static let expensePickerView = "ConstantPickerView"
     static let expenseConfirmButton = "ConfirmView"
     static let expenseListcontainer = "ExpenseListContainerView"
+    static let expenseListItem = "ExpenseListItemView"
+    static let expenseListSubitem = "ExpenseListSubItemView"
 }

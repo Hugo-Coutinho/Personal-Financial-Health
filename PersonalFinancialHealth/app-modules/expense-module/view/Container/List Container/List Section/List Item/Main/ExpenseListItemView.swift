@@ -10,33 +10,32 @@ import UIKit
 
 class ExpenseListItemView: UIView {
     
+    // MARK: - OUTLET -
     @IBOutlet weak var itemText: UILabel!
     @IBOutlet weak var itemBackgroundView: UIView!
     @IBOutlet weak var subItemMainStackView: StackViewController!
     
+    // MARK: - OVERRIDE -
     override func layoutSubviews() {
         self.itemText.text = "GAME"
         self.subItemMainStackView.delegate = self
         self.subItemMainStackView.dataSource = self
         self.subItemMainStackView.initialize()
     }
-    
-    public func configureSubItems() {
-        self.layoutIfNeeded()
-        self.subItemMainStackView.layoutIfNeeded()
-    }
 }
 
+// MARK: - STACK VIEW DATA SOURCE -
 extension ExpenseListItemView: StackViewDataSource {
     func stackView(_ stackView: UIStackView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 1
     }
     
     func stackView(_ stackView: UIStackView, viewForRowAt index: Int) -> UIView {
-        return ExpenseListSubItemView.instanceFromNib(nibName: "ExpenseListSubItemView")
+        return ExpenseListSubItemView.instanceFromNib(nibName: Constant.view.expenseView.expenseListSubitem)
     }
 }
 
+// MARK: - STACKVIEW DELEGATE -
 extension ExpenseListItemView: StackViewDelegate {
 
 }

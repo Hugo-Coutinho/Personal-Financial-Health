@@ -33,14 +33,7 @@ class ExpenseViewController: UIViewController {
     private lazy var isOpen: Bool = false
     private lazy var n = 0
     private lazy var formView = ExpenseFormView()
-    
-    private lazy var subViews: [Int: IExpenseSubView] = [
-        0: ExpenseFormView(),
-        1: ConstantCollapseView(),
-        2: ConstantPickerView(),
-        3: ConfirmView(),
-        4: ExpenseListContainerView(),
-    ]
+    private lazy var subViews = [IExpenseSubView]()
 }
 
 // MARK: - LIFE CYCLE VIEW CONTROLLER -
@@ -48,6 +41,7 @@ extension ExpenseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureNavigationItem(hidesBackButton: false)
+        self.addingExpenseSubViews()
         self.configureMainStackView()
         self.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
@@ -55,6 +49,14 @@ extension ExpenseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.view.layoutIfNeeded()
+    }
+    
+    private func addingExpenseSubViews() {
+        self.subViews.append(ExpenseFormView())
+        self.subViews.append(ConstantCollapseView())
+        self.subViews.append(ConstantPickerView())
+        self.subViews.append(ConfirmView())
+        self.subViews.append(ExpenseListContainerView())
     }
 }
 
@@ -77,7 +79,7 @@ extension ExpenseViewController {
 extension ExpenseViewController: StackViewDataSource {
     func stackView(_ stackView: UIStackView, viewForRowAt index: Int) -> UIView {
         guard self.currentViewExist(index: index) else { return UIView() }
-        return self.subViews[index]!.instanceExpenseSubViewFromNib()
+        return self.subViews[index].instanceExpenseSubViewFromNib()
     }
     
     func stackView(_ stackView: UIStackView, numberOfRowsInSection section: Int) -> Int {

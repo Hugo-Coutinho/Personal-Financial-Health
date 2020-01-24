@@ -39,7 +39,7 @@
                                     <real key="value" value="1"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                    <size key="value" width="1" height="1"/>
+                                    <size key="value" width="0.0" height="0.0"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                     <color key="value" red="0.0" green="0.60392156860000001" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>

@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zpZ-ZG-mtL">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zpZ-ZG-mtL" customClass="StackViewController" customModule="PersonalFinancialHealth" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                 </stackView>
             </subviews>
@@ -28,7 +28,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="listContainerStackView" destination="zpZ-ZG-mtL" id="23F-me-An2"/>
+                <outlet property="listContainerStackView" destination="zpZ-ZG-mtL" id="I7f-im-p2Q"/>
             </connections>
         </view>
     </objects>
