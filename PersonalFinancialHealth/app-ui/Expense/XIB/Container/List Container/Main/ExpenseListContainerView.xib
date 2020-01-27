@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,16 +16,31 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zpZ-ZG-mtL" customClass="StackViewController" customModule="PersonalFinancialHealth" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52k-GR-y0B">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
-                </stackView>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="zpZ-ZG-mtL" customClass="StackViewController" customModule="PersonalFinancialHealth" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="zpZ-ZG-mtL" firstAttribute="top" secondItem="Wib-aB-i2A" secondAttribute="top" id="0sb-dg-Pv0"/>
+                        <constraint firstItem="zpZ-ZG-mtL" firstAttribute="trailing" secondItem="Wib-aB-i2A" secondAttribute="trailing" id="2se-hV-Vcm"/>
+                        <constraint firstItem="zpZ-ZG-mtL" firstAttribute="bottom" secondItem="Wib-aB-i2A" secondAttribute="bottom" priority="250" id="Did-8Q-gly"/>
+                        <constraint firstItem="zpZ-ZG-mtL" firstAttribute="leading" secondItem="Wib-aB-i2A" secondAttribute="leading" id="jci-9v-BL3"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="Wib-aB-i2A"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="zpZ-ZG-mtL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="9GH-Aq-DnD"/>
-                <constraint firstAttribute="bottom" secondItem="zpZ-ZG-mtL" secondAttribute="bottom" id="NcL-dF-ylu"/>
-                <constraint firstItem="zpZ-ZG-mtL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="R9f-jW-Qp4"/>
-                <constraint firstAttribute="trailing" secondItem="zpZ-ZG-mtL" secondAttribute="trailing" id="k1k-w9-04X"/>
+                <constraint firstItem="52k-GR-y0B" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="LLS-x4-OzH"/>
+                <constraint firstAttribute="trailing" secondItem="52k-GR-y0B" secondAttribute="trailing" id="LPe-9t-aTA"/>
+                <constraint firstItem="52k-GR-y0B" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="SQg-fi-ju3"/>
+                <constraint firstAttribute="bottom" secondItem="52k-GR-y0B" secondAttribute="bottom" id="YRW-02-T81"/>
+                <constraint firstItem="52k-GR-y0B" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" priority="250" id="koj-pq-zM1"/>
+                <constraint firstItem="52k-GR-y0B" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="wXx-Kb-yEP"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

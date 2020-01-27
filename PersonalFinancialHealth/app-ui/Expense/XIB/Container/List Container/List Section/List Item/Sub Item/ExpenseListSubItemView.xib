@@ -92,6 +92,7 @@
                         <constraint firstAttribute="trailing" secondItem="FPH-8N-iq7" secondAttribute="trailing" id="q5l-jS-Q3H"/>
                         <constraint firstItem="NtY-4U-k23" firstAttribute="width" secondItem="szM-kY-2AV" secondAttribute="width" multiplier="0.23" id="qEc-3V-mDf"/>
                         <constraint firstItem="PbZ-a3-AMp" firstAttribute="centerY" secondItem="szM-kY-2AV" secondAttribute="centerY" id="qz4-td-3I6"/>
+                        <constraint firstAttribute="width" secondItem="szM-kY-2AV" secondAttribute="height" multiplier="144:25" id="zpt-8X-OKU"/>
                     </constraints>
                 </view>
             </subviews>

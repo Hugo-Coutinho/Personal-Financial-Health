@@ -39,3 +39,10 @@ extension ExpenseListItemView: StackViewDataSource {
 extension ExpenseListItemView: StackViewDelegate {
 
 }
+
+// MARK: - IMPLEMENTS INTERFACE -
+extension ExpenseListItemView: IExpenseSubView {
+    func instanceExpenseSubViewFromNib() -> UIView {
+     return ExpenseListItemView.instanceFromNib(nibName: Constant.view.expenseView.expenseListItem)
+    }
+}

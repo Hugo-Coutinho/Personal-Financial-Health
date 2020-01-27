@@ -284,12 +284,14 @@
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="CfN-2T-4Yh" secondAttribute="bottom" id="BQl-Z2-2D4"/>
                                             <constraint firstItem="CfN-2T-4Yh" firstAttribute="leading" secondItem="aFY-0h-wuP" secondAttribute="leading" id="HFq-Fq-Gcb"/>
+                                            <constraint firstAttribute="height" secondItem="CfN-2T-4Yh" secondAttribute="height" priority="250" id="ixn-N5-SQD"/>
                                             <constraint firstAttribute="trailing" secondItem="CfN-2T-4Yh" secondAttribute="trailing" id="kbt-mE-w4t"/>
                                             <constraint firstItem="CfN-2T-4Yh" firstAttribute="top" secondItem="aFY-0h-wuP" secondAttribute="top" id="mB3-jR-7kT"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="aFY-0h-wuP" firstAttribute="centerY" secondItem="Lzi-3k-WJn" secondAttribute="centerY" priority="250" id="KW0-XC-k5K"/>
                                     <constraint firstAttribute="bottom" secondItem="aFY-0h-wuP" secondAttribute="bottom" id="XzP-DP-XwO"/>
                                     <constraint firstAttribute="trailing" secondItem="aFY-0h-wuP" secondAttribute="trailing" id="c6r-Gr-Ur6"/>
                                     <constraint firstItem="aFY-0h-wuP" firstAttribute="leading" secondItem="Lzi-3k-WJn" secondAttribute="leading" id="qYs-qA-i5C"/>
@@ -303,7 +305,6 @@
                             <constraint firstAttribute="trailing" secondItem="Lzi-3k-WJn" secondAttribute="trailing" id="aUT-lP-m2c"/>
                             <constraint firstItem="Lzi-3k-WJn" firstAttribute="top" secondItem="vUq-f2-BzL" secondAttribute="top" id="cSk-dw-lXj"/>
                             <constraint firstItem="Lzi-3k-WJn" firstAttribute="leading" secondItem="vUq-f2-BzL" secondAttribute="leading" id="cuy-ko-GM9"/>
-                            <constraint firstItem="aFY-0h-wuP" firstAttribute="height" secondItem="vUq-f2-BzL" secondAttribute="height" priority="250" id="p1V-2P-6Ym"/>
                             <constraint firstItem="aFY-0h-wuP" firstAttribute="width" secondItem="vUq-f2-BzL" secondAttribute="width" id="uMJ-Ne-L73"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cqp-lA-EP6"/>

@@ -14,8 +14,8 @@ class ExpenseListContainerView: UIView {
     @IBOutlet weak var listContainerStackView: StackViewController!
     
     // MARK: - OUTLET -
-    private lazy var arrangedSubviews: [UIView] = [
-    ExpenseListItemView.instanceFromNib(nibName: Constant.view.expenseView.expenseListItem)
+    private lazy var arrangedSubviews: [IExpenseSubView] = [
+    ExpenseListItemView()
     ]
     
     // MARK: - OVERRIDE -
@@ -28,11 +28,11 @@ class ExpenseListContainerView: UIView {
 // MARK: - STACKVIEW DATASOURCE -
 extension ExpenseListContainerView: StackViewDataSource {
     func stackView(_ stackView: UIStackView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 20
     }
     
     func stackView(_ stackView: UIStackView, viewForRowAt index: Int) -> UIView {
-        return self.arrangedSubviews[0]
+        return self.arrangedSubviews[0].instanceExpenseSubViewFromNib()
     }
 }
 
