@@ -19,7 +19,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52k-GR-y0B">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="zpZ-ZG-mtL" customClass="StackViewController" customModule="PersonalFinancialHealth" customModuleProvider="target">
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zpZ-ZG-mtL" customClass="StackViewController" customModule="PersonalFinancialHealth" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                         </stackView>
                     </subviews>

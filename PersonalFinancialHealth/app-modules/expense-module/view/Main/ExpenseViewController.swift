@@ -25,6 +25,10 @@ class ExpenseViewController: UIViewController {
         case collapse = 1
         case pickerView = 2
         case confirmButton = 3
+    
+        func getIndex() -> Int {
+            return self.rawValue
+        }
     }
     
     // MARK: - CONSTANTS -
@@ -66,17 +70,16 @@ extension ExpenseViewController {
         self.mainStackView.dataSource = self
         self.mainStackView.delegate = self
         self.mainStackView.initialize()
-        self.mainStackView.axis = .vertical
-        self.mainStackView.alignment = .fill
-        self.mainStackView.distribution = .fill
-        self.mainStackView.spacing = 8
-        self.mainStackView.translatesAutoresizingMaskIntoConstraints = false
-        self.mainStackView.layoutIfNeeded()
     }
 }
 
 // MARK: - STACKVIEW DATASOURCE -
 extension ExpenseViewController: StackViewDataSource {
+    func stackView(_ stackView: UIStackView, customSpacingForRow index: Int) -> Int {
+        guard index == subViewsEnum.confirmButton.getIndex() else { return 8 }
+        return 32
+    }
+    
     func stackView(_ stackView: UIStackView, viewForRowAt index: Int) -> UIView {
         guard self.currentViewExist(index: index) else { return UIView() }
         return self.subViews[index].instanceExpenseSubViewFromNib()
@@ -106,7 +109,7 @@ extension ExpenseViewController {
 // MARK: - DID SELECT COLLAPSE -
 extension ExpenseViewController {
     private func didSelectRowAtCollapseView(index: Int) -> Bool {
-        return index == subViewsEnum.collapse.rawValue
+        return index == subViewsEnum.collapse.getIndex()
     }
     private func didSelectCollapseView() {
         guard self.subViewPickerViewIsHidden() else { return self.hiddenPickerView(collapseView: self.getCollapseViewFromMainStackView()) }
@@ -114,22 +117,22 @@ extension ExpenseViewController {
     }
     
     private func subViewPickerViewIsHidden() -> Bool {
-        let subViewPositionTwo =  self.mainStackView.arrangedSubviews[subViewsEnum.pickerView.rawValue]
+        let subViewPositionTwo =  self.mainStackView.arrangedSubviews[subViewsEnum.pickerView.getIndex()]
         return !(subViewPositionTwo is ConstantPickerView)
     }
     
     private func getCollapseViewFromMainStackView() -> ConstantCollapseView? {
-        return self.mainStackView.arrangedSubviews[subViewsEnum.collapse.rawValue] as? ConstantCollapseView
+        return self.mainStackView.arrangedSubviews[subViewsEnum.collapse.getIndex()] as? ConstantCollapseView
     }
     
     private func addSubviewPickerView(collapseView: ConstantCollapseView?) {
         collapseView?.openConstantExpense()
-        self.mainStackView.addChildView(childView: ConstantPickerView.instanceFromNib(nibName: Constant.view.expenseView.expensePickerView), at: subViewsEnum.pickerView.rawValue)
+        self.mainStackView.addChildView(childView: ConstantPickerView.instanceFromNib(nibName: Constant.view.expenseView.expensePickerView), at: subViewsEnum.pickerView.getIndex())
     }
     
     private func hiddenPickerView(collapseView: ConstantCollapseView?) {
         collapseView?.closeConstantExpense();
-        self.mainStackView.removeChild(at: subViewsEnum.pickerView.rawValue)
+        self.mainStackView.removeChild(at: subViewsEnum.pickerView.getIndex())
         return
     }
 }

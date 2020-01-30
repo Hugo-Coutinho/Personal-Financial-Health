@@ -14,6 +14,7 @@ import UIKit
 @objc protocol StackViewDataSource : NSObjectProtocol {
     
     func stackView(_ stackView: UIStackView, numberOfRowsInSection section: Int) -> Int
+    func stackView(_ stackView: UIStackView, customSpacingForRow index: Int) -> Int
     func stackView(_ stackView: UIStackView, viewForRowAt index: Int) -> UIView
     @objc optional func stackView(_ stackView: UIStackView, viewForRowSelectionAt index: Int) -> UIView?
     
@@ -45,14 +46,19 @@ extension StackViewController {
     private func setupChildren() {
         guard let numberOfRows = self.dataSource?.stackView(self, numberOfRowsInSection: 0), numberOfRows > 0 else { return }
         self.removeChildrenIfNeeded(completed: {
-            for rowIndex in [Int](0...numberOfRows - 1) {
-                if let childView = self.dataSource?.stackView(self, viewForRowAt: rowIndex) {
+            (0...(numberOfRows - 1)).forEach { (rowIndex) in
+                guard let childView = self.dataSource?.stackView(self, viewForRowAt: rowIndex) else { return }
                  self.addChildView(childView, rowIndex)
-                }
+                self.setupCustomSpacingForRow(childView: childView, index: rowIndex)
             }
         })
     }
     
+    private func setupCustomSpacingForRow(childView: UIView, index: Int) {
+        guard let spacingForRow = self.dataSource?.stackView(self, customSpacingForRow: index) else { return }
+        self.setCustomSpacing(CGFloat(integerLiteral: spacingForRow), after: childView)
+    }
+
     private func removeChildrenIfNeeded(completed: @escaping () -> Void) {
         if self.arrangedSubviews.count > 0 {
             self.removeChildrenViews(removalCompleted: { completed() })
@@ -62,7 +68,7 @@ extension StackViewController {
     }
     
     private func removeChildrenViews(removalCompleted: @escaping () -> Void) {
-        for arrangedSubview in self.arrangedSubviews {
+          self.arrangedSubviews.forEach { (arrangedSubview) in
             UIView.animate(withDuration: 0.4, animations: {
                 arrangedSubview.alpha = 0
             }, completion: { animationCompleted in
@@ -92,7 +98,8 @@ extension StackViewController {
         UIView.animate(withDuration: 0.4,
                        animations: {
                         childView.alpha = 0.4
-        self.insertArrangedSubview(childView, at: rowIndex)
+                        self.insertArrangedSubview(childView, at: rowIndex)
+                        self.setupCustomSpacingForRow(childView: childView, index: rowIndex)
         }) { (animationCompleted) in
             self.arrangedSubviews[rowIndex].alpha = 1
         }

@@ -17,10 +17,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="szM-kY-2AV" userLabel="Sub Item View">
-                    <rect key="frame" x="16" y="0.0" width="288" height="50"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FPH-8N-iq7" userLabel="RightLine">
-                            <rect key="frame" x="287" y="0.0" width="1" height="50"/>
+                            <rect key="frame" x="319" y="0.0" width="1" height="50"/>
                             <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="1" id="n2T-Ab-uik"/>
@@ -62,7 +62,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10/06/2019" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="UTZ-xT-HzM">
-                            <rect key="frame" x="82" y="15" width="78" height="20"/>
+                            <rect key="frame" x="91" y="14" width="86.5" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="UTZ-xT-HzM" secondAttribute="height" multiplier="39:10" id="tYN-x5-PDY"/>
                             </constraints>
@@ -70,7 +70,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 1000,00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="NtY-4U-k23">
-                            <rect key="frame" x="208" y="15" width="66" height="20"/>
+                            <rect key="frame" x="231" y="14" width="73.5" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="NtY-4U-k23" secondAttribute="height" multiplier="33:10" id="9CO-rB-hxV"/>
                             </constraints>
@@ -87,12 +87,12 @@
                         <constraint firstItem="PbZ-a3-AMp" firstAttribute="height" secondItem="szM-kY-2AV" secondAttribute="height" id="Uxu-5k-8mn"/>
                         <constraint firstItem="FPH-8N-iq7" firstAttribute="height" secondItem="szM-kY-2AV" secondAttribute="height" id="Wit-nD-B1i"/>
                         <constraint firstItem="PbZ-a3-AMp" firstAttribute="leading" secondItem="szM-kY-2AV" secondAttribute="leading" id="f3s-Wd-uFa"/>
+                        <constraint firstAttribute="width" secondItem="szM-kY-2AV" secondAttribute="height" multiplier="32:5" id="iJO-ob-3gR"/>
                         <constraint firstItem="NtY-4U-k23" firstAttribute="centerY" secondItem="szM-kY-2AV" secondAttribute="centerY" id="k8a-QF-xmU"/>
                         <constraint firstItem="UTZ-xT-HzM" firstAttribute="centerX" secondItem="szM-kY-2AV" secondAttribute="centerX" multiplier="0.84" id="lPZ-cC-sWq"/>
                         <constraint firstAttribute="trailing" secondItem="FPH-8N-iq7" secondAttribute="trailing" id="q5l-jS-Q3H"/>
                         <constraint firstItem="NtY-4U-k23" firstAttribute="width" secondItem="szM-kY-2AV" secondAttribute="width" multiplier="0.23" id="qEc-3V-mDf"/>
                         <constraint firstItem="PbZ-a3-AMp" firstAttribute="centerY" secondItem="szM-kY-2AV" secondAttribute="centerY" id="qz4-td-3I6"/>
-                        <constraint firstAttribute="width" secondItem="szM-kY-2AV" secondAttribute="height" multiplier="144:25" id="zpt-8X-OKU"/>
                     </constraints>
                 </view>
             </subviews>
@@ -101,7 +101,7 @@
                 <constraint firstItem="szM-kY-2AV" firstAttribute="centerY" secondItem="GRg-pb-zeq" secondAttribute="centerY" id="4b6-3f-LEg"/>
                 <constraint firstItem="szM-kY-2AV" firstAttribute="centerX" secondItem="GRg-pb-zeq" secondAttribute="centerX" id="9mF-UN-ddV"/>
                 <constraint firstAttribute="bottom" secondItem="szM-kY-2AV" secondAttribute="bottom" id="BLH-It-vNG"/>
-                <constraint firstItem="szM-kY-2AV" firstAttribute="width" secondItem="GRg-pb-zeq" secondAttribute="width" multiplier="0.9" id="DxG-oU-qtm"/>
+                <constraint firstItem="szM-kY-2AV" firstAttribute="width" secondItem="GRg-pb-zeq" secondAttribute="width" id="DxG-oU-qtm"/>
                 <constraint firstItem="szM-kY-2AV" firstAttribute="top" secondItem="GRg-pb-zeq" secondAttribute="top" id="S7d-3S-GN6"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

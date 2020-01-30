@@ -27,8 +27,12 @@ class ExpenseListContainerView: UIView {
 
 // MARK: - STACKVIEW DATASOURCE -
 extension ExpenseListContainerView: StackViewDataSource {
+    func stackView(_ stackView: UIStackView, customSpacingForRow index: Int) -> Int {
+        return 0
+    }
+    
     func stackView(_ stackView: UIStackView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return 8
     }
     
     func stackView(_ stackView: UIStackView, viewForRowAt index: Int) -> UIView {
