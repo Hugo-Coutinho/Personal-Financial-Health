@@ -21,6 +21,10 @@ class ExpenseFormView: UIView {
 
 // MARK: - IMPLEMENTS PROTOCOL EXPENSE SUBVIEWS -
 extension ExpenseFormView: IExpenseSubView {
+    func didSelectRow() {
+     
+    }
+    
     func instanceExpenseSubViewFromNib() -> UIView {
         return ExpenseFormView.instanceFromNib(nibName: Constant.view.expenseView.expenseFormView)
     }

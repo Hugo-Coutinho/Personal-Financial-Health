@@ -43,11 +43,29 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PbZ-a3-AMp" userLabel="LeftLine">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PbZ-a3-AMp" userLabel="bottomLine">
+                            <rect key="frame" x="0.0" y="49" width="320" height="1"/>
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="ept-Bw-h5B"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                    <size key="value" width="1" height="1"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="npg-cE-Ti8" userLabel="LeftLine">
                             <rect key="frame" x="0.0" y="0.0" width="1" height="50"/>
                             <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="1" id="IUe-g2-1Ck"/>
+                                <constraint firstAttribute="width" constant="1" id="Dt8-3Z-Wzd"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
@@ -78,21 +96,24 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="npg-cE-Ti8" firstAttribute="height" secondItem="szM-kY-2AV" secondAttribute="height" id="69i-jA-Ttz"/>
                         <constraint firstItem="NtY-4U-k23" firstAttribute="centerX" secondItem="szM-kY-2AV" secondAttribute="centerX" multiplier="1.673" id="6hk-4A-tqk"/>
                         <constraint firstItem="UTZ-xT-HzM" firstAttribute="width" secondItem="szM-kY-2AV" secondAttribute="width" multiplier="0.27" id="BiO-fj-QgB"/>
                         <constraint firstItem="UTZ-xT-HzM" firstAttribute="centerY" secondItem="szM-kY-2AV" secondAttribute="centerY" id="C3N-s9-Qtn"/>
+                        <constraint firstItem="PbZ-a3-AMp" firstAttribute="centerX" secondItem="szM-kY-2AV" secondAttribute="centerX" id="Q6Q-SZ-xFY"/>
                         <constraint firstItem="FPH-8N-iq7" firstAttribute="centerY" secondItem="szM-kY-2AV" secondAttribute="centerY" id="TN3-mJ-7Su"/>
-                        <constraint firstItem="PbZ-a3-AMp" firstAttribute="height" secondItem="szM-kY-2AV" secondAttribute="height" id="Uxu-5k-8mn"/>
+                        <constraint firstItem="PbZ-a3-AMp" firstAttribute="width" secondItem="szM-kY-2AV" secondAttribute="width" id="Unx-ma-IUo"/>
                         <constraint firstItem="FPH-8N-iq7" firstAttribute="height" secondItem="szM-kY-2AV" secondAttribute="height" id="Wit-nD-B1i"/>
-                        <constraint firstItem="PbZ-a3-AMp" firstAttribute="leading" secondItem="szM-kY-2AV" secondAttribute="leading" id="f3s-Wd-uFa"/>
+                        <constraint firstAttribute="bottom" secondItem="PbZ-a3-AMp" secondAttribute="bottom" id="Xp6-cL-aOl"/>
+                        <constraint firstItem="npg-cE-Ti8" firstAttribute="leading" secondItem="szM-kY-2AV" secondAttribute="leading" id="hKr-V3-Pyw"/>
                         <constraint firstAttribute="width" secondItem="szM-kY-2AV" secondAttribute="height" multiplier="32:5" id="iJO-ob-3gR"/>
                         <constraint firstItem="NtY-4U-k23" firstAttribute="centerY" secondItem="szM-kY-2AV" secondAttribute="centerY" id="k8a-QF-xmU"/>
                         <constraint firstItem="UTZ-xT-HzM" firstAttribute="centerX" secondItem="szM-kY-2AV" secondAttribute="centerX" multiplier="0.84" id="lPZ-cC-sWq"/>
+                        <constraint firstItem="npg-cE-Ti8" firstAttribute="centerY" secondItem="szM-kY-2AV" secondAttribute="centerY" id="ngO-5I-SXC"/>
                         <constraint firstAttribute="trailing" secondItem="FPH-8N-iq7" secondAttribute="trailing" id="q5l-jS-Q3H"/>
                         <constraint firstItem="NtY-4U-k23" firstAttribute="width" secondItem="szM-kY-2AV" secondAttribute="width" multiplier="0.23" id="qEc-3V-mDf"/>
-                        <constraint firstItem="PbZ-a3-AMp" firstAttribute="centerY" secondItem="szM-kY-2AV" secondAttribute="centerY" id="qz4-td-3I6"/>
                     </constraints>
                 </view>
             </subviews>

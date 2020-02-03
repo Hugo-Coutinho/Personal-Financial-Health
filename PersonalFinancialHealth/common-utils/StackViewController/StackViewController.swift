@@ -126,6 +126,23 @@ extension StackViewController {
         })
     }
     
+    public func removeChild(child: UIView) {
+        guard self.arrangedSubviews.contains(child) else { return }
+        UIView.animate(withDuration: 0.4, animations: {
+            child.alpha = 0
+        }, completion: { animationCompleted in
+            self.removeArrangedSubview(child)
+            child.removeFromSuperview()
+        })
+    }
+    
+    public func removeAll() {
+        guard !self.arrangedSubviews.isEmpty else { return }
+        self.arrangedSubviews.forEach({ (current) in
+            self.removeChild(child: current)
+        })
+    }
+    
     public func reloadStackView() {
         self.setupStackView()
     }

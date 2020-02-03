@@ -8,28 +8,34 @@
 
 import UIKit
 
+// MARK: - EXPENSE SUBVIEW INTERFACE -
 protocol IExpenseSubView {
     func instanceExpenseSubViewFromNib() -> UIView
+    func didSelectRow()
 }
 
+// MARK: - EXPENSE VIEW DATA -
+struct ExpenseParentViewData {
+    var stack: StackViewController
+}
+
+// MARK: - ENUMS -
+enum expenseSubViewEnum: Int {
+    case form = 0
+    case collapse = 1
+    case pickerView = 2
+    case confirmButton = 3
+    
+    func getIndex() -> Int {
+        return self.rawValue
+    }
+}
 
 class ExpenseViewController: UIViewController {
     
     // MARK: - OUTLETS -
     @IBOutlet weak var mainStackView: StackViewController!
     @IBOutlet weak var scrollView: UIScrollView!
-    
-    // MARK: - ENUMS -
-    enum subViewsEnum: Int {
-        case form = 0
-        case collapse = 1
-        case pickerView = 2
-        case confirmButton = 3
-    
-        func getIndex() -> Int {
-            return self.rawValue
-        }
-    }
     
     // MARK: - CONSTANTS -
     
@@ -56,8 +62,10 @@ extension ExpenseViewController {
     }
     
     private func addingExpenseSubViews() {
+        let collapseView = ConstantCollapseView()
+        collapseView.parentData = ExpenseParentViewData(stack: self.mainStackView)
         self.subViews.append(ExpenseFormView())
-        self.subViews.append(ConstantCollapseView())
+        self.subViews.append(collapseView)
         self.subViews.append(ConstantPickerView())
         self.subViews.append(ConfirmView())
         self.subViews.append(ExpenseListContainerView())
@@ -76,7 +84,7 @@ extension ExpenseViewController {
 // MARK: - STACKVIEW DATASOURCE -
 extension ExpenseViewController: StackViewDataSource {
     func stackView(_ stackView: UIStackView, customSpacingForRow index: Int) -> Int {
-        guard index == subViewsEnum.confirmButton.getIndex() else { return 8 }
+        guard index == expenseSubViewEnum.confirmButton.getIndex() else { return 8 }
         return 32
     }
     
@@ -93,9 +101,8 @@ extension ExpenseViewController: StackViewDataSource {
 // MARK: - STACKVIEW DATASOURCE -
 extension ExpenseViewController: StackViewDelegate {
     func stackView(_ stackView: UIStackView, didSelectRowAt index: Int, view: UIView) {
-        if  self.didSelectRowAtCollapseView(index: index) {
-            self.didSelectCollapseView()
-        }
+        guard self.currentViewExist(index: index) else { return }
+        self.subViews[index].didSelectRow()
     }
 }
 
@@ -103,36 +110,5 @@ extension ExpenseViewController: StackViewDelegate {
 extension ExpenseViewController {
     private func currentViewExist(index: Int) -> Bool {
         return self.subViews.count >= index
-    }
-}
-
-// MARK: - DID SELECT COLLAPSE -
-extension ExpenseViewController {
-    private func didSelectRowAtCollapseView(index: Int) -> Bool {
-        return index == subViewsEnum.collapse.getIndex()
-    }
-    private func didSelectCollapseView() {
-        guard self.subViewPickerViewIsHidden() else { return self.hiddenPickerView(collapseView: self.getCollapseViewFromMainStackView()) }
-        self.addSubviewPickerView(collapseView: self.getCollapseViewFromMainStackView())
-    }
-    
-    private func subViewPickerViewIsHidden() -> Bool {
-        let subViewPositionTwo =  self.mainStackView.arrangedSubviews[subViewsEnum.pickerView.getIndex()]
-        return !(subViewPositionTwo is ConstantPickerView)
-    }
-    
-    private func getCollapseViewFromMainStackView() -> ConstantCollapseView? {
-        return self.mainStackView.arrangedSubviews[subViewsEnum.collapse.getIndex()] as? ConstantCollapseView
-    }
-    
-    private func addSubviewPickerView(collapseView: ConstantCollapseView?) {
-        collapseView?.openConstantExpense()
-        self.mainStackView.addChildView(childView: ConstantPickerView.instanceFromNib(nibName: Constant.view.expenseView.expensePickerView), at: subViewsEnum.pickerView.getIndex())
-    }
-    
-    private func hiddenPickerView(collapseView: ConstantCollapseView?) {
-        collapseView?.closeConstantExpense();
-        self.mainStackView.removeChild(at: subViewsEnum.pickerView.getIndex())
-        return
     }
 }

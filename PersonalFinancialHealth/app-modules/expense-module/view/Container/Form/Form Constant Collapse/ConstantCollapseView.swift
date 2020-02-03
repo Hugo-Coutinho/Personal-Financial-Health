@@ -15,6 +15,8 @@ class ConstantCollapseView: UIView {
     @IBOutlet weak var ivDownArrow: UIImageView!
     @IBOutlet weak var constantCollapseView: UIView!
     
+    // MARK: - PROPERTIES -
+    var parentData: ExpenseParentViewData?
     
     override func layoutSubviews() {
         self.ivDownArrow.isHidden = false
@@ -42,7 +44,39 @@ class ConstantCollapseView: UIView {
 
 // MARK: - IMPLEMENTS PROTOCOL EXPENSE SUBVIEWS -
 extension ConstantCollapseView: IExpenseSubView {
+    func didSelectRow() {
+        self.didSelectCollapseView()
+    }
+    
     func instanceExpenseSubViewFromNib() -> UIView {
         return ConstantCollapseView.instanceFromNib(nibName: Constant.view.expenseView.expenseCollapseView)
+    }
+}
+
+// MARK: - AUX FUNCTIONS -
+extension ConstantCollapseView {
+    private func didSelectCollapseView() {
+        guard self.subViewPickerViewIsHidden() else { return self.hiddenPickerView(collapseView: self.getCollapseViewFromMainStackView()) }
+        self.addSubviewPickerView(collapseView: self.getCollapseViewFromMainStackView())
+    }
+    
+    private func subViewPickerViewIsHidden() -> Bool {
+        let subViewPositionTwo =  self.parentData?.stack.arrangedSubviews[expenseSubViewEnum.pickerView.getIndex()]
+        return !(subViewPositionTwo is ConstantPickerView)
+    }
+    
+    private func getCollapseViewFromMainStackView() -> ConstantCollapseView? {
+        return self.parentData?.stack.arrangedSubviews[expenseSubViewEnum.collapse.getIndex()] as? ConstantCollapseView
+    }
+    
+    private func addSubviewPickerView(collapseView: ConstantCollapseView?) {
+        collapseView?.openConstantExpense()
+        self.parentData?.stack.addChildView(childView: ConstantPickerView.instanceFromNib(nibName: Constant.view.expenseView.expensePickerView), at: expenseSubViewEnum.pickerView.getIndex())
+    }
+    
+    private func hiddenPickerView(collapseView: ConstantCollapseView?) {
+        collapseView?.closeConstantExpense();
+        self.parentData?.stack.removeChild(at: expenseSubViewEnum.pickerView.getIndex())
+        return
     }
 }

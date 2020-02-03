@@ -8,14 +8,19 @@
 
 import UIKit
 
+protocol IExpenseContainerSubView {
+    func instanceExpenseContainerSubViewFromNib() -> UIView
+}
+
+
 class ExpenseListContainerView: UIView {
     
     // MARK: - OUTLET -
     @IBOutlet weak var listContainerStackView: StackViewController!
     
     // MARK: - OUTLET -
-    private lazy var arrangedSubviews: [IExpenseSubView] = [
-    ExpenseListItemView()
+    private lazy var arrangedSubviews: [IExpenseContainerSubView] = [
+    ExpenseListSectionView()
     ]
     
     // MARK: - OVERRIDE -
@@ -28,20 +33,24 @@ class ExpenseListContainerView: UIView {
 // MARK: - STACKVIEW DATASOURCE -
 extension ExpenseListContainerView: StackViewDataSource {
     func stackView(_ stackView: UIStackView, customSpacingForRow index: Int) -> Int {
-        return 0
+        return 64
     }
     
     func stackView(_ stackView: UIStackView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return 2
     }
     
     func stackView(_ stackView: UIStackView, viewForRowAt index: Int) -> UIView {
-        return self.arrangedSubviews[0].instanceExpenseSubViewFromNib()
+        return self.arrangedSubviews[0].instanceExpenseContainerSubViewFromNib()
     }
 }
 
 // MARK: - IMPLEMENTS PROTOCOL EXPENSE SUBVIEWS -
 extension ExpenseListContainerView: IExpenseSubView {
+    func didSelectRow() {
+        
+    }
+    
     func instanceExpenseSubViewFromNib() -> UIView {
         return ExpenseListContainerView.instanceFromNib(nibName: Constant.view.expenseView.expenseListcontainer)
     }
