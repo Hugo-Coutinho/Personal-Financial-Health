@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 class BaseRouter {
-    class func createModule() -> UIViewController {
-        return UIStoryboard.getViewController(UIViewController.self)
+    class func createModule<T: UIViewController>(viewController: T.Type) -> T {
+        return UIStoryboard.getViewController(viewController)
     }
     
     class func goTo<T>(module: T) where T : UIViewController {

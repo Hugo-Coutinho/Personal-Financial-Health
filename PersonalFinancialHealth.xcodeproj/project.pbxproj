@@ -27,9 +27,7 @@
 		6391372522CBE7CF0018B65F /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391371922CBE7CF0018B65F /* HomeInteractor.swift */; };
 		6391372822CBE7CF0018B65F /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391371E22CBE7CF0018B65F /* HomeProtocols.swift */; };
 		6391372922CBE7CF0018B65F /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391372022CBE7CF0018B65F /* HomeModel.swift */; };
-		6391372A22CBE7CF0018B65F /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391372222CBE7CF0018B65F /* HomeRouter.swift */; };
 		6391372B22CBE7CF0018B65F /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391372422CBE7CF0018B65F /* HomePresenter.swift */; };
-		639FA05422D612B200983497 /* ExpenseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639FA05322D612B200983497 /* ExpenseRouter.swift */; };
 		639FA05622D6337C00983497 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639FA05522D6337C00983497 /* UIViewController.swift */; };
 		63A56BB422FA6A0F008C7093 /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A56BB322FA6A0F008C7093 /* StackViewController.swift */; };
 		63B56C7222D5041000D14C24 /* Financial.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63B56C7022D5041000D14C24 /* Financial.xcdatamodeld */; };
@@ -88,9 +86,7 @@
 		6391371922CBE7CF0018B65F /* HomeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		6391371E22CBE7CF0018B65F /* HomeProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
 		6391372022CBE7CF0018B65F /* HomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
-		6391372222CBE7CF0018B65F /* HomeRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		6391372422CBE7CF0018B65F /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
-		639FA05322D612B200983497 /* ExpenseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseRouter.swift; sourceTree = "<group>"; };
 		639FA05522D6337C00983497 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		63A56BB322FA6A0F008C7093 /* StackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewController.swift; sourceTree = "<group>"; };
 		63B56C7122D5041000D14C24 /* Financial.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Financial.xcdatamodel; sourceTree = "<group>"; };
@@ -436,7 +432,6 @@
 				6391371F22CBE7CF0018B65F /* entity */,
 				6391372322CBE7CF0018B65F /* presenter */,
 				6391371D22CBE7CF0018B65F /* protocols */,
-				6391372122CBE7CF0018B65F /* router */,
 				6391371A22CBE7CF0018B65F /* view */,
 			);
 			path = "home-module";
@@ -472,14 +467,6 @@
 				6391372022CBE7CF0018B65F /* HomeModel.swift */,
 			);
 			path = entity;
-			sourceTree = "<group>";
-		};
-		6391372122CBE7CF0018B65F /* router */ = {
-			isa = PBXGroup;
-			children = (
-				6391372222CBE7CF0018B65F /* HomeRouter.swift */,
-			);
-			path = router;
 			sourceTree = "<group>";
 		};
 		6391372322CBE7CF0018B65F /* presenter */ = {
@@ -714,17 +701,8 @@
 				63B90EAC23F1C46300D05638 /* protocol */,
 				63B90EA923F1C43500D05638 /* interactor */,
 				63CE3FD222D540E3000E90ED /* view */,
-				63CE3FCE22D525FC000E90ED /* router */,
 			);
 			path = "expense-module";
-			sourceTree = "<group>";
-		};
-		63CE3FCE22D525FC000E90ED /* router */ = {
-			isa = PBXGroup;
-			children = (
-				639FA05322D612B200983497 /* ExpenseRouter.swift */,
-			);
-			path = router;
 			sourceTree = "<group>";
 		};
 		63CE3FD222D540E3000E90ED /* view */ = {
@@ -894,8 +872,6 @@
 				63B56C7722D5095500D14C24 /* MainCoreData.swift in Sources */,
 				63EA771B2326A29800DADC63 /* ConfirmView.swift in Sources */,
 				63347B2923106011006CA2CC /* ExpenseListContainerView.swift in Sources */,
-				639FA05422D612B200983497 /* ExpenseRouter.swift in Sources */,
-				6391372A22CBE7CF0018B65F /* HomeRouter.swift in Sources */,
 				63B90EB623F1DDA000D05638 /* BaseRouter.swift in Sources */,
 				6316141D23D20A1500C9E9C9 /* ConstantExpenseView.swift in Sources */,
 				6391372922CBE7CF0018B65F /* HomeModel.swift in Sources */,

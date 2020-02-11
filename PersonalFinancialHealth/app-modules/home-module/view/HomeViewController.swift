@@ -33,6 +33,7 @@ extension HomeViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.configureNavigationItem(hidesBackButton: true)
+        BaseRouter.goTo(module: BaseRouter.createModule(viewController: ExpenseViewController.self))
     }
 }
 
@@ -62,7 +63,8 @@ extension HomeViewController {
         case homeOptionsEnum.availableFunds.getIndex():
             print("availableFunds")
         case homeOptionsEnum.myExpensesView.getIndex():
-            HomeRouter.navigateTo(module: ExpenseRouter.createModule())
+//            HomeRouter.navigateTo(module: ExpenseRouter.createModule())
+            BaseRouter.goTo(module: BaseRouter.createModule(viewController: ExpenseViewController.self))
         case homeOptionsEnum.netSalaryView.getIndex():
             print("net salary")
         case homeOptionsEnum.historicalView.getIndex():
