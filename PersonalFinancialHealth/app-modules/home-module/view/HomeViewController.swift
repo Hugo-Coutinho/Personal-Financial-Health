@@ -8,6 +8,19 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var myExpensesView: UIView!
     @IBOutlet weak var netSalaryView: UIView!
     @IBOutlet weak var historicalView: UIView!
+    
+    // MARK: - ENUMS -
+    enum homeOptionsEnum: Int {
+        case availableFunds = 0
+        case myExpensesView = 1
+        case netSalaryView = 2
+        case historicalView = 3
+        
+        func getIndex() -> Int {
+            return self.rawValue
+        }
+    }
+    
 }
 
 // MARK: - LIFE CYCLE -
@@ -20,7 +33,6 @@ extension HomeViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.configureNavigationItem(hidesBackButton: true)
-        Coordinator.setVisibleScreen(vc: ExpenseRouter.createModule())
     }
 }
 
@@ -33,27 +45,27 @@ extension HomeViewController {
         self.addGesture(view: self.historicalView)
         self.addTag()
     }
-
+    
     private func addGesture(view: UIView) {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapToNewScreen(_:)))
         view.addGestureRecognizer(tapGesture)
     }
     
     @objc private func tapToNewScreen(_ sender: Any) {
-    guard let tapGesture = sender as? UITapGestureRecognizer,
-    let attachedView = tapGesture.view else { return }
-    redirectToNewScreenBy(index: attachedView.tag)
+        guard let tapGesture = sender as? UITapGestureRecognizer,
+            let attachedView = tapGesture.view else { return }
+        self.redirectToNewScreenBy(index: attachedView.tag)
     }
     
     private func redirectToNewScreenBy(index: Int) {
         switch index {
-        case 0:
+        case homeOptionsEnum.availableFunds.getIndex():
             print("availableFunds")
-        case 1:
-            Coordinator.setVisibleScreen(vc: ExpenseRouter.createModule())
-        case 2:
+        case homeOptionsEnum.myExpensesView.getIndex():
+            HomeRouter.navigateTo(module: ExpenseRouter.createModule())
+        case homeOptionsEnum.netSalaryView.getIndex():
             print("net salary")
-        case 3:
+        case homeOptionsEnum.historicalView.getIndex():
             print("historical")
         default:
             break
@@ -61,9 +73,9 @@ extension HomeViewController {
     }
     
     private func addTag() {
-        self.availableFundsView.tag = 0
-        self.myExpensesView.tag = 1
-        self.netSalaryView.tag = 2
-        self.historicalView.tag = 3
+        self.availableFundsView.tag = homeOptionsEnum.availableFunds.getIndex()
+        self.myExpensesView.tag = homeOptionsEnum.myExpensesView.getIndex()
+        self.netSalaryView.tag = homeOptionsEnum.netSalaryView.getIndex()
+        self.historicalView.tag = homeOptionsEnum.historicalView.getIndex()
     }
 }

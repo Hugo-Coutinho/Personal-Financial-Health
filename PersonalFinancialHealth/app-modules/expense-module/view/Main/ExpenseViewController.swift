@@ -40,6 +40,7 @@ class ExpenseViewController: UIViewController {
     // MARK: - CONSTANTS -
     
     // MARK: - VARIABLES -
+    private lazy var presenter: ExpenseViewToPresenter = ExpensePresenter.make(view: self)
     private lazy var isOpen: Bool = false
     private lazy var n = 0
     private lazy var formView = ExpenseFormView()
@@ -111,4 +112,9 @@ extension ExpenseViewController {
     private func currentViewExist(index: Int) -> Bool {
         return self.subViews.count >= index
     }
+}
+
+// MARK: - PRESENTER OUTPUT -
+extension ExpenseViewController: ExpensePresenterToView {
+
 }

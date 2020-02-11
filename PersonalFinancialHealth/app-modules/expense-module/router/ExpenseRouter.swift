@@ -9,8 +9,14 @@
 import Foundation
 import UIKit
 
-class ExpenseRouter {
-    static func createModule() -> ExpenseViewController {
+class ExpenseRouter: BaseRouter {
+    // MARK: - OVERRIDE -
+    override class func createModule() -> ExpenseViewController {
         return UIStoryboard.getViewController(ExpenseViewController.self)
+    }
+    
+    // MARK: - PUSH VIEW CONTROLLER -
+    static func navigateTo<T>(module: T) where T : UIViewController {
+        self.goTo(module: module)
     }
 }

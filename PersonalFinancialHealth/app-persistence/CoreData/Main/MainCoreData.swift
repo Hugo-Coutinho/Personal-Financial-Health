@@ -10,6 +10,17 @@ import Foundation
 import UIKit
 import CoreData
 
+protocol ManagedObjectProtocol {
+    associatedtype Entity
+    func toEntity() -> Entity?
+}
+
+protocol ManagedObjectConvertible {
+    associatedtype ManagedObject
+    func toManagedObject(in context: NSManagedObjectContext) -> ManagedObject?
+}
+
+
 enum ErrorCoreData:Error {
     case notSave
 }
@@ -49,5 +60,6 @@ class MainCoreData {
             
         }
         return results
-    }}
+    }
+}
 
