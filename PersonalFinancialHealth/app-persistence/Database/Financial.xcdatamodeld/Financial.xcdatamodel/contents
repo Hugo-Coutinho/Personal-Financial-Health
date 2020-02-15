@@ -1,28 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Expense" representedClassName="Expense" syncable="YES" codeGenerationType="class">
-        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="expenseType" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18G103" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ExpenseItemMO" representedClassName="ExpenseItemMO" syncable="YES" codeGenerationType="class">
+        <attribute name="expenseType" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="subItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExpenseSubItemMO" syncable="YES"/>
     </entity>
-    <entity name="Historical" representedClassName="Historical" syncable="YES" codeGenerationType="class">
+    <entity name="ExpenseSubItemMO" representedClassName="ExpenseSubItemMO" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="expended" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="HistoricalMO" representedClassName="HistoricalMO" syncable="YES" codeGenerationType="class">
         <attribute name="available" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="month" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="month" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="remaining" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="valueUsed" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="used" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
-    <entity name="PreSetExpenseName" representedClassName="PreSetExpenseName" syncable="YES" codeGenerationType="class">
+    <entity name="PreSetExpenseNameMO" representedClassName="PreSetExpenseNameMO" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="PreSetExpensePrice" representedClassName="PreSetExpensePrice" syncable="YES" codeGenerationType="class">
+    <entity name="PreSetExpensePriceMO" representedClassName="PreSetExpensePriceMO" syncable="YES" codeGenerationType="class">
         <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
+    <entity name="SalaryMO" representedClassName="SalaryMO" syncable="YES" codeGenerationType="class">
+        <attribute name="net" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="usefully" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Expense" positionX="-63" positionY="-18" width="128" height="120"/>
-        <element name="Historical" positionX="-18" positionY="45" width="128" height="105"/>
-        <element name="PreSetExpenseName" positionX="-54" positionY="27" width="128" height="60"/>
-        <element name="PreSetExpensePrice" positionX="-36" positionY="36" width="128" height="60"/>
+        <element name="ExpenseItemMO" positionX="-45" positionY="36" width="128" height="105"/>
+        <element name="ExpenseSubItemMO" positionX="-36" positionY="72" width="128" height="75"/>
+        <element name="HistoricalMO" positionX="-18" positionY="99" width="128" height="105"/>
+        <element name="PreSetExpenseNameMO" positionX="-54" positionY="27" width="128" height="60"/>
+        <element name="PreSetExpensePriceMO" positionX="-36" positionY="36" width="128" height="60"/>
+        <element name="SalaryMO" positionX="-9" positionY="126" width="128" height="75"/>
     </elements>
 </model>

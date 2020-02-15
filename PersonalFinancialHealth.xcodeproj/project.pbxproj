@@ -19,6 +19,10 @@
 		63347B2923106011006CA2CC /* ExpenseListContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63347B2823106011006CA2CC /* ExpenseListContainerView.swift */; };
 		6350AD8922FB8CFB00433C70 /* PopupMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6350AD8822FB8CFB00433C70 /* PopupMenu.xib */; };
 		6350AD8B22FB95D600433C70 /* PopupMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6350AD8A22FB95D600433C70 /* PopupMenu.swift */; };
+		637A8A1523F39D6400688E6C /* ExpenseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637A8A1423F39D6400688E6C /* ExpenseTests.swift */; };
+		637A8A2023F77C9A00688E6C /* CoreDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637A8A1F23F77C9A00688E6C /* CoreDataWorker.swift */; };
+		637A8A2223F78FC700688E6C /* ExpenseSubItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637A8A2123F78FC700688E6C /* ExpenseSubItemModel.swift */; };
+		637A8A2E23F82B9B00688E6C /* Financial.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 637A8A2C23F82B9B00688E6C /* Financial.xcdatamodeld */; };
 		637B0BBC22D647A200FF8BD0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B0BBB22D647A200FF8BD0 /* UIView.swift */; };
 		6391370122CBE3470018B65F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391370022CBE3470018B65F /* AppDelegate.swift */; };
 		6391370322CBE3470018B65F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391370222CBE3470018B65F /* HomeViewController.swift */; };
@@ -30,13 +34,8 @@
 		6391372B22CBE7CF0018B65F /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391372422CBE7CF0018B65F /* HomePresenter.swift */; };
 		639FA05622D6337C00983497 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639FA05522D6337C00983497 /* UIViewController.swift */; };
 		63A56BB422FA6A0F008C7093 /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A56BB322FA6A0F008C7093 /* StackViewController.swift */; };
-		63B56C7222D5041000D14C24 /* Financial.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63B56C7022D5041000D14C24 /* Financial.xcdatamodeld */; };
 		63B56C7522D5085E00D14C24 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B56C7422D5085E00D14C24 /* Constant.swift */; };
 		63B56C7722D5095500D14C24 /* MainCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B56C7622D5095500D14C24 /* MainCoreData.swift */; };
-		63B56C7B22D509F100D14C24 /* ExpenseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B56C7A22D509F100D14C24 /* ExpenseManager.swift */; };
-		63B56C7D22D50AB500D14C24 /* Historical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B56C7C22D50AB500D14C24 /* Historical.swift */; };
-		63B56C7F22D50B7800D14C24 /* PreSetExpenseName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B56C7E22D50B7700D14C24 /* PreSetExpenseName.swift */; };
-		63B56C8122D50BAE00D14C24 /* PreSetExpensePrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B56C8022D50BAE00D14C24 /* PreSetExpensePrice.swift */; };
 		63B56C8422D5142900D14C24 /* BLFinancial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B56C8322D5142900D14C24 /* BLFinancial.swift */; };
 		63B6C4992323E41A00BA16ED /* ExpenseListSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B6C4982323E41A00BA16ED /* ExpenseListSectionView.swift */; };
 		63B6C49B2323E6D800BA16ED /* ExpenseListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B6C49A2323E6D800BA16ED /* ExpenseListItemView.swift */; };
@@ -47,7 +46,6 @@
 		63B90EAB23F1C44900D05638 /* ExpenseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B90EAA23F1C44900D05638 /* ExpenseInteractor.swift */; };
 		63B90EAE23F1C48700D05638 /* ExpenseProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B90EAD23F1C48700D05638 /* ExpenseProtocols.swift */; };
 		63B90EB123F1C64900D05638 /* ExpensePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B90EB023F1C64900D05638 /* ExpensePresenter.swift */; };
-		63B90EB423F1C6EE00D05638 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B90EB323F1C6EE00D05638 /* Expense.swift */; };
 		63B90EB623F1DDA000D05638 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B90EB523F1DDA000D05638 /* BaseRouter.swift */; };
 		63CE3FCA22D51E54000E90ED /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE3FC922D51E54000E90ED /* UIStoryboard.swift */; };
 		63CE3FCC22D51F2B000E90ED /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE3FCB22D51F2B000E90ED /* String.swift */; };
@@ -63,6 +61,16 @@
 		63F6C7EA22CC60A7003B7FA6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F6C7E922CC60A7003B7FA6 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		637A8A1723F39D6400688E6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 639136F522CBE3470018B65F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 639136FC22CBE3470018B65F;
+			remoteInfo = PersonalFinancialHealth;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		63106E9D22FD04970059D21E /* PopupSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupSelectView.swift; sourceTree = "<group>"; };
 		63106EA022FD0EAC0059D21E /* PopupEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupEditView.swift; sourceTree = "<group>"; };
@@ -76,6 +84,12 @@
 		63347B2823106011006CA2CC /* ExpenseListContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseListContainerView.swift; sourceTree = "<group>"; };
 		6350AD8822FB8CFB00433C70 /* PopupMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupMenu.xib; sourceTree = "<group>"; };
 		6350AD8A22FB95D600433C70 /* PopupMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupMenu.swift; sourceTree = "<group>"; };
+		637A8A1223F39D6400688E6C /* PersonalFinancialHealthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PersonalFinancialHealthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		637A8A1423F39D6400688E6C /* ExpenseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTests.swift; sourceTree = "<group>"; };
+		637A8A1623F39D6400688E6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		637A8A1F23F77C9A00688E6C /* CoreDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWorker.swift; sourceTree = "<group>"; };
+		637A8A2123F78FC700688E6C /* ExpenseSubItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseSubItemModel.swift; sourceTree = "<group>"; };
+		637A8A2D23F82B9B00688E6C /* Financial.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Financial.xcdatamodel; sourceTree = "<group>"; };
 		637B0BBB22D647A200FF8BD0 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		639136FD22CBE3470018B65F /* PersonalFinancialHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalFinancialHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6391370022CBE3470018B65F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,13 +103,8 @@
 		6391372422CBE7CF0018B65F /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		639FA05522D6337C00983497 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		63A56BB322FA6A0F008C7093 /* StackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewController.swift; sourceTree = "<group>"; };
-		63B56C7122D5041000D14C24 /* Financial.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Financial.xcdatamodel; sourceTree = "<group>"; };
 		63B56C7422D5085E00D14C24 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		63B56C7622D5095500D14C24 /* MainCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoreData.swift; sourceTree = "<group>"; };
-		63B56C7A22D509F100D14C24 /* ExpenseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseManager.swift; sourceTree = "<group>"; };
-		63B56C7C22D50AB500D14C24 /* Historical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Historical.swift; sourceTree = "<group>"; };
-		63B56C7E22D50B7700D14C24 /* PreSetExpenseName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreSetExpenseName.swift; sourceTree = "<group>"; };
-		63B56C8022D50BAE00D14C24 /* PreSetExpensePrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreSetExpensePrice.swift; sourceTree = "<group>"; };
 		63B56C8322D5142900D14C24 /* BLFinancial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLFinancial.swift; sourceTree = "<group>"; };
 		63B6C4982323E41A00BA16ED /* ExpenseListSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseListSectionView.swift; sourceTree = "<group>"; };
 		63B6C49A2323E6D800BA16ED /* ExpenseListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseListItemView.swift; sourceTree = "<group>"; };
@@ -106,7 +115,6 @@
 		63B90EAA23F1C44900D05638 /* ExpenseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseInteractor.swift; sourceTree = "<group>"; };
 		63B90EAD23F1C48700D05638 /* ExpenseProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseProtocols.swift; sourceTree = "<group>"; };
 		63B90EB023F1C64900D05638 /* ExpensePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensePresenter.swift; sourceTree = "<group>"; };
-		63B90EB323F1C6EE00D05638 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		63B90EB523F1DDA000D05638 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseRouter.swift; path = "PersonalFinancialHealth/common-utils/router/BaseRouter.swift"; sourceTree = SOURCE_ROOT; };
 		63CE3FC922D51E54000E90ED /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
 		63CE3FCB22D51F2B000E90ED /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -123,6 +131,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		637A8A0F23F39D6400688E6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		639136FA22CBE3470018B65F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -325,6 +340,48 @@
 			path = PopupMenu;
 			sourceTree = "<group>";
 		};
+		637A8A1323F39D6400688E6C /* PersonalFinancialHealthTests */ = {
+			isa = PBXGroup;
+			children = (
+				637A8A1C23F39D8400688E6C /* Tests */,
+				637A8A1623F39D6400688E6C /* Info.plist */,
+			);
+			path = PersonalFinancialHealthTests;
+			sourceTree = "<group>";
+		};
+		637A8A1C23F39D8400688E6C /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				637A8A1E23F6F4E300688E6C /* Home */,
+				637A8A1D23F39D9C00688E6C /* Expense */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		637A8A1D23F39D9C00688E6C /* Expense */ = {
+			isa = PBXGroup;
+			children = (
+				637A8A1423F39D6400688E6C /* ExpenseTests.swift */,
+			);
+			path = Expense;
+			sourceTree = "<group>";
+		};
+		637A8A1E23F6F4E300688E6C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		637A8A2323F828EC00688E6C /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				637A8A2C23F82B9B00688E6C /* Financial.xcdatamodeld */,
+			);
+			name = Database;
+			path = "PersonalFinancialHealth/app-persistence/Database";
+			sourceTree = SOURCE_ROOT;
+		};
 		637B0BB322D6383A00FF8BD0 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +409,7 @@
 			isa = PBXGroup;
 			children = (
 				639136FF22CBE3470018B65F /* PersonalFinancialHealth */,
+				637A8A1323F39D6400688E6C /* PersonalFinancialHealthTests */,
 				639136FE22CBE3470018B65F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -360,6 +418,7 @@
 			isa = PBXGroup;
 			children = (
 				639136FD22CBE3470018B65F /* PersonalFinancialHealth.app */,
+				637A8A1223F39D6400688E6C /* PersonalFinancialHealthTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -514,26 +573,17 @@
 		63B56C6D22D4DA9400D14C24 /* app-persistence */ = {
 			isa = PBXGroup;
 			children = (
-				63B56C6E22D4DAE100D14C24 /* Database */,
 				63B56C6F22D4DAE800D14C24 /* CoreData */,
 			);
 			path = "app-persistence";
 			sourceTree = "<group>";
 		};
-		63B56C6E22D4DAE100D14C24 /* Database */ = {
-			isa = PBXGroup;
-			children = (
-				63B56C7022D5041000D14C24 /* Financial.xcdatamodeld */,
-			);
-			path = Database;
-			sourceTree = "<group>";
-		};
 		63B56C6F22D4DAE800D14C24 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				637A8A2323F828EC00688E6C /* Database */,
 				63B90EA623E9D80000D05638 /* Worker */,
 				63B56C7822D5098F00D14C24 /* Main */,
-				63B56C7922D509AE00D14C24 /* Manager */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -554,17 +604,6 @@
 				63B56C7622D5095500D14C24 /* MainCoreData.swift */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		63B56C7922D509AE00D14C24 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				63B56C7A22D509F100D14C24 /* ExpenseManager.swift */,
-				63B56C7C22D50AB500D14C24 /* Historical.swift */,
-				63B56C7E22D50B7700D14C24 /* PreSetExpenseName.swift */,
-				63B56C8022D50BAE00D14C24 /* PreSetExpensePrice.swift */,
-			);
-			path = Manager;
 			sourceTree = "<group>";
 		};
 		63B56C8222D5126200D14C24 /* BusinessLogic */ = {
@@ -645,6 +684,7 @@
 		63B90EA623E9D80000D05638 /* Worker */ = {
 			isa = PBXGroup;
 			children = (
+				637A8A1F23F77C9A00688E6C /* CoreDataWorker.swift */,
 			);
 			path = Worker;
 			sourceTree = "<group>";
@@ -676,7 +716,7 @@
 		63B90EB223F1C6AB00D05638 /* entity */ = {
 			isa = PBXGroup;
 			children = (
-				63B90EB323F1C6EE00D05638 /* Expense.swift */,
+				637A8A2123F78FC700688E6C /* ExpenseSubItemModel.swift */,
 			);
 			path = entity;
 			sourceTree = "<group>";
@@ -790,6 +830,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		637A8A1123F39D6400688E6C /* PersonalFinancialHealthTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 637A8A1923F39D6400688E6C /* Build configuration list for PBXNativeTarget "PersonalFinancialHealthTests" */;
+			buildPhases = (
+				637A8A0E23F39D6400688E6C /* Sources */,
+				637A8A0F23F39D6400688E6C /* Frameworks */,
+				637A8A1023F39D6400688E6C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				637A8A1823F39D6400688E6C /* PBXTargetDependency */,
+			);
+			name = PersonalFinancialHealthTests;
+			productName = PersonalFinancialHealthTests;
+			productReference = 637A8A1223F39D6400688E6C /* PersonalFinancialHealthTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		639136FC22CBE3470018B65F /* PersonalFinancialHealth */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6391370F22CBE3490018B65F /* Build configuration list for PBXNativeTarget "PersonalFinancialHealth" */;
@@ -817,6 +875,10 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = BRQ;
 				TargetAttributes = {
+					637A8A1123F39D6400688E6C = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 639136FC22CBE3470018B65F;
+					};
 					639136FC22CBE3470018B65F = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -836,11 +898,19 @@
 			projectRoot = "";
 			targets = (
 				639136FC22CBE3470018B65F /* PersonalFinancialHealth */,
+				637A8A1123F39D6400688E6C /* PersonalFinancialHealthTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		637A8A1023F39D6400688E6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		639136FB22CBE3470018B65F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -863,6 +933,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		637A8A0E23F39D6400688E6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				637A8A1523F39D6400688E6C /* ExpenseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		639136F922CBE3470018B65F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -878,17 +956,16 @@
 				63106E9E22FD04970059D21E /* PopupSelectView.swift in Sources */,
 				63B90EAE23F1C48700D05638 /* ExpenseProtocols.swift in Sources */,
 				63CE3FD422D54111000E90ED /* ExpenseViewController.swift in Sources */,
+				637A8A2E23F82B9B00688E6C /* Financial.xcdatamodeld in Sources */,
+				637A8A2223F78FC700688E6C /* ExpenseSubItemModel.swift in Sources */,
 				63B6C49B2323E6D800BA16ED /* ExpenseListItemView.swift in Sources */,
 				6391370322CBE3470018B65F /* HomeViewController.swift in Sources */,
 				63B90EAB23F1C44900D05638 /* ExpenseInteractor.swift in Sources */,
 				63106EA122FD0EAC0059D21E /* PopupEditView.swift in Sources */,
 				6391372822CBE7CF0018B65F /* HomeProtocols.swift in Sources */,
-				63B56C7D22D50AB500D14C24 /* Historical.swift in Sources */,
 				63CE3FCA22D51E54000E90ED /* UIStoryboard.swift in Sources */,
-				63B56C7222D5041000D14C24 /* Financial.xcdatamodeld in Sources */,
 				6317066322CE331A002259C2 /* UIColor.swift in Sources */,
 				6316141823D2095F00C9E9C9 /* ConstantPersistence.swift in Sources */,
-				63B56C7B22D509F100D14C24 /* ExpenseManager.swift in Sources */,
 				6391370122CBE3470018B65F /* AppDelegate.swift in Sources */,
 				639FA05622D6337C00983497 /* UIViewController.swift in Sources */,
 				63B6C49D2323E70300BA16ED /* ExpenseListSubItemView.swift in Sources */,
@@ -899,20 +976,26 @@
 				63335C2C22F4845E00FB302F /* ExpenseContainerView.swift in Sources */,
 				6391372B22CBE7CF0018B65F /* HomePresenter.swift in Sources */,
 				6391372522CBE7CF0018B65F /* HomeInteractor.swift in Sources */,
-				63B90EB423F1C6EE00D05638 /* Expense.swift in Sources */,
 				63B56C8422D5142900D14C24 /* BLFinancial.swift in Sources */,
 				63B6C4992323E41A00BA16ED /* ExpenseListSectionView.swift in Sources */,
 				63EA77192326A23F00DADC63 /* ConstantPickerView.swift in Sources */,
 				63F6C7EA22CC60A7003B7FA6 /* Coordinator.swift in Sources */,
+				637A8A2023F77C9A00688E6C /* CoreDataWorker.swift in Sources */,
 				63B90EB123F1C64900D05638 /* ExpensePresenter.swift in Sources */,
-				63B56C8122D50BAE00D14C24 /* PreSetExpensePrice.swift in Sources */,
-				63B56C7F22D50B7800D14C24 /* PreSetExpenseName.swift in Sources */,
 				63B56C7522D5085E00D14C24 /* Constant.swift in Sources */,
 				63EA77172326A1EA00DADC63 /* ConstantCollapseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		637A8A1823F39D6400688E6C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 639136FC22CBE3470018B65F /* PersonalFinancialHealth */;
+			targetProxy = 637A8A1723F39D6400688E6C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6391370422CBE3470018B65F /* Main.storyboard */ = {
@@ -926,6 +1009,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		637A8A1A23F39D6400688E6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UEDMTC57NN;
+				INFOPLIST_FILE = PersonalFinancialHealthTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.hugoProjects.PersonalFinancialHealthTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PersonalFinancialHealth.app/PersonalFinancialHealth";
+			};
+			name = Debug;
+		};
+		637A8A1B23F39D6400688E6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UEDMTC57NN;
+				INFOPLIST_FILE = PersonalFinancialHealthTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.hugoProjects.PersonalFinancialHealthTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PersonalFinancialHealth.app/PersonalFinancialHealth";
+			};
+			name = Release;
+		};
 		6391370D22CBE3490018B65F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1081,6 +1204,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		637A8A1923F39D6400688E6C /* Build configuration list for PBXNativeTarget "PersonalFinancialHealthTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				637A8A1A23F39D6400688E6C /* Debug */,
+				637A8A1B23F39D6400688E6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		639136F822CBE3470018B65F /* Build configuration list for PBXProject "PersonalFinancialHealth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1102,12 +1234,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		63B56C7022D5041000D14C24 /* Financial.xcdatamodeld */ = {
+		637A8A2C23F82B9B00688E6C /* Financial.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				63B56C7122D5041000D14C24 /* Financial.xcdatamodel */,
+				637A8A2D23F82B9B00688E6C /* Financial.xcdatamodel */,
 			);
-			currentVersion = 63B56C7122D5041000D14C24 /* Financial.xcdatamodel */;
+			currentVersion = 637A8A2D23F82B9B00688E6C /* Financial.xcdatamodel */;
 			path = Financial.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

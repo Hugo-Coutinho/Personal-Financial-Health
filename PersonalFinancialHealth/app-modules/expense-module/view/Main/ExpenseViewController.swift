@@ -40,7 +40,7 @@ class ExpenseViewController: UIViewController {
     // MARK: - CONSTANTS -
     
     // MARK: - VARIABLES -
-    private lazy var presenter: ExpenseViewToPresenter = ExpensePresenter.make(view: self)
+    private lazy var presenter: ExpensePresenterInput = ExpensePresenter.make(view: self)
     private lazy var isOpen: Bool = false
     private lazy var n = 0
     private lazy var formView = ExpenseFormView()
@@ -58,6 +58,22 @@ extension ExpenseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+// MARK: - READ COREDATA -
+//        let worker: CoreDataWorkerInput = CoreDataWorker.make()
+//        let sortDescriptor = NSSortDescriptor(key: Constant.persistence.sortDescriptor, ascending: true)
+//        let managedObject = worker.read(entityType: ExpenseSubItemMO.self, sortDescriptor: [sortDescriptor])
+//        managedObject?.forEach({ (current) in
+//            print(ExpenseSubItemModel.toEntity(MO: current).date)
+//        })
+
+// MARK: - SAVE COREDATA -
+//        let model = ExpenseSubItemModel(date: Date(), expended: 400.0)
+//        let worker: CoreDataWorkerInput = CoreDataWorker.make()
+//        do {
+//            try worker.create(entity: model.toManagedObject(in: worker.context))
+//        } catch  {
+//
+//        }
         super.viewWillAppear(true)
         self.view.layoutIfNeeded()
     }

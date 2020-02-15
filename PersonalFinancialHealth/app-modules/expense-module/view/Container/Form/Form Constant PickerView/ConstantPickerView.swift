@@ -15,6 +15,12 @@ class ConstantPickerView: UIView {
     @IBOutlet weak var monthsPickerView: UIPickerView!
     @IBOutlet weak var constantPickerView: UIView!
     
+    // MARK: - DECLARATIONS -
+    private lazy var pickerViewType: [String] = [
+        Constant.view.expenseView.constantExpense,
+        Constant.view.expenseView.dailyExpense
+    ]
+    
     // MARK: - OVERRIDE -
     override func layoutSubviews() {
         self.monthsPickerView.delegate = self
@@ -33,11 +39,11 @@ extension ConstantPickerView: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 6
+        return 2
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "flaflaflaflaflafla"
+        return self.pickerViewType[row]
     }
 }
 

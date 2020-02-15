@@ -13,7 +13,6 @@ import Foundation
 protocol ExpenseViewToPresenter {
     var view: ExpensePresenterToView {get set}
     var interactor: ExpensePresenterToInteractor? {get set}
-    static func make(view: ExpensePresenterToView) -> ExpenseViewToPresenter
 }
 
 // MARK: - PRESENTER OUTPUT -

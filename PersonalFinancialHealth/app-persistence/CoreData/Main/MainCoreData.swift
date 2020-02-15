@@ -12,12 +12,20 @@ import CoreData
 
 protocol ManagedObjectProtocol {
     associatedtype Entity
-    func toEntity() -> Entity?
+    associatedtype ManagedObject
+    
+    static func toEntity(MO: ManagedObject) -> Entity
 }
 
 protocol ManagedObjectConvertible {
     associatedtype ManagedObject
-    func toManagedObject(in context: NSManagedObjectContext) -> ManagedObject?
+    func toManagedObject(in context: NSManagedObjectContext) -> ManagedObject
+}
+
+protocol CoreDataInput {
+    var context: NSManagedObjectContext { get set }
+    static func make() -> CoreDataInput
+    func save() throws
 }
 
 
@@ -25,13 +33,33 @@ enum ErrorCoreData:Error {
     case notSave
 }
 
-class MainCoreData {
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    lazy var context:NSManagedObjectContext = {
-        return self.appDelegate.persistentContainer.viewContext
-    }()
+class MainCoreData: CoreDataInput {
     
-    func saveDatabase() throws {
+    let appDelegate: AppDelegate
+    private var sortDescriptor: NSSortDescriptor
+    var context: NSManagedObjectContext
+    
+    init() {
+        self.appDelegate = UIApplication.shared.delegate as! AppDelegate
+        self.sortDescriptor = NSSortDescriptor(key: Constant.persistence.sortDescriptor, ascending: true)
+        self.context = self.appDelegate.persistentContainer.viewContext
+    }
+    
+    static func make() -> CoreDataInput {
+        return MainCoreData.init()
+    }
+    
+    func save() throws {
+        do {
+            try self.saveDatabase()
+        } catch  {
+            throw ErrorCoreData.notSave
+        }
+    }
+}
+
+extension MainCoreData {
+    private func saveDatabase() throws {
         do {
             try self.context.save()
         } catch  {

@@ -8,7 +8,11 @@
 
 import Foundation
 
-class ExpensePresenter: ExpenseViewToPresenter {
+protocol ExpensePresenterInput {
+    static func make(view: ExpensePresenterToView) -> ExpensePresenterInput
+}
+
+class ExpensePresenter: ExpensePresenterInput, ExpenseViewToPresenter {
     
     // MARK: - PROPERTIES -
     var view: ExpensePresenterToView
@@ -21,7 +25,7 @@ class ExpensePresenter: ExpenseViewToPresenter {
     }
     
     // MARK: - DI -
-    static func make(view: ExpensePresenterToView) -> ExpenseViewToPresenter {
+    static func make(view: ExpensePresenterToView) -> ExpensePresenterInput {
         return ExpensePresenter.init(view: view)
     }
 }

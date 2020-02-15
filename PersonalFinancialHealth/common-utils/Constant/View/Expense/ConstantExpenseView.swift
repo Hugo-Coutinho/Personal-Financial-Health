@@ -9,6 +9,7 @@
 import Foundation
 
 enum ConstantExpenseView {
+    // MARK: - VIEW -
     static let expenseHeader = "ExpenseHeaderView"
     static let expenseBody = "ExpenseBodyView"
     static let expenseFormView = "ExpenseFormView"
@@ -19,4 +20,8 @@ enum ConstantExpenseView {
     static let expenseSection = "ExpenseListSectionView"
     static let expenseListItem = "ExpenseListItemView"
     static let expenseListSubitem = "ExpenseListSubItemView"
+    
+    // MARK: - PICKER VIEWS -
+    static let constantExpense = "Constant"
+    static let dailyExpense = "Daily"
 }

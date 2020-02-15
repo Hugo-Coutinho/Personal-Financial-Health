@@ -2,15 +2,12 @@ import Foundation
 
 protocol HomeViewToPresenter {
     var view: HomePresenterToView {get set}
-    var interactor: HomePresenterToInteractor {get set}
-    var router: HomePresenterToRouter {get set}
-    func startFetchingNotice()
-//    func showMovieController(navigationController:UINavigationController)
+    var interactor: HomePresenterToInteractor? {get set}
 }
 
 protocol HomePresenterToView {
 //    func showNotice(noticeArray:Array<NoticeModel>)
-    func showError()
+//    func showError()
 }
 
 protocol HomePresenterToRouter {
@@ -19,11 +16,10 @@ protocol HomePresenterToRouter {
 }
 
 protocol HomePresenterToInteractor {
-    var presenter:HomePresenterToView {get set}
-    func fetchNotice()
+    var presenter:HomeInteractorToPresenter {get set}
+    static func make(presenter: HomeInteractorToPresenter) -> HomePresenterToInteractor
 }
 
 protocol HomeInteractorToPresenter {
-//    func noticeFetchedSuccess(noticeModelArray:Array<NoticeModel>)
-    func noticeFetchFailed()
+
 }
