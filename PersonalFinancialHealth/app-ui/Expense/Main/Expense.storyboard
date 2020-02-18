@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My Expenses-->
+        <scene sceneID="XYm-zg-rhx">
+            <objects>
+                <viewController storyboardIdentifier="ExpenseViewController" id="Dv3-4c-fzU" customClass="ExpenseViewController" customModule="PersonalFinancialHealth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rvc-et-by2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OIz-mn-A7a">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SWr-KX-MN4">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ofT-9d-dKO" customClass="StackViewController" customModule="PersonalFinancialHealth" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ofT-9d-dKO" secondAttribute="trailing" id="0oE-h9-Tax"/>
+                                            <constraint firstAttribute="height" secondItem="ofT-9d-dKO" secondAttribute="height" priority="250" id="8X4-xj-wdW"/>
+                                            <constraint firstItem="ofT-9d-dKO" firstAttribute="leading" secondItem="SWr-KX-MN4" secondAttribute="leading" id="S3C-t0-n7f"/>
+                                            <constraint firstAttribute="bottom" secondItem="ofT-9d-dKO" secondAttribute="bottom" id="b0k-fv-8Mp"/>
+                                            <constraint firstItem="ofT-9d-dKO" firstAttribute="top" secondItem="SWr-KX-MN4" secondAttribute="top" id="zhK-1t-2wS"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="SWr-KX-MN4" firstAttribute="leading" secondItem="OIz-mn-A7a" secondAttribute="leading" id="0cg-Jn-1TA"/>
+                                    <constraint firstItem="SWr-KX-MN4" firstAttribute="top" secondItem="OIz-mn-A7a" secondAttribute="top" id="BVa-po-ZUG"/>
+                                    <constraint firstAttribute="bottom" secondItem="SWr-KX-MN4" secondAttribute="bottom" id="RFd-IF-D1j"/>
+                                    <constraint firstItem="SWr-KX-MN4" firstAttribute="centerY" secondItem="OIz-mn-A7a" secondAttribute="centerY" priority="250" id="UnX-wC-lmr"/>
+                                    <constraint firstAttribute="trailing" secondItem="SWr-KX-MN4" secondAttribute="trailing" id="mJs-vu-kxu"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SWr-KX-MN4" firstAttribute="width" secondItem="rvc-et-by2" secondAttribute="width" id="8uG-Iy-T7c"/>
+                            <constraint firstItem="OIz-mn-A7a" firstAttribute="top" secondItem="rvc-et-by2" secondAttribute="top" id="JxR-F3-Qah"/>
+                            <constraint firstAttribute="trailing" secondItem="OIz-mn-A7a" secondAttribute="trailing" id="iQe-gs-GS9"/>
+                            <constraint firstItem="OIz-mn-A7a" firstAttribute="leading" secondItem="rvc-et-by2" secondAttribute="leading" id="vbV-wP-9fK"/>
+                            <constraint firstItem="OIz-mn-A7a" firstAttribute="bottom" secondItem="xUz-L8-nM9" secondAttribute="bottom" id="y1k-2i-iz3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xUz-L8-nM9"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="My Expenses" id="ZZk-OS-ivU"/>
+                    <connections>
+                        <outlet property="mainStackView" destination="ofT-9d-dKO" id="kRF-Ow-ePR"/>
+                        <outlet property="scrollView" destination="OIz-mn-A7a" id="Ov7-CN-Je1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7an-MB-76F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1757" y="33"/>
+        </scene>
+    </scenes>
+</document>

@@ -36,8 +36,8 @@ extension ExpenseSubItemModel: ManagedObjectConvertible {
 extension ExpenseSubItemModel: ManagedObjectProtocol {
     typealias Entity = ExpenseSubItemModel
     
-    static func toEntity(MO: ExpenseSubItemMO) -> ExpenseSubItemModel {
-        return ExpenseSubItemModel(date: MO.date ?? Date(), expended: MO.expended)
+    static func toEntity(mo: ExpenseSubItemMO) -> ExpenseSubItemModel {
+        return ExpenseSubItemModel(date: mo.date ?? Date(), expended: mo.expended)
     }
     
 }

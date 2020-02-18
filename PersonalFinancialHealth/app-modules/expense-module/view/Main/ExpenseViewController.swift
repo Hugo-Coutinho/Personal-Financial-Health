@@ -58,6 +58,26 @@ extension ExpenseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        // MARK: - READ COREDATA ITEMS -
+//                let worker: CoreDataWorkerInput = CoreDataWorker.make()
+//                let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+//                let managedObject = worker.read(entityType: ExpenseItemMO.self, sortDescriptor: [sortDescriptor])
+//                managedObject?.forEach({ (current) in
+//                    ExpenseItemModel.toEntity(mo: current).subItems.forEach({ (current) in
+//                        print(current.expended)
+//                    })
+//                })
+        
+        // MARK: - SAVE COREDATA ITEMS -
+//                let model = ExpenseItemModel(icon: "icon_1", name: "item_1", expenseType: 0, subItems: [ExpenseSubItemModel(date: Date(), expended: 1.200), ExpenseSubItemModel(date: Date(), expended: 3.400)])
+//                let worker: CoreDataWorkerInput = CoreDataWorker.make()
+//                do {
+//                    try worker.create(entity: model.toManagedObject(in: worker.context))
+//                } catch  {
+//
+//                }
+
+        
 // MARK: - READ COREDATA -
 //        let worker: CoreDataWorkerInput = CoreDataWorker.make()
 //        let sortDescriptor = NSSortDescriptor(key: Constant.persistence.sortDescriptor, ascending: true)

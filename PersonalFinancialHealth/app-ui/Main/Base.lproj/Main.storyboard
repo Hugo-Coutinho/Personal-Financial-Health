@@ -262,63 +262,6 @@
             </objects>
             <point key="canvasLocation" x="1061.25" y="32.74647887323944"/>
         </scene>
-        <!--My Expenses-->
-        <scene sceneID="Y5m-Mr-b6S">
-            <objects>
-                <viewController storyboardIdentifier="ExpenseViewController" id="Arm-k2-g4A" customClass="ExpenseViewController" customModule="PersonalFinancialHealth" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vUq-f2-BzL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lzi-3k-WJn">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aFY-0h-wuP">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CfN-2T-4Yh" customClass="StackViewController" customModule="PersonalFinancialHealth" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                            </stackView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="CfN-2T-4Yh" secondAttribute="bottom" id="BQl-Z2-2D4"/>
-                                            <constraint firstItem="CfN-2T-4Yh" firstAttribute="leading" secondItem="aFY-0h-wuP" secondAttribute="leading" id="HFq-Fq-Gcb"/>
-                                            <constraint firstAttribute="height" secondItem="CfN-2T-4Yh" secondAttribute="height" priority="250" id="ixn-N5-SQD"/>
-                                            <constraint firstAttribute="trailing" secondItem="CfN-2T-4Yh" secondAttribute="trailing" id="kbt-mE-w4t"/>
-                                            <constraint firstItem="CfN-2T-4Yh" firstAttribute="top" secondItem="aFY-0h-wuP" secondAttribute="top" id="mB3-jR-7kT"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="aFY-0h-wuP" firstAttribute="centerY" secondItem="Lzi-3k-WJn" secondAttribute="centerY" priority="250" id="KW0-XC-k5K"/>
-                                    <constraint firstAttribute="bottom" secondItem="aFY-0h-wuP" secondAttribute="bottom" id="XzP-DP-XwO"/>
-                                    <constraint firstAttribute="trailing" secondItem="aFY-0h-wuP" secondAttribute="trailing" id="c6r-Gr-Ur6"/>
-                                    <constraint firstItem="aFY-0h-wuP" firstAttribute="leading" secondItem="Lzi-3k-WJn" secondAttribute="leading" id="qYs-qA-i5C"/>
-                                    <constraint firstItem="aFY-0h-wuP" firstAttribute="top" secondItem="Lzi-3k-WJn" secondAttribute="top" id="uHp-oS-WCN"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Lzi-3k-WJn" firstAttribute="bottom" secondItem="cqp-lA-EP6" secondAttribute="bottom" id="1xj-hX-VjS"/>
-                            <constraint firstAttribute="trailing" secondItem="Lzi-3k-WJn" secondAttribute="trailing" id="aUT-lP-m2c"/>
-                            <constraint firstItem="Lzi-3k-WJn" firstAttribute="top" secondItem="vUq-f2-BzL" secondAttribute="top" id="cSk-dw-lXj"/>
-                            <constraint firstItem="Lzi-3k-WJn" firstAttribute="leading" secondItem="vUq-f2-BzL" secondAttribute="leading" id="cuy-ko-GM9"/>
-                            <constraint firstItem="aFY-0h-wuP" firstAttribute="width" secondItem="vUq-f2-BzL" secondAttribute="width" id="uMJ-Ne-L73"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="cqp-lA-EP6"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="My Expenses" id="7hF-Hs-GOW"/>
-                    <connections>
-                        <outlet property="mainStackView" destination="CfN-2T-4Yh" id="Ugk-bE-vnG"/>
-                        <outlet property="scrollView" destination="Lzi-3k-WJn" id="NXL-Ku-auT"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fgk-ut-DFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2475" y="33"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="DcJ-oo-iYa">
             <objects>

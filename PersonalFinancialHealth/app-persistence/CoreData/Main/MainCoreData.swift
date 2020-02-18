@@ -14,7 +14,7 @@ protocol ManagedObjectProtocol {
     associatedtype Entity
     associatedtype ManagedObject
     
-    static func toEntity(MO: ManagedObject) -> Entity
+    static func toEntity(mo: ManagedObject) -> Entity
 }
 
 protocol ManagedObjectConvertible {
@@ -29,22 +29,25 @@ protocol CoreDataInput {
 }
 
 
-enum ErrorCoreData:Error {
+enum ErrorCoreData: Error {
     case notSave
 }
 
 class MainCoreData: CoreDataInput {
     
+     // MARK: - DECLARATIONS -
     let appDelegate: AppDelegate
     private var sortDescriptor: NSSortDescriptor
     var context: NSManagedObjectContext
     
+       // MARK: - INITIALIZATIONS -
     init() {
         self.appDelegate = UIApplication.shared.delegate as! AppDelegate
         self.sortDescriptor = NSSortDescriptor(key: Constant.persistence.sortDescriptor, ascending: true)
         self.context = self.appDelegate.persistentContainer.viewContext
     }
     
+    // MARK: - DI -
     static func make() -> CoreDataInput {
         return MainCoreData.init()
     }

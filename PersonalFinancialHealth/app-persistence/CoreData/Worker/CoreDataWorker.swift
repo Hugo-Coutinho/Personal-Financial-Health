@@ -18,14 +18,17 @@ protocol CoreDataWorkerInput {
 
 class CoreDataWorker: CoreDataWorkerInput {
     
+    // MARK: - DECLARATIONS -
     private var maincoreData: CoreDataInput
     var context: NSManagedObjectContext
     
+    // MARK: - INITIALIZATIONS -
     init() {
         self.maincoreData = MainCoreData.make()
         self.context = self.maincoreData.context
     }
     
+    // MARK: - DI -
     static func make() -> CoreDataWorkerInput {
         return CoreDataWorker.init()
     }
