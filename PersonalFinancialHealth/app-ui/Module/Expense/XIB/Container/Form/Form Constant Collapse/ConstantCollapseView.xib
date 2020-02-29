@@ -25,10 +25,10 @@
                                 <constraint firstAttribute="width" secondItem="WTh-I0-mlr" secondAttribute="height" multiplier="1:1" id="iA7-RE-bx9"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expense Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="NX0-hO-b3r">
-                            <rect key="frame" x="56" y="12.5" width="131" height="15"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expense Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NX0-hO-b3r">
+                            <rect key="frame" x="56" y="10" width="131" height="25"/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="NX0-hO-b3r" secondAttribute="height" multiplier="131:15" id="9gt-9l-oFN"/>
+                                <constraint firstAttribute="width" secondItem="NX0-hO-b3r" secondAttribute="height" multiplier="131:25" id="XA2-f9-yY9"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                             <nil key="highlightedColor"/>
@@ -42,7 +42,7 @@
                         <constraint firstItem="NX0-hO-b3r" firstAttribute="leading" secondItem="WTh-I0-mlr" secondAttribute="trailing" constant="16" id="Dkk-8k-bkl"/>
                         <constraint firstAttribute="width" secondItem="ncw-Vf-CaA" secondAttribute="height" multiplier="8:1" id="Ihm-FH-C1k"/>
                         <constraint firstItem="WTh-I0-mlr" firstAttribute="leading" secondItem="ncw-Vf-CaA" secondAttribute="leading" constant="16" id="RTk-J2-FOu"/>
-                        <constraint firstItem="NX0-hO-b3r" firstAttribute="centerY" secondItem="WTh-I0-mlr" secondAttribute="centerY" id="vzD-GA-Ter"/>
+                        <constraint firstItem="NX0-hO-b3r" firstAttribute="centerY" secondItem="WTh-I0-mlr" secondAttribute="centerY" constant="2.5" id="vzD-GA-Ter"/>
                     </constraints>
                 </view>
             </subviews>

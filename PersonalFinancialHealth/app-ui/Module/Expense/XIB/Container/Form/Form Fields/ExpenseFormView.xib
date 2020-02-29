@@ -111,9 +111,9 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="expended:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="gGs-7c-XVG">
-                                    <rect key="frame" x="16" y="7.5" width="80" height="15"/>
+                                    <rect key="frame" x="16" y="5" width="80" height="25"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" secondItem="gGs-7c-XVG" secondAttribute="height" multiplier="16:3" id="lP8-cQ-APs"/>
+                                        <constraint firstAttribute="width" secondItem="gGs-7c-XVG" secondAttribute="height" multiplier="16:5" id="ThG-oa-WfD"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="highlightedColor"/>
@@ -121,7 +121,7 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="gGs-7c-XVG" firstAttribute="centerY" secondItem="OoP-jT-Qnf" secondAttribute="centerY" id="2Io-jO-JyD"/>
+                                <constraint firstItem="gGs-7c-XVG" firstAttribute="centerY" secondItem="OoP-jT-Qnf" secondAttribute="centerY" constant="2.5" id="2Io-jO-JyD"/>
                                 <constraint firstItem="gGs-7c-XVG" firstAttribute="leading" secondItem="OoP-jT-Qnf" secondAttribute="leading" constant="16" id="2oC-Rd-q5U"/>
                                 <constraint firstItem="NDH-c6-x9y" firstAttribute="centerY" secondItem="OoP-jT-Qnf" secondAttribute="centerY" id="3nf-VA-xJS"/>
                                 <constraint firstItem="Zpa-ve-8ah" firstAttribute="width" secondItem="OoP-jT-Qnf" secondAttribute="width" multiplier="0.468" id="FE9-qi-LZ7"/>

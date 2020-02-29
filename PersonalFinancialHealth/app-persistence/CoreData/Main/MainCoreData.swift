@@ -43,7 +43,7 @@ class MainCoreData: CoreDataInput {
        // MARK: - INITIALIZATIONS -
     init() {
         self.appDelegate = UIApplication.shared.delegate as! AppDelegate
-        self.sortDescriptor = NSSortDescriptor(key: Constant.persistence.sortDescriptor, ascending: true)
+        self.sortDescriptor = NSSortDescriptor(key: "", ascending: true)
         self.context = self.appDelegate.persistentContainer.viewContext
     }
     

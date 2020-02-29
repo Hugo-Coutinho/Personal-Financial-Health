@@ -12,8 +12,10 @@ import CoreData
 protocol CoreDataWorkerInput {
     var context: NSManagedObjectContext { get }
     static func make() -> CoreDataWorkerInput
+    func createEntities<T: NSManagedObject>(managedObjects: [T]) throws
     func create<T: NSManagedObject>(entity: T) throws
-    func read<T: NSManagedObject>(entityType: T.Type, sortDescriptor: [NSSortDescriptor]?) -> [T]?
+    func read<T: NSManagedObject>(manageObjectType: T.Type, sortDescriptor: [NSSortDescriptor]?) -> [T]?
+    func delete<T: NSManagedObject>(entities: [T])
 }
 
 class CoreDataWorker: CoreDataWorkerInput {
@@ -41,7 +43,17 @@ class CoreDataWorker: CoreDataWorkerInput {
         }
     }
     
-    func read<T: NSManagedObject>(entityType: T.Type, sortDescriptor: [NSSortDescriptor]? = nil) -> [T]? {
+    func createEntities<T: NSManagedObject>(managedObjects: [T]) throws {
+        do {
+            try managedObjects.forEach { (current) in
+                try self.create(entity: current)
+            }
+        } catch  {
+            throw ErrorCoreData.notSave
+        }
+    }
+    
+    func read<T: NSManagedObject>(manageObjectType: T.Type, sortDescriptor: [NSSortDescriptor]? = nil) -> [T]? {
         guard let sortDescriptor = sortDescriptor else {return nil }
         let fetchRequest:NSFetchRequest<T> = T.fetchRequest() as! NSFetchRequest<T>
         fetchRequest.sortDescriptors = sortDescriptor
@@ -52,11 +64,9 @@ class CoreDataWorker: CoreDataWorkerInput {
         }
     }
     
-    func update () {
-        
-    }
-    
-    func delete() {
-        
+    func delete<T: NSManagedObject>(entities: [T]) {
+        entities.forEach { (current) in
+            self.context.delete(current)
+        }
     }
 }

@@ -42,16 +42,11 @@ extension HomeViewController {
 // MARK: - AUX METHODS -
 extension HomeViewController {
     private func setupViewAddingGestureToHomeOptions() {
-        self.addGesture(view: self.availableFundsView)
-        self.addGesture(view: self.myExpensesView)
-        self.addGesture(view: self.netSalaryView)
-        self.addGesture(view: self.historicalView)
+        GestureRecognizer.addGesture(view: self.availableFundsView, target: self, action: #selector(self.tapToNewScreen(_:)))
+        GestureRecognizer.addGesture(view: self.myExpensesView, target: self, action: #selector(self.tapToNewScreen(_:)))
+        GestureRecognizer.addGesture(view: self.netSalaryView, target: self, action: #selector(self.tapToNewScreen(_:)))
+        GestureRecognizer.addGesture(view: self.historicalView, target: self, action: #selector(self.tapToNewScreen(_:)))
         self.addTag()
-    }
-    
-    private func addGesture(view: UIView) {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapToNewScreen(_:)))
-        view.addGestureRecognizer(tapGesture)
     }
     
     @objc private func tapToNewScreen(_ sender: Any) {

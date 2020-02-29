@@ -31,7 +31,7 @@ class HomePresenter: HomeViewToPresenter, HomePresenterInput {
         case HomeOptionsEnum.myExpensesView.getIndex():
             BaseRouter.goTo(module: BaseRouter.createModule(viewController: ExpenseViewController.self))
         case HomeOptionsEnum.netSalaryView.getIndex():
-            print("net salary")
+            BaseRouter.goTo(module: BaseRouter.createModule(viewController: SalaryViewController.self))
         case HomeOptionsEnum.historicalView.getIndex():
             print("historical")
         default:

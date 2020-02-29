@@ -12,15 +12,21 @@ import UIKit
 // MARK: - CONFIRM VIEW -
 class ConfirmView: UIView {
     
-    @IBOutlet weak var confirmView: UIView!
-    @IBOutlet weak var confirmButton: UIButton!
-    
+    // MARK: - OUTLETS -
+    @IBOutlet weak var reusableButton: ReusableButton!
     
     override func layoutSubviews() {
-        self.addConstraint(configureAspectRatio(toItem: self.confirmView, multiplierFirst: 5.0, multiplierSecond: 25.0))
-        self.confirmButton.layer.cornerRadius = self.confirmButton.layer.bounds.size.height / 2
+        GestureRecognizer.addGesture(view: self.reusableButton, target: self, action: #selector(self.saveExpense(_:)))
     }
 }
+
+// MARK: - AUX METHODS -
+extension ConfirmView {
+    @objc private func saveExpense(_ sender: Any) {
+        print("confirm view button clicked")
+    }
+}
+
 
 // MARK: - IMPLEMENTS PROTOCOL EXPENSE SUBVIEWS -
 extension ConfirmView: IExpenseSubView {
