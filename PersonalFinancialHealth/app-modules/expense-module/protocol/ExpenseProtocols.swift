@@ -24,6 +24,7 @@ protocol ExpensePresenterToView {
 protocol ExpensePresenterToInteractor {
     var presenter: ExpenseInteractorToPresenter {get set}
     static func make(presenter: ExpenseInteractorToPresenter) -> ExpensePresenterToInteractor
+    func expenseIsEmpty() -> Bool
 }
 
 // MARK: - INTERACTOR OUTPUT -

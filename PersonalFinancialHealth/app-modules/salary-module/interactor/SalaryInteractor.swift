@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: - INTERACTOR INPUT -
 protocol SalaryInteractorInput {
     static func make(presenter: SalaryInteractorToPresenter) -> SalaryPresenterToInteractor
 }
@@ -17,11 +18,11 @@ class SalaryInteractor: SalaryInteractorInput, SalaryPresenterToInteractor {
     // MARK: - PROPERTIES -
     var worker: CoreDataWorkerInput
     var presenter: SalaryInteractorToPresenter
-    let sortDescriptor: [NSSortDescriptor] = [NSSortDescriptor(key: Constant.persistence.sortDescriptorSalary, ascending: true)]
     
+    // MARK: - INITIALIZER -
     init(presenter: SalaryInteractorToPresenter) {
         self.presenter = presenter
-        self.worker  = CoreDataWorker.make()
+        self.worker  = CoreDataWorker.make(sortDescriptionKey: ConstantPersistence.sortDescriptorSalary)
     }
     
     // MARK: - DI -
@@ -30,7 +31,7 @@ class SalaryInteractor: SalaryInteractorInput, SalaryPresenterToInteractor {
     }
     
     func fetchNetSalary(net: SalaryModel) {
-        let managedObject = self.worker.read(manageObjectType: SalaryMO.self, sortDescriptor: self.sortDescriptor)
+        let managedObject = self.worker.read(manageObjectType: SalaryMO.self)
         guard let wrappedValue = managedObject?.first else { self.createNetSalary(net: net); return }
         self.updateNetSalary(net: net, wrappedValue: wrappedValue)
     }
@@ -56,9 +57,8 @@ class SalaryInteractor: SalaryInteractorInput, SalaryPresenterToInteractor {
     }
     
     func loadNetSalary() -> Double? {
-        let managedObject = self.worker.read(manageObjectType: SalaryMO.self, sortDescriptor: self.sortDescriptor)
+        let managedObject = self.worker.read(manageObjectType: SalaryMO.self)
         guard let wrappedValue = managedObject?.first else { return nil }
         return wrappedValue.net
-        
     }
 }

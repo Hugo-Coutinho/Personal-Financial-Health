@@ -17,6 +17,7 @@
 		63335C2C22F4845E00FB302F /* ExpenseContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63335C2B22F4845E00FB302F /* ExpenseContainerView.swift */; };
 		63347B2523105F2D006CA2CC /* ExpenseListContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63347B2423105F2D006CA2CC /* ExpenseListContainerView.xib */; };
 		63347B2923106011006CA2CC /* ExpenseListContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63347B2823106011006CA2CC /* ExpenseListContainerView.swift */; };
+		634060EA241DC49B0067894C /* BLFinancialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634060E9241DC49B0067894C /* BLFinancialTests.swift */; };
 		63446D3423FC21240025D20F /* Salary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63446D3323FC21240025D20F /* Salary.storyboard */; };
 		63446D3C23FC24E60025D20F /* SalaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63446D3B23FC24E60025D20F /* SalaryViewController.swift */; };
 		63446D4123FC56C70025D20F /* ReusableButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63446D4023FC56C70025D20F /* ReusableButton.xib */; };
@@ -40,6 +41,7 @@
 		6391372822CBE7CF0018B65F /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391371E22CBE7CF0018B65F /* HomeProtocols.swift */; };
 		6391372922CBE7CF0018B65F /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391372022CBE7CF0018B65F /* HomeModel.swift */; };
 		6391372B22CBE7CF0018B65F /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391372422CBE7CF0018B65F /* HomePresenter.swift */; };
+		639B9DAA2417DC5300F4DBCD /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639B9DA92417DC5300F4DBCD /* Alert.swift */; };
 		639FA05622D6337C00983497 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639FA05522D6337C00983497 /* UIViewController.swift */; };
 		63A56BB422FA6A0F008C7093 /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A56BB322FA6A0F008C7093 /* StackViewController.swift */; };
 		63B56C7522D5085E00D14C24 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B56C7422D5085E00D14C24 /* Constant.swift */; };
@@ -71,6 +73,12 @@
 		63EEEB7723FF7D5C00A2D408 /* SalaryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EEEB7623FF7D5C00A2D408 /* SalaryInteractor.swift */; };
 		63EEEB7A23FF822200A2D408 /* SalaryPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EEEB7923FF822200A2D408 /* SalaryPresenterTests.swift */; };
 		63F6C7EA22CC60A7003B7FA6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F6C7E922CC60A7003B7FA6 /* Coordinator.swift */; };
+		63FD7307240B5CAB003E0DD1 /* ConstantSalaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD7306240B5CAA003E0DD1 /* ConstantSalaryView.swift */; };
+		63FD730C240D5271003E0DD1 /* Funds.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63FD730B240D5271003E0DD1 /* Funds.storyboard */; };
+		63FD7310240D52B9003E0DD1 /* FundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD730F240D52B9003E0DD1 /* FundsViewController.swift */; };
+		63FD7315240D52F2003E0DD1 /* FundsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD7314240D52F2003E0DD1 /* FundsProtocols.swift */; };
+		63FD7317240D531D003E0DD1 /* FundsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD7316240D531D003E0DD1 /* FundsInteractor.swift */; };
+		63FD7319240D5335003E0DD1 /* FundsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD7318240D5335003E0DD1 /* FundsPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +102,7 @@
 		63335C2B22F4845E00FB302F /* ExpenseContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseContainerView.swift; sourceTree = "<group>"; };
 		63347B2423105F2D006CA2CC /* ExpenseListContainerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseListContainerView.xib; sourceTree = "<group>"; };
 		63347B2823106011006CA2CC /* ExpenseListContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseListContainerView.swift; sourceTree = "<group>"; };
+		634060E9241DC49B0067894C /* BLFinancialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLFinancialTests.swift; sourceTree = "<group>"; };
 		63446D3323FC21240025D20F /* Salary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Salary.storyboard; sourceTree = "<group>"; };
 		63446D3B23FC24E60025D20F /* SalaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryViewController.swift; sourceTree = "<group>"; };
 		63446D4023FC56C70025D20F /* ReusableButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReusableButton.xib; sourceTree = "<group>"; };
@@ -121,6 +130,7 @@
 		6391371E22CBE7CF0018B65F /* HomeProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
 		6391372022CBE7CF0018B65F /* HomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		6391372422CBE7CF0018B65F /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		639B9DA92417DC5300F4DBCD /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		639FA05522D6337C00983497 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		63A56BB322FA6A0F008C7093 /* StackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewController.swift; sourceTree = "<group>"; };
 		63B56C7422D5085E00D14C24 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -152,6 +162,12 @@
 		63EEEB7623FF7D5C00A2D408 /* SalaryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryInteractor.swift; sourceTree = "<group>"; };
 		63EEEB7923FF822200A2D408 /* SalaryPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryPresenterTests.swift; sourceTree = "<group>"; };
 		63F6C7E922CC60A7003B7FA6 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		63FD7306240B5CAA003E0DD1 /* ConstantSalaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantSalaryView.swift; sourceTree = "<group>"; };
+		63FD730B240D5271003E0DD1 /* Funds.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Funds.storyboard; sourceTree = "<group>"; };
+		63FD730F240D52B9003E0DD1 /* FundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsViewController.swift; sourceTree = "<group>"; };
+		63FD7314240D52F2003E0DD1 /* FundsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsProtocols.swift; sourceTree = "<group>"; };
+		63FD7316240D531D003E0DD1 /* FundsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsInteractor.swift; sourceTree = "<group>"; };
+		63FD7318240D5335003E0DD1 /* FundsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				6316141A23D209AF00C9E9C9 /* Main */,
+				63FD7305240B5C89003E0DD1 /* Salary */,
 				6316141B23D209EC00C9E9C9 /* Expense */,
 			);
 			path = View;
@@ -271,6 +288,14 @@
 			path = XIB;
 			sourceTree = "<group>";
 		};
+		634060E8241DC4890067894C /* BLFinancial */ = {
+			isa = PBXGroup;
+			children = (
+				634060E9241DC49B0067894C /* BLFinancialTests.swift */,
+			);
+			path = BLFinancial;
+			sourceTree = "<group>";
+		};
 		63446D3223FC20EE0025D20F /* Salary */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,6 +367,7 @@
 		63446D3E23FC55FA0025D20F /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				63FD730A240D4634003E0DD1 /* Funds */,
 				637B0BB522D6385B00FF8BD0 /* Expense */,
 				63446D3223FC20EE0025D20F /* Salary */,
 			);
@@ -462,6 +488,7 @@
 		637A8A1C23F39D8400688E6C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				634060E8241DC4890067894C /* BLFinancial */,
 				63EEEB7823FF81EC00A2D408 /* Salary */,
 				637A8A1E23F6F4E300688E6C /* Home */,
 				637A8A1D23F39D9C00688E6C /* Expense */,
@@ -587,6 +614,7 @@
 		6391371422CBE5BE0018B65F /* common-utils */ = {
 			isa = PBXGroup;
 			children = (
+				639B9DA82417DC3800F4DBCD /* Alert */,
 				6390A05223FE3E6000CF2095 /* GestureRecognizer */,
 				63A56BB222FA698E008C7093 /* StackViewController */,
 				63CE3FC822D51E3E000E90ED /* Extension */,
@@ -608,6 +636,7 @@
 		6391371622CBE6080018B65F /* app-modules */ = {
 			isa = PBXGroup;
 			children = (
+				63FD730D240D5289003E0DD1 /* funds-module */,
 				63446D3523FC24170025D20F /* salary-module */,
 				63CE3FCD22D525B1000E90ED /* expense-module */,
 				6391371722CBE77E0018B65F /* home-module */,
@@ -665,6 +694,14 @@
 				6391372422CBE7CF0018B65F /* HomePresenter.swift */,
 			);
 			path = presenter;
+			sourceTree = "<group>";
+		};
+		639B9DA82417DC3800F4DBCD /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				639B9DA92417DC5300F4DBCD /* Alert.swift */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 		63A56BB222FA698E008C7093 /* StackViewController */ = {
@@ -967,6 +1004,65 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		63FD7305240B5C89003E0DD1 /* Salary */ = {
+			isa = PBXGroup;
+			children = (
+				63FD7306240B5CAA003E0DD1 /* ConstantSalaryView.swift */,
+			);
+			path = Salary;
+			sourceTree = "<group>";
+		};
+		63FD730A240D4634003E0DD1 /* Funds */ = {
+			isa = PBXGroup;
+			children = (
+				63FD730B240D5271003E0DD1 /* Funds.storyboard */,
+			);
+			path = Funds;
+			sourceTree = "<group>";
+		};
+		63FD730D240D5289003E0DD1 /* funds-module */ = {
+			isa = PBXGroup;
+			children = (
+				63FD730E240D5298003E0DD1 /* view */,
+				63FD7311240D52CA003E0DD1 /* interactor */,
+				63FD7312240D52D1003E0DD1 /* presenter */,
+				63FD7313240D52D9003E0DD1 /* protocols */,
+			);
+			path = "funds-module";
+			sourceTree = "<group>";
+		};
+		63FD730E240D5298003E0DD1 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				63FD730F240D52B9003E0DD1 /* FundsViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		63FD7311240D52CA003E0DD1 /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				63FD7316240D531D003E0DD1 /* FundsInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		63FD7312240D52D1003E0DD1 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				63FD7318240D5335003E0DD1 /* FundsPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		63FD7313240D52D9003E0DD1 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				63FD7314240D52F2003E0DD1 /* FundsProtocols.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1062,6 +1158,7 @@
 				63335C2A22F4844000FB302F /* ExpenseContainerView.xib in Resources */,
 				63EA770F232699E600DADC63 /* ConfirmView.xib in Resources */,
 				63EA770B2326966900DADC63 /* ConstantCollapseView.xib in Resources */,
+				63FD730C240D5271003E0DD1 /* Funds.storyboard in Resources */,
 				63EA770D2326999000DADC63 /* ConstantPickerView.xib in Resources */,
 				63EA77092326962E00DADC63 /* ExpenseFormView.xib in Resources */,
 				63B6C4A42323EAE300BA16ED /* ExpenseListItemView.xib in Resources */,
@@ -1081,6 +1178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				637A8A1523F39D6400688E6C /* ExpenseTests.swift in Sources */,
+				634060EA241DC49B0067894C /* BLFinancialTests.swift in Sources */,
 				63EEEB7A23FF822200A2D408 /* SalaryPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1094,16 +1192,20 @@
 				63EEEB7523FF7C8B00A2D408 /* SalaryPresenter.swift in Sources */,
 				63B56C7722D5095500D14C24 /* MainCoreData.swift in Sources */,
 				63EA771B2326A29800DADC63 /* ConfirmView.swift in Sources */,
+				63FD7317240D531D003E0DD1 /* FundsInteractor.swift in Sources */,
 				63347B2923106011006CA2CC /* ExpenseListContainerView.swift in Sources */,
+				63FD7319240D5335003E0DD1 /* FundsPresenter.swift in Sources */,
 				63B90EB623F1DDA000D05638 /* BaseRouter.swift in Sources */,
 				6316141D23D20A1500C9E9C9 /* ConstantExpenseView.swift in Sources */,
 				6390A05123FE3BD100CF2095 /* SalaryModel.swift in Sources */,
 				63446D4323FC5DE20025D20F /* ReusableButton.swift in Sources */,
+				63FD7310240D52B9003E0DD1 /* FundsViewController.swift in Sources */,
 				6391372922CBE7CF0018B65F /* HomeModel.swift in Sources */,
 				63106E9E22FD04970059D21E /* PopupSelectView.swift in Sources */,
 				63B90EAE23F1C48700D05638 /* ExpenseProtocols.swift in Sources */,
 				63CE3FD422D54111000E90ED /* ExpenseViewController.swift in Sources */,
 				637A8A2E23F82B9B00688E6C /* Financial.xcdatamodeld in Sources */,
+				639B9DAA2417DC5300F4DBCD /* Alert.swift in Sources */,
 				637A8A2223F78FC700688E6C /* ExpenseSubItemModel.swift in Sources */,
 				63B6C49B2323E6D800BA16ED /* ExpenseListItemView.swift in Sources */,
 				6391370322CBE3470018B65F /* HomeViewController.swift in Sources */,
@@ -1112,6 +1214,7 @@
 				63106EA122FD0EAC0059D21E /* PopupEditView.swift in Sources */,
 				637A8A3023FB13B400688E6C /* ExpenseItemModel.swift in Sources */,
 				6391372822CBE7CF0018B65F /* HomeProtocols.swift in Sources */,
+				63FD7315240D52F2003E0DD1 /* FundsProtocols.swift in Sources */,
 				63446D3C23FC24E60025D20F /* SalaryViewController.swift in Sources */,
 				63CE3FCA22D51E54000E90ED /* UIStoryboard.swift in Sources */,
 				6317066322CE331A002259C2 /* UIColor.swift in Sources */,
@@ -1125,6 +1228,7 @@
 				6350AD8B22FB95D600433C70 /* PopupMenu.swift in Sources */,
 				63EEEB7323FF7C0D00A2D408 /* SalaryProtocols.swift in Sources */,
 				637B0BBC22D647A200FF8BD0 /* UIView.swift in Sources */,
+				63FD7307240B5CAB003E0DD1 /* ConstantSalaryView.swift in Sources */,
 				63335C2C22F4845E00FB302F /* ExpenseContainerView.swift in Sources */,
 				6391372B22CBE7CF0018B65F /* HomePresenter.swift in Sources */,
 				6391372522CBE7CF0018B65F /* HomeInteractor.swift in Sources */,

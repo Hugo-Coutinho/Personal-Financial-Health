@@ -11,11 +11,13 @@ import CoreData
 
 protocol CoreDataWorkerInput {
     var context: NSManagedObjectContext { get }
-    static func make() -> CoreDataWorkerInput
+    var sortDescriptor: [NSSortDescriptor] { get set }
+    static func make(sortDescriptionKey: String?) -> CoreDataWorkerInput
     func createEntities<T: NSManagedObject>(managedObjects: [T]) throws
     func create<T: NSManagedObject>(entity: T) throws
-    func read<T: NSManagedObject>(manageObjectType: T.Type, sortDescriptor: [NSSortDescriptor]?) -> [T]?
+    func read<T: NSManagedObject>(manageObjectType: T.Type) -> [T]?
     func delete<T: NSManagedObject>(entities: [T])
+    func resetAppExpenseStorage<T: NSManagedObject>(manageObjectType: T.Type)
 }
 
 class CoreDataWorker: CoreDataWorkerInput {
@@ -23,22 +25,24 @@ class CoreDataWorker: CoreDataWorkerInput {
     // MARK: - DECLARATIONS -
     private var maincoreData: CoreDataInput
     var context: NSManagedObjectContext
+    var sortDescriptor: [NSSortDescriptor]
     
     // MARK: - INITIALIZATIONS -
-    init() {
+    init(sortDescriptionKey: String?) {
         self.maincoreData = MainCoreData.make()
         self.context = self.maincoreData.context
+        self.sortDescriptor = [NSSortDescriptor(key: sortDescriptionKey, ascending: true)]
     }
     
     // MARK: - DI -
-    static func make() -> CoreDataWorkerInput {
-        return CoreDataWorker.init()
+    static func make(sortDescriptionKey: String?) -> CoreDataWorkerInput {
+        return CoreDataWorker.init(sortDescriptionKey: sortDescriptionKey)
     }
     
     func create<T: NSManagedObject>(entity: T) throws {
         do {
             try self.maincoreData.save()
-        } catch  {
+        } catch {
             throw ErrorCoreData.notSave
         }
     }
@@ -48,15 +52,14 @@ class CoreDataWorker: CoreDataWorkerInput {
             try managedObjects.forEach { (current) in
                 try self.create(entity: current)
             }
-        } catch  {
+        } catch {
             throw ErrorCoreData.notSave
         }
     }
     
-    func read<T: NSManagedObject>(manageObjectType: T.Type, sortDescriptor: [NSSortDescriptor]? = nil) -> [T]? {
-        guard let sortDescriptor = sortDescriptor else {return nil }
+    func read<T: NSManagedObject>(manageObjectType: T.Type) -> [T]? {
         let fetchRequest:NSFetchRequest<T> = T.fetchRequest() as! NSFetchRequest<T>
-        fetchRequest.sortDescriptors = sortDescriptor
+        fetchRequest.sortDescriptors = self.sortDescriptor
         do {
             return try self.maincoreData.context.fetch(fetchRequest)
         } catch {
@@ -67,6 +70,20 @@ class CoreDataWorker: CoreDataWorkerInput {
     func delete<T: NSManagedObject>(entities: [T]) {
         entities.forEach { (current) in
             self.context.delete(current)
+        }
+    }
+    
+    func resetAppExpenseStorage<T: NSManagedObject>(manageObjectType: T.Type) {
+        let fetchRequest:NSFetchRequest<T> = T.fetchRequest() as! NSFetchRequest<T>
+        fetchRequest.sortDescriptors = self.sortDescriptor
+        
+        // Create Batch Delete Request
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest as! NSFetchRequest<NSFetchRequestResult>)
+        
+        do {
+            try self.context.execute(batchDeleteRequest)
+        } catch {
+            
         }
     }
 }

@@ -35,7 +35,6 @@ extension HomeViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.configureNavigationItem(hidesBackButton: true)
-//        BaseRouter.goTo(module: BaseRouter.createModule(viewController: ExpenseViewController.self))
     }
 }
 

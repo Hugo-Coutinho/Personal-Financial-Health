@@ -49,7 +49,7 @@ extension ConstantPickerView: UIPickerViewDataSource {
 
 // MARK: - IMPLEMENTS PROTOCOL EXPENSE SUBVIEWS -
 extension ConstantPickerView: IExpenseSubView {
-    func didSelectRow() {
+    func didSelectRow(mainStack: StackViewController) {
         
     }
     

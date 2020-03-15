@@ -18,12 +18,17 @@ class SalaryViewController: UIViewController {
     
     // MARK: - VARIABLES -
     private lazy var presenter: SalaryPresenterInput = SalaryPresenter.make(view: self)
+    private let netSalaryDesign = Constant.view.salaryView.netSalaryDesign
     
     
     // MARK: - OVERRIDE LIFECYCLE -
     override func viewDidLoad() {
         super.viewDidLoad()
         GestureRecognizer.addGesture(view: self.reusableButton, target: self, action: #selector(self.saveSalary(_:)))
+    }
+    
+    override func viewWillLayoutSubviews() {
+        self.reusableButton.button.setTitle("Save", for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,10 +53,7 @@ extension SalaryViewController {
 // MARK: - PRESENTER OUTPUT -
 extension SalaryViewController: SalaryPresenterToView {
     func invalidInput() {
-        let alertController = UIAlertController(title: "Error", message: "please, input all the values to submit it.", preferredStyle: .alert)
-        let OKAction = UIAlertAction(title: "OK", style: .default)
-        alertController.addAction(OKAction)
-        self.present(alertController, animated: true, completion:nil)
+        Alert.presentOkNativeAlert(title: "Error", message: Constant.view.salaryView.alertInvalidInput, viewController: self)
     }
     
     func validInput() {
@@ -59,27 +61,22 @@ extension SalaryViewController: SalaryPresenterToView {
     }
     
     func didNotLoadNetSalary() {
-        self.netSalary.text = "R$ 00,00"
+        self.netSalary.text = self.netSalaryDesign
     }
     
     func didLoadNetSalary(net: Double) {
-        let moneyValue = "R$ 00,00"
-        let netSalaryResult = moneyValue.replace("00,00", withString: String(net))
+        let netSalaryResult = self.netSalaryDesign.replace("00,00", withString: String(net))
         
         self.netSalary.text = netSalaryResult
     }
     
     func updateNetSalaryLabel() {
-        let moneyValue = "R$ 00,00"
-        let netSalaryResult = moneyValue.replace("00,00", withString: self.textFieldNetSalary.text ?? "00.00")
+        let netSalaryResult = self.netSalaryDesign.replace("00,00", withString: self.textFieldNetSalary.text ?? "00.00")
         
         self.netSalary.text = netSalaryResult
     }
     
     func showFailToSaveSalaryAlert() {
-        let alertController = UIAlertController(title: "Error", message: "Something went wrong, please try later.", preferredStyle: .alert)
-        let OKAction = UIAlertAction(title: "OK", style: .default)
-        alertController.addAction(OKAction)
-        self.present(alertController, animated: true, completion:nil)
+        Alert.presentOkNativeAlert(title: "Error", message: Constant.view.salaryView.alertFailToSaveSalary, viewController: self)
     }
 }

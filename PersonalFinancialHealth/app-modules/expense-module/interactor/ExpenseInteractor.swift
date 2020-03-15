@@ -12,13 +12,20 @@ class ExpenseInteractor: ExpensePresenterToInteractor {
     
     // MARK: - PROPERTIES -
     var presenter: ExpenseInteractorToPresenter
+    var worker: CoreDataWorkerInput
     
     init(presenter: ExpenseInteractorToPresenter) {
         self.presenter = presenter
+        self.worker  = CoreDataWorker.make(sortDescriptionKey: ConstantPersistence.sortDescriptorExpense)
     }
     
     // MARK: - DI -
     static func make(presenter: ExpenseInteractorToPresenter) -> ExpensePresenterToInteractor {
         return ExpenseInteractor.init(presenter: presenter)
+    }
+    
+    func expenseIsEmpty() -> Bool {
+        guard let managedObject = self.worker.read(manageObjectType: ExpenseItemMO.self) else { return true }
+        return managedObject.isEmpty
     }
 }

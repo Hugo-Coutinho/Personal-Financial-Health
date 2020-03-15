@@ -239,8 +239,10 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="expenseTypeLabel" destination="jW3-lo-OkR" id="fuC-cP-xob"/>
                 <outlet property="itemMainStackView" destination="OO1-4C-pvW" id="Hhv-Qf-7uG"/>
                 <outlet property="sectionView" destination="tG6-o9-H4i" id="tgJ-kF-INB"/>
+                <outlet property="totalExpendedLabel" destination="x3s-sF-grK" id="r51-Ps-pDs"/>
             </connections>
             <point key="canvasLocation" x="126" y="320"/>
         </view>

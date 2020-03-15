@@ -14,11 +14,14 @@ class ExpenseListItemView: UIView {
     @IBOutlet weak var itemText: UILabel!
     @IBOutlet weak var itemBackgroundView: UIView!
     @IBOutlet weak var arrowImage: UIImageView!
+    @IBOutlet weak var expenseValueLabel: UILabel!
     @IBOutlet weak var subItemMainStackView: StackViewController!
     
     // MARK: - VARIABLE -
     private lazy var arrangedSubviews: [IExpenseSubView] = [
     ]
+    private lazy var worker: CoreDataWorkerInput = CoreDataWorker.make(sortDescriptionKey: nil)
+    private lazy var blFinancial: BLFinancial = BLFinancial(worker: self.worker)
     
     // MARK: - OVERRIDE -
     override func layoutSubviews() {
@@ -27,7 +30,15 @@ class ExpenseListItemView: UIView {
         self.subItemMainStackView.dataSource = self
         self.subItemMainStackView.initialize()
         self.addGestureRecognizer()
+        self.fetchTotalExpended()
     }
+    
+    // MARK: - MAKE VIEW -
+//    func setupItemView(itemView: ExpenseListItemView, itemModel: ExpenseItemModel) -> ExpenseListItemView {
+//        itemView.itemText.text = itemModel.name
+//        itemView.arrowImage.image = UIImage(named: itemModel.icon)
+//        itemView.expenseValueLabel.text = itemModel.
+//    }
 }
 
 // MARK: - STACK VIEW DATA SOURCE -
@@ -87,6 +98,20 @@ extension ExpenseListItemView {
         }) { (isAnimationComplete) in
         }
     }
+    
+    private func fetchTotalExpended() {
+        self.blFinancial.getExpenses(successExpenses: { (expenses) in
+            let totalValue = String(expenses.map({ $0.subItems.map({ $0.expended }).reduce(0, +) }).reduce(0, +))
+            let defaultText = "R$ 00,00"
+            self.expenseValueLabel.text = defaultText.replace("00,00", withString: totalValue)
+        }) { (error) in
+            self.expenseValueLabel.text = "R$ 00,00"
+        }
+    }
+    
+    private func totalItemExpended(expenses: [ExpenseItemModel]) -> Double {
+        return expenses.map({ $0.subItems.map({ $0.expended }).reduce(0, +) }).reduce(0, +)
+    }
 }
 
 // MARK: - IMPLEMENTS INTERFACE -
@@ -95,3 +120,4 @@ extension ExpenseListItemView: IExpenseContainerSubView {
      return ExpenseListItemView.instanceFromNib(nibName: Constant.view.expenseView.expenseListItem)
     }
 }
+

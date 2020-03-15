@@ -15,7 +15,7 @@ class ConstantCollapseView: UIView {
     @IBOutlet weak var ivDownArrow: UIImageView!
     @IBOutlet weak var constantCollapseView: UIView!
     
-    // MARK: - PROPERTIES -
+    // MARK: - PROPERTIES -     
     var parentData: ExpenseParentViewData?
     
     override func layoutSubviews() {
@@ -44,7 +44,7 @@ class ConstantCollapseView: UIView {
 
 // MARK: - IMPLEMENTS PROTOCOL EXPENSE SUBVIEWS -
 extension ConstantCollapseView: IExpenseSubView {
-    func didSelectRow() {
+    func didSelectRow(mainStack: StackViewController) {
         self.didSelectCollapseView()
     }
     

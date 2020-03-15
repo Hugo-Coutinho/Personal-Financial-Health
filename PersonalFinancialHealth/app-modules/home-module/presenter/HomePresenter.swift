@@ -27,7 +27,7 @@ class HomePresenter: HomeViewToPresenter, HomePresenterInput {
     func redirectToNewScreenBy(index: Int) {
         switch index {
         case HomeOptionsEnum.availableFunds.getIndex():
-            print("availableFunds")
+            BaseRouter.goTo(module: BaseRouter.createModule(viewController: FundsViewController.self))
         case HomeOptionsEnum.myExpensesView.getIndex():
             BaseRouter.goTo(module: BaseRouter.createModule(viewController: ExpenseViewController.self))
         case HomeOptionsEnum.netSalaryView.getIndex():

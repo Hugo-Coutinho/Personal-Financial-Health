@@ -9,6 +9,9 @@
 import UIKit
 
 class ReusableButton: UIView {
+    
+    @IBOutlet weak var button: UIButton!
+    
     let nibName = "ReusableButton"
 
     required init?(coder aDecoder: NSCoder) {

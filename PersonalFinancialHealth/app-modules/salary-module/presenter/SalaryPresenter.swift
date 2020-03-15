@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: - PRESENTER INPUT -
 protocol SalaryPresenterInput {
     static func make(view: SalaryPresenterToView) -> SalaryPresenterInput
     func fetchNetSalary(netInputValue: String?, usefullyInputValue: String?)

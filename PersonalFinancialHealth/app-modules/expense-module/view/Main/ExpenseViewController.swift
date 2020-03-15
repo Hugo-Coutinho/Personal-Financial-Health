@@ -11,7 +11,7 @@ import UIKit
 // MARK: - EXPENSE SUBVIEW INTERFACE -
 protocol IExpenseSubView {
     func instanceExpenseSubViewFromNib() -> UIView
-    func didSelectRow()
+    func didSelectRow(mainStack: StackViewController)
 }
 
 // MARK: - EXPENSE VIEW DATA -
@@ -52,60 +52,29 @@ extension ExpenseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureNavigationItem(hidesBackButton: false)
-        self.addingExpenseSubViews()
+        self.configureSubViews()
         self.configureMainStackView()
         self.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        // MARK: - READ COREDATA ITEMS -
-//                let worker: CoreDataWorkerInput = CoreDataWorker.make()
-//                let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
-//                let managedObject = worker.read(entityType: ExpenseItemMO.self, sortDescriptor: [sortDescriptor])
-//                managedObject?.forEach({ (current) in
-//                    ExpenseItemModel.toEntity(mo: current).subItems.forEach({ (current) in
-//                        print(current.expended)
-//                    })
-//                })
-        
-        // MARK: - SAVE COREDATA ITEMS -
-//                let model = ExpenseItemModel(icon: "icon_1", name: "item_1", expenseType: 0, subItems: [ExpenseSubItemModel(date: Date(), expended: 1.200), ExpenseSubItemModel(date: Date(), expended: 3.400)])
-//                let worker: CoreDataWorkerInput = CoreDataWorker.make()
-//                do {
-//                    try worker.create(entity: model.toManagedObject(in: worker.context))
-//                } catch  {
-//
-//                }
-
-        
-// MARK: - READ COREDATA -
-//        let worker: CoreDataWorkerInput = CoreDataWorker.make()
-//        let sortDescriptor = NSSortDescriptor(key: Constant.persistence.sortDescriptor, ascending: true)
-//        let managedObject = worker.read(entityType: ExpenseSubItemMO.self, sortDescriptor: [sortDescriptor])
-//        managedObject?.forEach({ (current) in
-//            print(ExpenseSubItemModel.toEntity(MO: current).date)
-//        })
-
-// MARK: - SAVE COREDATA -
-//        let model = ExpenseSubItemModel(date: Date(), expended: 400.0)
-//        let worker: CoreDataWorkerInput = CoreDataWorker.make()
-//        do {
-//            try worker.create(entity: model.toManagedObject(in: worker.context))
-//        } catch  {
-//
-//        }
-        super.viewWillAppear(true)
-        self.view.layoutIfNeeded()
-    }
-    
-    private func addingExpenseSubViews() {
-        let collapseView = ConstantCollapseView()
-        collapseView.parentData = ExpenseParentViewData(stack: self.mainStackView)
+    private func configureSubViews() {
         self.subViews.append(ExpenseFormView())
-        self.subViews.append(collapseView)
+        self.addingCollapseView()
         self.subViews.append(ConstantPickerView())
         self.subViews.append(ConfirmView())
+        self.addingListContainerView()
+    }
+    
+     func addingListContainerView() {
+        guard !self.subViews.contains(where: { $0 is ExpenseListContainerView }),
+            !self.presenter.expenseIsEmpty() else { return }
         self.subViews.append(ExpenseListContainerView())
+    }
+    
+    private func addingCollapseView() {
+        let collapseView = ConstantCollapseView()
+        collapseView.parentData = ExpenseParentViewData(stack: self.mainStackView)
+        self.subViews.append(collapseView)
     }
 }
 
@@ -139,7 +108,7 @@ extension ExpenseViewController: StackViewDataSource {
 extension ExpenseViewController: StackViewDelegate {
     func stackView(_ stackView: UIStackView, didSelectRowAt index: Int, view: UIView) {
         guard self.currentViewExist(index: index) else { return }
-        self.subViews[index].didSelectRow()
+        self.subViews[index].didSelectRow(mainStack: self.mainStackView)
     }
 }
 
@@ -152,5 +121,5 @@ extension ExpenseViewController {
 
 // MARK: - PRESENTER OUTPUT -
 extension ExpenseViewController: ExpensePresenterToView {
-
+    
 }

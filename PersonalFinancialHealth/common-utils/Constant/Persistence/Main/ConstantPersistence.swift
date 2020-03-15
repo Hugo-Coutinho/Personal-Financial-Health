@@ -9,7 +9,7 @@
 import Foundation
 
 enum ConstantPersistence {
-    static let sortDescriptorExpense = "expended"
+    static let sortDescriptorExpense = "name"
     static let sortDescriptorSalary = "usefully"
     static let container = "Financial"
 }

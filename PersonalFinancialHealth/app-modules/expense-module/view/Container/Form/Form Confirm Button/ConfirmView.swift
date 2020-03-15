@@ -14,24 +14,13 @@ class ConfirmView: UIView {
     
     // MARK: - OUTLETS -
     @IBOutlet weak var reusableButton: ReusableButton!
-    
-    override func layoutSubviews() {
-        GestureRecognizer.addGesture(view: self.reusableButton, target: self, action: #selector(self.saveExpense(_:)))
-    }
 }
-
-// MARK: - AUX METHODS -
-extension ConfirmView {
-    @objc private func saveExpense(_ sender: Any) {
-        print("confirm view button clicked")
-    }
-}
-
 
 // MARK: - IMPLEMENTS PROTOCOL EXPENSE SUBVIEWS -
 extension ConfirmView: IExpenseSubView {
-    func didSelectRow() {
-        
+    func didSelectRow(mainStack: StackViewController) {
+            guard let formView = mainStack.arrangedSubviews.filter({ $0 is ExpenseFormView }).first else { return }
+        (formView as! ExpenseFormView).createNewExpense()
     }
     
     func instanceExpenseSubViewFromNib() -> UIView {

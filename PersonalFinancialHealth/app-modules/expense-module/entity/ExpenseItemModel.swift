@@ -29,7 +29,7 @@ extension ExpenseItemModel: ManagedObjectConvertible {
     typealias ManagedObject = ExpenseItemMO
     
     func toManagedObject(in context: NSManagedObjectContext) -> ExpenseItemMO {
-        let worker: CoreDataWorkerInput = CoreDataWorker.make()
+        let worker: CoreDataWorkerInput = CoreDataWorker.make(sortDescriptionKey: ConstantPersistence.sortDescriptorExpense)
         let dbContext = worker.context
         let itemMO = ExpenseItemMO(context: context)
         itemMO.icon = self.icon

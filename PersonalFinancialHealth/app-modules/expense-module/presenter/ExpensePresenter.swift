@@ -10,10 +10,11 @@ import Foundation
 
 protocol ExpensePresenterInput {
     static func make(view: ExpensePresenterToView) -> ExpensePresenterInput
+    func expenseIsEmpty() -> Bool
 }
 
 class ExpensePresenter: ExpensePresenterInput, ExpenseViewToPresenter {
-    
+
     // MARK: - PROPERTIES -
     var view: ExpensePresenterToView
     var interactor: ExpensePresenterToInteractor?
@@ -27,6 +28,11 @@ class ExpensePresenter: ExpensePresenterInput, ExpenseViewToPresenter {
     // MARK: - DI -
     static func make(view: ExpensePresenterToView) -> ExpensePresenterInput {
         return ExpensePresenter.init(view: view)
+    }
+    
+    func expenseIsEmpty() -> Bool {
+        guard let interactor = self.interactor else { return true }
+        return interactor.expenseIsEmpty()
     }
 }
 
