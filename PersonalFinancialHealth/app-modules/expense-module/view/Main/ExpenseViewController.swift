@@ -59,7 +59,7 @@ extension ExpenseViewController {
     
     private func configureSubViews() {
         self.subViews.append(ExpenseFormView())
-        self.addingCollapseView()
+        self.subViews.append(ConstantCollapseView())
         self.subViews.append(ConstantPickerView())
         self.subViews.append(ConfirmView())
         self.addingListContainerView()
@@ -69,12 +69,6 @@ extension ExpenseViewController {
         guard !self.subViews.contains(where: { $0 is ExpenseListContainerView }),
             !self.presenter.expenseIsEmpty() else { return }
         self.subViews.append(ExpenseListContainerView())
-    }
-    
-    private func addingCollapseView() {
-        let collapseView = ConstantCollapseView()
-        collapseView.parentData = ExpenseParentViewData(stack: self.mainStackView)
-        self.subViews.append(collapseView)
     }
 }
 

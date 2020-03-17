@@ -20,12 +20,11 @@ class ExpenseListItemView: UIView {
     // MARK: - VARIABLE -
     private lazy var arrangedSubviews: [IExpenseSubView] = [
     ]
-    private lazy var worker: CoreDataWorkerInput = CoreDataWorker.make(sortDescriptionKey: nil)
+    private lazy var worker: CoreDataWorkerInput = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorExpense)
     private lazy var blFinancial: BLFinancial = BLFinancial(worker: self.worker)
     
     // MARK: - OVERRIDE -
     override func layoutSubviews() {
-        self.itemText.text = "GAME"
         self.subItemMainStackView.delegate = self
         self.subItemMainStackView.dataSource = self
         self.subItemMainStackView.initialize()
@@ -34,11 +33,12 @@ class ExpenseListItemView: UIView {
     }
     
     // MARK: - MAKE VIEW -
-//    func setupItemView(itemView: ExpenseListItemView, itemModel: ExpenseItemModel) -> ExpenseListItemView {
-//        itemView.itemText.text = itemModel.name
-//        itemView.arrowImage.image = UIImage(named: itemModel.icon)
-//        itemView.expenseValueLabel.text = itemModel.
-//    }
+    func setupItemView(itemModel: ExpenseItemModel) -> ExpenseListItemView {
+        self.itemText.text = itemModel.name
+        self.arrowImage.image = UIImage(named: itemModel.icon)
+        self.expenseValueLabel.text = String(itemModel.subItems.map({ $0.expended }).reduce(0, +))
+        return self
+    }
 }
 
 // MARK: - STACK VIEW DATA SOURCE -

@@ -16,7 +16,7 @@ class ConstantCollapseView: UIView {
     @IBOutlet weak var constantCollapseView: UIView!
     
     // MARK: - PROPERTIES -     
-    var parentData: ExpenseParentViewData?
+    private lazy var mainStack: StackViewController = self.getExpenseArrangedSubViews()
     
     override func layoutSubviews() {
         self.ivDownArrow.isHidden = false
@@ -55,28 +55,33 @@ extension ConstantCollapseView: IExpenseSubView {
 
 // MARK: - AUX FUNCTIONS -
 extension ConstantCollapseView {
+    private func getExpenseArrangedSubViews() -> StackViewController {
+        guard let expenseViewController = UIViewController.getVisibileViewController(viewController: ExpenseViewController.self) else { return StackViewController() }
+        return expenseViewController.mainStackView
+    }
+    
     private func didSelectCollapseView() {
         guard self.subViewPickerViewIsHidden() else { return self.hiddenPickerView(collapseView: self.getCollapseViewFromMainStackView()) }
         self.addSubviewPickerView(collapseView: self.getCollapseViewFromMainStackView())
     }
     
     private func subViewPickerViewIsHidden() -> Bool {
-        let subViewPositionTwo =  self.parentData?.stack.arrangedSubviews[expenseSubViewEnum.pickerView.getIndex()]
+        let subViewPositionTwo =  self.mainStack.arrangedSubviews[expenseSubViewEnum.pickerView.getIndex()]
         return !(subViewPositionTwo is ConstantPickerView)
     }
     
     private func getCollapseViewFromMainStackView() -> ConstantCollapseView? {
-        return self.parentData?.stack.arrangedSubviews[expenseSubViewEnum.collapse.getIndex()] as? ConstantCollapseView
+        return self.mainStack.arrangedSubviews[expenseSubViewEnum.collapse.getIndex()] as? ConstantCollapseView
     }
     
     private func addSubviewPickerView(collapseView: ConstantCollapseView?) {
         collapseView?.openConstantExpense()
-        self.parentData?.stack.addChildView(childView: ConstantPickerView.instanceFromNib(nibName: Constant.view.expenseView.expensePickerView), at: expenseSubViewEnum.pickerView.getIndex())
+        self.mainStack.addChildView(childView: ConstantPickerView.instanceFromNib(nibName: Constant.view.expenseView.expensePickerView), at: expenseSubViewEnum.pickerView.getIndex())
     }
     
     private func hiddenPickerView(collapseView: ConstantCollapseView?) {
         collapseView?.closeConstantExpense();
-        self.parentData?.stack.removeChild(at: expenseSubViewEnum.pickerView.getIndex())
+        self.mainStack.removeChild(at: expenseSubViewEnum.pickerView.getIndex())
         return
     }
 }
