@@ -32,36 +32,31 @@ class ExpenseListSectionView: UIView {
     public func setupSectionView(sectionView: ExpenseListSectionView, itemModel: [ExpenseItemModel], index: Int) -> ExpenseListSectionView {
         let defaultTotal = "R$ 00,00"
         var totalExpended: String = ""
-        totalExpended = self.getTotalExpended(sectionView: sectionView, itemModel: itemModel, index: index)
+        totalExpended = self.getTotalExpended(itemModel: itemModel, index: index)
         sectionView.totalExpendedLabel.text = defaultTotal.replace("00,00", withString: totalExpended)
-        sectionView.expenseTypeLabel.text = self.getExpenseType(sectionView: sectionView, itemModel: itemModel, index: index) == 0 ? "Constant Expense" : "Daily Expense"
+        sectionView.expenseTypeLabel.text = self.getExpenseType(itemModel: itemModel, index: index) == 0 ? "Constant Expense" : "Daily Expense"
         return sectionView
     }
 }
 
 // MARK: - AUX METHODS -
 extension ExpenseListSectionView {
-    // - pega o index da secao
-    // - é zero -> possui gasto constante -> retorna gasto constante.
-    // - é zero -> nao possui gasto constate -> retorna gasto diario.
-    // - é um -> apresenta gasto diario.
+    func getTotalExpended(itemModel: [ExpenseItemModel], index: Int) -> String {
+        guard index == 0 && itemModel.filter({ $0.expenseType == 0 }).count > 0 else { return self.getTotalDailyExpended(itemModel: itemModel) }
+        return self.getTotalConstantExpended(itemModel: itemModel)
+    }
     
-    private func getTotalExpended(sectionView: ExpenseListSectionView, itemModel: [ExpenseItemModel], index: Int) -> String {
-        if index == 0 && itemModel.filter({ $0.expenseType == 0 }).count > 0 {
-            return String(itemModel.filter({ $0.expenseType == 0 }).map({ $0.subItems.map({ $0.expended }).reduce(0, +) }).reduce(0, +))
-        } else if index == 0 && itemModel.filter({ $0.expenseType == 1 }).count > 0 {
-            return String(itemModel.filter({ $0.expenseType == 1 }).map({ $0.subItems.map({ $0.expended }).reduce(0, +) }).reduce(0, +))
-        }
+    func getTotalConstantExpended(itemModel: [ExpenseItemModel]) -> String {
+        return String(itemModel.filter({ $0.expenseType == 0 }).map({ $0.subItems.map({ $0.expended }).reduce(0, +) }).reduce(0, +))
+    }
+    
+    func getTotalDailyExpended(itemModel: [ExpenseItemModel]) -> String {
         return String(itemModel.filter({ $0.expenseType == 1 }).map({ $0.subItems.map({ $0.expended }).reduce(0, +) }).reduce(0, +))
     }
     
-    private func getExpenseType(sectionView: ExpenseListSectionView, itemModel: [ExpenseItemModel], index: Int) -> Int {
-        if index == 0 && itemModel.filter({ $0.expenseType == 0 }).count > 0 {
+    func getExpenseType(itemModel: [ExpenseItemModel], index: Int) -> Int {
+        guard index == 0 && itemModel.filter({ $0.expenseType == 0 }).count > 0 else { return 1 }
             return 0
-        } else if index == 0 && itemModel.filter({ $0.expenseType == 1 }).count > 0 {
-            return 1
-        }
-        return 1
     }
 }
 

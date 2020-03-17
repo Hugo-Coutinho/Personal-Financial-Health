@@ -34,7 +34,7 @@ enum expenseSubViewEnum: Int {
 class ExpenseViewController: UIViewController {
     
     // MARK: - OUTLETS -
-    @IBOutlet weak var mainStackView: StackViewController!
+    @IBOutlet var mainStackView: StackViewController!
     @IBOutlet weak var scrollView: UIScrollView!
     
     // MARK: - CONSTANTS -

@@ -11,14 +11,33 @@ import XCTest
 
 class ExpenseTests: XCTestCase {
     
-private lazy var worker: CoreDataWorkerInput = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorExpense)
-private lazy var blFinancial: BLFinancial = BLFinancial(worker: self.worker)
+    private var worker: CoreDataWorkerInput?
+    private var blFinancial: BLFinancial?
     
     override func setUp() {
+        self.setExpenseAsRootViewController(controller: self.instantiateExpense())
+        self.worker = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorExpense)
+        guard let worker = self.worker else { assertionFailure(); return }
+        self.blFinancial = BLFinancial(worker: worker)
     }
     
     override func tearDown() {
-        self.blFinancial.resetAppExpenseStorage()
+        self.blFinancial?.resetAppExpenseStorage()
+    }
+}
+
+// MARK: - HELPER FUNCTIONS -
+extension ExpenseTests {
+    private func setExpenseAsRootViewController(controller: ExpenseViewController) {
+        let nav = UINavigationController(rootViewController: controller)
+        UIApplication.shared.keyWindow?.rootViewController = nav
+    }
+    
+    private func instantiateExpense() -> ExpenseViewController {
+        let storyboard = UIStoryboard(name: "Expense", bundle: nil)
+        let expenseView = storyboard.instantiateViewController(withIdentifier: "ExpenseViewController") as! ExpenseViewController
+        expenseView.mainStackView = StackViewController()
+        return expenseView
     }
 }
 
@@ -90,13 +109,15 @@ extension ExpenseTests {
         // 1. GIVEN
         let formViewCreateExpense = ExpenseFormView.instanceFromNib(nibName: Constant.view.expenseView.expenseFormView) as? ExpenseFormView
         let formView = ExpenseFormView.instanceFromNib(nibName: Constant.view.expenseView.expenseFormView) as? ExpenseFormView
+        let name = "fla maior do mundo"
+        let expended = "100.0"
         // 2. WHEN
-        formViewCreateExpense?.nameTextField.text = "fla maior do mundo"
-        formViewCreateExpense?.expendedTextField.text = "100.0"
+        formViewCreateExpense?.nameTextField.text = name
+        formViewCreateExpense?.expendedTextField.text = expended
         formViewCreateExpense?.createNewExpense()
-        
-        formView?.nameTextField.text = "fla maior do mundo"
-        formView?.expendedTextField.text = "100.0"
+
+        formView?.nameTextField.text = name
+        formView?.expendedTextField.text = expended
         let result = formView?.expenseAlreadyExist()
         // 3. THEN
         assert(result == true)
@@ -132,8 +153,8 @@ extension ExpenseTests {
         let containerView = ExpenseListContainerView.instanceFromNib(nibName: Constant.view.expenseView.expenseListcontainer) as? ExpenseListContainerView
         // 2. WHEN
         do {
-            try self.worker.create(entity: ExpenseItemModel(icon: "", name: "fla", expenseType: 0, subItems: [ExpenseSubItemModel(date: Date(), expended: 2.0)]).toManagedObject(in: self.worker.context))
-            try self.worker.create(entity: ExpenseItemModel(icon: "", name: "fla", expenseType: 1, subItems: [ExpenseSubItemModel(date: Date(), expended: 2.0)]).toManagedObject(in: self.worker.context))
+            try self.worker?.create(entity: ExpenseItemModel(icon: "", name: "fla", expenseType: 0, subItems: [ExpenseSubItemModel(date: Date(), expended: 2.0)]).toManagedObject(in: self.worker!.context))
+            try self.worker?.create(entity: ExpenseItemModel(icon: "", name: "fla", expenseType: 1, subItems: [ExpenseSubItemModel(date: Date(), expended: 2.0)]).toManagedObject(in: self.worker!.context))
             containerView?.setupActiveExpenses()
         } catch {
             assertionFailure()
@@ -148,7 +169,7 @@ extension ExpenseTests {
         let containerView = ExpenseListContainerView.instanceFromNib(nibName: Constant.view.expenseView.expenseListcontainer) as? ExpenseListContainerView
         // 2. WHEN
         do {
-            try self.worker.create(entity: ExpenseItemModel(icon: "", name: "fla", expenseType: 1, subItems: [ExpenseSubItemModel(date: Date(), expended: 2.0)]).toManagedObject(in: self.worker.context))
+            try self.worker?.create(entity: ExpenseItemModel(icon: "", name: "fla", expenseType: 1, subItems: [ExpenseSubItemModel(date: Date(), expended: 2.0)]).toManagedObject(in: self.worker!.context))
             containerView?.setupActiveExpenses()
         } catch {
             assertionFailure()
@@ -156,4 +177,75 @@ extension ExpenseTests {
         // 3. THEN
         assert(containerView?.arrangedSubviews.count == 1)
     }
+    
+    // MARK: - EXPENSE SECTION VIEW -
+    func testGetExpenseType_shouldReturnZero() {
+        // 1. GIVEN
+        let sectionView = ExpenseListSectionView.instanceFromNib(nibName: Constant.view.expenseView.expenseSection) as? ExpenseListSectionView
+        let itemModel = [ExpenseItemModel(icon: "", name: "", expenseType: 0, subItems: [ExpenseSubItemModel(date: Date(), expended: 0.0)])]
+        // 2. WHEN
+        let result = sectionView?.getExpenseType(itemModel: itemModel, index: 0)
+        // 3. THEN
+        assert(result == 0)
+    }
+    
+    // MARK: - EXPENSE SECTION VIEW -
+    func testGetExpenseType_shouldReturnOne() {
+        // 1. GIVEN
+        let sectionView = ExpenseListSectionView.instanceFromNib(nibName: Constant.view.expenseView.expenseSection) as? ExpenseListSectionView
+        let itemModel = [ExpenseItemModel(icon: "", name: "", expenseType: 1, subItems: [ExpenseSubItemModel(date: Date(), expended: 0.0)])]
+        // 2. WHEN
+        let result = sectionView?.getExpenseType(itemModel: itemModel, index: 1)
+        // 3. THEN
+        assert(result == 1)
+    }
+    
+    // MARK: - EXPENSE SECTION VIEW -
+    func testGetTotalDailyExpended_shouldReturnStringThree() {
+        // 1. GIVEN
+        let sectionView = ExpenseListSectionView.instanceFromNib(nibName: Constant.view.expenseView.expenseSection) as? ExpenseListSectionView
+        let itemModel = [ExpenseItemModel(icon: "", name: "", expenseType: 1, subItems: [ExpenseSubItemModel(date: Date(), expended: 3.0)])]
+        // 2. WHEN
+        let result = sectionView?.getTotalDailyExpended(itemModel: itemModel)
+        // 3. THEN
+        guard let finalResult = result else { assertionFailure(); return }
+        assert(finalResult == "3.0")
+    }
+    
+    // MARK: - EXPENSE SECTION VIEW -
+    func testGetTotalConstantExpended_shouldReturnStringFour() {
+        // 1. GIVEN
+        let sectionView = ExpenseListSectionView.instanceFromNib(nibName: Constant.view.expenseView.expenseSection) as? ExpenseListSectionView
+        let itemModel = [ExpenseItemModel(icon: "", name: "", expenseType: 0, subItems: [ExpenseSubItemModel(date: Date(), expended: 4.0)])]
+        // 2. WHEN
+        let result = sectionView?.getTotalConstantExpended(itemModel: itemModel)
+        // 3. THEN
+        guard let finalResult = result else { assertionFailure(); return }
+        assert(finalResult == "4.0")
+    }
+    
+    // MARK: - EXPENSE SECTION VIEW -
+    func testGetTotalExpendedToConstantExpense_shouldReturnStringTen() {
+        // 1. GIVEN
+        let sectionView = ExpenseListSectionView.instanceFromNib(nibName: Constant.view.expenseView.expenseSection) as? ExpenseListSectionView
+        let itemModel = [ExpenseItemModel(icon: "", name: "", expenseType: 0, subItems: [ExpenseSubItemModel(date: Date(), expended: 10.0)])]
+        // 2. WHEN
+        let result = sectionView?.getTotalExpended(itemModel: itemModel, index: 0)
+        // 3. THEN
+        guard let finalResult = result else { assertionFailure(); return }
+        assert(finalResult == "10.0")
+    }
+    
+    // MARK: - EXPENSE SECTION VIEW -
+    func testGetTotalExpendedToDailyExpense_shouldReturnStringTen() {
+        // 1. GIVEN
+        let sectionView = ExpenseListSectionView.instanceFromNib(nibName: Constant.view.expenseView.expenseSection) as? ExpenseListSectionView
+        let itemModel = [ExpenseItemModel(icon: "", name: "", expenseType: 1, subItems: [ExpenseSubItemModel(date: Date(), expended: 10.0)])]
+        // 2. WHEN
+        let result = sectionView?.getTotalExpended(itemModel: itemModel, index: 1)
+        // 3. THEN
+        guard let finalResult = result else { assertionFailure(); return }
+        assert(finalResult == "10.0")
+    }
 }
+
