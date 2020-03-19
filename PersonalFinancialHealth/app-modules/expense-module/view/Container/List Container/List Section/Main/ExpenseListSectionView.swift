@@ -43,12 +43,12 @@ class ExpenseListSectionView: UIView {
 
 // MARK: - STACKVIEW DATASOURCE -
 extension ExpenseListSectionView: StackViewDataSource {
-    func stackView(_ stackView: UIStackView, numberOfRowsInSection section: Int) -> Int {
-        return self.arrangedItemModels.count
-    }
-    
     func stackView(_ stackView: UIStackView, customSpacingForRow index: Int) -> Int {
         return 0
+    }
+    
+    func stackView(_ stackView: UIStackView, numberOfRowsInSection section: Int) -> Int {
+        return self.arrangedItemModels.count
     }
     
     func stackView(_ stackView: UIStackView, viewForRowAt index: Int) -> UIView {
@@ -59,7 +59,7 @@ extension ExpenseListSectionView: StackViewDataSource {
 // MARK: - STACKVIEW AUX FUNCTIONS -
 extension ExpenseListSectionView {
     private func getViewForRow(index: Int) -> UIView {
-        guard self.currentViewExist(index: index) else { return UIView() }
+        guard self.currentViewExist(index: index) else { return self.instantiateListItem() }
         let itemView = self.instantiateListItem()
         let itemViewPrepared = itemView.setupItemView(itemModel: self.arrangedItemModels[index])
         return itemViewPrepared
@@ -87,8 +87,8 @@ extension ExpenseListSectionView {
     }
     
     private func updateArrangedItems(itemModel: [ExpenseItemModel], index: Int) {
-        let arrangedSubItemNames = self.arrangedItemModels.map({ $0.name })
-        let newItemsToInsert = itemModel.filter({ arrangedSubItemNames.contains($0.name) == false })
+        let arrangedItemNames = self.arrangedItemModels.map({ $0.name })
+        let newItemsToInsert = itemModel.filter({ arrangedItemNames.contains($0.name) == false })
         guard newItemsToInsert.count > 0 else { return }
         newItemsToInsert.filter({ $0.expenseType == index }).forEach { (currentItem) in
             self.arrangedItemModels.append(currentItem)
@@ -113,20 +113,20 @@ extension ExpenseListSectionView {
     }
     
     @objc private func didSelectSection() {
-        guard self.subViewItemsIsHidden() else { self.removeSubItems(); return }
-        self.showSubItems()
+        guard self.itemViewIsHidden() else { self.removeItemView(); return }
+        self.showItemView()
     }
     
-    private func subViewItemsIsHidden() -> Bool {
+    private func itemViewIsHidden() -> Bool {
         return self.itemMainStackView.arrangedSubviews.isEmpty
     }
     
-    private func showSubItems() {
+    private func showItemView() {
         self.itemMainStackView.isHidden = false
         self.itemMainStackView.reloadStackView()
     }
     
-    private func removeSubItems() {
+    private func removeItemView() {
         self.itemMainStackView.isHidden = true
         self.itemMainStackView.removeAll()
     }

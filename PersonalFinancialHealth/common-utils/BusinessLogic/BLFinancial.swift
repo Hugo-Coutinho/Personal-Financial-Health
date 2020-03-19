@@ -53,7 +53,16 @@ extension BLFinancial {
     }
     
     func resetAppExpenseStorage() {
-        self.worker.resetAppExpenseStorage(manageObjectType: ExpenseItemMO.self)
+        self.worker.resetAppStorage(manageObjectType: ExpenseItemMO.self)
+        
+    }
+    
+    func resetAppSalaryStorage() {
+        self.worker.resetAppStorage(manageObjectType: SalaryMO.self)
+    }
+    
+    func resetAppHistoricalStorage() {
+        self.worker.resetAppStorage(manageObjectType: HistoricalMO.self)
     }
 }
 

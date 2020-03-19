@@ -17,7 +17,7 @@ protocol CoreDataWorkerInput {
     func create<T: NSManagedObject>(entity: T) throws
     func read<T: NSManagedObject>(manageObjectType: T.Type) -> [T]?
     func delete<T: NSManagedObject>(entities: [T])
-    func resetAppExpenseStorage<T: NSManagedObject>(manageObjectType: T.Type)
+    func resetAppStorage<T: NSManagedObject>(manageObjectType: T.Type)
 }
 
 class CoreDataWorker: CoreDataWorkerInput {
@@ -73,7 +73,7 @@ class CoreDataWorker: CoreDataWorkerInput {
         }
     }
     
-    func resetAppExpenseStorage<T: NSManagedObject>(manageObjectType: T.Type) {
+    func resetAppStorage<T: NSManagedObject>(manageObjectType: T.Type) {
         let fetchRequest:NSFetchRequest<T> = T.fetchRequest() as! NSFetchRequest<T>
         fetchRequest.sortDescriptors = self.sortDescriptor
         

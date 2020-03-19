@@ -52,13 +52,9 @@ extension ExpenseListContainerView: StackViewDataSource {
 extension ExpenseListContainerView {
     func setupActiveExpenses() {
         self.blFinancial.getExpenses(successExpenses: { (expenses) in
-            if !expenses.filter({ $0.expenseType == 0 }).isEmpty {
-                self.arrangedSubviews.append(ExpenseListSectionView())
-            }
-            
-            if !expenses.filter({ $0.expenseType == 1 }).isEmpty {
-                self.arrangedSubviews.append(ExpenseListSectionView())
-            }
+            guard expenses.count > 0 else { return }
+            self.arrangedSubviews.append(ExpenseListSectionView())
+            self.arrangedSubviews.append(ExpenseListSectionView())
         }) { (error) in }
     }
 }

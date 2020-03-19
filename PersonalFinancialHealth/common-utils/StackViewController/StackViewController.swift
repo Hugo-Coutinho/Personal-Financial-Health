@@ -84,7 +84,7 @@ extension StackViewController {
         childView.tag = rowIndex
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.selectView))
         childView.addGestureRecognizer(tapGesture)
-        self.addArrangedSubview(childView)
+        self.addChildView(childView: childView, at: rowIndex)
     }
 }
 

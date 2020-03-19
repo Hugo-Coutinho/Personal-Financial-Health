@@ -28,8 +28,7 @@ class ExpenseListItemView: UIView {
         self.subItemMainStackView.delegate = self
         self.subItemMainStackView.dataSource = self
         self.subItemMainStackView.initialize()
-        self.addGestureRecognizer()
-        self.fetchTotalExpended()
+//        self.addGestureRecognizer()
     }
     
     // MARK: - MAKE VIEW -
@@ -48,7 +47,8 @@ extension ExpenseListItemView: StackViewDataSource {
     }
     
     func stackView(_ stackView: UIStackView, numberOfRowsInSection section: Int) -> Int {
-        return self.arrangedSubviews.count
+//        return self.arrangedSubviews.count
+        return 0
     }
     
     func stackView(_ stackView: UIStackView, viewForRowAt index: Int) -> UIView {
@@ -96,16 +96,6 @@ extension ExpenseListItemView {
         UIView.animate(withDuration: 0.2, delay: 0.15, options: .curveEaseIn, animations: { () -> Void in
             self.arrowImage.transform = CGAffineTransform(rotationAngle: CGFloat(CGFloat(Double.pi * 5)))
         }) { (isAnimationComplete) in
-        }
-    }
-    
-    private func fetchTotalExpended() {
-        self.blFinancial.getExpenses(successExpenses: { (expenses) in
-            let totalValue = String(expenses.map({ $0.subItems.map({ $0.expended }).reduce(0, +) }).reduce(0, +))
-            let defaultText = "R$ 00,00"
-            self.expenseValueLabel.text = defaultText.replace("00,00", withString: totalValue)
-        }) { (error) in
-            self.expenseValueLabel.text = "R$ 00,00"
         }
     }
     
