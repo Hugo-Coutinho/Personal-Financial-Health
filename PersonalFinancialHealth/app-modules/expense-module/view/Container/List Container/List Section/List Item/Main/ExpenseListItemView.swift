@@ -18,8 +18,9 @@ class ExpenseListItemView: UIView {
     @IBOutlet weak var subItemMainStackView: StackViewController!
     
     // MARK: - VARIABLE -
-    private lazy var arrangedSubviews: [IExpenseSubView] = [
-    ]
+    private var item: ExpenseItemModel?
+//    private lazy var arrangedItens: [ExpenseItemModel] = [
+//    ]
     private lazy var worker: CoreDataWorkerInput = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorExpense)
     private lazy var blFinancial: BLFinancial = BLFinancial(worker: self.worker)
     
@@ -28,7 +29,11 @@ class ExpenseListItemView: UIView {
         self.subItemMainStackView.delegate = self
         self.subItemMainStackView.dataSource = self
         self.subItemMainStackView.initialize()
-//        self.addGestureRecognizer()
+        self.addGestureRecognizer()
+    }
+    
+    override func awakeFromNib() {
+        self.subItemMainStackView.isHidden = true
     }
     
     // MARK: - MAKE VIEW -
@@ -36,6 +41,7 @@ class ExpenseListItemView: UIView {
         self.itemText.text = itemModel.name
         self.arrowImage.image = UIImage(named: itemModel.icon)
         self.expenseValueLabel.text = String(itemModel.subItems.map({ $0.expended }).reduce(0, +))
+        self.updateArrangedSubItems(itemModel: itemModel)
         return self
     }
 }
@@ -47,12 +53,11 @@ extension ExpenseListItemView: StackViewDataSource {
     }
     
     func stackView(_ stackView: UIStackView, numberOfRowsInSection section: Int) -> Int {
-//        return self.arrangedSubviews.count
-        return 0
+        return self.item?.subItems.count ?? 0
     }
     
     func stackView(_ stackView: UIStackView, viewForRowAt index: Int) -> UIView {
-        return ExpenseListSubItemView.instanceFromNib(nibName: Constant.view.expenseView.expenseListSubitem)
+        return self.getViewForRow(indexSubItem: index)
     }
 }
 
@@ -60,6 +65,33 @@ extension ExpenseListItemView: StackViewDataSource {
 extension ExpenseListItemView: StackViewDelegate {
 
 }
+
+// MARK: - STACKVIEW AUX FUNCTIONS -
+extension ExpenseListItemView {
+    private func getViewForRow(indexSubItem: Int) -> UIView {
+        guard let item = self.item,
+            self.currentViewExist(index: indexSubItem) else { return self.instantiateSubItem() }
+        let subItemView = self.instantiateSubItem()
+        let subItemViewPrepared = subItemView.setupSubItemView(date: item.subItems[indexSubItem].date, expense: item.subItems[indexSubItem].expended)
+        return subItemViewPrepared
+    }
+}
+
+// MARK: - MICRO FUNCTIONS ANIMATION -
+extension ExpenseListItemView {
+    private func currentViewExist(index: Int) -> Bool {
+        return self.item?.subItems.count ?? 0 >= index
+    }
+    
+    private func instantiateSubItem() -> ExpenseListSubItemView {
+        return ExpenseListSubItemView.instanceFromNib(nibName: Constant.view.expenseView.expenseListSubitem) as! ExpenseListSubItemView
+    }
+    
+    private func updateArrangedSubItems(itemModel: ExpenseItemModel) {
+        self.item = itemModel
+    }
+}
+
 
 // MARK: - MICRO FUNCTIONS -
 extension ExpenseListItemView {
@@ -80,8 +112,7 @@ extension ExpenseListItemView {
     
     private func showSubItems() {
         self.subItemMainStackView.isHidden = false
-        self.subItemMainStackView.addChildView(childView: ExpenseListItemView.instanceFromNib(nibName: Constant.view.expenseView.expenseListSubitem), at: 0)
-        self.subItemMainStackView.addChildView(childView: ExpenseListItemView.instanceFromNib(nibName: Constant.view.expenseView.expenseListSubitem), at: 1)
+        self.subItemMainStackView.reloadStackView()
     }
     
     private func removeSubItems() {

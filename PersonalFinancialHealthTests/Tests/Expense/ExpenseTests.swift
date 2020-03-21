@@ -148,13 +148,23 @@ extension ExpenseTests {
     }
     
     // MARK: - EXPENSE LIST CONTAINER VIEW -
-    func testSetupActiveExpenses_ShouldReturnArrangedSubviewsCountTwo() {
+    func testSetupActiveExpenses_ShouldReturnArrangedSubviewsCountZero() {
         // 1. GIVEN
         let containerView = ExpenseListContainerView.instanceFromNib(nibName: Constant.view.expenseView.expenseListcontainer) as? ExpenseListContainerView
         // 2. WHEN
+        containerView?.setupActiveExpenses()
+        // 3. THEN
+        assert(containerView?.arrangedSubviews.count == 0)
+    }
+    
+    // MARK: - EXPENSE LIST CONTAINER VIEW -
+    func testSetupActiveExpenses_ShouldReturnArrangedSubviewsCountTwo() {
+        // 1. GIVEN
+        let containerView = ExpenseListContainerView.instanceFromNib(nibName: Constant.view.expenseView.expenseListcontainer) as? ExpenseListContainerView
+        let item = ExpenseItemModel(icon: "", name: "fla", expenseType: 1, subItems: [ExpenseSubItemModel(date: Date(), expended: 2.0)]).toManagedObject(in: self.worker!.context)
+        // 2. WHEN
         do {
-            try self.worker?.create(entity: ExpenseItemModel(icon: "", name: "fla", expenseType: 0, subItems: [ExpenseSubItemModel(date: Date(), expended: 2.0)]).toManagedObject(in: self.worker!.context))
-            try self.worker?.create(entity: ExpenseItemModel(icon: "", name: "fla", expenseType: 1, subItems: [ExpenseSubItemModel(date: Date(), expended: 2.0)]).toManagedObject(in: self.worker!.context))
+            try self.worker?.create(entity: item)
             containerView?.setupActiveExpenses()
         } catch {
             assertionFailure()
@@ -163,20 +173,36 @@ extension ExpenseTests {
         assert(containerView?.arrangedSubviews.count == 2)
     }
     
-    // MARK: - EXPENSE LIST CONTAINER VIEW -
-    func testSetupActiveExpenses_ShouldReturnArrangedSubviewsCountOne() {
-        // 1. GIVEN
-        let containerView = ExpenseListContainerView.instanceFromNib(nibName: Constant.view.expenseView.expenseListcontainer) as? ExpenseListContainerView
-        // 2. WHEN
-        do {
-            try self.worker?.create(entity: ExpenseItemModel(icon: "", name: "fla", expenseType: 1, subItems: [ExpenseSubItemModel(date: Date(), expended: 2.0)]).toManagedObject(in: self.worker!.context))
-            containerView?.setupActiveExpenses()
-        } catch {
-            assertionFailure()
-        }
-        // 3. THEN
-        assert(containerView?.arrangedSubviews.count == 1)
-    }
+//    // MARK: - EXPENSE LIST CONTAINER VIEW -
+//    func testSetupActiveExpenses_ShouldReturnArrangedSubviewsCountTwo() {
+//        // 1. GIVEN
+//        let containerView = ExpenseListContainerView.instanceFromNib(nibName: Constant.view.expenseView.expenseListcontainer) as? ExpenseListContainerView
+//        // 2. WHEN
+//        do {
+//            try self.worker?.create(entity: ExpenseItemModel(icon: "", name: "fla", expenseType: 0, subItems: [ExpenseSubItemModel(date: Date(), expended: 2.0)]).toManagedObject(in: self.worker!.context))
+//            try self.worker?.create(entity: ExpenseItemModel(icon: "", name: "fla", expenseType: 1, subItems: [ExpenseSubItemModel(date: Date(), expended: 2.0)]).toManagedObject(in: self.worker!.context))
+//            containerView?.setupActiveExpenses()
+//        } catch {
+//            assertionFailure()
+//        }
+//        // 3. THEN
+//        assert(containerView?.arrangedSubviews.count == 2)
+//    }
+//
+//    // MARK: - EXPENSE LIST CONTAINER VIEW -
+//    func testSetupActiveExpenses_ShouldReturnArrangedSubviewsCountOne() {
+//        // 1. GIVEN
+//        let containerView = ExpenseListContainerView.instanceFromNib(nibName: Constant.view.expenseView.expenseListcontainer) as? ExpenseListContainerView
+//        // 2. WHEN
+//        do {
+//            try self.worker?.create(entity: ExpenseItemModel(icon: "", name: "fla", expenseType: 1, subItems: [ExpenseSubItemModel(date: Date(), expended: 2.0)]).toManagedObject(in: self.worker!.context))
+//            containerView?.setupActiveExpenses()
+//        } catch {
+//            assertionFailure()
+//        }
+//        // 3. THEN
+//        assert(containerView?.arrangedSubviews.count == 1)
+//    }
     
     // MARK: - EXPENSE SECTION VIEW -
     func testGetExpenseType_shouldReturnZero() {
@@ -246,6 +272,30 @@ extension ExpenseTests {
         // 3. THEN
         guard let finalResult = result else { assertionFailure(); return }
         assert(finalResult == "10.0")
+    }
+
+    // MARK: - EXPENSE SECTION VIEW -
+    func testGetExpenseTypeValue_shouldAssertConstantString() {
+        // 1. GIVEN
+        let sectionIndex = 0
+        let sectionView = ExpenseListSectionView.instanceFromNib(nibName: Constant.view.expenseView.expenseSection) as? ExpenseListSectionView
+        // 2. WHEN
+        let result = sectionView?.getExpenseTypeValue(sectionIndex: sectionIndex)
+        // 3. THEN
+        guard let finalResult = result else { assertionFailure(); return }
+        assert(finalResult == "Constant Expense")
+    }
+    
+    // MARK: - EXPENSE SECTION VIEW -
+    func testGetExpenseTypeValue_shouldAssertDailyString() {
+        // 1. GIVEN
+        let sectionIndex = 1
+        let sectionView = ExpenseListSectionView.instanceFromNib(nibName: Constant.view.expenseView.expenseSection) as? ExpenseListSectionView
+        // 2. WHEN
+        let result = sectionView?.getExpenseTypeValue(sectionIndex: sectionIndex)
+        // 3. THEN
+        guard let finalResult = result else { assertionFailure(); return }
+        assert(finalResult == "Daily Expense")
     }
 }
 

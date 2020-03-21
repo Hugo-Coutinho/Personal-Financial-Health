@@ -127,6 +127,10 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="7gA-iY-fVA"/>
+            <connections>
+                <outlet property="dateLabel" destination="UTZ-xT-HzM" id="miu-Rc-2ki"/>
+                <outlet property="expendedLabel" destination="NtY-4U-k23" id="wk2-Rb-ohy"/>
+            </connections>
             <point key="canvasLocation" x="124.8" y="449.77511244377814"/>
         </view>
     </objects>

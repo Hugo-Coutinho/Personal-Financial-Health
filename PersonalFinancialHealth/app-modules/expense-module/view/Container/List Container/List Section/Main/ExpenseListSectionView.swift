@@ -35,7 +35,7 @@ class ExpenseListSectionView: UIView {
         var totalExpended: String = ""
         totalExpended = self.getTotalExpended(itemModel: itemModel, index: index)
         sectionView.totalExpendedLabel.text = defaultTotal.replace("00,00", withString: totalExpended)
-        sectionView.expenseTypeLabel.text = self.getExpenseType(itemModel: itemModel, index: index) == 0 ? "Constant Expense" : "Daily Expense"
+        sectionView.expenseTypeLabel.text = self.getExpenseTypeValue(sectionIndex: index)
         self.updateArrangedItems(itemModel: itemModel, index: index)
         return sectionView
     }
@@ -69,8 +69,7 @@ extension ExpenseListSectionView {
 // MARK: - AUX METHODS -
 extension ExpenseListSectionView {
     func getTotalExpended(itemModel: [ExpenseItemModel], index: Int) -> String {
-        guard index == 0 && itemModel.filter({ $0.expenseType == 0 }).count > 0 else { return self.getTotalDailyExpended(itemModel: itemModel) }
-        return self.getTotalConstantExpended(itemModel: itemModel)
+        return index == 0 ? self.getTotalConstantExpended(itemModel: itemModel) : self.getTotalDailyExpended(itemModel: itemModel)
     }
     
     func getTotalConstantExpended(itemModel: [ExpenseItemModel]) -> String {
@@ -84,6 +83,10 @@ extension ExpenseListSectionView {
     func getExpenseType(itemModel: [ExpenseItemModel], index: Int) -> Int {
         guard index == 0 && itemModel.filter({ $0.expenseType == 0 }).count > 0 else { return 1 }
         return 0
+    }
+    
+    func getExpenseTypeValue(sectionIndex: Int) -> String {
+        return sectionIndex == 0 ? "Constant Expense" : "Daily Expense"
     }
     
     private func updateArrangedItems(itemModel: [ExpenseItemModel], index: Int) {
