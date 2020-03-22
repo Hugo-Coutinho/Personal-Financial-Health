@@ -214,7 +214,7 @@
                                     </constraints>
                                     <viewLayoutGuide key="safeArea" id="n7x-9N-e5j"/>
                                 </view>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OO1-4C-pvW" customClass="StackViewController" customModule="PersonalFinancialHealth" customModuleProvider="target">
+                                <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OO1-4C-pvW" customClass="StackViewController" customModule="PersonalFinancialHealth" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="64" width="272" height="50"/>
                                 </stackView>
                             </subviews>

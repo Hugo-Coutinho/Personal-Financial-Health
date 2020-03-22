@@ -16,8 +16,8 @@ extension Date {
         let dateFormatterPrint = DateFormatter()
         dateFormatterPrint.dateFormat = "MMM dd,yyyy"
         
-        let date: Date? = dateFormatterGet.date(from: "2018-02-01T19:10:04+00:00")
-        print("Date",dateFormatterPrint.string(from: date!)) // Feb 01,2018
-        return dateFormatterPrint.string(from: date!);
+        let date: Date = self
+        print("Date",dateFormatterPrint.string(from: date))
+        return dateFormatterPrint.string(from: date);
     }
 }

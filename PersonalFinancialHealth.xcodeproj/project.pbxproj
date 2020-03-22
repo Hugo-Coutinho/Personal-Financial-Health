@@ -258,13 +258,13 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		63347B2323105ED8006CA2CC /* List Section */ = {
+		63347B2323105ED8006CA2CC /* ListSection */ = {
 			isa = PBXGroup;
 			children = (
 				63B6C49E2323E9C300BA16ED /* Main */,
-				63B6C4A12323EAA000BA16ED /* List Item */,
+				63B6C4A12323EAA000BA16ED /* ListItem */,
 			);
-			path = "List Section";
+			path = ListSection;
 			sourceTree = "<group>";
 		};
 		63347B2623105FCB006CA2CC /* Main */ = {
@@ -391,7 +391,7 @@
 			isa = PBXGroup;
 			children = (
 				6350AD7E22FB8B6700433C70 /* Main */,
-				6350AD8022FB8B7D00433C70 /* List Container */,
+				6350AD8022FB8B7D00433C70 /* ListContainer */,
 				6350AD7F22FB8B7700433C70 /* Form */,
 			);
 			path = Container;
@@ -408,21 +408,21 @@
 		6350AD7F22FB8B7700433C70 /* Form */ = {
 			isa = PBXGroup;
 			children = (
-				63EA77032326957800DADC63 /* Form Fields */,
-				63EA77042326958A00DADC63 /* Form Constant Collapse */,
-				63EA7706232695CE00DADC63 /* Form Constant PickerView */,
-				63EA7707232695F000DADC63 /* Form Confirm */,
+				63EA77032326957800DADC63 /* FormFields */,
+				63EA77042326958A00DADC63 /* FormConstantCollapse */,
+				63EA7706232695CE00DADC63 /* FormConstantPickerView */,
+				63EA7707232695F000DADC63 /* FormConfirm */,
 			);
 			path = Form;
 			sourceTree = "<group>";
 		};
-		6350AD8022FB8B7D00433C70 /* List Container */ = {
+		6350AD8022FB8B7D00433C70 /* ListContainer */ = {
 			isa = PBXGroup;
 			children = (
 				63347B2223105E9B006CA2CC /* Main */,
-				63347B2323105ED8006CA2CC /* List Section */,
+				63347B2323105ED8006CA2CC /* ListSection */,
 			);
-			path = "List Container";
+			path = ListContainer;
 			sourceTree = "<group>";
 		};
 		6350AD8122FB8BD400433C70 /* Main */ = {
@@ -828,13 +828,13 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		63B6C4A12323EAA000BA16ED /* List Item */ = {
+		63B6C4A12323EAA000BA16ED /* ListItem */ = {
 			isa = PBXGroup;
 			children = (
 				63B6C4A22323EAAB00BA16ED /* Main */,
 				63B6C4A52323EB2800BA16ED /* Sub Item */,
 			);
-			path = "List Item";
+			path = ListItem;
 			sourceTree = "<group>";
 		};
 		63B6C4A22323EAAB00BA16ED /* Main */ = {
@@ -928,36 +928,36 @@
 			path = view;
 			sourceTree = "<group>";
 		};
-		63EA77032326957800DADC63 /* Form Fields */ = {
+		63EA77032326957800DADC63 /* FormFields */ = {
 			isa = PBXGroup;
 			children = (
 				63EA77082326962E00DADC63 /* ExpenseFormView.xib */,
 			);
-			path = "Form Fields";
+			path = FormFields;
 			sourceTree = "<group>";
 		};
-		63EA77042326958A00DADC63 /* Form Constant Collapse */ = {
+		63EA77042326958A00DADC63 /* FormConstantCollapse */ = {
 			isa = PBXGroup;
 			children = (
 				63EA770A2326966900DADC63 /* ConstantCollapseView.xib */,
 			);
-			path = "Form Constant Collapse";
+			path = FormConstantCollapse;
 			sourceTree = "<group>";
 		};
-		63EA7706232695CE00DADC63 /* Form Constant PickerView */ = {
+		63EA7706232695CE00DADC63 /* FormConstantPickerView */ = {
 			isa = PBXGroup;
 			children = (
 				63EA770C2326999000DADC63 /* ConstantPickerView.xib */,
 			);
-			path = "Form Constant PickerView";
+			path = FormConstantPickerView;
 			sourceTree = "<group>";
 		};
-		63EA7707232695F000DADC63 /* Form Confirm */ = {
+		63EA7707232695F000DADC63 /* FormConfirm */ = {
 			isa = PBXGroup;
 			children = (
 				63EA770E232699E600DADC63 /* ConfirmView.xib */,
 			);
-			path = "Form Confirm";
+			path = FormConfirm;
 			sourceTree = "<group>";
 		};
 		63EA771023269A1100DADC63 /* Form Fields */ = {
