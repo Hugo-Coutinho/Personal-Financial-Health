@@ -14,6 +14,7 @@ class ExpenseListItemView: UIView {
     @IBOutlet weak var itemText: UILabel!
     @IBOutlet weak var itemBackgroundView: UIView!
     @IBOutlet weak var arrowImage: UIImageView!
+    @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var expenseValueLabel: UILabel!
     @IBOutlet weak var subItemMainStackView: StackViewController!
     
@@ -30,11 +31,11 @@ class ExpenseListItemView: UIView {
         self.subItemMainStackView.dataSource = self
         self.addGestureRecognizer()
     }
-
+    
     // MARK: - MAKE VIEW -
     func setupItemView(itemModel: ExpenseItemModel) -> ExpenseListItemView {
         self.itemText.text = itemModel.name
-        self.arrowImage.image = UIImage(named: itemModel.icon)
+//        self.iconImage.image = UIImage(named: itemModel.icon)
         self.expenseValueLabel.text = String(itemModel.subItems.map({ $0.expended }).reduce(0, +))
         self.updateArrangedSubItems(itemModel: itemModel)
         return self

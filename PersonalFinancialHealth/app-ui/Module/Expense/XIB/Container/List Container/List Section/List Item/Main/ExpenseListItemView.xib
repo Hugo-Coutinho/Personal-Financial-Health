@@ -78,10 +78,10 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4i-Te-bza" userLabel="Color View">
-                                                    <rect key="frame" x="223.5" y="26" width="74" height="23.5"/>
+                                                    <rect key="frame" x="214.5" y="26" width="73.5" height="23.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 1000,00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="c1w-Rf-nxv">
-                                                            <rect key="frame" x="0.0" y="0.0" width="74" height="23.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="73.5" height="23.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -107,11 +107,8 @@
                                                         <constraint firstAttribute="width" secondItem="U1X-61-w15" secondAttribute="height" multiplier="1:1" id="Soc-80-HOp"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Launch time" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="x8p-je-1m2">
-                                                    <rect key="frame" x="86.5" y="26" width="105" height="23.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="x8p-je-1m2" secondAttribute="height" multiplier="9:2" priority="800" id="KoO-3z-OXA"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Launch time" lineBreakMode="clip" numberOfLines="0" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x8p-je-1m2">
+                                                    <rect key="frame" x="86.5" y="8" width="96" height="59.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -123,14 +120,15 @@
                                                 <constraint firstItem="hY2-BO-OIS" firstAttribute="width" secondItem="PuI-UI-Qny" secondAttribute="width" id="DOk-EF-j2O"/>
                                                 <constraint firstItem="j4i-Te-bza" firstAttribute="width" secondItem="PuI-UI-Qny" secondAttribute="width" multiplier="0.23" id="Ibe-Ma-gHD"/>
                                                 <constraint firstItem="j4i-Te-bza" firstAttribute="centerY" secondItem="PuI-UI-Qny" secondAttribute="centerY" id="Kzq-ac-mO2"/>
+                                                <constraint firstAttribute="trailing" secondItem="j4i-Te-bza" secondAttribute="trailing" constant="32" id="Lc8-XZ-8tN"/>
                                                 <constraint firstItem="j4i-Te-bza" firstAttribute="leading" secondItem="x8p-je-1m2" secondAttribute="trailing" constant="32" id="PeZ-7P-SKr"/>
                                                 <constraint firstItem="U1X-61-w15" firstAttribute="leading" secondItem="PuI-UI-Qny" secondAttribute="leading" constant="8" id="QKh-0q-Ule"/>
                                                 <constraint firstItem="yOD-SW-hve" firstAttribute="leading" secondItem="U1X-61-w15" secondAttribute="trailing" constant="16" id="Qez-hH-LYa"/>
+                                                <constraint firstItem="x8p-je-1m2" firstAttribute="top" secondItem="PuI-UI-Qny" secondAttribute="topMargin" id="Xcw-BI-bN5"/>
                                                 <constraint firstItem="x8p-je-1m2" firstAttribute="leading" secondItem="yOD-SW-hve" secondAttribute="trailing" constant="16" id="Y6a-L5-6yF"/>
                                                 <constraint firstAttribute="bottom" secondItem="hY2-BO-OIS" secondAttribute="bottom" id="crk-YN-Knp"/>
                                                 <constraint firstItem="U1X-61-w15" firstAttribute="centerY" secondItem="PuI-UI-Qny" secondAttribute="centerY" id="e2i-mD-WTy"/>
                                                 <constraint firstItem="x8p-je-1m2" firstAttribute="centerY" secondItem="PuI-UI-Qny" secondAttribute="centerY" id="fhN-rb-8T9"/>
-                                                <constraint firstItem="x8p-je-1m2" firstAttribute="width" secondItem="PuI-UI-Qny" secondAttribute="width" multiplier="0.328" id="iNZ-Ky-QsZ"/>
                                                 <constraint firstItem="j4i-Te-bza" firstAttribute="leading" secondItem="x8p-je-1m2" secondAttribute="trailing" constant="32" id="oQa-PC-m4x"/>
                                                 <constraint firstItem="U1X-61-w15" firstAttribute="width" secondItem="PuI-UI-Qny" secondAttribute="width" multiplier="0.058" id="zjy-A6-IgV"/>
                                             </constraints>
@@ -279,6 +277,7 @@
             <connections>
                 <outlet property="arrowImage" destination="U1X-61-w15" id="Uc2-GF-Sjm"/>
                 <outlet property="expenseValueLabel" destination="c1w-Rf-nxv" id="16f-XQ-1eL"/>
+                <outlet property="iconImage" destination="yOD-SW-hve" id="eo3-nM-xlq"/>
                 <outlet property="itemBackgroundView" destination="x4q-5D-fmI" id="yiA-Qx-tRd"/>
                 <outlet property="itemText" destination="x8p-je-1m2" id="6Ha-DP-d8I"/>
                 <outlet property="subItemMainStackView" destination="YUj-q8-iyC" id="aon-Qm-q5x"/>
