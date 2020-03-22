@@ -125,14 +125,14 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="rjY-Qh-QiJ">
-                                                    <rect key="frame" x="160.5" y="24" width="35.5" height="16"/>
+                                                    <rect key="frame" x="160.5" y="21.5" width="35.5" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="rjY-Qh-QiJ" secondAttribute="height" multiplier="11:5" id="7Hg-em-bxn"/>
+                                                        <constraint firstAttribute="width" secondItem="rjY-Qh-QiJ" secondAttribute="height" multiplier="5:3" id="zoc-nP-6lZ"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b7Y-Ry-Tkf">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b7Y-Ry-Tkf" userLabel="Total Expense View">
                                                     <rect key="frame" x="204" y="22" width="62.5" height="20"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 20,00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="x3s-sF-grK">
@@ -163,7 +163,6 @@
                                             <constraints>
                                                 <constraint firstItem="rjY-Qh-QiJ" firstAttribute="leading" secondItem="jW3-lo-OkR" secondAttribute="trailing" constant="32" id="2mT-2W-mKf"/>
                                                 <constraint firstItem="940-pl-Efd" firstAttribute="height" secondItem="tG6-o9-H4i" secondAttribute="height" id="30S-qL-OfT"/>
-                                                <constraint firstItem="b7Y-Ry-Tkf" firstAttribute="leading" secondItem="rjY-Qh-QiJ" secondAttribute="trailing" constant="8" id="3AE-5d-ItH"/>
                                                 <constraint firstAttribute="trailing" secondItem="eJS-HE-BoW" secondAttribute="trailing" id="4eP-zK-zSa"/>
                                                 <constraint firstItem="b7Y-Ry-Tkf" firstAttribute="centerY" secondItem="tG6-o9-H4i" secondAttribute="centerY" id="6yF-jE-0yP"/>
                                                 <constraint firstItem="eJS-HE-BoW" firstAttribute="centerY" secondItem="tG6-o9-H4i" secondAttribute="centerY" id="9KP-vM-gSX"/>
@@ -182,6 +181,7 @@
                                                 <constraint firstItem="nn1-bF-6bT" firstAttribute="centerX" secondItem="tG6-o9-H4i" secondAttribute="centerX" id="nP5-d5-xA2"/>
                                                 <constraint firstItem="jW3-lo-OkR" firstAttribute="width" secondItem="tG6-o9-H4i" secondAttribute="width" multiplier="0.414" id="vbH-Y6-bRm"/>
                                                 <constraint firstItem="jW3-lo-OkR" firstAttribute="leading" secondItem="tG6-o9-H4i" secondAttribute="leading" constant="16" id="wCc-GS-PPR"/>
+                                                <constraint firstItem="b7Y-Ry-Tkf" firstAttribute="centerX" secondItem="tG6-o9-H4i" secondAttribute="centerX" multiplier="1.731" id="yYQ-CB-eQv"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
