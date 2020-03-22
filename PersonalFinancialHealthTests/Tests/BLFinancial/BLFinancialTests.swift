@@ -56,4 +56,38 @@ class BLFinancialTests: XCTestCase {
         // 3. THEN
         assert(result == false)
     }
+    
+    func testResetAppSalaryStorage_shouldAssertEmpty() {
+        // 1. GIVEN
+        let salaryWorker: CoreDataWorkerInput = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorSalary)
+        let business = BLFinancial(worker: salaryWorker)
+        let salaryModel = SalaryModel(net: 100.0, usefully: 100.0)
+        let salaryMO = salaryModel.toManagedObject(in: self.worker!.context)
+        // 2. WHEN
+        do {
+            try salaryWorker.create(entity: salaryMO)
+        } catch {
+            assertionFailure()
+        }
+        business.resetAppSalaryStorage()
+        // 3. THEN
+        assert(salaryWorker.read(manageObjectType: SalaryMO.self)!.isEmpty == true)
+    }
+    
+    func testResetAppExpenseStorage_shouldAssertEmpty() {
+        // 1. GIVEN
+        let expenseWorker: CoreDataWorkerInput = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorExpense)
+        let business = BLFinancial(worker: expenseWorker)
+        let expenseModel = ExpenseItemModel(icon: "", name: "", expenseType: 0, subItems: [ExpenseSubItemModel(date: Date(), expended: 100.0)])
+        let expenseMO = expenseModel.toManagedObject(in: self.worker!.context)
+        // 2. WHEN
+        do {
+            try expenseWorker.create(entity: expenseMO)
+        } catch {
+            assertionFailure()
+        }
+        business.resetAppExpenseStorage()
+        // 3. THEN
+        assert(expenseWorker.read(manageObjectType: ExpenseItemMO.self)!.isEmpty == true)
+    }
 }

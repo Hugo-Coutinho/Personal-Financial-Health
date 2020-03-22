@@ -37,6 +37,7 @@ class ExpenseListSectionView: UIView {
         sectionView.totalExpendedLabel.text = defaultTotal.replace("00,00", withString: totalExpended)
         sectionView.expenseTypeLabel.text = self.getExpenseTypeValue(sectionIndex: index)
         self.updateArrangedItems(itemModel: itemModel, index: index)
+        self.configureUserInteraction(totalExpended: totalExpended)
         return sectionView
     }
 }
@@ -68,6 +69,12 @@ extension ExpenseListSectionView {
 
 // MARK: - AUX METHODS -
 extension ExpenseListSectionView {
+    func configureUserInteraction(totalExpended: String) {
+        guard let expended = Double(totalExpended),
+            expended > 0 else { self.isUserInteractionEnabled = false; return }
+        self.isUserInteractionEnabled = true
+    }
+    
     func getTotalExpended(itemModel: [ExpenseItemModel], index: Int) -> String {
         return index == 0 ? self.getTotalConstantExpended(itemModel: itemModel) : self.getTotalDailyExpended(itemModel: itemModel)
     }

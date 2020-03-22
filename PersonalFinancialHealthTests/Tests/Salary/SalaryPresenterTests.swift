@@ -10,13 +10,19 @@ import XCTest
 @testable import PersonalFinancialHealth
 
 class SalaryPresenterTests: XCTestCase {
+
+    // MARK: - PROPERTIES -
+    private var worker: CoreDataWorkerInput?
+    private var blFinancial: BLFinancial?
     
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        self.worker = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorSalary)
+        guard let worker = self.worker else { assertionFailure(); return }
+        self.blFinancial = BLFinancial(worker: worker)
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        self.blFinancial?.resetAppSalaryStorage()
     }
     
     func testGetNetSalaryInString_ShouldReturnValueInDouble() {
@@ -54,7 +60,6 @@ class SalaryPresenterTests: XCTestCase {
         // 3. THEN
         assert(result == 0.0)
     }
-
 }
 
 extension SalaryPresenterTests: SalaryPresenterToView {

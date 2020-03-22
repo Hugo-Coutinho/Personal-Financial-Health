@@ -83,7 +83,7 @@ class CoreDataWorker: CoreDataWorkerInput {
         do {
             try self.context.execute(batchDeleteRequest)
         } catch {
-            
+            assertionFailure()
         }
     }
 }

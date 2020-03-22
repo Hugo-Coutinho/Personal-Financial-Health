@@ -28,14 +28,9 @@ class ExpenseListItemView: UIView {
     override func layoutSubviews() {
         self.subItemMainStackView.delegate = self
         self.subItemMainStackView.dataSource = self
-        self.subItemMainStackView.initialize()
         self.addGestureRecognizer()
     }
-    
-    override func awakeFromNib() {
-        self.subItemMainStackView.isHidden = true
-    }
-    
+
     // MARK: - MAKE VIEW -
     func setupItemView(itemModel: ExpenseItemModel) -> ExpenseListItemView {
         self.itemText.text = itemModel.name

@@ -297,5 +297,28 @@ extension ExpenseTests {
         guard let finalResult = result else { assertionFailure(); return }
         assert(finalResult == "Daily Expense")
     }
+    
+    // MARK: - EXPENSE SECTION VIEW -
+    func testConfigureUserInteraction_shouldAssertEnable() {
+        // 1. GIVEN
+        let totalExpended = "2.0"
+        let sectionView = ExpenseListSectionView.instanceFromNib(nibName: Constant.view.expenseView.expenseSection) as? ExpenseListSectionView
+        // 2. WHEN
+        sectionView?.configureUserInteraction(totalExpended: totalExpended)
+        // 3. THEN
+        assert(sectionView?.isUserInteractionEnabled == true)
+    }
+
+    // MARK: - EXPENSE SECTION VIEW -
+    func testConfigureUserInteraction_shouldAssertDisable() {
+        // 1. GIVEN
+        let totalExpended = "0"
+        let sectionView = ExpenseListSectionView.instanceFromNib(nibName: Constant.view.expenseView.expenseSection) as? ExpenseListSectionView
+        // 2. WHEN
+        sectionView?.configureUserInteraction(totalExpended: totalExpended)
+        // 3. THEN
+        assert(sectionView?.isUserInteractionEnabled == false)
+    }
+
 }
 
