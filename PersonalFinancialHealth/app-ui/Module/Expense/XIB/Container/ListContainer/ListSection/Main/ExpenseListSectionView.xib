@@ -135,9 +135,9 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b7Y-Ry-Tkf" userLabel="Total Expense View">
                                                     <rect key="frame" x="204" y="22" width="62.5" height="20"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 20,00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="x3s-sF-grK">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 20,00" textAlignment="center" lineBreakMode="headTruncation" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x3s-sF-grK">
                                                             <rect key="frame" x="0.0" y="0.0" width="62.5" height="20"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -150,7 +150,7 @@
                                                         <constraint firstItem="x3s-sF-grK" firstAttribute="centerY" secondItem="b7Y-Ry-Tkf" secondAttribute="centerY" id="hxb-Jp-EbG"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily expenses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="jW3-lo-OkR">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Constant expenses" textAlignment="natural" lineBreakMode="clip" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="jW3-lo-OkR">
                                                     <rect key="frame" x="16" y="22" width="112.5" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="jW3-lo-OkR" secondAttribute="height" multiplier="113:20" id="yfS-VM-u31"/>

@@ -24,11 +24,11 @@ class ExpenseListSubItemView: UIView {
 
 // MARK: - AUX METHODS -
 extension ExpenseListSubItemView {
-    private func getDate(date: Date) -> String {
+    func getDate(date: Date) -> String {
         return date.getFormattedDate()
     }
 
-    private func getExpense(expense: Double) -> String {
-        return String(expense)
+    func getExpense(expense: Double) -> String {
+        return String(expense).formatValueWithR$()
     }
 }

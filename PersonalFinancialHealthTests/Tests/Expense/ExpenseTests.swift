@@ -320,5 +320,36 @@ extension ExpenseTests {
         assert(sectionView?.isUserInteractionEnabled == false)
     }
 
+    // MARK: - EXPENSE ITEM VIEW -
+    func testGetItemExpense_shouldAssertTen() {
+        // 1. GIVEN
+        let itemView = ExpenseListItemView.instanceFromNib(nibName: Constant.view.expenseView.expenseListItem) as? ExpenseListItemView
+        let item = ExpenseItemModel(icon: "", name: "", expenseType: 0, subItems: [ExpenseSubItemModel(date: Date(), expended: 10.0)])
+        // 2. WHEN
+        let result = itemView?.getItemExpense(itemModel: item)
+        // 3. THEN
+        assert(result == "R$ 10.0")
+    }
+    
+    // MARK: - EXPENSE SUBITEM VIEW -
+    func testGetDate_shouldAssertDateFormatted() {
+        // 1. GIVEN
+        let subItemView = ExpenseListSubItemView.instanceFromNib(nibName: Constant.view.expenseView.expenseListSubitem) as? ExpenseListSubItemView
+        // 2. WHEN
+        let result = subItemView?.getDate(date: Date())
+        // 3. THEN
+        assert(result == Date().getFormattedDate())
+    }
+
+    // MARK: - EXPENSE SUBITEM VIEW -
+    func testGetExpense_shouldAssertExpenseFormatted() {
+        // 1. GIVEN
+        let subItemView = ExpenseListSubItemView.instanceFromNib(nibName: Constant.view.expenseView.expenseListSubitem) as? ExpenseListSubItemView
+        // 2. WHEN
+        let result = subItemView?.getExpense(expense: 1251.25)
+        let resultExpected = "R$ 1251.25"
+        // 3. THEN
+        assert(result == resultExpected)
+    }
 }
 

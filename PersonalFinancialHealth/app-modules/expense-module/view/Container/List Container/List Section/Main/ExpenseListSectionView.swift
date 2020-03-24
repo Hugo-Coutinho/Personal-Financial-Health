@@ -31,10 +31,8 @@ class ExpenseListSectionView: UIView {
     
     // MARK: - MAKE VIEW -
     public func setupSectionView(sectionView: ExpenseListSectionView, itemModel: [ExpenseItemModel], index: Int) -> ExpenseListSectionView {
-        let defaultTotal = "R$ 00,00"
-        var totalExpended: String = ""
-        totalExpended = self.getTotalExpended(itemModel: itemModel, index: index)
-        sectionView.totalExpendedLabel.text = defaultTotal.replace("00,00", withString: totalExpended)
+        let totalExpended = self.getTotalExpended(itemModel: itemModel, index: index)
+        sectionView.totalExpendedLabel.text = totalExpended.formatValueWithR$()
         sectionView.expenseTypeLabel.text = self.getExpenseTypeValue(sectionIndex: index)
         self.updateArrangedItems(itemModel: itemModel, index: index)
         self.configureUserInteraction(totalExpended: totalExpended)

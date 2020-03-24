@@ -36,7 +36,7 @@ class ExpenseListItemView: UIView {
     func setupItemView(itemModel: ExpenseItemModel) -> ExpenseListItemView {
         self.itemText.text = itemModel.name
 //        self.iconImage.image = UIImage(named: itemModel.icon)
-        self.expenseValueLabel.text = String(itemModel.subItems.map({ $0.expended }).reduce(0, +))
+        self.expenseValueLabel.text = self.getItemExpense(itemModel: itemModel)
         self.updateArrangedSubItems(itemModel: itemModel)
         return self
     }
@@ -64,7 +64,7 @@ extension ExpenseListItemView: StackViewDelegate {
 
 // MARK: - STACKVIEW AUX FUNCTIONS -
 extension ExpenseListItemView {
-    private func getViewForRow(indexSubItem: Int) -> UIView {
+private func getViewForRow(indexSubItem: Int) -> UIView {
         guard let item = self.item,
             self.currentViewExist(index: indexSubItem) else { return self.instantiateSubItem() }
         let subItemView = self.instantiateSubItem()
@@ -86,11 +86,25 @@ extension ExpenseListItemView {
     private func updateArrangedSubItems(itemModel: ExpenseItemModel) {
         self.item = itemModel
     }
-}
+    
+    func animateArrow() {
+        UIView.animate(withDuration:0.2, animations: { () -> Void in
+            self.arrowImage.transform = CGAffineTransform(rotationAngle: CGFloat(CGFloat(Double.pi * 2)))
+        })
+        UIView.animate(withDuration: 0.2, delay: 0.15, options: .curveEaseIn, animations: { () -> Void in
+            self.arrowImage.transform = CGAffineTransform(rotationAngle: CGFloat(CGFloat(Double.pi * 5)))
+        }) { (isAnimationComplete) in
+        }
+    }
+}   
 
 
 // MARK: - MICRO FUNCTIONS -
 extension ExpenseListItemView {
+    func getItemExpense(itemModel: ExpenseItemModel) -> String {
+        return String(itemModel.subItems.map({ $0.expended }).reduce(0, +)).formatValueWithR$()
+    }
+    
     private func addGestureRecognizer() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.didSelectItem))
         self.itemBackgroundView.addGestureRecognizer(tapGesture)
@@ -114,16 +128,6 @@ extension ExpenseListItemView {
     private func removeSubItems() {
         self.subItemMainStackView.isHidden = true
         self.subItemMainStackView.removeAll()
-    }
-    
-    func animateArrow() {
-        UIView.animate(withDuration:0.2, animations: { () -> Void in
-            self.arrowImage.transform = CGAffineTransform(rotationAngle: CGFloat(CGFloat(Double.pi * 2)))
-        })
-        UIView.animate(withDuration: 0.2, delay: 0.15, options: .curveEaseIn, animations: { () -> Void in
-            self.arrowImage.transform = CGAffineTransform(rotationAngle: CGFloat(CGFloat(Double.pi * 5)))
-        }) { (isAnimationComplete) in
-        }
     }
     
     private func totalItemExpended(expenses: [ExpenseItemModel]) -> Double {
