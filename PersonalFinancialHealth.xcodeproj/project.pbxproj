@@ -24,6 +24,8 @@
 		63446D4323FC5DE20025D20F /* ReusableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63446D4223FC5DE20025D20F /* ReusableButton.swift */; };
 		6350AD8922FB8CFB00433C70 /* PopupMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6350AD8822FB8CFB00433C70 /* PopupMenu.xib */; };
 		6350AD8B22FB95D600433C70 /* PopupMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6350AD8A22FB95D600433C70 /* PopupMenu.swift */; };
+		63593B3C242AFD1800EBB862 /* FundsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63593B3B242AFD1800EBB862 /* FundsPresenterTests.swift */; };
+		63593B3E242AFF0F00EBB862 /* FundsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63593B3D242AFF0F00EBB862 /* FundsInteractorTests.swift */; };
 		637A8A1523F39D6400688E6C /* ExpenseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637A8A1423F39D6400688E6C /* ExpenseTests.swift */; };
 		637A8A2023F77C9A00688E6C /* CoreDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637A8A1F23F77C9A00688E6C /* CoreDataWorker.swift */; };
 		637A8A2223F78FC700688E6C /* ExpenseSubItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637A8A2123F78FC700688E6C /* ExpenseSubItemModel.swift */; };
@@ -111,6 +113,8 @@
 		63446D4223FC5DE20025D20F /* ReusableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableButton.swift; sourceTree = "<group>"; };
 		6350AD8822FB8CFB00433C70 /* PopupMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupMenu.xib; sourceTree = "<group>"; };
 		6350AD8A22FB95D600433C70 /* PopupMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupMenu.swift; sourceTree = "<group>"; };
+		63593B3B242AFD1800EBB862 /* FundsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsPresenterTests.swift; sourceTree = "<group>"; };
+		63593B3D242AFF0F00EBB862 /* FundsInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsInteractorTests.swift; sourceTree = "<group>"; };
 		637A8A1223F39D6400688E6C /* PersonalFinancialHealthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PersonalFinancialHealthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		637A8A1423F39D6400688E6C /* ExpenseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTests.swift; sourceTree = "<group>"; };
 		637A8A1623F39D6400688E6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -480,6 +484,15 @@
 			path = PopupMenu;
 			sourceTree = "<group>";
 		};
+		63593B3A242AFCDA00EBB862 /* Funds */ = {
+			isa = PBXGroup;
+			children = (
+				63593B3B242AFD1800EBB862 /* FundsPresenterTests.swift */,
+				63593B3D242AFF0F00EBB862 /* FundsInteractorTests.swift */,
+			);
+			path = Funds;
+			sourceTree = "<group>";
+		};
 		637A8A1323F39D6400688E6C /* PersonalFinancialHealthTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -492,9 +505,9 @@
 		637A8A1C23F39D8400688E6C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				63593B3A242AFCDA00EBB862 /* Funds */,
 				634060E8241DC4890067894C /* BLFinancial */,
 				63EEEB7823FF81EC00A2D408 /* Salary */,
-				637A8A1E23F6F4E300688E6C /* Home */,
 				637A8A1D23F39D9C00688E6C /* Expense */,
 			);
 			path = Tests;
@@ -506,13 +519,6 @@
 				637A8A1423F39D6400688E6C /* ExpenseTests.swift */,
 			);
 			path = Expense;
-			sourceTree = "<group>";
-		};
-		637A8A1E23F6F4E300688E6C /* Home */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Home;
 			sourceTree = "<group>";
 		};
 		637A8A2323F828EC00688E6C /* Database */ = {
@@ -1186,6 +1192,8 @@
 				63FC33412426891A00467EA5 /* SalaryInteractorTests.swift in Sources */,
 				637A8A1523F39D6400688E6C /* ExpenseTests.swift in Sources */,
 				634060EA241DC49B0067894C /* BLFinancialTests.swift in Sources */,
+				63593B3E242AFF0F00EBB862 /* FundsInteractorTests.swift in Sources */,
+				63593B3C242AFD1800EBB862 /* FundsPresenterTests.swift in Sources */,
 				63EEEB7A23FF822200A2D408 /* SalaryPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

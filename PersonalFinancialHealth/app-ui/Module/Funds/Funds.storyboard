@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Funds View Controller-->
+        <!--Available Funds-->
         <scene sceneID="EcI-PR-oaE">
             <objects>
                 <viewController storyboardIdentifier="FundsViewController" id="7dy-Bs-7Z2" customClass="FundsViewController" customModule="PersonalFinancialHealth" customModuleProvider="target" sceneMemberID="viewController">
@@ -176,6 +176,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lZ1-x3-79m"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Available Funds" id="Dpd-ha-It7"/>
                     <connections>
                         <outlet property="fundsLabel" destination="iKp-sF-PkP" id="ha9-3a-ZLG"/>
                         <outlet property="valueAlreadyUsedLabel" destination="adX-x6-ZSq" id="oTc-Hf-cX1"/>

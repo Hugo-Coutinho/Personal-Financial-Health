@@ -96,7 +96,7 @@ extension ExpenseListItemView {
         }) { (isAnimationComplete) in
         }
     }
-}   
+}
 
 
 // MARK: - MICRO FUNCTIONS -

@@ -12,5 +12,5 @@ enum ConstantSalaryView {
     // MARK: - VIEW -
     static let alertInvalidInput = "please, input all the values correctly to submit it."
     static let alertFailToSaveSalary = "Something went wrong, please try later."
-    static let netSalaryDesign = "R$ 00,00"
+    static let zeroNetSalary = "R$ 00.0"
 }

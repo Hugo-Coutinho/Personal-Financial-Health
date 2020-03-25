@@ -11,7 +11,10 @@ import Foundation
 // MARK: - PRESENTER INPUT -
 protocol FundsPresenterInput {
     static func make(view: FundsPresenterToView) -> FundsPresenterInput
+    func fetchFunds() -> String
+    func fetchDailyValue() -> String
 }
+
 
 class FundsPresenter: FundsPresenterInput, FundsViewToPresenter {
     
@@ -28,6 +31,14 @@ class FundsPresenter: FundsPresenterInput, FundsViewToPresenter {
     // MARK: - DI -
     static func make(view: FundsPresenterToView) -> FundsPresenterInput {
         return FundsPresenter.init(view: view)
+    }
+    
+    func fetchFunds() -> String {
+        return String(self.interactor?.getFundsFromDataBase() ?? 0.0).formatValueWithR$()
+    }
+
+    func fetchDailyValue() -> String {
+        return String(self.interactor?.getDailyValueAvailableFromDataBase() ?? 0.0).formatValueWithR$()
     }
 }
 

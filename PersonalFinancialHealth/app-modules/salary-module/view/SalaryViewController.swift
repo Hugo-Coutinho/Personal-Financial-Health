@@ -18,7 +18,7 @@ class SalaryViewController: UIViewController {
     
     // MARK: - VARIABLES -
     private lazy var presenter: SalaryPresenterInput = SalaryPresenter.make(view: self)
-    private let netSalaryDesign = Constant.view.salaryView.netSalaryDesign
+    private let zeroNetSalary = Constant.view.salaryView.zeroNetSalary
     
     
     // MARK: - OVERRIDE LIFECYCLE -
@@ -61,17 +61,17 @@ extension SalaryViewController: SalaryPresenterToView {
     }
     
     func didNotLoadNetSalary() {
-        self.netSalary.text = self.netSalaryDesign
+        self.netSalary.text = self.zeroNetSalary
     }
     
     func didLoadNetSalary(net: Double) {
-        let netSalaryResult = self.netSalaryDesign.replace("00,00", withString: String(net))
+        let netSalaryResult = String(net).formatValueWithR$()
         
         self.netSalary.text = netSalaryResult
     }
     
     func updateNetSalaryLabel() {
-        let netSalaryResult = self.netSalaryDesign.replace("00,00", withString: self.textFieldNetSalary.text ?? "00.00")
+        let netSalaryResult = self.textFieldNetSalary.text?.formatValueWithR$()
         
         self.netSalary.text = netSalaryResult
     }

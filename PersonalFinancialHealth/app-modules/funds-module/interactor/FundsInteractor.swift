@@ -14,15 +14,16 @@ protocol FundsInteractorInput {
 }
 
 class FundsInteractor: FundsInteractorInput, FundsPresenterToInteractor {
-    
+
     // MARK: - PROPERTIES -
     var worker: CoreDataWorkerInput
     var presenter: FundsInteractorToPresenter
+    private lazy var blFinancial: BLFinancial = BLFinancial(worker: self.worker)
     
     // MARK: - INITIALIZER -
     init(presenter: FundsInteractorToPresenter) {
         self.presenter = presenter
-        self.worker  = CoreDataWorker.make(sortDescriptionKey: nil)
+        self.worker  = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorSalary)
     }
     
     // MARK: - DI -
@@ -30,6 +31,17 @@ class FundsInteractor: FundsInteractorInput, FundsPresenterToInteractor {
         return FundsInteractor.init(presenter: presenter)
     }
     
+    func getFundsFromDataBase() -> Double {
+        guard let managedObject = self.worker.read(manageObjectType: SalaryMO.self)?.first else { return 0.0 }
+        return managedObject.usefully
+    }
+    
+    func getDailyValueAvailableFromDataBase() -> Double {
+        let usefullyValue: Double = self.getFundsFromDataBase()
+        let daysLeft: Double = Date().getDaysLeftFromMonth()
+        let totalExpense: Double = self.blFinancial.getTotalConstantAndDailyExpense()
+        return (usefullyValue - totalExpense) / daysLeft
+    }
 }
 
 

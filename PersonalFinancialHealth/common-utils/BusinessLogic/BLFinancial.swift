@@ -47,6 +47,17 @@ extension BLFinancial {
         successExpenses(managedObject.map({ (current) in return ExpenseItemModel.toEntity(mo: current) }))
     }
     
+    func getTotalConstantAndDailyExpense() -> Double {
+        var total = 0.0
+        self.worker = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorExpense)
+         self.getExpenses(successExpenses: { (expenses) in
+         total = expenses.map({ $0.subItems.map({ $0.expended }).reduce(0, +) }).reduce(0, +)
+        }) { (error) in
+            assertionFailure()
+        }
+        return total
+    }
+    
     func currentExpenseExist(newExpense: ExpenseItemModel) -> Bool {
         guard let _ = self.worker.read(manageObjectType: ExpenseItemMO.self)?.filter({ $0.name == newExpense.name && $0.expenseType == newExpense.expenseType }).first else { return false }
         return true
