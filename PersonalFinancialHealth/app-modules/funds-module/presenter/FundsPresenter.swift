@@ -13,6 +13,7 @@ protocol FundsPresenterInput {
     static func make(view: FundsPresenterToView) -> FundsPresenterInput
     func fetchFunds() -> String
     func fetchDailyValue() -> String
+    func fetchAlreadyUsedValue() -> String
 }
 
 
@@ -39,6 +40,10 @@ class FundsPresenter: FundsPresenterInput, FundsViewToPresenter {
 
     func fetchDailyValue() -> String {
         return String(self.interactor?.getDailyValueAvailableFromDataBase() ?? 0.0).formatValueWithR$()
+    }
+    
+    func fetchAlreadyUsedValue() -> String {
+        return String(self.interactor?.getAlreadyUsedValueFromDataBase() ?? 0.0).formatValueWithR$()
     }
 }
 

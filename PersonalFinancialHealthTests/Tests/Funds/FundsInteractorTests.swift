@@ -81,6 +81,22 @@ class FundsInteractorTests: XCTestCase {
         // 3. THEN
         assert(result == assertResult)
     }
+    
+    func testGetAlreadyUsedValueFromDataBase_shouldAssertTen() {
+        // 1. GIVEN
+        let interactor: FundsPresenterToInteractor = FundsInteractor.make(presenter: self)
+        let itemModel = ExpenseItemModel(icon: "", name: "", expenseType: 1, subItems: [ExpenseSubItemModel(date: Date(), expended: 10.0)])
+        let itemMO = itemModel.toManagedObject(in: self.worker!.context)
+        // 2. WHEN
+        do {
+            try self.worker?.create(entity: itemMO)
+        } catch {
+            assertionFailure()
+        }
+        let result = interactor.getAlreadyUsedValueFromDataBase()
+        // 3. THEN
+        assert(result == 10.0)
+    }
 }
 
 // MARK: - IMPLEMENTS INTERACTOR`S DELEGATE -

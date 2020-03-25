@@ -40,7 +40,11 @@ class FundsInteractor: FundsInteractorInput, FundsPresenterToInteractor {
         let usefullyValue: Double = self.getFundsFromDataBase()
         let daysLeft: Double = Date().getDaysLeftFromMonth()
         let totalExpense: Double = self.blFinancial.getTotalConstantAndDailyExpense()
-        return (usefullyValue - totalExpense) / daysLeft
+        return Double((usefullyValue - totalExpense) / daysLeft).rounded()
+    }
+    
+    func getAlreadyUsedValueFromDataBase() -> Double {
+        return self.blFinancial.getTotalConstantAndDailyExpense()
     }
 }
 

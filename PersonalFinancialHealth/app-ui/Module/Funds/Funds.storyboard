@@ -123,7 +123,7 @@
                                                 <color key="textColor" red="0.0" green="0.60392156860000001" blue="0.80392156859999997" alpha="0.96088248239999996" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To use daily" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCf-zj-2jN">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already used" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCf-zj-2jN">
                                                 <rect key="frame" x="0.0" y="70.999999999999943" width="165.66666666666666" height="23"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="aCf-zj-2jN" secondAttribute="height" multiplier="165:23" id="fgk-Os-cGS"/>

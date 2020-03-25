@@ -81,6 +81,22 @@ class FundsPresenterTests: XCTestCase {
         // 3. THEN
         assert(result == String(assertResult).formatValueWithR$())
     }
+    
+    func testFetchAlreadyUsedValue_shouldAssertTen() {
+        // 1. GIVEN
+        let presenter: FundsPresenterInput = FundsPresenter.make(view: self)
+        let itemModel = ExpenseItemModel(icon: "", name: "", expenseType: 1, subItems: [ExpenseSubItemModel(date: Date(), expended: 10.0)])
+        let itemMO = itemModel.toManagedObject(in: self.worker!.context)
+        // 2. WHEN
+        do {
+            try self.worker?.create(entity: itemMO)
+        } catch {
+            assertionFailure()
+        }
+        let result = presenter.fetchAlreadyUsedValue()
+        // 3. THEN
+        assert(result == "R$ 10.0")
+    }
 }
 
 // MARK: - IMPLEMENTS PRESENTER -

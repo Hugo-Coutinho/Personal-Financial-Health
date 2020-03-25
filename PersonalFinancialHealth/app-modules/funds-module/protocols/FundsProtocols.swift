@@ -24,6 +24,7 @@ protocol FundsPresenterToInteractor {
     var presenter: FundsInteractorToPresenter {get set}
     func getFundsFromDataBase() -> Double
     func getDailyValueAvailableFromDataBase() -> Double
+    func getAlreadyUsedValueFromDataBase() -> Double
 }
 
 // MARK: - INTERACTOR OUTPUT -

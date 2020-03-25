@@ -27,7 +27,7 @@ class FundsViewController: UIViewController {
     private func loadFunds() {
         self.fundsLabel.text = self.presenter.fetchFunds()
         self.valueUsedDailyLabel.text = self.presenter.fetchDailyValue()
-        self.valueAlreadyUsedLabel.text = ""
+        self.valueAlreadyUsedLabel.text = self.presenter.fetchAlreadyUsedValue()
     }
 }
 
