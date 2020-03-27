@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  PersonalFinancialHealth
+
+  Created by BRQ on 26/03/20.
+  Copyright © 2020 BRQ. All rights reserved.
+*/
+
+// MARK: - SALARY -
+"alertInvalidInput" = "Por favor, inseria todos os valores corretamente para criar um gasto.";
+"alertFailToSaveSalary" = "Algum erro ocorreu, por favor tente novamente.";
+"netSalary" = "%@";
+
+// MARK: - FUNDS -
+"fundsLabel" = "%@";
+"valueUsedDailyLabel" = "%@";
+"valueAlreadyUsedLabel" = "%@";
+
+
+

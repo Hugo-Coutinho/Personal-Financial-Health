@@ -1,0 +1,21 @@
+
+/* Class = "UILabel"; text = "Historical"; ObjectID = "1pB-TX-aWw"; */
+"1pB-TX-aWw.text" = "Histórico";
+
+/* Class = "UILabel"; text = "Spending Control"; ObjectID = "4Cw-gL-LzM"; */
+"4Cw-gL-LzM.text" = "Controle de gastos";
+
+/* Class = "UILabel"; text = "Just for reminder, first day of every month the expenses will be erased, and all values will be calculated and the history update it too."; ObjectID = "9Ra-4O-sej"; */
+"9Ra-4O-sej.text" = "Lembre-se, todo mês os valores são atualizados e recalculado. Cheque o histório para ver valores de meses anteriores.";
+
+/* Class = "UILabel"; text = "My expenses"; ObjectID = "aqy-zz-KbT"; */
+"aqy-zz-KbT.text" = "Gastos";
+
+/* Class = "UILabel"; text = "Available funds"; ObjectID = "l0J-tk-jEd"; */
+"l0J-tk-jEd.text" = "Disponível";
+
+/* Class = "UILabel"; text = "Net salary"; ObjectID = "ph2-a6-Z2k"; */
+"ph2-a6-Z2k.text" = "Salário";
+
+/* Class = "UINavigationItem"; title = "Personal Financial Health"; ObjectID = "ub4-Of-OVc"; */
+"ub4-Of-OVc.title" = "Controle de gastos pessoais.";

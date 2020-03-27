@@ -25,12 +25,17 @@ class FundsViewController: UIViewController {
     }
     
     private func loadFunds() {
-        self.fundsLabel.text = self.presenter.fetchFunds()
-        self.valueUsedDailyLabel.text = self.presenter.fetchDailyValue()
-        self.valueAlreadyUsedLabel.text = self.presenter.fetchAlreadyUsedValue()
+        let fundsFormatString = NSLocalizedString("fundsLabel", comment: "fundsLabel")
+        let valueUsedDailyFormatString = NSLocalizedString("valueUsedDailyLabel", comment: "valueUsedDailyLabel")
+        let valueAlreadyUsedFormatString = NSLocalizedString("valueAlreadyUsedLabel", comment: "valueAlreadyUsedLabel")
+        
+        self.fundsLabel.text = String.localizedStringWithFormat(fundsFormatString, self.presenter.fetchFunds())
+        self.valueUsedDailyLabel.text = String.localizedStringWithFormat(valueUsedDailyFormatString, self.presenter.fetchDailyValue())
+        self.valueAlreadyUsedLabel.text = String.localizedStringWithFormat(valueAlreadyUsedFormatString, self.presenter.fetchAlreadyUsedValue())
     }
 }
 
+// MARK: - PRESENTER OUTPUT -
 extension FundsViewController: FundsPresenterToView {
     
 }

@@ -18,7 +18,6 @@
 		63347B2523105F2D006CA2CC /* ExpenseListContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63347B2423105F2D006CA2CC /* ExpenseListContainerView.xib */; };
 		63347B2923106011006CA2CC /* ExpenseListContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63347B2823106011006CA2CC /* ExpenseListContainerView.swift */; };
 		634060EA241DC49B0067894C /* BLFinancialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634060E9241DC49B0067894C /* BLFinancialTests.swift */; };
-		63446D3423FC21240025D20F /* Salary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63446D3323FC21240025D20F /* Salary.storyboard */; };
 		63446D3C23FC24E60025D20F /* SalaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63446D3B23FC24E60025D20F /* SalaryViewController.swift */; };
 		63446D4123FC56C70025D20F /* ReusableButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63446D4023FC56C70025D20F /* ReusableButton.xib */; };
 		63446D4323FC5DE20025D20F /* ReusableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63446D4223FC5DE20025D20F /* ReusableButton.swift */; };
@@ -60,6 +59,9 @@
 		63B90EAE23F1C48700D05638 /* ExpenseProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B90EAD23F1C48700D05638 /* ExpenseProtocols.swift */; };
 		63B90EB123F1C64900D05638 /* ExpensePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B90EB023F1C64900D05638 /* ExpensePresenter.swift */; };
 		63B90EB623F1DDA000D05638 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B90EB523F1DDA000D05638 /* BaseRouter.swift */; };
+		63C96CE1242D3EE300BA0D67 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63C96CE3242D3EE300BA0D67 /* Localizable.strings */; };
+		63C96CE5242D6ECE00BA0D67 /* Salary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63C96CE7242D6ECE00BA0D67 /* Salary.storyboard */; };
+		63C96CEC242D704B00BA0D67 /* Funds.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63C96CEE242D704B00BA0D67 /* Funds.storyboard */; };
 		63CE3FCA22D51E54000E90ED /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE3FC922D51E54000E90ED /* UIStoryboard.swift */; };
 		63CE3FCC22D51F2B000E90ED /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE3FCB22D51F2B000E90ED /* String.swift */; };
 		63CE3FD422D54111000E90ED /* ExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE3FD322D54111000E90ED /* ExpenseViewController.swift */; };
@@ -78,7 +80,6 @@
 		63F6C7EA22CC60A7003B7FA6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F6C7E922CC60A7003B7FA6 /* Coordinator.swift */; };
 		63FC33412426891A00467EA5 /* SalaryInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FC33402426891A00467EA5 /* SalaryInteractorTests.swift */; };
 		63FD7307240B5CAB003E0DD1 /* ConstantSalaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD7306240B5CAA003E0DD1 /* ConstantSalaryView.swift */; };
-		63FD730C240D5271003E0DD1 /* Funds.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63FD730B240D5271003E0DD1 /* Funds.storyboard */; };
 		63FD7310240D52B9003E0DD1 /* FundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD730F240D52B9003E0DD1 /* FundsViewController.swift */; };
 		63FD7315240D52F2003E0DD1 /* FundsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD7314240D52F2003E0DD1 /* FundsProtocols.swift */; };
 		63FD7317240D531D003E0DD1 /* FundsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD7316240D531D003E0DD1 /* FundsInteractor.swift */; };
@@ -107,7 +108,6 @@
 		63347B2423105F2D006CA2CC /* ExpenseListContainerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseListContainerView.xib; sourceTree = "<group>"; };
 		63347B2823106011006CA2CC /* ExpenseListContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseListContainerView.swift; sourceTree = "<group>"; };
 		634060E9241DC49B0067894C /* BLFinancialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLFinancialTests.swift; sourceTree = "<group>"; };
-		63446D3323FC21240025D20F /* Salary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Salary.storyboard; sourceTree = "<group>"; };
 		63446D3B23FC24E60025D20F /* SalaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryViewController.swift; sourceTree = "<group>"; };
 		63446D4023FC56C70025D20F /* ReusableButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReusableButton.xib; sourceTree = "<group>"; };
 		63446D4223FC5DE20025D20F /* ReusableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableButton.swift; sourceTree = "<group>"; };
@@ -153,6 +153,15 @@
 		63B90EAD23F1C48700D05638 /* ExpenseProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseProtocols.swift; sourceTree = "<group>"; };
 		63B90EB023F1C64900D05638 /* ExpensePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensePresenter.swift; sourceTree = "<group>"; };
 		63B90EB523F1DDA000D05638 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseRouter.swift; path = "PersonalFinancialHealth/common-utils/router/BaseRouter.swift"; sourceTree = SOURCE_ROOT; };
+		63C96CE0242D3C0700BA0D67 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
+		63C96CE2242D3EE300BA0D67 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		63C96CE4242D3EE500BA0D67 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		63C96CE6242D6ECE00BA0D67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Salary.storyboard; sourceTree = "<group>"; };
+		63C96CE9242D6ED100BA0D67 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Salary.strings; sourceTree = "<group>"; };
+		63C96CEB242D6ED300BA0D67 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Salary.strings"; sourceTree = "<group>"; };
+		63C96CED242D704B00BA0D67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Funds.storyboard; sourceTree = "<group>"; };
+		63C96CF0242D704E00BA0D67 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Funds.strings; sourceTree = "<group>"; };
+		63C96CF2242D705000BA0D67 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Funds.strings"; sourceTree = "<group>"; };
 		63CE3FC922D51E54000E90ED /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
 		63CE3FCB22D51F2B000E90ED /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		63CE3FD322D54111000E90ED /* ExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewController.swift; sourceTree = "<group>"; };
@@ -171,7 +180,6 @@
 		63F6C7E922CC60A7003B7FA6 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		63FC33402426891A00467EA5 /* SalaryInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryInteractorTests.swift; sourceTree = "<group>"; };
 		63FD7306240B5CAA003E0DD1 /* ConstantSalaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantSalaryView.swift; sourceTree = "<group>"; };
-		63FD730B240D5271003E0DD1 /* Funds.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Funds.storyboard; sourceTree = "<group>"; };
 		63FD730F240D52B9003E0DD1 /* FundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsViewController.swift; sourceTree = "<group>"; };
 		63FD7314240D52F2003E0DD1 /* FundsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsProtocols.swift; sourceTree = "<group>"; };
 		63FD7316240D531D003E0DD1 /* FundsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsInteractor.swift; sourceTree = "<group>"; };
@@ -307,7 +315,7 @@
 		63446D3223FC20EE0025D20F /* Salary */ = {
 			isa = PBXGroup;
 			children = (
-				63446D3323FC21240025D20F /* Salary.storyboard */,
+				63C96CE7242D6ECE00BA0D67 /* Salary.storyboard */,
 			);
 			path = Salary;
 			sourceTree = "<group>";
@@ -573,6 +581,7 @@
 		639136F422CBE3470018B65F = {
 			isa = PBXGroup;
 			children = (
+				63C96CE3242D3EE300BA0D67 /* Localizable.strings */,
 				639136FF22CBE3470018B65F /* PersonalFinancialHealth */,
 				637A8A1323F39D6400688E6C /* PersonalFinancialHealthTests */,
 				639136FE22CBE3470018B65F /* Products */,
@@ -1027,7 +1036,7 @@
 		63FD730A240D4634003E0DD1 /* Funds */ = {
 			isa = PBXGroup;
 			children = (
-				63FD730B240D5271003E0DD1 /* Funds.storyboard */,
+				63C96CEE242D704B00BA0D67 /* Funds.storyboard */,
 			);
 			path = Funds;
 			sourceTree = "<group>";
@@ -1139,6 +1148,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 639136F422CBE3470018B65F;
 			productRefGroup = 639136FE22CBE3470018B65F /* Products */;
@@ -1163,6 +1173,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63C96CE1242D3EE300BA0D67 /* Localizable.strings in Resources */,
 				63446D4123FC56C70025D20F /* ReusableButton.xib in Resources */,
 				6391370822CBE3490018B65F /* Assets.xcassets in Resources */,
 				63347B2523105F2D006CA2CC /* ExpenseListContainerView.xib in Resources */,
@@ -1170,14 +1181,14 @@
 				63335C2A22F4844000FB302F /* ExpenseContainerView.xib in Resources */,
 				63EA770F232699E600DADC63 /* ConfirmView.xib in Resources */,
 				63EA770B2326966900DADC63 /* ConstantCollapseView.xib in Resources */,
-				63FD730C240D5271003E0DD1 /* Funds.storyboard in Resources */,
+				63C96CEC242D704B00BA0D67 /* Funds.storyboard in Resources */,
 				63EA770D2326999000DADC63 /* ConstantPickerView.xib in Resources */,
 				63EA77092326962E00DADC63 /* ExpenseFormView.xib in Resources */,
 				63B6C4A42323EAE300BA16ED /* ExpenseListItemView.xib in Resources */,
 				637A8A3323FC1C8D00688E6C /* Expense.storyboard in Resources */,
 				63B6C4A72323EB7400BA16ED /* ExpenseListSubItemView.xib in Resources */,
 				6391370622CBE3470018B65F /* Main.storyboard in Resources */,
-				63446D3423FC21240025D20F /* Salary.storyboard in Resources */,
+				63C96CE5242D6ECE00BA0D67 /* Salary.storyboard in Resources */,
 				63B6C4A02323EA5C00BA16ED /* ExpenseListSectionView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1274,8 +1285,38 @@
 			isa = PBXVariantGroup;
 			children = (
 				6391370522CBE3470018B65F /* Base */,
+				63C96CE0242D3C0700BA0D67 /* pt-BR */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		63C96CE3242D3EE300BA0D67 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63C96CE2242D3EE300BA0D67 /* en */,
+				63C96CE4242D3EE500BA0D67 /* pt-BR */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		63C96CE7242D6ECE00BA0D67 /* Salary.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63C96CE6242D6ECE00BA0D67 /* Base */,
+				63C96CE9242D6ED100BA0D67 /* en */,
+				63C96CEB242D6ED300BA0D67 /* pt-BR */,
+			);
+			name = Salary.storyboard;
+			sourceTree = "<group>";
+		};
+		63C96CEE242D704B00BA0D67 /* Funds.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63C96CED242D704B00BA0D67 /* Base */,
+				63C96CF0242D704E00BA0D67 /* en */,
+				63C96CF2242D705000BA0D67 /* pt-BR */,
+			);
+			name = Funds.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1325,6 +1366,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1386,6 +1428,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

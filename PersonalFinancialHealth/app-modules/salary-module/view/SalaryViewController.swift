@@ -53,7 +53,7 @@ extension SalaryViewController {
 // MARK: - PRESENTER OUTPUT -
 extension SalaryViewController: SalaryPresenterToView {
     func invalidInput() {
-        Alert.presentOkNativeAlert(title: "Error", message: Constant.view.salaryView.alertInvalidInput, viewController: self)
+        Alert.presentOkNativeAlert(title: "Error", message: NSLocalizedString(Constant.view.salaryView.alertInvalidInput, comment: "alert invalid user input"), viewController: self)
     }
     
     func validInput() {
@@ -65,18 +65,20 @@ extension SalaryViewController: SalaryPresenterToView {
     }
     
     func didLoadNetSalary(net: Double) {
+        let netSalaryFormatString = NSLocalizedString("netSalary", comment: "")
         let netSalaryResult = String(net).formatValueWithR$()
         
-        self.netSalary.text = netSalaryResult
+        self.netSalary.text = String.localizedStringWithFormat(netSalaryFormatString, netSalaryResult)
     }
     
     func updateNetSalaryLabel() {
-        let netSalaryResult = self.textFieldNetSalary.text?.formatValueWithR$()
+        let netSalaryResult = self.textFieldNetSalary.text?.formatValueWithR$() ?? self.zeroNetSalary
+        let netSalaryFormatString = NSLocalizedString("netSalary", comment: "")
         
-        self.netSalary.text = netSalaryResult
+        self.netSalary.text = String.localizedStringWithFormat(netSalaryFormatString, netSalaryResult)
     }
     
     func showFailToSaveSalaryAlert() {
-        Alert.presentOkNativeAlert(title: "Error", message: Constant.view.salaryView.alertFailToSaveSalary, viewController: self)
+        Alert.presentOkNativeAlert(title: "Error", message: NSLocalizedString(Constant.view.salaryView.alertFailToSaveSalary, comment: "alert fail to save salary"), viewController: self)
     }
 }

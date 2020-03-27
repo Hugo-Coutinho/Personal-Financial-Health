@@ -8,9 +8,9 @@
 
 import Foundation
 
-enum ConstantSalaryView {
+enum ConstantSalaryView {   
     // MARK: - VIEW -
-    static let alertInvalidInput = "please, input all the values correctly to submit it."
-    static let alertFailToSaveSalary = "Something went wrong, please try later."
+    static let alertInvalidInput = "alertInvalidInput"
+    static let alertFailToSaveSalary = "alertFailToSaveSalary."
     static let zeroNetSalary = "R$ 00.0"
 }

@@ -1,0 +1,27 @@
+
+/* Class = "UILabel"; text = "R$ 500,00"; ObjectID = "CSA-9W-nVu"; */
+"CSA-9W-nVu.text" = "R$ 500,00";
+
+/* Class = "UILabel"; text = "Total available for this month."; ObjectID = "CSK-Wg-Kdb"; */
+"CSK-Wg-Kdb.text" = "Total gasto no mês.";
+
+/* Class = "UINavigationItem"; title = "Available Funds"; ObjectID = "Dpd-ha-It7"; */
+"Dpd-ha-It7.title" = "Disponível";
+
+/* Class = "UILabel"; text = "Already used"; ObjectID = "aCf-zj-2jN"; */
+"aCf-zj-2jN.text" = "Usado";
+
+/* Class = "UILabel"; text = "R$ 500,00"; ObjectID = "adX-x6-ZSq"; */
+"adX-x6-ZSq.text" = "R$ 500,00";
+
+/* Class = "UILabel"; text = "General in this month"; ObjectID = "h5y-a4-kug"; */
+"h5y-a4-kug.text" = "Geral";
+
+/* Class = "UILabel"; text = "R$ 100,0"; ObjectID = "iKp-sF-PkP"; */
+"iKp-sF-PkP.text" = "R$ 100,0";
+
+/* Class = "UILabel"; text = "To use daily"; ObjectID = "tmt-Pr-6iT"; */
+"tmt-Pr-6iT.text" = "Sugestão de uso diário";
+
+/* Class = "UILabel"; text = "Every new month, the value will be updated."; ObjectID = "uyF-aD-tOe"; */
+"uyF-aD-tOe.text" = "Valores atualizado a cada início de mês.";
