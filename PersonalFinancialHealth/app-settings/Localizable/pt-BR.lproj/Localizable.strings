@@ -11,6 +11,9 @@
 "alertFailToSaveSalary" = "Algum erro ocorreu, por favor tente novamente.";
 "netSalary" = "R$ %.02f";
 "saveButton" = "Salvar";
+"SuccessInsertSalaryTitle" = "successo";
+"SuccessInsertSalaryMessage" = "Salário salvo com sucesso!";
+"zeroNetSalary" = "R$ 0,00";
 
 // MARK: - FUNDS -
 "fundsLabel" = "R$ %.02f";
@@ -42,6 +45,10 @@
 "alertInvalidInput" = "Por favor, insira os valores corretamente para que possa salva-lo";
 "alertSomethingWentWrong" = "Descuple, Algo deu errado. Por favor tente novamente.";
 "alertExpenseSaved" = "Gasto salvo com sucesso!";
+
+// MARK: - EXPENSE CONFIRM VIEW -
+"newExpenseButton" = "Novo gasto";
+
 
 // use %d para numeros e %@ para strings
 

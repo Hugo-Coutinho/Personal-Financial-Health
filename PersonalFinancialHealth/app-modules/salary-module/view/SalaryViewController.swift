@@ -41,12 +41,14 @@ extension SalaryViewController {
     @objc private func saveSalary(_ sender: Any) {
         self.presenter.validateInputValues(netInputValue: self.textFieldNetSalary.text, usefullyInputValue: self.textFieldUsefullySalary.text)
     }
-}
-
-// MARK: - AUX METHODS -
-extension SalaryViewController {
+    
     func loadNetSalary() {
         self.presenter.loadNetSalary()
+    }
+    
+    private func cleanTextFields() {
+      self.textFieldNetSalary.text = ""
+        self.textFieldUsefullySalary.text = ""
     }
 }
 
@@ -57,11 +59,16 @@ extension SalaryViewController: SalaryPresenterToView {
     }
     
     func validInput() {
+        let title = NSLocalizedString(Constant.view.salaryView.successInsertSalaryTitle, comment: "")
+        let message = NSLocalizedString(Constant.view.salaryView.successInsertSalaryMessage, comment: "")
+        
         self.presenter.fetchNetSalary(netInputValue: self.textFieldNetSalary.text, usefullyInputValue: self.textFieldUsefullySalary.text)
+        Alert.presentOkNativeAlert(title: title, message: message, viewController: self)
+        self.cleanTextFields()
     }
     
     func didNotLoadNetSalary() {
-        self.netSalary.text = self.zeroNetSalary
+        self.netSalary.text = NSLocalizedString(self.zeroNetSalary, comment: "")
     }
     
     func didLoadNetSalary(net: Double) {

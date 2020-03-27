@@ -10,6 +10,9 @@
 "alertFailToSaveSalary" = "Something went wrong, please try later.";
 "netSalary" = "$ %.02f";
 "saveButton" = "Save";
+"SuccessInsertSalaryTitle" = "success";
+"SuccessInsertSalaryMessage" = "Salary successfuly saved";
+"zeroNetSalary" = "$ 0.00";
 
 // MARK: - FUNDS -
 "fundsLabel" = "$ %.02f";
@@ -40,3 +43,6 @@
 "alertInvalidInput" = "Please, input all the values correctly to create the expense.";
 "alertSomethingWentWrong" = "Sorry, something went wrong. Please, submit it again.";
 "alertExpenseSaved" = "Expense successfuly saved.";
+
+// MARK: - EXPENSE CONFIRM VIEW -
+"newExpenseButton" = "New Expense";

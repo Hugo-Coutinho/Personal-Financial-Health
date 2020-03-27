@@ -14,6 +14,11 @@ class ConfirmView: UIView {
     
     // MARK: - OUTLETS -
     @IBOutlet weak var reusableButton: ReusableButton!
+    
+    // MARK: - OVERRIDE -
+    override func layoutSubviews() {
+        self.reusableButton.button.setTitle(NSLocalizedString("newExpenseButton", comment: ""), for: .normal)
+    }
 }
 
 // MARK: - IMPLEMENTS PROTOCOL EXPENSE SUBVIEWS -

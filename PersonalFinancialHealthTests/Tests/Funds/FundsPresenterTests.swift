@@ -54,7 +54,7 @@ class FundsPresenterTests: XCTestCase {
         }
         let result = presenter.fetchFunds()
         // 3. THEN
-        assert(result == "R$ 10.0")
+        assert(result == 10.0)
     }
 
     func testFetchDailyValue_shouldAssertHundred() {
@@ -79,7 +79,7 @@ class FundsPresenterTests: XCTestCase {
         let result = presenter.fetchDailyValue()
         let assertResult = (600.0 - 300.0) / daysLeft
         // 3. THEN
-        assert(result == String(assertResult).formatValueWithR$())
+        assert(result == assertResult)
     }
     
     func testFetchAlreadyUsedValue_shouldAssertTen() {
@@ -95,7 +95,7 @@ class FundsPresenterTests: XCTestCase {
         }
         let result = presenter.fetchAlreadyUsedValue()
         // 3. THEN
-        assert(result == "R$ 10.0")
+        assert(result == 10.0)
     }
 }
 

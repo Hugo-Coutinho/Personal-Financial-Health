@@ -42,6 +42,8 @@
 		6391372922CBE7CF0018B65F /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391372022CBE7CF0018B65F /* HomeModel.swift */; };
 		6391372B22CBE7CF0018B65F /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391372422CBE7CF0018B65F /* HomePresenter.swift */; };
 		639B9DAA2417DC5300F4DBCD /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639B9DA92417DC5300F4DBCD /* Alert.swift */; };
+		639E7F15242E697800496F14 /* Historical.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639E7F14242E697800496F14 /* Historical.storyboard */; };
+		639E7F19242E69CB00496F14 /* HistoricalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E7F18242E69CB00496F14 /* HistoricalViewController.swift */; };
 		639FA05622D6337C00983497 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639FA05522D6337C00983497 /* UIViewController.swift */; };
 		63A56BB422FA6A0F008C7093 /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A56BB322FA6A0F008C7093 /* StackViewController.swift */; };
 		63B56C7522D5085E00D14C24 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B56C7422D5085E00D14C24 /* Constant.swift */; };
@@ -135,6 +137,8 @@
 		6391372022CBE7CF0018B65F /* HomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		6391372422CBE7CF0018B65F /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		639B9DA92417DC5300F4DBCD /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		639E7F14242E697800496F14 /* Historical.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Historical.storyboard; sourceTree = "<group>"; };
+		639E7F18242E69CB00496F14 /* HistoricalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalViewController.swift; sourceTree = "<group>"; };
 		639FA05522D6337C00983497 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		63A56BB322FA6A0F008C7093 /* StackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewController.swift; sourceTree = "<group>"; };
 		63B56C7422D5085E00D14C24 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -389,6 +393,7 @@
 		63446D3E23FC55FA0025D20F /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				639E7F13242E695A00496F14 /* Historical */,
 				63FD730A240D4634003E0DD1 /* Funds */,
 				637B0BB522D6385B00FF8BD0 /* Expense */,
 				63446D3223FC20EE0025D20F /* Salary */,
@@ -652,6 +657,7 @@
 		6391371622CBE6080018B65F /* app-modules */ = {
 			isa = PBXGroup;
 			children = (
+				639E7F16242E69A900496F14 /* historical-module */,
 				63FD730D240D5289003E0DD1 /* funds-module */,
 				63446D3523FC24170025D20F /* salary-module */,
 				63CE3FCD22D525B1000E90ED /* expense-module */,
@@ -718,6 +724,30 @@
 				639B9DA92417DC5300F4DBCD /* Alert.swift */,
 			);
 			path = Alert;
+			sourceTree = "<group>";
+		};
+		639E7F13242E695A00496F14 /* Historical */ = {
+			isa = PBXGroup;
+			children = (
+				639E7F14242E697800496F14 /* Historical.storyboard */,
+			);
+			path = Historical;
+			sourceTree = "<group>";
+		};
+		639E7F16242E69A900496F14 /* historical-module */ = {
+			isa = PBXGroup;
+			children = (
+				639E7F17242E69B500496F14 /* view */,
+			);
+			path = "historical-module";
+			sourceTree = "<group>";
+		};
+		639E7F17242E69B500496F14 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				639E7F18242E69CB00496F14 /* HistoricalViewController.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		63A56BB222FA698E008C7093 /* StackViewController */ = {
@@ -1193,6 +1223,7 @@
 				63B6C4A72323EB7400BA16ED /* ExpenseListSubItemView.xib in Resources */,
 				6391370622CBE3470018B65F /* Main.storyboard in Resources */,
 				63C96CE5242D6ECE00BA0D67 /* Salary.storyboard in Resources */,
+				639E7F15242E697800496F14 /* Historical.storyboard in Resources */,
 				63C96CF3242DA10500BA0D67 /* ExpenseListSectionView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1267,6 +1298,7 @@
 				63B6C4992323E41A00BA16ED /* ExpenseListSectionView.swift in Sources */,
 				63EA77192326A23F00DADC63 /* ConstantPickerView.swift in Sources */,
 				63F6C7EA22CC60A7003B7FA6 /* Coordinator.swift in Sources */,
+				639E7F19242E69CB00496F14 /* HistoricalViewController.swift in Sources */,
 				637A8A2023F77C9A00688E6C /* CoreDataWorker.swift in Sources */,
 				63B90EB123F1C64900D05638 /* ExpensePresenter.swift in Sources */,
 				63B56C7522D5085E00D14C24 /* Constant.swift in Sources */,
