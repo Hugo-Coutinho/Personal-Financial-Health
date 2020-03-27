@@ -8,26 +8,26 @@
 // MARK: - SALARY -
 "alertInvalidInput" = "please, input all the values correctly to submit it.";
 "alertFailToSaveSalary" = "Something went wrong, please try later.";
-"netSalary" = "%@";
+"netSalary" = "$ %.02f";
 "saveButton" = "Save";
 
 // MARK: - FUNDS -
-"fundsLabel" = "%@";
-"valueUsedDailyLabel" = "%@";
-"valueAlreadyUsedLabel" = "%@";
+"fundsLabel" = "$ %.02f";
+"valueUsedDailyLabel" = "$ %.02f";
+"valueAlreadyUsedLabel" = "$ %.02f";
 
 // MARK: - EXPENSE SECTION -
-"totalExpendedLabel" = "%@";
+"totalExpendedLabel" = "$ %.02f";
 "expenseConstantTypeLabel" = "Constant Expense";
 "expenseDailyTypeLabel" = "Daily Expense";
 
 // MARK: - EXPENSE ITEM -
 "itemText" = "%@";
-"expenseValueLabel" = "%@";
+"expenseValueLabel" = "$ %.02f";
 
 // MARK: - EXPENSE SUB ITEMs -
 "dateLabel" = "%@";
-"expendedLabel" = "%@";
+"expendedLabel" = "$ %.02f";
 
 // MARK: -  EXPENSE PICKER VIEWS -
 "constantExpense" = "Constant";

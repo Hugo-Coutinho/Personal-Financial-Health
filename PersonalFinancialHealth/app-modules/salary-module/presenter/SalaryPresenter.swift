@@ -48,7 +48,7 @@ class SalaryPresenter: SalaryPresenterInput, SalaryViewToPresenter {
             let usefullyInputValue = usefullyInputValue,
             let netDoubleValue = Double(net),
             let usefullyDoubleValue = Double(usefullyInputValue),
-            (netDoubleValue > 0 && usefullyDoubleValue > 0) else { self.view.invalidInput(); return }
+            ((netDoubleValue > 0 && usefullyDoubleValue > 0) && (usefullyDoubleValue < netDoubleValue )) else { self.view.invalidInput(); return }
         self.view.validInput()
     }
 }

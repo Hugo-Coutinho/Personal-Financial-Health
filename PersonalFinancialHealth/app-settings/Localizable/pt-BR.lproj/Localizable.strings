@@ -9,27 +9,27 @@
 // MARK: - SALARY -
 "alertInvalidInput" = "Por favor, inseria todos os valores corretamente para criar um gasto.";
 "alertFailToSaveSalary" = "Algum erro ocorreu, por favor tente novamente.";
-"netSalary" = "%@";
+"netSalary" = "R$ %.02f";
 "saveButton" = "Salvar";
 
 // MARK: - FUNDS -
-"fundsLabel" = "%@";
-"valueUsedDailyLabel" = "%@";
-"valueAlreadyUsedLabel" = "%@";
+"fundsLabel" = "R$ %.02f";
+"valueUsedDailyLabel" = "R$ %.02f";
+"valueAlreadyUsedLabel" = "R$ %.02f";
 
 
 // MARK: - EXPENSE SECTION -
-"totalExpendedLabel" = "%@";
+"totalExpendedLabel" = "R$ %.02f";
 "expenseConstantTypeLabel" = "Gasto Constante";
 "expenseDailyTypeLabel" = "Gasto Avulso";
 
 // MARK: - EXPENSE ITEM -
 "itemText" = "%@";
-"expenseValueLabel" = "%@";
+"expenseValueLabel" = "R$ %.02f";
 
 // MARK: - EXPENSE SUB ITEMs -
 "dateLabel" = "%@";
-"expendedLabel" = "%@";
+"expendedLabel"  = "R$ %.02f";
 
 // MARK: - PICKER VIEWS -
 "constantExpense" = "Gasto constante";

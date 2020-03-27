@@ -33,7 +33,7 @@ class ExpenseListSectionView: UIView {
     public func setupSectionView(sectionView: ExpenseListSectionView, itemModel: [ExpenseItemModel], index: Int) -> ExpenseListSectionView {
         let totalExpendedFormatString = NSLocalizedString("totalExpendedLabel", comment: "")
         let totalExpended = self.getTotalExpended(itemModel: itemModel, index: index)
-        sectionView.totalExpendedLabel.text = String.localizedStringWithFormat(totalExpendedFormatString, totalExpended.formatValueWithR$())
+        sectionView.totalExpendedLabel.text = String.localizedStringWithFormat(totalExpendedFormatString, totalExpended)
         sectionView.expenseTypeLabel.text = NSLocalizedString( self.getExpenseTypeValue(sectionIndex: index), comment: "")
         self.updateArrangedItems(itemModel: itemModel, index: index)
         self.configureUserInteraction(totalExpended: totalExpended)
@@ -68,22 +68,21 @@ extension ExpenseListSectionView {
 
 // MARK: - AUX METHODS -
 extension ExpenseListSectionView {
-    func configureUserInteraction(totalExpended: String) {
-        guard let expended = Double(totalExpended),
-            expended > 0 else { self.isUserInteractionEnabled = false; return }
+    func configureUserInteraction(totalExpended: Double) {
+        guard totalExpended > 0 else { self.isUserInteractionEnabled = false; return }
         self.isUserInteractionEnabled = true
     }
     
-    func getTotalExpended(itemModel: [ExpenseItemModel], index: Int) -> String {
+    func getTotalExpended(itemModel: [ExpenseItemModel], index: Int) -> Double {
         return index == 0 ? self.getTotalConstantExpended(itemModel: itemModel) : self.getTotalDailyExpended(itemModel: itemModel)
     }
     
-    func getTotalConstantExpended(itemModel: [ExpenseItemModel]) -> String {
-        return String(itemModel.filter({ $0.expenseType == 0 }).map({ $0.subItems.map({ $0.expended }).reduce(0, +) }).reduce(0, +))
+    func getTotalConstantExpended(itemModel: [ExpenseItemModel]) -> Double {
+        return itemModel.filter({ $0.expenseType == 0 }).map({ $0.subItems.map({ $0.expended }).reduce(0, +) }).reduce(0, +)
     }
     
-    func getTotalDailyExpended(itemModel: [ExpenseItemModel]) -> String {
-        return String(itemModel.filter({ $0.expenseType == 1 }).map({ $0.subItems.map({ $0.expended }).reduce(0, +) }).reduce(0, +))
+    func getTotalDailyExpended(itemModel: [ExpenseItemModel]) -> Double {
+        return itemModel.filter({ $0.expenseType == 1 }).map({ $0.subItems.map({ $0.expended }).reduce(0, +) }).reduce(0, +)
     }
     
     func getExpenseType(itemModel: [ExpenseItemModel], index: Int) -> Int {

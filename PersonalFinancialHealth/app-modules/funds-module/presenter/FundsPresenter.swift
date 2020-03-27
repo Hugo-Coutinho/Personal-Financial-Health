@@ -11,9 +11,9 @@ import Foundation
 // MARK: - PRESENTER INPUT -
 protocol FundsPresenterInput {
     static func make(view: FundsPresenterToView) -> FundsPresenterInput
-    func fetchFunds() -> String
-    func fetchDailyValue() -> String
-    func fetchAlreadyUsedValue() -> String
+    func fetchFunds() -> Double
+    func fetchDailyValue() -> Double
+    func fetchAlreadyUsedValue() -> Double
 }
 
 
@@ -34,16 +34,16 @@ class FundsPresenter: FundsPresenterInput, FundsViewToPresenter {
         return FundsPresenter.init(view: view)
     }
     
-    func fetchFunds() -> String {
-        return String(self.interactor?.getFundsFromDataBase() ?? 0.0).formatValueWithR$()
+    func fetchFunds() -> Double {
+        return self.interactor?.getFundsFromDataBase() ?? 0.0
     }
 
-    func fetchDailyValue() -> String {
-        return String(self.interactor?.getDailyValueAvailableFromDataBase() ?? 0.0).formatValueWithR$()
+    func fetchDailyValue() -> Double {
+        return self.interactor?.getDailyValueAvailableFromDataBase() ?? 0.0
     }
     
-    func fetchAlreadyUsedValue() -> String {
-        return String(self.interactor?.getAlreadyUsedValueFromDataBase() ?? 0.0).formatValueWithR$()
+    func fetchAlreadyUsedValue() -> Double {
+        return self.interactor?.getAlreadyUsedValueFromDataBase() ?? 0.0
     }
 }
 

@@ -20,7 +20,7 @@ class ExpenseListSubItemView: UIView {
         let expendedFormatString = NSLocalizedString("expendedLabel", comment: "")
         
         self.dateLabel.text =  String.localizedStringWithFormat(dateFormatString, self.getDate(date: date))
-        self.expendedLabel.text = String.localizedStringWithFormat(expendedFormatString, self.getExpense(expense: expense))
+        self.expendedLabel.text = String.localizedStringWithFormat(expendedFormatString, expense)
         return self
     }
 }
@@ -29,9 +29,5 @@ class ExpenseListSubItemView: UIView {
 extension ExpenseListSubItemView {
     func getDate(date: Date) -> String {
         return date.getFormattedDate()
-    }
-
-    func getExpense(expense: Double) -> String {
-        return String(expense).formatValueWithR$()
     }
 }

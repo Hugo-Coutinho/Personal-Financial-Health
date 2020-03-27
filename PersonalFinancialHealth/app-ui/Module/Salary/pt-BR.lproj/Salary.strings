@@ -12,7 +12,7 @@
 "lOy-0C-0k8.text" = "digite aqui o quanto voçê pode gastar";
 
 /* Class = "UILabel"; text = "We  does nothing with that value,\nthis page is just for your better control of your money."; ObjectID = "mnh-83-muw"; */
-"mnh-83-muw.text" = "Não fazemos nada com esse valor, \nServe apenas para um melhor controle do seu dinheiro";
+"mnh-83-muw.text" = "Não fazemos nada com esse valor, \nserve apenas para um melhor controle do seu dinheiro";
 
 /* Class = "UILabel"; text = "Your current net salary"; ObjectID = "rTu-Cp-yzj"; */
 "rTu-Cp-yzj.text" = "Seu atual salário líquido";

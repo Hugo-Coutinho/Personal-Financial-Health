@@ -41,6 +41,7 @@ class ExpenseListItemView: UIView {
 //        self.iconImage.image = UIImage(named: itemModel.icon)
         self.expenseValueLabel.text = String.localizedStringWithFormat(expenseValueFormatString, self.getItemExpense(itemModel: itemModel))
         self.updateArrangedSubItems(itemModel: itemModel)
+        self.subItemMainStackView.isHidden = true
         return self
     }
 }
@@ -104,8 +105,8 @@ extension ExpenseListItemView {
 
 // MARK: - MICRO FUNCTIONS -
 extension ExpenseListItemView {
-    func getItemExpense(itemModel: ExpenseItemModel) -> String {
-        return String(itemModel.subItems.map({ $0.expended }).reduce(0, +)).formatValueWithR$()
+    func getItemExpense(itemModel: ExpenseItemModel) -> Double {
+        return itemModel.subItems.map({ $0.expended }).reduce(0, +)
     }
     
     private func addGestureRecognizer() {

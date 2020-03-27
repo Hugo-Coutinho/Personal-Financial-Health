@@ -66,16 +66,18 @@ extension SalaryViewController: SalaryPresenterToView {
     
     func didLoadNetSalary(net: Double) {
         let netSalaryFormatString = NSLocalizedString("netSalary", comment: "")
-        let netSalaryResult = String(net).formatValueWithR$()
+        let netSalaryResult = net
         
         self.netSalary.text = String.localizedStringWithFormat(netSalaryFormatString, netSalaryResult)
     }
     
     func updateNetSalaryLabel() {
-        let netSalaryResult = self.textFieldNetSalary.text?.formatValueWithR$() ?? self.zeroNetSalary
         let netSalaryFormatString = NSLocalizedString("netSalary", comment: "")
         
-        self.netSalary.text = String.localizedStringWithFormat(netSalaryFormatString, netSalaryResult)
+        guard let netSalary = self.textFieldNetSalary.text,
+            let netSalaryResultDouble = Double(netSalary)  else { self.netSalary.text = self.zeroNetSalary; return }
+        
+        self.netSalary.text = String.localizedStringWithFormat(netSalaryFormatString, netSalaryResultDouble)
     }
     
     func showFailToSaveSalaryAlert() {
