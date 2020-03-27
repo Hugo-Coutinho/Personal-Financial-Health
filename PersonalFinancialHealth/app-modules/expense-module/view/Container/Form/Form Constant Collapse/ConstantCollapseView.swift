@@ -14,11 +14,13 @@ class ConstantCollapseView: UIView {
     // MARK: - OUTLET -
     @IBOutlet weak var ivDownArrow: UIImageView!
     @IBOutlet weak var constantCollapseView: UIView!
+    @IBOutlet weak var expenseTypeLabel: UILabel!
     
     // MARK: - PROPERTIES -     
     private lazy var mainStack: StackViewController = self.getExpenseArrangedSubViews()
     
     override func layoutSubviews() {
+        self.expenseTypeLabel.text = NSLocalizedString("expenseTypeLabel", comment: "")
         self.ivDownArrow.isHidden = false
         self.openConstantExpense()
         self.addConstraint(configureAspectRatio(toItem: self.constantCollapseView, multiplierFirst: 1.0, multiplierSecond: 7.0))

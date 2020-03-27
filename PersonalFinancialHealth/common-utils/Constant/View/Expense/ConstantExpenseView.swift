@@ -22,14 +22,14 @@ enum ConstantExpenseView {
     static let expenseListSubitem = "ExpenseListSubItemView"
     
     // MARK: - VIEW -
-    static let alertInvalidInput = "Please, input all the values correctly to create the expense."
-    static let alertSomethingWentWrong = "Sorry, something went wrong. Please, submit it again."
-    static let alertExpenseSaved = "Expense successfuly saved."
+    static let alertInvalidInput = "alertInvalidInput"
+    static let alertSomethingWentWrong = "alertSomethingWentWrong"
+    static let alertExpenseSaved = "alertExpenseSaved"
     static let alertExpenseTitleSuccess = "Success"
     static let alertExpenseTitleError = "Error"
     
     
     // MARK: - PICKER VIEWS -
-    static let constantExpense = "Constant"
-    static let dailyExpense = "Daily"
+    static let constantExpense = "constantExpense"
+    static let dailyExpense = "dailyExpense"
 }

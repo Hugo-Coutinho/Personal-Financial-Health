@@ -40,12 +40,12 @@ extension ExpenseFormView {
 extension ExpenseFormView {
     private func invalidInput() {
         guard let currentViewController = UIViewController.getVisibileViewController(viewController: ExpenseViewController.self) else { self.ShowAlertSomethingWentWrong(); return }
-        Alert.presentOkNativeAlert(title: Constant.view.expenseView.alertExpenseTitleError, message: Constant.view.expenseView.alertInvalidInput, viewController: currentViewController)
+        Alert.presentOkNativeAlert(title: Constant.view.expenseView.alertExpenseTitleError, message: NSLocalizedString(Constant.view.expenseView.alertInvalidInput, comment: ""), viewController: currentViewController)
     }
     
     private func ShowAlertSomethingWentWrong() {
         guard let currentViewController = UIViewController.getVisibileViewController(viewController: ExpenseViewController.self) else { return }
-        Alert.presentOkNativeAlert(title: Constant.view.expenseView.alertExpenseTitleError, message: Constant.view.expenseView.alertSomethingWentWrong, viewController: currentViewController)
+        Alert.presentOkNativeAlert(title: Constant.view.expenseView.alertExpenseTitleError, message: NSLocalizedString(Constant.view.expenseView.alertSomethingWentWrong, comment: ""), viewController: currentViewController)
     }
     
     private func updateExpense() {
@@ -53,7 +53,7 @@ extension ExpenseFormView {
             let currentViewController = UIViewController.getVisibileViewController(viewController: ExpenseViewController.self) else { self.ShowAlertSomethingWentWrong(); return }
         self.blFinancial.updateExpense(newExpense: expense)
         self.reloadStackView()
-        Alert.presentOkNativeAlert(title: Constant.view.expenseView.alertExpenseTitleSuccess, message: Constant.view.expenseView.alertExpenseSaved, viewController: currentViewController)
+        Alert.presentOkNativeAlert(title: Constant.view.expenseView.alertExpenseTitleSuccess, message: NSLocalizedString(Constant.view.expenseView.alertExpenseSaved, comment: ""), viewController: currentViewController)
     }
     
     func createExpense() {
@@ -61,7 +61,7 @@ extension ExpenseFormView {
             let currentViewController = UIViewController.getVisibileViewController(viewController: ExpenseViewController.self) else { self.ShowAlertSomethingWentWrong(); return }
         self.blFinancial.createExpense(newExpense: expense)
         self.reloadStackView()
-        Alert.presentOkNativeAlert(title: Constant.view.expenseView.alertExpenseTitleSuccess, message: Constant.view.expenseView.alertExpenseSaved, viewController: currentViewController)
+        Alert.presentOkNativeAlert(title: Constant.view.expenseView.alertExpenseTitleSuccess, message: NSLocalizedString(Constant.view.expenseView.alertExpenseSaved, comment: ""), viewController: currentViewController)
     }
     
     private func reloadStackView() {

@@ -16,8 +16,11 @@ class ExpenseListSubItemView: UIView {
     
     // MARK: - MAKE VIEW -
     func setupSubItemView(date: Date, expense: Double) -> ExpenseListSubItemView {
-        self.dateLabel.text = self.getDate(date: date)
-        self.expendedLabel.text = self.getExpense(expense: expense)
+        let dateFormatString = NSLocalizedString("dateLabel", comment: "")
+        let expendedFormatString = NSLocalizedString("expendedLabel", comment: "")
+        
+        self.dateLabel.text =  String.localizedStringWithFormat(dateFormatString, self.getDate(date: date))
+        self.expendedLabel.text = String.localizedStringWithFormat(expendedFormatString, self.getExpense(expense: expense))
         return self
     }
 }

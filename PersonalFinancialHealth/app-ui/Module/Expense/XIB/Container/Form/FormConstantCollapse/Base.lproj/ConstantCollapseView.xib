@@ -56,6 +56,7 @@
             <viewLayoutGuide key="safeArea" id="9E5-Pq-Hds"/>
             <connections>
                 <outlet property="constantCollapseView" destination="ncw-Vf-CaA" id="3Ka-NE-cWA"/>
+                <outlet property="expenseTypeLabel" destination="NX0-hO-b3r" id="DsU-Re-G47"/>
                 <outlet property="ivDownArrow" destination="WTh-I0-mlr" id="Q3S-R5-7hw"/>
             </connections>
             <point key="canvasLocation" x="-998" y="392"/>

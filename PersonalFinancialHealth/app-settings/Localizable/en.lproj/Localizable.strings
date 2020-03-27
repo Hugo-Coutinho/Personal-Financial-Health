@@ -1,0 +1,42 @@
+/* 
+  Localizable.strings
+  PersonalFinancialHealth
+
+  Created by BRQ on 26/03/20.
+  Copyright © 2020 BRQ. All rights reserved.
+*/
+// MARK: - SALARY -
+"alertInvalidInput" = "please, input all the values correctly to submit it.";
+"alertFailToSaveSalary" = "Something went wrong, please try later.";
+"netSalary" = "%@";
+"saveButton" = "Save";
+
+// MARK: - FUNDS -
+"fundsLabel" = "%@";
+"valueUsedDailyLabel" = "%@";
+"valueAlreadyUsedLabel" = "%@";
+
+// MARK: - EXPENSE SECTION -
+"totalExpendedLabel" = "%@";
+"expenseConstantTypeLabel" = "Constant Expense";
+"expenseDailyTypeLabel" = "Daily Expense";
+
+// MARK: - EXPENSE ITEM -
+"itemText" = "%@";
+"expenseValueLabel" = "%@";
+
+// MARK: - EXPENSE SUB ITEMs -
+"dateLabel" = "%@";
+"expendedLabel" = "%@";
+
+// MARK: -  EXPENSE PICKER VIEWS -
+"constantExpense" = "Constant";
+"dailyExpense" = "Daily";
+
+// MARK: -  EXPENSE COLLAPSE VIEW -
+"expenseTypeLabel" = "Tipo de gasto";
+
+// MARK: - EXPENSE FORM VIEW -
+"alertInvalidInput" = "Please, input all the values correctly to create the expense.";
+"alertSomethingWentWrong" = "Sorry, something went wrong. Please, submit it again.";
+"alertExpenseSaved" = "Expense successfuly saved.";

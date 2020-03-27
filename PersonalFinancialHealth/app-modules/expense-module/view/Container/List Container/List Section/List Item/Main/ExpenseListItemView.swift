@@ -34,9 +34,12 @@ class ExpenseListItemView: UIView {
     
     // MARK: - MAKE VIEW -
     func setupItemView(itemModel: ExpenseItemModel) -> ExpenseListItemView {
-        self.itemText.text = itemModel.name
+        let itemTextFormatString = NSLocalizedString("itemText", comment: "")
+        let expenseValueFormatString = NSLocalizedString("expenseValueLabel", comment: "")
+        
+        self.itemText.text = String.localizedStringWithFormat(itemTextFormatString, itemModel.name)
 //        self.iconImage.image = UIImage(named: itemModel.icon)
-        self.expenseValueLabel.text = self.getItemExpense(itemModel: itemModel)
+        self.expenseValueLabel.text = String.localizedStringWithFormat(expenseValueFormatString, self.getItemExpense(itemModel: itemModel))
         self.updateArrangedSubItems(itemModel: itemModel)
         return self
     }

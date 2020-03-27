@@ -17,8 +17,8 @@ class ConstantPickerView: UIView {
     
     // MARK: - DECLARATIONS -
     private lazy var pickerViewType: [String] = [
-        Constant.view.expenseView.constantExpense,
-        Constant.view.expenseView.dailyExpense
+        NSLocalizedString(Constant.view.expenseView.constantExpense, comment: ""),
+        NSLocalizedString(Constant.view.expenseView.dailyExpense, comment: ""),
     ]
     
     // MARK: - OVERRIDE -

@@ -28,7 +28,7 @@ class SalaryViewController: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
-        self.reusableButton.button.setTitle("Save", for: .normal)
+        self.reusableButton.button.setTitle(NSLocalizedString("saveButton", comment: ""), for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {

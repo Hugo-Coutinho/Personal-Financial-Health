@@ -31,9 +31,10 @@ class ExpenseListSectionView: UIView {
     
     // MARK: - MAKE VIEW -
     public func setupSectionView(sectionView: ExpenseListSectionView, itemModel: [ExpenseItemModel], index: Int) -> ExpenseListSectionView {
+        let totalExpendedFormatString = NSLocalizedString("totalExpendedLabel", comment: "")
         let totalExpended = self.getTotalExpended(itemModel: itemModel, index: index)
-        sectionView.totalExpendedLabel.text = totalExpended.formatValueWithR$()
-        sectionView.expenseTypeLabel.text = self.getExpenseTypeValue(sectionIndex: index)
+        sectionView.totalExpendedLabel.text = String.localizedStringWithFormat(totalExpendedFormatString, totalExpended.formatValueWithR$())
+        sectionView.expenseTypeLabel.text = NSLocalizedString( self.getExpenseTypeValue(sectionIndex: index), comment: "")
         self.updateArrangedItems(itemModel: itemModel, index: index)
         self.configureUserInteraction(totalExpended: totalExpended)
         return sectionView
@@ -91,7 +92,7 @@ extension ExpenseListSectionView {
     }
     
     func getExpenseTypeValue(sectionIndex: Int) -> String {
-        return sectionIndex == 0 ? "Constant Expense" : "Daily Expense"
+        return sectionIndex == 0 ? "expenseConstantTypeLabel" : "expenseDailyTypeLabel"
     }
     
     private func updateArrangedItems(itemModel: [ExpenseItemModel], index: Int) {
