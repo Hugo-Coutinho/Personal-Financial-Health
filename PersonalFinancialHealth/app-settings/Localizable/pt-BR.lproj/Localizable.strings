@@ -49,6 +49,11 @@
 // MARK: - EXPENSE CONFIRM VIEW -
 "newExpenseButton" = "Novo gasto";
 
+// MARK: - EXPENSE -
+"expenseEmptyMessageLabel" = "Sem gastos até o momento.";
+
+// MARK: - HISTORICAL -
+"historicalEmptyMessageLabel" = "Sem histórico no momento.";
 
 // use %d para numeros e %@ para strings
 

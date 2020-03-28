@@ -12,4 +12,5 @@ enum ConstantHistoricalView {
     // MARK: - VIEW -
     static let historicalContainerView = "HistoricalContainerView"
     static let historicalHeaderView = "HistoricalHeaderView"
+    static let historicalBodyView = "HistoricalBodyView"
 }

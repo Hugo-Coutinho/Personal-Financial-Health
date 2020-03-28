@@ -63,7 +63,7 @@
             </objects>
             <point key="canvasLocation" x="49" y="33"/>
         </scene>
-        <!--My Expenses-->
+        <!--Historical-->
         <scene sceneID="NZT-bh-Qns">
             <objects>
                 <viewController storyboardIdentifier="HistoricalViewController" id="ikO-nO-dDU" customClass="HistoricalViewController" customModule="PersonalFinancialHealth" customModuleProvider="target" sceneMemberID="viewController">
@@ -110,9 +110,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="X1w-Uf-jyO"/>
                     </view>
-                    <navigationItem key="navigationItem" title="My Expenses" id="vkx-Un-lcS"/>
+                    <navigationItem key="navigationItem" title="Historical" id="vkx-Un-lcS"/>
                     <connections>
                         <outlet property="mainStackView" destination="Ath-ei-8jG" id="3zk-Wi-Msv"/>
+                        <outlet property="scrollView" destination="SNw-dO-8tz" id="iqy-mq-sSn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bK6-hy-A9h" userLabel="First Responder" sceneMemberID="firstResponder"/>

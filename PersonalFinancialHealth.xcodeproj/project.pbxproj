@@ -53,6 +53,8 @@
 		639FA05622D6337C00983497 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639FA05522D6337C00983497 /* UIViewController.swift */; };
 		63A56BB422FA6A0F008C7093 /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A56BB322FA6A0F008C7093 /* StackViewController.swift */; };
 		63B30DAB242FA0DD0019AD39 /* ConstantHistoricalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B30DAA242FA0DD0019AD39 /* ConstantHistoricalView.swift */; };
+		63B30DAE242FE0180019AD39 /* EmptyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B30DAD242FE0180019AD39 /* EmptyPageView.swift */; };
+		63B30DB0242FE02D0019AD39 /* EmptyPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B30DAF242FE02D0019AD39 /* EmptyPageView.xib */; };
 		63B56C7522D5085E00D14C24 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B56C7422D5085E00D14C24 /* Constant.swift */; };
 		63B56C7722D5095500D14C24 /* MainCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B56C7622D5095500D14C24 /* MainCoreData.swift */; };
 		63B56C8422D5142900D14C24 /* BLFinancial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B56C8322D5142900D14C24 /* BLFinancial.swift */; };
@@ -155,6 +157,8 @@
 		639FA05522D6337C00983497 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		63A56BB322FA6A0F008C7093 /* StackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewController.swift; sourceTree = "<group>"; };
 		63B30DAA242FA0DD0019AD39 /* ConstantHistoricalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantHistoricalView.swift; sourceTree = "<group>"; };
+		63B30DAD242FE0180019AD39 /* EmptyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPageView.swift; sourceTree = "<group>"; };
+		63B30DAF242FE02D0019AD39 /* EmptyPageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyPageView.xib; sourceTree = "<group>"; };
 		63B56C7422D5085E00D14C24 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		63B56C7622D5095500D14C24 /* MainCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoreData.swift; sourceTree = "<group>"; };
 		63B56C8322D5142900D14C24 /* BLFinancial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLFinancial.swift; sourceTree = "<group>"; };
@@ -400,6 +404,7 @@
 		63446D3D23FC55EE0025D20F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				63B30DAC242FDFE50019AD39 /* EmptyPage */,
 				63446D3F23FC56300025D20F /* ReusableButton */,
 			);
 			path = Common;
@@ -901,6 +906,15 @@
 			path = Historical;
 			sourceTree = "<group>";
 		};
+		63B30DAC242FDFE50019AD39 /* EmptyPage */ = {
+			isa = PBXGroup;
+			children = (
+				63B30DAD242FE0180019AD39 /* EmptyPageView.swift */,
+				63B30DAF242FE02D0019AD39 /* EmptyPageView.xib */,
+			);
+			path = EmptyPage;
+			sourceTree = "<group>";
+		};
 		63B56C6D22D4DA9400D14C24 /* app-persistence */ = {
 			isa = PBXGroup;
 			children = (
@@ -1329,6 +1343,7 @@
 				63446D4123FC56C70025D20F /* ReusableButton.xib in Resources */,
 				6391370822CBE3490018B65F /* Assets.xcassets in Resources */,
 				63347B2523105F2D006CA2CC /* ExpenseListContainerView.xib in Resources */,
+				63B30DB0242FE02D0019AD39 /* EmptyPageView.xib in Resources */,
 				6350AD8922FB8CFB00433C70 /* PopupMenu.xib in Resources */,
 				63EA770F232699E600DADC63 /* ConfirmView.xib in Resources */,
 				63C96D08242DAA0F00BA0D67 /* ConstantCollapseView.xib in Resources */,
@@ -1394,6 +1409,7 @@
 				6391370322CBE3470018B65F /* HomeViewController.swift in Sources */,
 				63B90EAB23F1C44900D05638 /* ExpenseInteractor.swift in Sources */,
 				63EEEB7723FF7D5C00A2D408 /* SalaryInteractor.swift in Sources */,
+				63B30DAE242FE0180019AD39 /* EmptyPageView.swift in Sources */,
 				639E7F32242EA20600496F14 /* HistoricalContainerView.swift in Sources */,
 				63106EA122FD0EAC0059D21E /* PopupEditView.swift in Sources */,
 				638450A92425DB1B00D672A3 /* Date.swift in Sources */,

@@ -76,8 +76,17 @@ extension ExpenseViewController {
     
     func addingListContainerView() {
         guard !self.subViews.contains(where: { $0 is ExpenseListContainerView }),
-            !self.presenter.expenseIsEmpty() else { return }
+            !self.presenter.expenseIsEmpty() else { self.addEmptySection(); return }
+        self.removeEmptySection()
         self.subViews.append(ExpenseListContainerView())
+    }
+    
+    private func addEmptySection() {
+        self.subViews.append(EmptyPageView())
+    }
+    
+    private func removeEmptySection() {
+        self.subViews.removeAll(where: { $0 is EmptyPageView })
     }
 }
 

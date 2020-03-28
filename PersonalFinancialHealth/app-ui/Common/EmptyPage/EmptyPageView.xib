@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="EmptyPageView" id="iN0-l3-epB" customClass="EmptyPageView" customModule="PersonalFinancialHealth" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="181"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="jS7-20-3fQ">
+                    <rect key="frame" x="128" y="32" width="64" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="jS7-20-3fQ" secondAttribute="height" multiplier="1:1" id="JDg-rD-HAD"/>
+                        <constraint firstAttribute="height" constant="64" id="fAv-8B-Omh"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It`s your first month on the app" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRd-fC-8mu">
+                    <rect key="frame" x="0.0" y="128" width="320" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="KRd-fC-8mu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="FRL-gq-Xwl"/>
+                <constraint firstItem="jS7-20-3fQ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="32" id="PXn-uS-Wqk"/>
+                <constraint firstItem="jS7-20-3fQ" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" multiplier="0.2" id="YWs-cX-RdG"/>
+                <constraint firstItem="KRd-fC-8mu" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" id="nb2-w2-263"/>
+                <constraint firstItem="jS7-20-3fQ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="upa-aA-baC"/>
+                <constraint firstItem="KRd-fC-8mu" firstAttribute="top" secondItem="jS7-20-3fQ" secondAttribute="bottom" constant="32" id="wdL-S5-TgJ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="MessageLabel" destination="KRd-fC-8mu" id="5bX-ml-Ucb"/>
+            </connections>
+            <point key="canvasLocation" x="208" y="371.06446776611699"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="empty" width="64" height="64"/>
+    </resources>
+</document>

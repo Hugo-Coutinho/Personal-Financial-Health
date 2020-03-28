@@ -149,6 +149,11 @@
                                                         <constraint firstItem="x3s-sF-grK" firstAttribute="height" secondItem="b7Y-Ry-Tkf" secondAttribute="height" id="d8V-PL-Gy6"/>
                                                         <constraint firstItem="x3s-sF-grK" firstAttribute="centerY" secondItem="b7Y-Ry-Tkf" secondAttribute="centerY" id="hxb-Jp-EbG"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="8"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Constant expenses" textAlignment="natural" lineBreakMode="clip" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="jW3-lo-OkR">
                                                     <rect key="frame" x="16" y="22" width="112.5" height="20"/>

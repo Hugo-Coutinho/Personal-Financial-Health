@@ -37,7 +37,7 @@
 "dailyExpense" = "Daily";
 
 // MARK: -  EXPENSE COLLAPSE VIEW -
-"expenseTypeLabel" = "Tipo de gasto";
+"expenseTypeLabel" = "Expense type";
 
 // MARK: - EXPENSE FORM VIEW -
 "alertInvalidInput" = "Please, input all the values correctly to create the expense.";
@@ -46,3 +46,9 @@
 
 // MARK: - EXPENSE CONFIRM VIEW -
 "newExpenseButton" = "New Expense";
+
+// MARK: - EXPENSE -
+"expenseEmptyMessageLabel" = "No expense yet.";
+
+// MARK: - HISTORICAL -
+"historicalEmptyMessageLabel" = "No historical yet.";

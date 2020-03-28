@@ -94,6 +94,11 @@
                                                         <constraint firstItem="c1w-Rf-nxv" firstAttribute="width" secondItem="j4i-Te-bza" secondAttribute="width" id="yVs-VJ-oGU"/>
                                                         <constraint firstItem="c1w-Rf-nxv" firstAttribute="height" secondItem="j4i-Te-bza" secondAttribute="height" id="zv3-aV-aDJ"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="8"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-time" translatesAutoresizingMaskIntoConstraints="NO" id="yOD-SW-hve">
                                                     <rect key="frame" x="42.5" y="23.5" width="28" height="28.5"/>

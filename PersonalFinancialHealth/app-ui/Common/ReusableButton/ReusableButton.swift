@@ -10,8 +10,10 @@ import UIKit
 
 class ReusableButton: UIView {
     
+    // MARK: - OUTLETS -
     @IBOutlet weak var button: UIButton!
     
+    // MARK: - CONSTANTS -
     let nibName = "ReusableButton"
 
     required init?(coder aDecoder: NSCoder) {

@@ -22,12 +22,12 @@ class HistoricalHeaderView: UIView {
 
 // MARK: - IMPLEMENTS PROTOCOL HISTORICAL VIEWS -
 extension HistoricalHeaderView: IHistoricalView {
-    func didSelectRow(mainStack: StackViewController) {
-        
+    func instanceHistoricalViewFromNib() -> UIView {
+        return HistoricalContainerView.instanceFromNib(nibName: Constant.view.historicalView.historicalHeaderView)
     }
     
-    func instanceExpenseSubViewFromNib() -> UIView {
-        return ExpenseFormView.instanceFromNib(nibName: Constant.view.historicalView.historicalHeaderView)
+    func didSelectHistoricalRow(mainStack: StackViewController) {
+        
     }
 }
 

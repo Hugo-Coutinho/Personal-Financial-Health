@@ -18,12 +18,14 @@ class HistoricalContainerView: UIView {
 
 // MARK: - IMPLEMENTS PROTOCOL -
 extension HistoricalContainerView: IHistoricalView {
-    func instanceExpenseSubViewFromNib() -> UIView {
+    func instanceHistoricalViewFromNib() -> UIView {
         return HistoricalContainerView.instanceFromNib(nibName: Constant.view.historicalView.historicalContainerView)
     }
     
-    func didSelectRow(mainStack: StackViewController) {
+    func didSelectHistoricalRow(mainStack: StackViewController) {
         
     }
+    
+    
 }
 
