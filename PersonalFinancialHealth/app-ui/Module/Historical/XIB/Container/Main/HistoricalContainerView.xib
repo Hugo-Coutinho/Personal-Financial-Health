@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="HistoricalContainerView" id="D13-Is-vxB" customClass="HistoricalContainerView" customModule="PersonalFinancialHealth" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3dM-Vu-vdA">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KVK-RM-NOv" customClass="StackViewController" customModule="PersonalFinancialHealth" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="KVK-RM-NOv" firstAttribute="top" secondItem="k2C-po-NH3" secondAttribute="top" id="8qc-Cz-iUs"/>
+                        <constraint firstItem="KVK-RM-NOv" firstAttribute="leading" secondItem="k2C-po-NH3" secondAttribute="leading" id="aQN-Ue-7jb"/>
+                        <constraint firstItem="KVK-RM-NOv" firstAttribute="bottom" secondItem="k2C-po-NH3" secondAttribute="bottom" priority="250" id="eoP-dG-Coi"/>
+                        <constraint firstItem="KVK-RM-NOv" firstAttribute="trailing" secondItem="k2C-po-NH3" secondAttribute="trailing" id="tUd-re-Fl9"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="k2C-po-NH3"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="3dM-Vu-vdA" firstAttribute="leading" secondItem="D13-Is-vxB" secondAttribute="leading" id="312-h6-XQS"/>
+                <constraint firstItem="3dM-Vu-vdA" firstAttribute="width" secondItem="D13-Is-vxB" secondAttribute="width" id="Fo0-qF-KOD"/>
+                <constraint firstAttribute="trailing" secondItem="3dM-Vu-vdA" secondAttribute="trailing" id="JUD-im-iPx"/>
+                <constraint firstItem="3dM-Vu-vdA" firstAttribute="top" secondItem="D13-Is-vxB" secondAttribute="top" id="gRS-hN-jTJ"/>
+                <constraint firstItem="3dM-Vu-vdA" firstAttribute="height" secondItem="D13-Is-vxB" secondAttribute="height" priority="250" id="j8F-cx-ftG"/>
+                <constraint firstAttribute="bottom" secondItem="3dM-Vu-vdA" secondAttribute="bottom" id="tJf-7j-3Da"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="ylR-M6-Qf8"/>
+        </view>
+    </objects>
+</document>

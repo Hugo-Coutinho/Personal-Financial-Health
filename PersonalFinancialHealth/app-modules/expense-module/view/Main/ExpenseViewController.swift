@@ -56,6 +56,15 @@ extension ExpenseViewController {
         self.configureMainStackView()
         self.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
+}
+
+// MARK: - CONFIGURATION UI COMPONENTS -
+extension ExpenseViewController {
+    func configureMainStackView() {
+        self.mainStackView.dataSource = self
+        self.mainStackView.delegate = self
+        self.mainStackView.initialize()
+    }
     
     private func configureSubViews() {
         self.subViews.append(ExpenseFormView())
@@ -65,19 +74,10 @@ extension ExpenseViewController {
         self.addingListContainerView()
     }
     
-     func addingListContainerView() {
+    func addingListContainerView() {
         guard !self.subViews.contains(where: { $0 is ExpenseListContainerView }),
             !self.presenter.expenseIsEmpty() else { return }
         self.subViews.append(ExpenseListContainerView())
-    }
-}
-
-// MARK: - CONFIGURATION UI COMPONENTS -
-extension ExpenseViewController {
-    func configureMainStackView() {
-        self.mainStackView.dataSource = self
-        self.mainStackView.delegate = self
-        self.mainStackView.initialize()
     }
 }
 
@@ -98,7 +98,7 @@ extension ExpenseViewController: StackViewDataSource {
     }
 }
 
-// MARK: - STACKVIEW DATASOURCE -
+// MARK: - STACKVIEW DELEGATE -
 extension ExpenseViewController: StackViewDelegate {
     func stackView(_ stackView: UIStackView, didSelectRowAt index: Int, view: UIView) {
         guard self.currentViewExist(index: index) else { return }

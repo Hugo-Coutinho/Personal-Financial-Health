@@ -33,7 +33,7 @@ class HomePresenter: HomeViewToPresenter, HomePresenterInput {
         case HomeOptionsEnum.netSalaryView.getIndex():
             BaseRouter.goTo(module: BaseRouter.createModule(viewController: SalaryViewController.self))
         case HomeOptionsEnum.historicalView.getIndex():
-            print("historical")
+            BaseRouter.goTo(module: BaseRouter.createModule(viewController: HistoricalViewController.self))
         default:
             break
         }
