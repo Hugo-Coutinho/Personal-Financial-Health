@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,14 +15,14 @@
             <objects>
                 <viewController storyboardIdentifier="FundsViewController" id="7dy-Bs-7Z2" customClass="FundsViewController" customModule="PersonalFinancialHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2GO-dN-dU2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OZE-cs-QNV" userLabel="background blue sky">
-                                <rect key="frame" x="0.0" y="20" width="414" height="358"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="274"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 100,0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKp-sF-PkP">
-                                        <rect key="frame" x="0.0" y="92.333333333333329" width="414" height="65.999999999999986"/>
+                                        <rect key="frame" x="0.0" y="43" width="320" height="51"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="iKp-sF-PkP" secondAttribute="height" multiplier="25:4" id="cbx-fA-Rfx"/>
                                         </constraints>
@@ -31,7 +31,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total available for this month." textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSK-Wg-Kdb">
-                                        <rect key="frame" x="20.666666666666657" y="166.33333333333334" width="372.66666666666674" height="25"/>
+                                        <rect key="frame" x="16" y="102" width="288" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="1h0-gH-2VU"/>
                                         </constraints>
@@ -40,7 +40,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Every new month, the value will be updated." textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyF-aD-tOe">
-                                        <rect key="frame" x="41.333333333333343" y="195.33333333333334" width="331.33333333333326" height="16"/>
+                                        <rect key="frame" x="32" y="131" width="256" height="32"/>
                                         <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -54,23 +54,23 @@
                                     <constraint firstItem="CSK-Wg-Kdb" firstAttribute="width" secondItem="OZE-cs-QNV" secondAttribute="width" multiplier="0.9" id="YY1-Yc-nXr"/>
                                     <constraint firstItem="iKp-sF-PkP" firstAttribute="width" secondItem="OZE-cs-QNV" secondAttribute="width" id="fe2-id-0pX"/>
                                     <constraint firstItem="uyF-aD-tOe" firstAttribute="top" secondItem="CSK-Wg-Kdb" secondAttribute="bottom" constant="4" id="gWI-yg-N7M"/>
-                                    <constraint firstItem="iKp-sF-PkP" firstAttribute="centerY" secondItem="OZE-cs-QNV" secondAttribute="centerY" multiplier="0.7" id="gXR-to-zaa"/>
+                                    <constraint firstItem="iKp-sF-PkP" firstAttribute="centerY" secondItem="OZE-cs-QNV" secondAttribute="centerY" multiplier="0.5" id="gXR-to-zaa"/>
                                     <constraint firstItem="CSK-Wg-Kdb" firstAttribute="centerX" secondItem="OZE-cs-QNV" secondAttribute="centerX" id="kPV-kw-y9z"/>
                                     <constraint firstItem="iKp-sF-PkP" firstAttribute="centerX" secondItem="OZE-cs-QNV" secondAttribute="centerX" id="yVz-lw-Ptq"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WEo-ur-KLZ" userLabel="dashboard view">
-                                <rect key="frame" x="0.0" y="378" width="414" height="358"/>
+                                <rect key="frame" x="0.0" y="294" width="320" height="274"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vh3-DQ-oEa" userLabel="line">
-                                        <rect key="frame" x="20.666666666666657" y="60.333333333333314" width="372.66666666666674" height="1"/>
+                                        <rect key="frame" x="16" y="46" width="288" height="1"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="eHw-GZ-FUs"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="General in this month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5y-a4-kug">
-                                        <rect key="frame" x="31.999999999999986" y="32" width="194.66666666666663" height="24"/>
+                                        <rect key="frame" x="32" y="21.5" width="194.5" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="1hy-Zf-f8e"/>
                                         </constraints>
@@ -79,10 +79,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tpc-ZO-KMU" userLabel="daily view">
-                                        <rect key="frame" x="20.666666666666671" y="121.66666666666669" width="165.66666666666663" height="115"/>
+                                        <rect key="frame" x="16" y="79.5" width="128" height="115"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 500,00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSA-9W-nVu">
-                                                <rect key="frame" x="0.0" y="31.999999999999943" width="165.66666666666666" height="23"/>
+                                                <rect key="frame" x="0.0" y="32" width="128" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="CSA-9W-nVu" secondAttribute="height" multiplier="50:7" id="Jw6-fJ-iPr"/>
                                                 </constraints>
@@ -91,7 +91,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To use daily" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmt-Pr-6iT">
-                                                <rect key="frame" x="0.0" y="70.999999999999943" width="165.66666666666666" height="23.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="66" width="128" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="tmt-Pr-6iT" secondAttribute="height" multiplier="50:7" id="Ue2-hM-1QT"/>
                                                 </constraints>
@@ -112,10 +112,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hbb-9g-ftv" userLabel="used view">
-                                        <rect key="frame" x="227.66666666666669" y="121.66666666666669" width="165.66666666666669" height="115"/>
+                                        <rect key="frame" x="176" y="79.5" width="128" height="115"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 500,00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adX-x6-ZSq">
-                                                <rect key="frame" x="0.0" y="31.999999999999943" width="165.66666666666666" height="23"/>
+                                                <rect key="frame" x="0.0" y="32" width="128" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="adX-x6-ZSq" secondAttribute="height" multiplier="165:23" id="fUf-6C-U0e"/>
                                                 </constraints>
@@ -124,7 +124,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already used" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCf-zj-2jN">
-                                                <rect key="frame" x="0.0" y="70.999999999999943" width="165.66666666666666" height="23"/>
+                                                <rect key="frame" x="0.0" y="66" width="128" height="17.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="aCf-zj-2jN" secondAttribute="height" multiplier="165:23" id="fgk-Os-cGS"/>
                                                 </constraints>

@@ -2,9 +2,20 @@
 # platform :ios, '9.0'
 
 target 'PersonalFinancialHealth' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
+  pod 'lottie-ios'
 
-  # Pods for PersonalFinancialHealth
+end
 
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    if target.name == 'PersonalFinancialHealth'
+      target.build_configurations.each do |config|
+        if config.name == 'Debug'
+          config.build_settings['OTHER_SWIFT_FLAGS'] = '-DDEBUG'
+          else
+          config.build_settings['OTHER_SWIFT_FLAGS'] = ''
+        end
+      end
+    end
+  end
 end
