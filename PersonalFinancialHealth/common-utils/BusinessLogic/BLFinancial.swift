@@ -63,7 +63,10 @@ extension BLFinancial {
         guard let _ = self.worker.read(manageObjectType: ExpenseItemMO.self)?.filter({ $0.name == newExpense.name && $0.expenseType == newExpense.expenseType }).first else { return false }
         return true
     }
-    
+}
+
+// MARK: - CLEAN DATABASE -
+extension BLFinancial {
     func resetAppExpenseStorage() {
         self.worker.resetAppStorage(manageObjectType: ExpenseItemMO.self)
         
@@ -110,5 +113,26 @@ extension BLFinancial {
         let salaryWorker = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorSalary)
         guard let managedObject = salaryWorker.read(manageObjectType: SalaryMO.self)?.first else { return 0.0 }
         return managedObject.usefully
+    }
+}
+
+// MARK: - GLOBAL FINANCIAL STATE  MANAGMENT -
+extension BLFinancial {
+    func checkFinancialBudget<T: UIViewController>(viewController: T.Type) {
+        self.getExpenses(successExpenses: { (expenses) in
+            guard expenses.count > 0,
+                self.financialStateUpdateTotalViewColor(itemModel: expenses) == UIColor.ExpenseRed() else { return }
+            self.showAlertBudgetIsBlack(viewController: T.self)
+        }) { (error) in
+            assertionFailure()
+        }
+    }
+    
+    private func showAlertBudgetIsBlack<T: UIViewController>(viewController: T.Type) {
+        let title = NSLocalizedString("financialShowAlertBudgetIsBlackTitle", comment: "")
+        let message = NSLocalizedString("financialShowAlertBudgetIsBlackMessage", comment: "")
+        guard let currentViewController = UIViewController.getVisibileViewController(viewController: T.self) else { return }
+        
+        Alert.presentOkNativeAlert(title: title, message: message, viewController: currentViewController)
     }
 }

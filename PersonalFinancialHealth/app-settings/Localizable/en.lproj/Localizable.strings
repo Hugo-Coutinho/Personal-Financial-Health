@@ -11,7 +11,7 @@
 "netSalary" = "$ %.02f";
 "usefullySalary" = "$ %.02f";
 "saveButton" = "Save";
-"SuccessInsertSalaryTitle" = "success";
+"SuccessInsertSalaryTitle" = "Success";
 "SuccessInsertSalaryMessage" = "Salary successfuly saved";
 "zeroNetSalary" = "$ 0.00";
 
@@ -53,3 +53,7 @@
 
 // MARK: - HISTORICAL -
 "historicalEmptyMessageLabel" = "No historical yet.";
+
+// MARK: - FINANCIAL -
+"financialShowAlertBudgetIsBlackTitle" = "Oh no, what a shame!";
+"financialShowAlertBudgetIsBlackMessage" = "Your budget is black. please be attention";

@@ -18,6 +18,7 @@ protocol HomePresenterToRouter {
 protocol HomePresenterToInteractor {
     var presenter:HomeInteractorToPresenter {get set}
     static func make(presenter: HomeInteractorToPresenter) -> HomePresenterToInteractor
+    func checkFinancialBudget()
 }
 
 protocol HomeInteractorToPresenter {

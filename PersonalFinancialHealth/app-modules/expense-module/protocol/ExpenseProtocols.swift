@@ -25,6 +25,7 @@ protocol ExpensePresenterToInteractor {
     var presenter: ExpenseInteractorToPresenter {get set}
     static func make(presenter: ExpenseInteractorToPresenter) -> ExpensePresenterToInteractor
     func expenseIsEmpty() -> Bool
+    func checkFinancialBudget()
 }
 
 // MARK: - INTERACTOR OUTPUT -

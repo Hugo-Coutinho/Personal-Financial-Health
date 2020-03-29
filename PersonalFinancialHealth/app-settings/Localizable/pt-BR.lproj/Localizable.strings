@@ -12,7 +12,7 @@
 "netSalary" = "R$ %.02f";
 "usefullySalary" = "$ %.02f";
 "saveButton" = "Salvar";
-"SuccessInsertSalaryTitle" = "successo";
+"SuccessInsertSalaryTitle" = "Successo";
 "SuccessInsertSalaryMessage" = "Salário salvo com sucesso!";
 "zeroNetSalary" = "R$ 0,00";
 
@@ -55,6 +55,10 @@
 
 // MARK: - HISTORICAL -
 "historicalEmptyMessageLabel" = "Sem histórico no momento.";
+
+// MARK: - GLOBAL -
+"financialShowAlertBudgetIsBlackTitle" = "Vish, deu ruim";
+"financialShowAlertBudgetIsBlackMessage" = "Seu orçamento está no vermelho, tenha atenção com seus gastos";
 
 // use %d para numeros e %@ para strings
 

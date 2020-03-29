@@ -56,6 +56,7 @@ extension ExpenseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.presenter.checkFinancialBudget()
         self.configureSubViews()
         self.configureMainStackView()
     }

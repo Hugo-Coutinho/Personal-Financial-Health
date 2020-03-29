@@ -4,6 +4,7 @@ import UIKit
 protocol HomePresenterInput {
     static func make(view: HomePresenterToView) -> HomePresenterInput
     func redirectToNewScreenBy(index: Int)
+    func checkFinancialBudget()
 }
 
 class HomePresenter: HomeViewToPresenter, HomePresenterInput {
@@ -37,6 +38,10 @@ class HomePresenter: HomeViewToPresenter, HomePresenterInput {
         default:
             break
         }
+    }
+    
+    func checkFinancialBudget() {
+        self.interactor?.checkFinancialBudget()
     }
 }
 

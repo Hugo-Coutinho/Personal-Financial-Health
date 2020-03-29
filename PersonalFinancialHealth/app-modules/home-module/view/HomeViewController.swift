@@ -29,6 +29,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.presenter.checkFinancialBudget()
         self.setupViewAddingGestureToHomeOptions()    
         Coordinator.navController = self.navigationController
     }

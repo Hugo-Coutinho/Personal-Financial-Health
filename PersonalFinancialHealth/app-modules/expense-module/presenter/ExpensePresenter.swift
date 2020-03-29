@@ -11,6 +11,7 @@ import Foundation
 protocol ExpensePresenterInput {
     static func make(view: ExpensePresenterToView) -> ExpensePresenterInput
     func expenseIsEmpty() -> Bool
+    func checkFinancialBudget()
 }
 
 class ExpensePresenter: ExpensePresenterInput, ExpenseViewToPresenter {
@@ -33,6 +34,10 @@ class ExpensePresenter: ExpensePresenterInput, ExpenseViewToPresenter {
     func expenseIsEmpty() -> Bool {
         guard let interactor = self.interactor else { return true }
         return interactor.expenseIsEmpty()
+    }
+    
+    func checkFinancialBudget() {
+        self.interactor?.checkFinancialBudget()
     }
 }
 

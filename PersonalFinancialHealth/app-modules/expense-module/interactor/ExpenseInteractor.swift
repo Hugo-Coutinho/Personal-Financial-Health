@@ -13,6 +13,7 @@ class ExpenseInteractor: ExpensePresenterToInteractor {
     // MARK: - PROPERTIES -
     var presenter: ExpenseInteractorToPresenter
     var worker: CoreDataWorkerInput
+    private lazy var blFinancial: BLFinancial = BLFinancial(worker: self.worker)
     
     init(presenter: ExpenseInteractorToPresenter) {
         self.presenter = presenter
@@ -27,5 +28,9 @@ class ExpenseInteractor: ExpensePresenterToInteractor {
     func expenseIsEmpty() -> Bool {
         guard let managedObject = self.worker.read(manageObjectType: ExpenseItemMO.self) else { return true }
         return managedObject.isEmpty
+    }
+    
+    func checkFinancialBudget() {
+        self.blFinancial.checkFinancialBudget(viewController: ExpenseViewController.self)
     }
 }
