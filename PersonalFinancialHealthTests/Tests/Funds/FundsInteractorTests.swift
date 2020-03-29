@@ -41,7 +41,7 @@ class FundsInteractorTests: XCTestCase {
         self.blFinancial?.resetAppExpenseStorage()
     }
     
-    func testGetFundsFromDataBase_shouldAssertTen() {
+    func testGetFundsCalculatedFromDataBase_shouldAssertTen() {
         // 1. GIVEN
         let interactor: FundsPresenterToInteractor = FundsInteractor.make(presenter: self)
         let salary = SalaryModel(net: 5.0, usefully: 10.0)
@@ -52,7 +52,7 @@ class FundsInteractorTests: XCTestCase {
         } catch {
             assertionFailure()
         }
-        let result = interactor.getFundsFromDataBase()
+        let result = interactor.getFundsCalculatedFromDataBase()
         // 3. THEN
         assert(result == 10.0)
     }
@@ -94,6 +94,22 @@ class FundsInteractorTests: XCTestCase {
             assertionFailure()
         }
         let result = interactor.getAlreadyUsedValueFromDataBase()
+        // 3. THEN
+        assert(result == 10.0)
+    }
+    
+    func testGetUsefullyFunds_shouldAssertTen() {
+        // 1. GIVEN
+        let interactor: FundsPresenterToInteractor = FundsInteractor.make(presenter: self)
+        let salary = SalaryModel(net: 5.0, usefully: 10.0)
+        let salaryMO = salary.toManagedObject(in: self.worker!.context)
+        // 2. WHEN
+        do {
+            try self.worker?.create(entity: salaryMO)
+        } catch {
+            assertionFailure()
+        }
+        let result = interactor.getUsefullyFunds()
         // 3. THEN
         assert(result == 10.0)
     }

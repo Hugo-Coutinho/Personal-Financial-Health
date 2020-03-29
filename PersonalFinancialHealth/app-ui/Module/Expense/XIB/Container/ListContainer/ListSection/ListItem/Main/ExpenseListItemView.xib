@@ -283,9 +283,11 @@
             <connections>
                 <outlet property="arrowImage" destination="U1X-61-w15" id="Uc2-GF-Sjm"/>
                 <outlet property="expenseValueLabel" destination="c1w-Rf-nxv" id="16f-XQ-1eL"/>
+                <outlet property="iconImage" destination="yOD-SW-hve" id="uQd-Si-RVW"/>
                 <outlet property="itemBackgroundView" destination="x4q-5D-fmI" id="yiA-Qx-tRd"/>
                 <outlet property="itemText" destination="x8p-je-1m2" id="6Ha-DP-d8I"/>
                 <outlet property="subItemMainStackView" destination="YUj-q8-iyC" id="aon-Qm-q5x"/>
+                <outlet property="totalExpenseView" destination="j4i-Te-bza" id="yh7-Nl-WBi"/>
             </connections>
             <point key="canvasLocation" x="124.8" y="626.08695652173913"/>
         </view>

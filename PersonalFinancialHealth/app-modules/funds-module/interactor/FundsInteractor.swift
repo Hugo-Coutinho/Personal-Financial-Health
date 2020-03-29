@@ -23,7 +23,7 @@ class FundsInteractor: FundsInteractorInput, FundsPresenterToInteractor {
     // MARK: - INITIALIZER -
     init(presenter: FundsInteractorToPresenter) {
         self.presenter = presenter
-        self.worker  = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorSalary)
+        self.worker = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorSalary)
     }
     
     // MARK: - DI -
@@ -31,13 +31,22 @@ class FundsInteractor: FundsInteractorInput, FundsPresenterToInteractor {
         return FundsInteractor.init(presenter: presenter)
     }
     
-    func getFundsFromDataBase() -> Double {
-        guard let managedObject = self.worker.read(manageObjectType: SalaryMO.self)?.first else { return 0.0 }
-        return managedObject.usefully
+    func getFundsCalculatedFromDataBase() -> Double {
+        var funds = 0.0
+        self.blFinancial.getUsefullyFundsRecalculated(usefullyFund: { (usefully) in
+            funds = usefully
+        }) { (error) in
+            funds = 0.0
+        }
+        return funds
+    }
+    
+    func getUsefullyFunds() -> Double {
+        return self.blFinancial.getUsefullyFunds()
     }
     
     func getDailyValueAvailableFromDataBase() -> Double {
-        let usefullyValue: Double = self.getFundsFromDataBase()
+        let usefullyValue: Double = self.getUsefullyFunds()
         let daysLeft: Double = Date().getDaysLeftFromMonth()
         let totalExpense: Double = self.blFinancial.getTotalConstantAndDailyExpense()
         return Double((usefullyValue - totalExpense) / daysLeft).rounded()

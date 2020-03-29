@@ -141,7 +141,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.33333333329999998" green="0.69803921570000005" blue="0.20784313730000001" alpha="0.45000000000000001" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.33333333329999998" green="0.69803921570000005" blue="0.20784313730000001" alpha="0.45000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="b7Y-Ry-Tkf" secondAttribute="height" multiplier="63:20" id="1Rp-2i-AeI"/>
                                                         <constraint firstItem="x3s-sF-grK" firstAttribute="centerX" secondItem="b7Y-Ry-Tkf" secondAttribute="centerX" id="3cq-ek-Fj7"/>
@@ -248,6 +248,7 @@
                 <outlet property="itemMainStackView" destination="OO1-4C-pvW" id="Hhv-Qf-7uG"/>
                 <outlet property="sectionView" destination="tG6-o9-H4i" id="tgJ-kF-INB"/>
                 <outlet property="totalExpendedLabel" destination="x3s-sF-grK" id="r51-Ps-pDs"/>
+                <outlet property="totalExpendedView" destination="b7Y-Ry-Tkf" id="D3d-90-GKg"/>
             </connections>
             <point key="canvasLocation" x="126" y="320"/>
         </view>

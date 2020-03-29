@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class BLFinancial {
     
@@ -50,8 +51,8 @@ extension BLFinancial {
     func getTotalConstantAndDailyExpense() -> Double {
         var total = 0.0
         self.worker = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorExpense)
-         self.getExpenses(successExpenses: { (expenses) in
-         total = expenses.map({ $0.subItems.map({ $0.expended }).reduce(0, +) }).reduce(0, +)
+        self.getExpenses(successExpenses: { (expenses) in
+            total = expenses.map({ $0.subItems.map({ $0.expended }).reduce(0, +) }).reduce(0, +)
         }) { (error) in
             assertionFailure()
         }
@@ -79,16 +80,35 @@ extension BLFinancial {
 
 // MARK: - OPEN FUNCTIONS FUNDS -
 extension BLFinancial {
-    func getUsefullyFunds(usefullyFund: @escaping (Double) -> Void, invalid: @escaping () -> Void) {
-        let managedObject = self.worker.read(manageObjectType: SalaryMO.self)
-        guard let wrappedValue = managedObject?.first else { invalid(); return }
-        usefullyFund(self.calculateTheUsefullyFunds(net: wrappedValue.usefully, totalExpended: 0.0))
+    func getUsefullyFundsRecalculated(usefullyFund: @escaping (Double) -> Void, invalid: @escaping (Error?) -> Void) {
+        let salaryWorker = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorSalary)
+        let managedObject = salaryWorker.read(manageObjectType: SalaryMO.self)
+        guard let wrappedValue = managedObject?.first else { invalid(nil); return }
+        usefullyFund(self.calculateTheUsefullyFunds(usefully: wrappedValue.usefully, totalExpended: self.getTotalConstantAndDailyExpense()))
     }
 }
 
 // MARK: - AUX FUNCTIONS -
 extension BLFinancial {
-    func calculateTheUsefullyFunds(net: Double, totalExpended: Double) -> Double {
-        return (net - totalExpended)
+    func calculateTheUsefullyFunds(usefully: Double, totalExpended: Double) -> Double {
+        return (usefully - totalExpended)
+    }
+}
+
+
+// MARK: - SECTION & ITEM REUSABLE FUNCTIONs -
+extension BLFinancial {
+    func financialStateUpdateTotalViewColor(itemModel: [ExpenseItemModel]) -> UIColor {
+        let totalUsed = self.getTotalConstantAndDailyExpense()
+        let usefully = self.getUsefullyFunds()
+        let userSituationIsOk = totalUsed < usefully
+        guard userSituationIsOk  else { return UIColor.ExpenseRed() }
+        return UIColor.ExpenseGreen()
+    }
+    
+    func getUsefullyFunds() -> Double {
+        let salaryWorker = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorSalary)
+        guard let managedObject = salaryWorker.read(manageObjectType: SalaryMO.self)?.first else { return 0.0 }
+        return managedObject.usefully
     }
 }

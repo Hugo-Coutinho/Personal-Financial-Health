@@ -35,11 +35,12 @@ class FundsPresenter: FundsPresenterInput, FundsViewToPresenter {
     }
     
     func fetchFunds() -> Double {
-        return self.interactor?.getFundsFromDataBase() ?? 0.0
+        return self.interactor?.getFundsCalculatedFromDataBase() ?? 0.0
     }
 
     func fetchDailyValue() -> Double {
-        return self.interactor?.getDailyValueAvailableFromDataBase() ?? 0.0
+        let used = self.interactor?.getDailyValueAvailableFromDataBase() ?? 0.0
+        return used < 0.0 ? 0.0 : used
     }
     
     func fetchAlreadyUsedValue() -> Double {

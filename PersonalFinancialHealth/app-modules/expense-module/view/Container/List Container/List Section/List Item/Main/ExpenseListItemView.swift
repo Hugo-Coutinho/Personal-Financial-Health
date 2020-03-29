@@ -13,6 +13,7 @@ class ExpenseListItemView: UIView {
     // MARK: - OUTLET -
     @IBOutlet weak var itemText: UILabel!
     @IBOutlet weak var itemBackgroundView: UIView!
+    @IBOutlet weak var totalExpenseView: UIView!
     @IBOutlet weak var arrowImage: UIImageView!
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var expenseValueLabel: UILabel!
@@ -40,6 +41,7 @@ class ExpenseListItemView: UIView {
         self.itemText.text = String.localizedStringWithFormat(itemTextFormatString, itemModel.name)
 //        self.iconImage.image = UIImage(named: itemModel.icon)
         self.expenseValueLabel.text = String.localizedStringWithFormat(expenseValueFormatString, self.getItemExpense(itemModel: itemModel))
+        self.financialStateUpdateTotalViewColor(itemModel: [itemModel])
         self.updateArrangedSubItems(itemModel: itemModel)
         self.subItemMainStackView.isHidden = true
         return self
@@ -105,6 +107,10 @@ extension ExpenseListItemView {
 
 // MARK: - MICRO FUNCTIONS -
 extension ExpenseListItemView {
+    func financialStateUpdateTotalViewColor(itemModel: [ExpenseItemModel]) {
+        self.totalExpenseView.backgroundColor = self.blFinancial.financialStateUpdateTotalViewColor(itemModel: itemModel)
+    }
+    
     func getItemExpense(itemModel: ExpenseItemModel) -> Double {
         return itemModel.subItems.map({ $0.expended }).reduce(0, +)
     }

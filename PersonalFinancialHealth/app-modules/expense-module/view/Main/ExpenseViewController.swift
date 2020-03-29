@@ -52,9 +52,12 @@ extension ExpenseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureNavigationItem(hidesBackButton: false)
+        self.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         self.configureSubViews()
         self.configureMainStackView()
-        self.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
 }
 

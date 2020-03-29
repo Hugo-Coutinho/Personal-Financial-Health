@@ -22,9 +22,10 @@ protocol FundsPresenterToView {
 // MARK: - INTERACTOR INPUT -
 protocol FundsPresenterToInteractor {
     var presenter: FundsInteractorToPresenter {get set}
-    func getFundsFromDataBase() -> Double
+    func getFundsCalculatedFromDataBase() -> Double
     func getDailyValueAvailableFromDataBase() -> Double
     func getAlreadyUsedValueFromDataBase() -> Double
+    func getUsefullyFunds() -> Double
 }
 
 // MARK: - INTERACTOR OUTPUT -

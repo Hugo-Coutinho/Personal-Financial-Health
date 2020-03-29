@@ -27,7 +27,7 @@ class BLFinancialTests: XCTestCase {
     func testCalculateTheUsefullyFunds() {
         // 1. GIVEN
         // 2. WHEN
-        let result = self.blFinancial?.calculateTheUsefullyFunds(net: 200.0, totalExpended: 100.0)
+        let result = self.blFinancial?.calculateTheUsefullyFunds(usefully: 200.0, totalExpended: 100.0)
         // 3. THEN
         assert(result == 100.0)
     }
@@ -89,5 +89,63 @@ class BLFinancialTests: XCTestCase {
         business.resetAppExpenseStorage()
         // 3. THEN
         assert(expenseWorker.read(manageObjectType: ExpenseItemMO.self)!.isEmpty == true)
+    }
+    
+    func testFinancialStateUpdateTotalViewColor_shouldAssertGreenColor() {
+        // 1. GIVEN
+        let expenseWorker: CoreDataWorkerInput = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorExpense)
+        let salaryWorker: CoreDataWorkerInput = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorSalary)
+        let salaryModel = SalaryModel(net: 2500.0, usefully: 2000.0)
+        let salaryMO = salaryModel.toManagedObject(in: self.worker!.context)
+        let expenseModel = ExpenseItemModel(icon: "", name: "", expenseType: 0, subItems: [ExpenseSubItemModel(date: Date(), expended: 900.0)])
+        let expenseMO = expenseModel.toManagedObject(in: self.worker!.context)
+
+        // 2. WHEN
+        do {
+            try salaryWorker.create(entity: salaryMO)
+            try expenseWorker.create(entity: expenseMO)
+        } catch {
+            assertionFailure()
+        }
+        let result = self.blFinancial?.financialStateUpdateTotalViewColor(itemModel: [expenseModel])
+        // 3. THEN
+        assert(result == UIColor.ExpenseGreen())
+    }
+    
+    func testFinancialStateUpdateTotalViewColor_shouldAssertGreenRed() {
+        // 1. GIVEN
+        let expenseWorker: CoreDataWorkerInput = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorExpense)
+        let salaryWorker: CoreDataWorkerInput = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorSalary)
+        let salaryModel = SalaryModel(net: 2500.0, usefully: 2000.0)
+        let salaryMO = salaryModel.toManagedObject(in: self.worker!.context)
+        let expenseModel = ExpenseItemModel(icon: "", name: "", expenseType: 0, subItems: [ExpenseSubItemModel(date: Date(), expended: 2100.0)])
+        let expenseMO = expenseModel.toManagedObject(in: self.worker!.context)
+        
+        // 2. WHEN
+        do {
+            try salaryWorker.create(entity: salaryMO)
+            try expenseWorker.create(entity: expenseMO)
+        } catch {
+            assertionFailure()
+        }
+        let result = self.blFinancial?.financialStateUpdateTotalViewColor(itemModel: [expenseModel])
+        // 3. THEN
+        assert(result == UIColor.ExpenseRed())
+    }
+    
+    func testGetUsefullyFunds_shouldAssertTen() {
+        // 1. GIVEN
+        let salaryWorker: CoreDataWorkerInput = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorSalary)
+        let salaryModel = SalaryModel(net: 2500.0, usefully: 2000.0)
+        let salaryMO = salaryModel.toManagedObject(in: self.worker!.context)
+        // 2. WHEN
+        do {
+            try salaryWorker.create(entity: salaryMO)
+        } catch {
+            assertionFailure()
+        }
+        let result = self.blFinancial?.getUsefullyFunds()
+        // 3. THEN
+        assert(result == 2000.0)
     }
 }

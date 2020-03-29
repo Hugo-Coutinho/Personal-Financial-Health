@@ -14,6 +14,8 @@ class ExpenseListSectionView: UIView {
     @IBOutlet weak var sectionView: UIView!
     @IBOutlet weak var totalExpendedLabel: UILabel!
     @IBOutlet weak var expenseTypeLabel: UILabel!
+    @IBOutlet weak var totalExpendedView: UIView!
+    
     @IBOutlet weak var itemMainStackView: StackViewController!
     
     // MARK: - VARIABLE -
@@ -35,8 +37,10 @@ class ExpenseListSectionView: UIView {
         let totalExpended = self.getTotalExpended(itemModel: itemModel, index: index)
         sectionView.totalExpendedLabel.text = String.localizedStringWithFormat(totalExpendedFormatString, totalExpended)
         sectionView.expenseTypeLabel.text = NSLocalizedString( self.getExpenseTypeValue(sectionIndex: index), comment: "")
+        self.financialStateUpdateTotalViewColor(itemModel: itemModel)
         self.updateArrangedItems(itemModel: itemModel, index: index)
         self.configureUserInteraction(totalExpended: totalExpended)
+        
         return sectionView
     }
 }
@@ -68,6 +72,10 @@ extension ExpenseListSectionView {
 
 // MARK: - AUX METHODS -
 extension ExpenseListSectionView {
+    func financialStateUpdateTotalViewColor(itemModel: [ExpenseItemModel]) {
+        self.totalExpendedView.backgroundColor = self.blFinancial.financialStateUpdateTotalViewColor(itemModel: itemModel)
+    }
+    
     func configureUserInteraction(totalExpended: Double) {
         guard totalExpended > 0 else { self.isUserInteractionEnabled = false; return }
         self.isUserInteractionEnabled = true
