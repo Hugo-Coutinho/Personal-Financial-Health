@@ -67,6 +67,7 @@ extension ExpenseFormView {
     private func reloadStackView() {
         guard let expenseViewController = UIViewController.getVisibileViewController(viewController: ExpenseViewController.self) else { self.ShowAlertSomethingWentWrong(); return }
         expenseViewController.addingListContainerView()
+        expenseViewController.didLoadEmptyViewManagment()
         expenseViewController.mainStackView.reloadStackView()
     }
     

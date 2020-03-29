@@ -16,10 +16,10 @@ protocol SalaryViewToPresenter {
 
 // MARK: - PRESENTER OUTPUT -
 protocol SalaryPresenterToView {
-    func updateNetSalaryLabel()
+    func updateSalaryLabels()
     func showFailToSaveSalaryAlert()
-    func didNotLoadNetSalary()
-    func didLoadNetSalary(net: Double)
+    func didNotLoadSalary()
+    func didLoadSalary(salary: SalaryModel)
     func invalidInput()
     func validInput()
 }
@@ -29,7 +29,7 @@ protocol SalaryPresenterToInteractor {
     var presenter: SalaryInteractorToPresenter {get set}
     static func make(presenter: SalaryInteractorToPresenter) -> SalaryPresenterToInteractor
     func fetchNetSalary(net: SalaryModel)
-    func loadNetSalary() -> Double?
+    func loadSalary() -> SalaryModel?
 }
 
 // MARK: - INTERACTOR OUTPUT -

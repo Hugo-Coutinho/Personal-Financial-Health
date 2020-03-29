@@ -25,7 +25,7 @@ class SalaryInteractorTests: XCTestCase {
         self.blFinancial?.resetAppSalaryStorage()
     }
     
-    func testLoadNetSalary_shouldAssertNetValueEqualToTen() {
+    func testLoadSalary_shouldAssertNetValueEqualToTen() {
         // 1. GIVEN
         let presenter = SalaryPresenter(view: self)
         let interactor = SalaryInteractor.make(presenter: presenter)
@@ -37,9 +37,10 @@ class SalaryInteractorTests: XCTestCase {
         } catch {
             assertionFailure()
         }
-        let result = interactor.loadNetSalary()
+        let result = interactor.loadSalary()
         // 3. THEN
-        assert(result == 10.0)
+        assert(result?.usefully == 100.0)
+        assert(result?.net == 10.0)
     }
     
     func testLoadNetSalary_shouldAssertNil() {
@@ -47,7 +48,7 @@ class SalaryInteractorTests: XCTestCase {
         let presenter = SalaryPresenter(view: self)
         let interactor = SalaryInteractor.make(presenter: presenter)
         // 2. WHEN
-        let result = interactor.loadNetSalary()
+        let result = interactor.loadSalary()
         // 3. THEN
         XCTAssertNil(result)
     }
@@ -67,15 +68,15 @@ class SalaryInteractorTests: XCTestCase {
 }
 
 extension SalaryInteractorTests: SalaryPresenterToView {
-    func updateNetSalaryLabel() {
+    func updateSalaryLabels() {
         
     }
     
-    func didNotLoadNetSalary() {
+    func didLoadSalary(salary: SalaryModel) {
         
     }
     
-    func didLoadNetSalary(net: Double) {
+    func didNotLoadSalary() {
         
     }
     

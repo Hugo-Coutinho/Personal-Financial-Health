@@ -75,13 +75,18 @@ extension ExpenseViewController {
         self.subViews.append(ConstantPickerView())
         self.subViews.append(ConfirmView())
         self.addingListContainerView()
+        self.didLoadEmptyViewManagment()
     }
     
     func addingListContainerView() {
         guard !self.subViews.contains(where: { $0 is ExpenseListContainerView }),
-            !self.presenter.expenseIsEmpty() else { self.addEmptySection(); return }
-        self.removeEmptySection()
+            !self.presenter.expenseIsEmpty() else { return }
         self.subViews.append(ExpenseListContainerView())
+    }
+    
+    func didLoadEmptyViewManagment() {
+        guard !self.subViews.contains(where: { $0 is ExpenseListContainerView }) else { self.subViews.removeAll(where: { $0 is EmptyPageView }); return }
+        self.subViews.append(EmptyPageView())
     }
     
     private func addEmptySection() {

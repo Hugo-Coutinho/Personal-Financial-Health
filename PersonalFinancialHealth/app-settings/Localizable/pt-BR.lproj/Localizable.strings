@@ -10,6 +10,7 @@
 "alertInvalidInput" = "Por favor, inseria todos os valores corretamente para criar um gasto.";
 "alertFailToSaveSalary" = "Algum erro ocorreu, por favor tente novamente.";
 "netSalary" = "R$ %.02f";
+"usefullySalary" = "$ %.02f";
 "saveButton" = "Salvar";
 "SuccessInsertSalaryTitle" = "successo";
 "SuccessInsertSalaryMessage" = "Salário salvo com sucesso!";

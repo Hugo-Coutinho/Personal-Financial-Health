@@ -9,6 +9,7 @@
 "alertInvalidInput" = "please, input all the values correctly to submit it.";
 "alertFailToSaveSalary" = "Something went wrong, please try later.";
 "netSalary" = "$ %.02f";
+"usefullySalary" = "$ %.02f";
 "saveButton" = "Save";
 "SuccessInsertSalaryTitle" = "success";
 "SuccessInsertSalaryMessage" = "Salary successfuly saved";

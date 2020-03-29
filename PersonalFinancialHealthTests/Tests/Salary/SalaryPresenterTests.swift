@@ -63,15 +63,15 @@ class SalaryPresenterTests: XCTestCase {
 }
 
 extension SalaryPresenterTests: SalaryPresenterToView {
-    func updateNetSalaryLabel() {
+    func updateSalaryLabels() {
         
     }
     
-    func didNotLoadNetSalary() {
+    func didLoadSalary(salary: SalaryModel) {
         
     }
     
-    func didLoadNetSalary(net: Double) {
+    func didNotLoadSalary() {
         
     }
     

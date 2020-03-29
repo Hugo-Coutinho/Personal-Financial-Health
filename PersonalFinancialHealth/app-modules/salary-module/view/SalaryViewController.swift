@@ -15,6 +15,7 @@ class SalaryViewController: UIViewController {
     @IBOutlet weak var textFieldNetSalary: UITextField!
     @IBOutlet weak var textFieldUsefullySalary: UITextField!
     @IBOutlet weak var netSalary: UILabel!
+    @IBOutlet weak var usefullySalary: UILabel!
     
     // MARK: - VARIABLES -
     private lazy var presenter: SalaryPresenterInput = SalaryPresenter.make(view: self)
@@ -50,6 +51,24 @@ extension SalaryViewController {
       self.textFieldNetSalary.text = ""
         self.textFieldUsefullySalary.text = ""
     }
+    
+    private func updateNetLabel() {
+        let netSalaryFormatString = NSLocalizedString("netSalary", comment: "")
+        
+        guard let netSalary = self.textFieldNetSalary.text,
+            let netSalaryResultDouble = Double(netSalary)  else { self.netSalary.text = self.zeroNetSalary; return }
+        
+        self.netSalary.text = String.localizedStringWithFormat(netSalaryFormatString, netSalaryResultDouble)
+    }
+    
+    private func updateUsefullyLabel() {
+        let usefullySalaryFormatString = NSLocalizedString("usefullySalary", comment: "")
+        
+        guard let usefullySalary = self.textFieldUsefullySalary.text,
+            let usefullySalaryResultDouble = Double(usefullySalary)  else { self.usefullySalary.text = self.zeroNetSalary; return }
+        
+        self.usefullySalary.text = String.localizedStringWithFormat(usefullySalaryFormatString, usefullySalaryResultDouble)
+    }
 }
 
 // MARK: - PRESENTER OUTPUT -
@@ -67,24 +86,22 @@ extension SalaryViewController: SalaryPresenterToView {
         self.cleanTextFields()
     }
     
-    func didNotLoadNetSalary() {
+    func didNotLoadSalary() {
         self.netSalary.text = NSLocalizedString(self.zeroNetSalary, comment: "")
+        self.usefullySalary.text = NSLocalizedString(self.zeroNetSalary, comment: "")
     }
     
-    func didLoadNetSalary(net: Double) {
+    func didLoadSalary(salary: SalaryModel) {
         let netSalaryFormatString = NSLocalizedString("netSalary", comment: "")
-        let netSalaryResult = net
+        let usefullySalaryFormatString = NSLocalizedString("usefullySalary", comment: "")
         
-        self.netSalary.text = String.localizedStringWithFormat(netSalaryFormatString, netSalaryResult)
+        self.netSalary.text = String.localizedStringWithFormat(netSalaryFormatString, salary.net)
+        self.usefullySalary.text = String.localizedStringWithFormat(usefullySalaryFormatString, salary.usefully)
     }
     
-    func updateNetSalaryLabel() {
-        let netSalaryFormatString = NSLocalizedString("netSalary", comment: "")
-        
-        guard let netSalary = self.textFieldNetSalary.text,
-            let netSalaryResultDouble = Double(netSalary)  else { self.netSalary.text = self.zeroNetSalary; return }
-        
-        self.netSalary.text = String.localizedStringWithFormat(netSalaryFormatString, netSalaryResultDouble)
+    func updateSalaryLabels() {
+        self.updateNetLabel()
+        self.updateUsefullyLabel()
     }
     
     func showFailToSaveSalaryAlert() {

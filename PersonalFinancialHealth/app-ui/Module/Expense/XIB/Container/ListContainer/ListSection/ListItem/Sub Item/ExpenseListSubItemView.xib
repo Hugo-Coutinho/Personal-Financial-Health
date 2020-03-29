@@ -80,14 +80,14 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10/06/2019" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="UTZ-xT-HzM">
-                            <rect key="frame" x="91" y="14" width="86.5" height="22"/>
+                            <rect key="frame" x="1" y="0.0" width="223" height="49"/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="UTZ-xT-HzM" secondAttribute="height" multiplier="39:10" id="tYN-x5-PDY"/>
+                                <constraint firstAttribute="width" constant="223" id="4Mi-EJ-HvF"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 1000,00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="NtY-4U-k23">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 1000,0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="NtY-4U-k23">
                             <rect key="frame" x="240" y="14" width="74" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="NtY-4U-k23" secondAttribute="height" multiplier="33:10" id="9CO-rB-hxV"/>
@@ -100,20 +100,20 @@
                     <constraints>
                         <constraint firstItem="npg-cE-Ti8" firstAttribute="height" secondItem="szM-kY-2AV" secondAttribute="height" id="69i-jA-Ttz"/>
                         <constraint firstItem="NtY-4U-k23" firstAttribute="centerX" secondItem="szM-kY-2AV" secondAttribute="centerX" multiplier="1.731" id="6hk-4A-tqk"/>
-                        <constraint firstItem="UTZ-xT-HzM" firstAttribute="width" secondItem="szM-kY-2AV" secondAttribute="width" multiplier="0.27" id="BiO-fj-QgB"/>
-                        <constraint firstItem="UTZ-xT-HzM" firstAttribute="centerY" secondItem="szM-kY-2AV" secondAttribute="centerY" id="C3N-s9-Qtn"/>
+                        <constraint firstItem="UTZ-xT-HzM" firstAttribute="top" secondItem="szM-kY-2AV" secondAttribute="top" id="EpS-EX-a2P"/>
                         <constraint firstItem="PbZ-a3-AMp" firstAttribute="centerX" secondItem="szM-kY-2AV" secondAttribute="centerX" id="Q6Q-SZ-xFY"/>
                         <constraint firstItem="FPH-8N-iq7" firstAttribute="centerY" secondItem="szM-kY-2AV" secondAttribute="centerY" id="TN3-mJ-7Su"/>
                         <constraint firstItem="PbZ-a3-AMp" firstAttribute="width" secondItem="szM-kY-2AV" secondAttribute="width" id="Unx-ma-IUo"/>
+                        <constraint firstItem="PbZ-a3-AMp" firstAttribute="top" secondItem="UTZ-xT-HzM" secondAttribute="bottom" id="VZy-me-YOZ"/>
                         <constraint firstItem="FPH-8N-iq7" firstAttribute="height" secondItem="szM-kY-2AV" secondAttribute="height" id="Wit-nD-B1i"/>
                         <constraint firstAttribute="bottom" secondItem="PbZ-a3-AMp" secondAttribute="bottom" id="Xp6-cL-aOl"/>
                         <constraint firstItem="npg-cE-Ti8" firstAttribute="leading" secondItem="szM-kY-2AV" secondAttribute="leading" id="hKr-V3-Pyw"/>
                         <constraint firstAttribute="width" secondItem="szM-kY-2AV" secondAttribute="height" multiplier="32:5" id="iJO-ob-3gR"/>
                         <constraint firstItem="NtY-4U-k23" firstAttribute="centerY" secondItem="szM-kY-2AV" secondAttribute="centerY" id="k8a-QF-xmU"/>
-                        <constraint firstItem="UTZ-xT-HzM" firstAttribute="centerX" secondItem="szM-kY-2AV" secondAttribute="centerX" multiplier="0.84" id="lPZ-cC-sWq"/>
                         <constraint firstItem="npg-cE-Ti8" firstAttribute="centerY" secondItem="szM-kY-2AV" secondAttribute="centerY" id="ngO-5I-SXC"/>
                         <constraint firstAttribute="trailing" secondItem="FPH-8N-iq7" secondAttribute="trailing" id="q5l-jS-Q3H"/>
                         <constraint firstItem="NtY-4U-k23" firstAttribute="width" secondItem="szM-kY-2AV" secondAttribute="width" multiplier="0.23" id="qEc-3V-mDf"/>
+                        <constraint firstItem="UTZ-xT-HzM" firstAttribute="leading" secondItem="npg-cE-Ti8" secondAttribute="trailing" id="shx-6p-53C"/>
                     </constraints>
                 </view>
             </subviews>

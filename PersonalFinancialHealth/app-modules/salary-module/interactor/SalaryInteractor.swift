@@ -56,9 +56,9 @@ class SalaryInteractor: SalaryInteractorInput, SalaryPresenterToInteractor {
         }
     }
     
-    func loadNetSalary() -> Double? {
+    func loadSalary() -> SalaryModel? {
         let managedObject = self.worker.read(manageObjectType: SalaryMO.self)
         guard let wrappedValue = managedObject?.first else { return nil }
-        return wrappedValue.net
+        return SalaryModel.toEntity(mo: wrappedValue) 
     }
 }

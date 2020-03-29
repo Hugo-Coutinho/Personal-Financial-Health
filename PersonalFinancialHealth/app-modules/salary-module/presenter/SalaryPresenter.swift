@@ -39,8 +39,8 @@ class SalaryPresenter: SalaryPresenterInput, SalaryViewToPresenter {
     
     func loadNetSalary() {
         guard let interactor = self.interactor,
-            let netSalary = interactor.loadNetSalary() else { self.view.didNotLoadNetSalary(); return }
-        self.view.didLoadNetSalary(net: netSalary)
+            let salary = interactor.loadSalary() else { self.view.didNotLoadSalary(); return }
+        self.view.didLoadSalary(salary: salary)
     }
     
     func validateInputValues(netInputValue: String?, usefullyInputValue: String?) {
@@ -72,7 +72,7 @@ extension SalaryPresenter {
 // MARK: - IMPLEMENTS INTERACTOR -
 extension SalaryPresenter: SalaryInteractorToPresenter {
     func didSaveSalary() {
-        self.view.updateNetSalaryLabel()
+        self.view.updateSalaryLabels()
     }
     
     func didFailToSaveSalary() {

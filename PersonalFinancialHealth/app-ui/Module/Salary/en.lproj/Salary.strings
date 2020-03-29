@@ -12,7 +12,7 @@
 "lOy-0C-0k8.text" = "Type here the amount you can use";
 
 /* Class = "UILabel"; text = "We  does nothing with that value,\nthis page is just for your better control of your money."; ObjectID = "mnh-83-muw"; */
-"mnh-83-muw.text" = "We  does nothing with that value,\nthis page is just for your better control of your money.";
+"mnh-83-muw.text" = "From this value, \nwe are gonna calculate how much expense you can have this month.";
 
 /* Class = "UILabel"; text = "Your current net salary"; ObjectID = "rTu-Cp-yzj"; */
-"rTu-Cp-yzj.text" = "Your current net salary";
+"rTu-Cp-yzj.text" = "Current available value to spend";
