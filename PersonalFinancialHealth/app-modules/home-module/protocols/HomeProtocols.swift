@@ -6,8 +6,7 @@ protocol HomeViewToPresenter {
 }
 
 protocol HomePresenterToView {
-//    func showNotice(noticeArray:Array<NoticeModel>)
-//    func showError()
+func showAlertAppWasReseted()
 }
 
 protocol HomePresenterToRouter {
@@ -19,6 +18,7 @@ protocol HomePresenterToInteractor {
     var presenter:HomeInteractorToPresenter {get set}
     static func make(presenter: HomeInteractorToPresenter) -> HomePresenterToInteractor
     func checkFinancialBudget()
+    func resetFinancialInformation()
 }
 
 protocol HomeInteractorToPresenter {

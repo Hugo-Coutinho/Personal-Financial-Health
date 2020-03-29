@@ -15,6 +15,7 @@ class SalaryInteractorTests: XCTestCase {
     private var worker: CoreDataWorkerInput?
     private var blFinancial: BLFinancial?
     
+    // MARK: - UNIT TESTING LIFE CYCLE -
     override func setUp() {
         self.worker = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorSalary)
         guard let worker = self.worker else { assertionFailure(); return }

@@ -57,3 +57,7 @@
 // MARK: - FINANCIAL -
 "financialShowAlertBudgetIsBlackTitle" = "Oh no, what a shame!";
 "financialShowAlertBudgetIsBlackMessage" = "Your budget is black. please be attention";
+
+// MARK: - HOME -
+"homeAlertAppResetTitle" = "New month arrived";
+"homeAlertAppResetMessage" = "All of your information was reseted, therefore, the new month begins.";

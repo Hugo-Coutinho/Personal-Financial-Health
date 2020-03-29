@@ -28,6 +28,10 @@ extension Date {
         let endDayOfMonth = Calendar.current.component(.day, from: monthLastDate!)
         return Double(endDayOfMonth - today)
     }
+    
+    static func IsTodayANewMonth() -> Bool {
+        return Calendar.current.component(.day, from: Date()) == 1
+    }
 }
 
 // MARK: - AUX FUNCTIONS -

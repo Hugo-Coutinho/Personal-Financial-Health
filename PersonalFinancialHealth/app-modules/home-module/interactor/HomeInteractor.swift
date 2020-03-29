@@ -21,4 +21,11 @@ class HomeInteractor: HomePresenterToInteractor {
     func checkFinancialBudget() {
         self.blFinancial.checkFinancialBudget(viewController: HomeViewController.self)
     }
+    
+    func resetFinancialInformation() {
+        let salaryFinancial = BLFinancial(worker: CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorSalary))
+        
+        salaryFinancial.resetAppSalaryStorage()
+        self.blFinancial.resetAppExpenseStorage()
+    }
 }

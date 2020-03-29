@@ -5,6 +5,7 @@ protocol HomePresenterInput {
     static func make(view: HomePresenterToView) -> HomePresenterInput
     func redirectToNewScreenBy(index: Int)
     func checkFinancialBudget()
+    func checkCalendarToResetInformation()
 }
 
 class HomePresenter: HomeViewToPresenter, HomePresenterInput {
@@ -42,6 +43,12 @@ class HomePresenter: HomeViewToPresenter, HomePresenterInput {
     
     func checkFinancialBudget() {
         self.interactor?.checkFinancialBudget()
+    }
+    
+    func checkCalendarToResetInformation() {
+        guard Date.IsTodayANewMonth() else { return }
+        self.interactor?.resetFinancialInformation()
+        self.view.showAlertAppWasReseted()
     }
 }
 

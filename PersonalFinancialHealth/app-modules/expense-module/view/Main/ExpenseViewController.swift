@@ -73,7 +73,6 @@ extension ExpenseViewController {
     private func configureSubViews() {
         self.subViews.append(ExpenseFormView())
         self.subViews.append(ConstantCollapseView())
-        self.subViews.append(ConstantPickerView())
         self.subViews.append(ConfirmView())
         self.addingListContainerView()
         self.didLoadEmptyViewManagment()
@@ -102,7 +101,7 @@ extension ExpenseViewController {
 // MARK: - STACKVIEW DATASOURCE -
 extension ExpenseViewController: StackViewDataSource {
     func stackView(_ stackView: UIStackView, customSpacingForRow index: Int) -> Int {
-        guard index == expenseSubViewEnum.confirmButton.getIndex() else { return 8 }
+        guard self.isCurrentViewEqualToConfirmView(index: index) else { return 8 }
         return 32
     }
     
@@ -124,8 +123,15 @@ extension ExpenseViewController: StackViewDelegate {
     }
 }
 
-// MARK: - STACKVIEW VIEW FOR ROW LOGIC -
+// MARK: - STACKVIEW DATASOURCE LOGIC -
 extension ExpenseViewController {
+    private func isCurrentViewEqualToConfirmView(index: Int) -> Bool {
+        guard let confirmView = self.mainStackView.arrangedSubviews.first(where: { $0 is ConfirmView }),
+            let confirmViewIndex = self.mainStackView.arrangedSubviews.firstIndex(of: confirmView),
+            index == confirmViewIndex else { return false }
+        return true
+    }
+    
     private func currentViewExist(index: Int) -> Bool {
         return self.subViews.count >= index
     }

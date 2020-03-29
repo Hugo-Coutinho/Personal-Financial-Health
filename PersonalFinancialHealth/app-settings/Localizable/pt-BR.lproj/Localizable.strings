@@ -56,9 +56,15 @@
 // MARK: - HISTORICAL -
 "historicalEmptyMessageLabel" = "Sem histórico no momento.";
 
-// MARK: - GLOBAL -
+// MARK: - GLOBAL FINANCIAL -
 "financialShowAlertBudgetIsBlackTitle" = "Vish, deu ruim";
 "financialShowAlertBudgetIsBlackMessage" = "Seu orçamento está no vermelho, tenha atenção com seus gastos";
+
+// MARK: - HOME -
+"homeAlertAppResetTitle" = "New month arrived";
+"homeAlertAppResetMessage" = "All of your information was reseted, therefore, the new month begins.";
+
+
 
 // use %d para numeros e %@ para strings
 

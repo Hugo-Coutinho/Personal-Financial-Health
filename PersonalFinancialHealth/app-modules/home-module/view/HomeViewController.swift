@@ -29,6 +29,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.presenter.checkCalendarToResetInformation()
         self.presenter.checkFinancialBudget()
         self.setupViewAddingGestureToHomeOptions()    
         Coordinator.navController = self.navigationController
@@ -65,5 +66,10 @@ extension HomeViewController {
 
 // MARK: - IMPLEMENTS PRESENTER DELEGATE -
 extension HomeViewController: HomePresenterToView {
-    
+    func showAlertAppWasReseted() {
+        let title = NSLocalizedString("homeAlertAppResetTitle", comment: "")
+        let message = NSLocalizedString("homeAlertAppResetMessage", comment: "")
+        
+        Alert.presentOkNativeAlert(title: title, message: message, viewController: self)
+    }
 }

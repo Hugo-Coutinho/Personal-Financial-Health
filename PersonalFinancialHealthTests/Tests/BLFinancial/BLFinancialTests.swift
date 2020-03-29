@@ -136,7 +136,7 @@ class BLFinancialTests: XCTestCase {
     func testGetUsefullyFunds_shouldAssertTen() {
         // 1. GIVEN
         let salaryWorker: CoreDataWorkerInput = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorSalary)
-        let salaryModel = SalaryModel(net: 2500.0, usefully: 2000.0)
+        let salaryModel = SalaryModel(net: 2500.0, usefully: 10.0)
         let salaryMO = salaryModel.toManagedObject(in: self.worker!.context)
         // 2. WHEN
         do {
@@ -144,8 +144,9 @@ class BLFinancialTests: XCTestCase {
         } catch {
             assertionFailure()
         }
+        self.blFinancial?.resetAppExpenseStorage()
         let result = self.blFinancial?.getUsefullyFunds()
         // 3. THEN
-        assert(result == 2000.0)
+        assert(result == 10.0)
     }
 }

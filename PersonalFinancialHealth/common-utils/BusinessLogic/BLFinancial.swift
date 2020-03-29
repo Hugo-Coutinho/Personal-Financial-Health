@@ -75,10 +75,6 @@ extension BLFinancial {
     func resetAppSalaryStorage() {
         self.worker.resetAppStorage(manageObjectType: SalaryMO.self)
     }
-    
-    func resetAppHistoricalStorage() {
-        self.worker.resetAppStorage(manageObjectType: HistoricalMO.self)
-    }
 }
 
 // MARK: - OPEN FUNCTIONS FUNDS -
