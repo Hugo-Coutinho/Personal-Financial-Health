@@ -16,3 +16,6 @@
 
 /* Class = "UILabel"; text = "Your current net salary"; ObjectID = "rTu-Cp-yzj"; */
 "rTu-Cp-yzj.text" = "Atual valor disponibilizado para gasto";
+
+/* Class = "UILabel"; text = "show net salary"; ObjectID = "xbc-Q1-jBO"; */
+"xbc-Q1-jBO.text" = "Salário bruto atual:";

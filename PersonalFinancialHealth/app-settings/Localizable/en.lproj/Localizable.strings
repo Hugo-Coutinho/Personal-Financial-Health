@@ -19,6 +19,8 @@
 "fundsLabel" = "$ %.02f";
 "valueUsedDailyLabel" = "$ %.02f";
 "valueAlreadyUsedLabel" = "$ %.02f";
+"budgetIsGreateMessage" = "You are going great!";
+"budgetIsNotGoingWell" =  "Budget in the black";
 
 // MARK: - EXPENSE SECTION -
 "totalExpendedLabel" = "$ %.02f";

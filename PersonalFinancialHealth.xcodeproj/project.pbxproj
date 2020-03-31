@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63085A792432149400CC87BF /* check-mark.json in Resources */ = {isa = PBXBuildFile; fileRef = 63085A782432149400CC87BF /* check-mark.json */; };
 		63106E9E22FD04970059D21E /* PopupSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63106E9D22FD04970059D21E /* PopupSelectView.swift */; };
 		63106EA122FD0EAC0059D21E /* PopupEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63106EA022FD0EAC0059D21E /* PopupEditView.swift */; };
 		6316141523D208B600C9E9C9 /* ConstantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6316141423D208B600C9E9C9 /* ConstantView.swift */; };
@@ -43,7 +44,6 @@
 		6391372922CBE7CF0018B65F /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391372022CBE7CF0018B65F /* HomeModel.swift */; };
 		6391372B22CBE7CF0018B65F /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391372422CBE7CF0018B65F /* HomePresenter.swift */; };
 		639B9DAA2417DC5300F4DBCD /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639B9DA92417DC5300F4DBCD /* Alert.swift */; };
-		639E7F15242E697800496F14 /* Historical.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639E7F14242E697800496F14 /* Historical.storyboard */; };
 		639E7F19242E69CB00496F14 /* HistoricalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E7F18242E69CB00496F14 /* HistoricalViewController.swift */; };
 		639E7F21242E9E1D00496F14 /* HistoricalHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 639E7F20242E9E1D00496F14 /* HistoricalHeaderView.xib */; };
 		639E7F23242E9E3E00496F14 /* HistoricalBodyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 639E7F22242E9E3E00496F14 /* HistoricalBodyView.xib */; };
@@ -53,6 +53,7 @@
 		639E7F32242EA20600496F14 /* HistoricalContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E7F31242EA20600496F14 /* HistoricalContainerView.swift */; };
 		639FA05622D6337C00983497 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639FA05522D6337C00983497 /* UIViewController.swift */; };
 		63A56BB422FA6A0F008C7093 /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A56BB322FA6A0F008C7093 /* StackViewController.swift */; };
+		63A615E224337AEE005A7A68 /* Historical.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63A615E424337AEE005A7A68 /* Historical.storyboard */; };
 		63B30DAB242FA0DD0019AD39 /* ConstantHistoricalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B30DAA242FA0DD0019AD39 /* ConstantHistoricalView.swift */; };
 		63B30DAE242FE0180019AD39 /* EmptyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B30DAD242FE0180019AD39 /* EmptyPageView.swift */; };
 		63B30DB0242FE02D0019AD39 /* EmptyPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B30DAF242FE02D0019AD39 /* EmptyPageView.xib */; };
@@ -88,6 +89,8 @@
 		63EEEB7523FF7C8B00A2D408 /* SalaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EEEB7423FF7C8B00A2D408 /* SalaryPresenter.swift */; };
 		63EEEB7723FF7D5C00A2D408 /* SalaryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EEEB7623FF7D5C00A2D408 /* SalaryInteractor.swift */; };
 		63EEEB7A23FF822200A2D408 /* SalaryPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EEEB7923FF822200A2D408 /* SalaryPresenterTests.swift */; };
+		63F5F75A24327B83006390F1 /* budget_black.json in Resources */ = {isa = PBXBuildFile; fileRef = 63F5F75924327B83006390F1 /* budget_black.json */; };
+		63F5F75D24327BC1006390F1 /* ConstantFundsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F5F75C24327BC1006390F1 /* ConstantFundsView.swift */; };
 		63F6C7EA22CC60A7003B7FA6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F6C7E922CC60A7003B7FA6 /* Coordinator.swift */; };
 		63FC33412426891A00467EA5 /* SalaryInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FC33402426891A00467EA5 /* SalaryInteractorTests.swift */; };
 		63FD7307240B5CAB003E0DD1 /* ConstantSalaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD7306240B5CAA003E0DD1 /* ConstantSalaryView.swift */; };
@@ -95,6 +98,8 @@
 		63FD7315240D52F2003E0DD1 /* FundsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD7314240D52F2003E0DD1 /* FundsProtocols.swift */; };
 		63FD7317240D531D003E0DD1 /* FundsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD7316240D531D003E0DD1 /* FundsInteractor.swift */; };
 		63FD7319240D5335003E0DD1 /* FundsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD7318240D5335003E0DD1 /* FundsPresenter.swift */; };
+		8CC53C927FD64C8A3B5B97F2 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		CAE7348DF8A78B4C93FCB052 /* libPods-PersonalFinancialHealthTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC9621ECA87BE5CA40DED264 /* libPods-PersonalFinancialHealthTests.a */; };
 		EC309ABE5950C17A2EEF4CDA /* libPods-PersonalFinancialHealth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A72B080D3CC667803F29623 /* libPods-PersonalFinancialHealth.a */; };
 /* End PBXBuildFile section */
 
@@ -109,13 +114,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22B3E5265EC105425AEF1A9C /* Pods-PersonalFinancialHealthTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonalFinancialHealthTests.release.xcconfig"; path = "Target Support Files/Pods-PersonalFinancialHealthTests/Pods-PersonalFinancialHealthTests.release.xcconfig"; sourceTree = "<group>"; };
 		22F1326F1005777BA8C3E3F3 /* Pods-PersonalFinancialHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonalFinancialHealth.debug.xcconfig"; path = "Target Support Files/Pods-PersonalFinancialHealth/Pods-PersonalFinancialHealth.debug.xcconfig"; sourceTree = "<group>"; };
+		63085A782432149400CC87BF /* check-mark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "check-mark.json"; sourceTree = "<group>"; };
 		63106E9D22FD04970059D21E /* PopupSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupSelectView.swift; sourceTree = "<group>"; };
 		63106EA022FD0EAC0059D21E /* PopupEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupEditView.swift; sourceTree = "<group>"; };
 		6316141423D208B600C9E9C9 /* ConstantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantView.swift; sourceTree = "<group>"; };
 		6316141723D2095F00C9E9C9 /* ConstantPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantPersistence.swift; sourceTree = "<group>"; };
 		6316141C23D20A1500C9E9C9 /* ConstantExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantExpenseView.swift; sourceTree = "<group>"; };
 		6317066222CE331A002259C2 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		6327858C243294E700415DCD /* liblottie-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "liblottie-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		632785902432954500415DCD /* liblottie-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "liblottie-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63335C2B22F4845E00FB302F /* ExpenseContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseContainerView.swift; sourceTree = "<group>"; };
 		63347B2423105F2D006CA2CC /* ExpenseListContainerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseListContainerView.xib; sourceTree = "<group>"; };
 		63347B2823106011006CA2CC /* ExpenseListContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseListContainerView.swift; sourceTree = "<group>"; };
@@ -150,7 +159,6 @@
 		6391372022CBE7CF0018B65F /* HomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		6391372422CBE7CF0018B65F /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		639B9DA92417DC5300F4DBCD /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
-		639E7F14242E697800496F14 /* Historical.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Historical.storyboard; sourceTree = "<group>"; };
 		639E7F18242E69CB00496F14 /* HistoricalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalViewController.swift; sourceTree = "<group>"; };
 		639E7F20242E9E1D00496F14 /* HistoricalHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoricalHeaderView.xib; sourceTree = "<group>"; };
 		639E7F22242E9E3E00496F14 /* HistoricalBodyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoricalBodyView.xib; sourceTree = "<group>"; };
@@ -160,6 +168,10 @@
 		639E7F31242EA20600496F14 /* HistoricalContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalContainerView.swift; sourceTree = "<group>"; };
 		639FA05522D6337C00983497 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		63A56BB322FA6A0F008C7093 /* StackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewController.swift; sourceTree = "<group>"; };
+		63A615E12433788D005A7A68 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Salary.strings; sourceTree = "<group>"; };
+		63A615E324337AEE005A7A68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Historical.storyboard; sourceTree = "<group>"; };
+		63A615E624337AF2005A7A68 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Historical.strings; sourceTree = "<group>"; };
+		63A615E824337AF5005A7A68 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Historical.strings"; sourceTree = "<group>"; };
 		63B30DAA242FA0DD0019AD39 /* ConstantHistoricalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantHistoricalView.swift; sourceTree = "<group>"; };
 		63B30DAD242FE0180019AD39 /* EmptyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPageView.swift; sourceTree = "<group>"; };
 		63B30DAF242FE02D0019AD39 /* EmptyPageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyPageView.xib; sourceTree = "<group>"; };
@@ -179,7 +191,6 @@
 		63C96CE2242D3EE300BA0D67 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		63C96CE4242D3EE500BA0D67 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		63C96CE6242D6ECE00BA0D67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Salary.storyboard; sourceTree = "<group>"; };
-		63C96CE9242D6ED100BA0D67 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Salary.strings; sourceTree = "<group>"; };
 		63C96CEB242D6ED300BA0D67 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Salary.strings"; sourceTree = "<group>"; };
 		63C96CED242D704B00BA0D67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Funds.storyboard; sourceTree = "<group>"; };
 		63C96CF0242D704E00BA0D67 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Funds.strings; sourceTree = "<group>"; };
@@ -209,6 +220,8 @@
 		63EEEB7423FF7C8B00A2D408 /* SalaryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryPresenter.swift; sourceTree = "<group>"; };
 		63EEEB7623FF7D5C00A2D408 /* SalaryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryInteractor.swift; sourceTree = "<group>"; };
 		63EEEB7923FF822200A2D408 /* SalaryPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryPresenterTests.swift; sourceTree = "<group>"; };
+		63F5F75924327B83006390F1 /* budget_black.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = budget_black.json; sourceTree = "<group>"; };
+		63F5F75C24327BC1006390F1 /* ConstantFundsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantFundsView.swift; sourceTree = "<group>"; };
 		63F6C7E922CC60A7003B7FA6 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		63FC33402426891A00467EA5 /* SalaryInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryInteractorTests.swift; sourceTree = "<group>"; };
 		63FD7306240B5CAA003E0DD1 /* ConstantSalaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantSalaryView.swift; sourceTree = "<group>"; };
@@ -217,6 +230,8 @@
 		63FD7316240D531D003E0DD1 /* FundsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsInteractor.swift; sourceTree = "<group>"; };
 		63FD7318240D5335003E0DD1 /* FundsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsPresenter.swift; sourceTree = "<group>"; };
 		7A72B080D3CC667803F29623 /* libPods-PersonalFinancialHealth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PersonalFinancialHealth.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8380A2E547A2322221CC023E /* Pods-PersonalFinancialHealthTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonalFinancialHealthTests.debug.xcconfig"; path = "Target Support Files/Pods-PersonalFinancialHealthTests/Pods-PersonalFinancialHealthTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BC9621ECA87BE5CA40DED264 /* libPods-PersonalFinancialHealthTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PersonalFinancialHealthTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD0C6090933C4E45740473D0 /* Pods-PersonalFinancialHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonalFinancialHealth.release.xcconfig"; path = "Target Support Files/Pods-PersonalFinancialHealth/Pods-PersonalFinancialHealth.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -225,6 +240,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAE7348DF8A78B4C93FCB052 /* libPods-PersonalFinancialHealthTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC309ABE5950C17A2EEF4CDA /* libPods-PersonalFinancialHealth.a in Frameworks */,
+				8CC53C927FD64C8A3B5B97F2 /* (null) in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,9 +259,29 @@
 		27F4AD1039C27F59F0D59A75 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				632785902432954500415DCD /* liblottie-ios.a */,
+				6327858C243294E700415DCD /* liblottie-ios.a */,
 				7A72B080D3CC667803F29623 /* libPods-PersonalFinancialHealth.a */,
+				BC9621ECA87BE5CA40DED264 /* libPods-PersonalFinancialHealthTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		63085A762432147500CC87BF /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				63085A772432148300CC87BF /* Files */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		63085A772432148300CC87BF /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				63F5F75924327B83006390F1 /* budget_black.json */,
+				63085A782432149400CC87BF /* check-mark.json */,
+			);
+			path = Files;
 			sourceTree = "<group>";
 		};
 		63106E9F22FD0E780059D21E /* Edit */ = {
@@ -266,6 +303,7 @@
 		6316141323D208A000C9E9C9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				63F5F75B24327BA7006390F1 /* Funds */,
 				6316141A23D209AF00C9E9C9 /* Main */,
 				63B30DA9242FA0CC0019AD39 /* Historical */,
 				63FD7305240B5C89003E0DD1 /* Salary */,
@@ -680,6 +718,7 @@
 		6391371422CBE5BE0018B65F /* common-utils */ = {
 			isa = PBXGroup;
 			children = (
+				63085A762432147500CC87BF /* Lottie */,
 				639B9DA82417DC3800F4DBCD /* Alert */,
 				6390A05223FE3E6000CF2095 /* GestureRecognizer */,
 				63A56BB222FA698E008C7093 /* StackViewController */,
@@ -802,7 +841,7 @@
 		639E7F1A242E9D4600496F14 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				639E7F14242E697800496F14 /* Historical.storyboard */,
+				63A615E424337AEE005A7A68 /* Historical.storyboard */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1208,6 +1247,14 @@
 			path = Salary;
 			sourceTree = "<group>";
 		};
+		63F5F75B24327BA7006390F1 /* Funds */ = {
+			isa = PBXGroup;
+			children = (
+				63F5F75C24327BC1006390F1 /* ConstantFundsView.swift */,
+			);
+			path = Funds;
+			sourceTree = "<group>";
+		};
 		63F6C7E822CC6090003B7FA6 /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -1281,6 +1328,8 @@
 			children = (
 				22F1326F1005777BA8C3E3F3 /* Pods-PersonalFinancialHealth.debug.xcconfig */,
 				CD0C6090933C4E45740473D0 /* Pods-PersonalFinancialHealth.release.xcconfig */,
+				8380A2E547A2322221CC023E /* Pods-PersonalFinancialHealthTests.debug.xcconfig */,
+				22B3E5265EC105425AEF1A9C /* Pods-PersonalFinancialHealthTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1292,6 +1341,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 637A8A1923F39D6400688E6C /* Build configuration list for PBXNativeTarget "PersonalFinancialHealthTests" */;
 			buildPhases = (
+				3FE6A53A883DB61DCAE53489 /* [CP] Check Pods Manifest.lock */,
 				637A8A0E23F39D6400688E6C /* Sources */,
 				637A8A0F23F39D6400688E6C /* Frameworks */,
 				637A8A1023F39D6400688E6C /* Resources */,
@@ -1378,6 +1428,7 @@
 				63C96CE1242D3EE300BA0D67 /* Localizable.strings in Resources */,
 				63446D4123FC56C70025D20F /* ReusableButton.xib in Resources */,
 				6391370822CBE3490018B65F /* Assets.xcassets in Resources */,
+				63F5F75A24327B83006390F1 /* budget_black.json in Resources */,
 				63347B2523105F2D006CA2CC /* ExpenseListContainerView.xib in Resources */,
 				63B30DB0242FE02D0019AD39 /* EmptyPageView.xib in Resources */,
 				6350AD8922FB8CFB00433C70 /* PopupMenu.xib in Resources */,
@@ -1390,11 +1441,12 @@
 				63C96D01242DA9CE00BA0D67 /* ExpenseFormView.xib in Resources */,
 				63B6C4A42323EAE300BA16ED /* ExpenseListItemView.xib in Resources */,
 				63C96CFA242DA71600BA0D67 /* Expense.storyboard in Resources */,
+				63085A792432149400CC87BF /* check-mark.json in Resources */,
 				63B6C4A72323EB7400BA16ED /* ExpenseListSubItemView.xib in Resources */,
 				639E7F23242E9E3E00496F14 /* HistoricalBodyView.xib in Resources */,
 				6391370622CBE3470018B65F /* Main.storyboard in Resources */,
 				63C96CE5242D6ECE00BA0D67 /* Salary.storyboard in Resources */,
-				639E7F15242E697800496F14 /* Historical.storyboard in Resources */,
+				63A615E224337AEE005A7A68 /* Historical.storyboard in Resources */,
 				63C96CF3242DA10500BA0D67 /* ExpenseListSectionView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1402,6 +1454,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3FE6A53A883DB61DCAE53489 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PersonalFinancialHealthTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D1CF39FD76D0075846488FB9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1502,6 +1576,7 @@
 				63F6C7EA22CC60A7003B7FA6 /* Coordinator.swift in Sources */,
 				639E7F19242E69CB00496F14 /* HistoricalViewController.swift in Sources */,
 				637A8A2023F77C9A00688E6C /* CoreDataWorker.swift in Sources */,
+				63F5F75D24327BC1006390F1 /* ConstantFundsView.swift in Sources */,
 				63B90EB123F1C64900D05638 /* ExpensePresenter.swift in Sources */,
 				63B56C7522D5085E00D14C24 /* Constant.swift in Sources */,
 				63EA77172326A1EA00DADC63 /* ConstantCollapseView.swift in Sources */,
@@ -1528,6 +1603,16 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
+		63A615E424337AEE005A7A68 /* Historical.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63A615E324337AEE005A7A68 /* Base */,
+				63A615E624337AF2005A7A68 /* en */,
+				63A615E824337AF5005A7A68 /* pt-BR */,
+			);
+			name = Historical.storyboard;
+			sourceTree = "<group>";
+		};
 		63C96CE3242D3EE300BA0D67 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1541,8 +1626,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				63C96CE6242D6ECE00BA0D67 /* Base */,
-				63C96CE9242D6ED100BA0D67 /* en */,
 				63C96CEB242D6ED300BA0D67 /* pt-BR */,
+				63A615E12433788D005A7A68 /* en */,
 			);
 			name = Salary.storyboard;
 			sourceTree = "<group>";
@@ -1602,6 +1687,7 @@
 /* Begin XCBuildConfiguration section */
 		637A8A1A23F39D6400688E6C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8380A2E547A2322221CC023E /* Pods-PersonalFinancialHealthTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1622,6 +1708,7 @@
 		};
 		637A8A1B23F39D6400688E6C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22B3E5265EC105425AEF1A9C /* Pods-PersonalFinancialHealthTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;

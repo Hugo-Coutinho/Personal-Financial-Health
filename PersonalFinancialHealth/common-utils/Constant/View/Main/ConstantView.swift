@@ -12,5 +12,6 @@ enum ConstantView {
     static let expenseView = ConstantExpenseView.self
     static let salaryView = ConstantSalaryView.self
     static let historicalView = ConstantHistoricalView.self
+    static let fundsView = ConstantFundsView.self
 }
 

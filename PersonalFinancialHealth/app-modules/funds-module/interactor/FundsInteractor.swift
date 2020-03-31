@@ -55,6 +55,25 @@ class FundsInteractor: FundsInteractorInput, FundsPresenterToInteractor {
     func getAlreadyUsedValueFromDataBase() -> Double {
         return self.blFinancial.getTotalConstantAndDailyExpense()
     }
+    
+    func playAnimationByCurrentBudgetState(happyAnimation: @escaping () -> Void, sadAnimation: @escaping () -> Void) {
+        // verificar se o usuario ja realizou algum gasto
+        // verificar se o usuario ja setou seu salario
+        // playAnimationHappy senao o sad.
+        guard self.isUserAlreadySubmitedAllInformations() else { return }
+        self.blFinancial.getUsefullyFundsRecalculated(usefullyFund: { (budget) in
+            guard budget > 0 else { sadAnimation(); return }
+            happyAnimation()
+        }) { (error) in
+            assertionFailure()
+        }
+    }
+    
+    func isUserAlreadySubmitedAllInformations() -> Bool {
+        guard self.blFinancial.getTotalConstantAndDailyExpense() > 0,
+            self.blFinancial.getUsefullyFunds() != 0.0 else { return false }
+        return true
+    }
 }
 
 

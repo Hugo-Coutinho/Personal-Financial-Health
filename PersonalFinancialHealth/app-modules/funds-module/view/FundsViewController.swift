@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Lottie
 
 class FundsViewController: UIViewController {
     
@@ -14,6 +15,8 @@ class FundsViewController: UIViewController {
     @IBOutlet weak var fundsLabel: UILabel!
     @IBOutlet weak var valueUsedDailyLabel: UILabel!
     @IBOutlet weak var valueAlreadyUsedLabel: UILabel!
+    @IBOutlet weak var expensesStateAnimation: AnimationView!
+    @IBOutlet weak var expensesStateMessageLabel: UILabel!
     
     // MARK: - PROPERTIES -
     private lazy var presenter: FundsPresenterInput = FundsPresenter.make(view: self)
@@ -21,7 +24,27 @@ class FundsViewController: UIViewController {
     
     // MARK: - LIFE CYCLE -
     override func viewWillAppear(_ animated: Bool) {
+        self.hiddenExpenseAnimation()
+        self.presenter.checkUserBudgetState()
         self.loadFunds()
+    }
+    
+    private func hiddenExpenseAnimation() {
+        self.expensesStateAnimation.isHidden = true
+        self.expensesStateMessageLabel.isHidden = true
+    }
+    
+    private func UnhiddenExpenseAnimation() {
+        self.expensesStateAnimation.isHidden = false
+        self.expensesStateMessageLabel.isHidden = false
+    }
+    
+    func playAnimation(named: String, LocalizedmMessage: String) {
+        self.expensesStateMessageLabel.text = NSLocalizedString(LocalizedmMessage, comment: "")
+        self.expensesStateAnimation.animation = Animation.named(named)
+        self.expensesStateAnimation.loopMode = .playOnce
+        self.expensesStateAnimation.contentMode = .scaleAspectFill
+        self.expensesStateAnimation.play()
     }
     
     private func loadFunds() {
@@ -37,7 +60,15 @@ class FundsViewController: UIViewController {
 
 // MARK: - PRESENTER OUTPUT -
 extension FundsViewController: FundsPresenterToView {
+    func playHappyAnimation() {
+        self.UnhiddenExpenseAnimation()
+        self.playAnimation(named: Constant.view.fundsView.BudgetIsGreenAnimation, LocalizedmMessage: "budgetIsGreateMessage")
+    }
     
+    func playSadAnimation() {
+        self.UnhiddenExpenseAnimation()
+        self.playAnimation(named: Constant.view.fundsView.BudgetIsBlackAnimation, LocalizedmMessage: "budgetIsNotGoingWell")
+    }
 }
 
 

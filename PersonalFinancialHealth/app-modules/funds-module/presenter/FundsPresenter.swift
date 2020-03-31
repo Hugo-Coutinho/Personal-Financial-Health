@@ -14,6 +14,7 @@ protocol FundsPresenterInput {
     func fetchFunds() -> Double
     func fetchDailyValue() -> Double
     func fetchAlreadyUsedValue() -> Double
+    func checkUserBudgetState()
 }
 
 
@@ -35,7 +36,8 @@ class FundsPresenter: FundsPresenterInput, FundsViewToPresenter {
     }
     
     func fetchFunds() -> Double {
-        return self.interactor?.getFundsCalculatedFromDataBase() ?? 0.0
+        let funds = self.interactor?.getFundsCalculatedFromDataBase() ?? 0.0
+        return funds < 0.0 ? 0.0 : funds
     }
 
     func fetchDailyValue() -> Double {
@@ -45,6 +47,16 @@ class FundsPresenter: FundsPresenterInput, FundsViewToPresenter {
     
     func fetchAlreadyUsedValue() -> Double {
         return self.interactor?.getAlreadyUsedValueFromDataBase() ?? 0.0
+    }
+    
+    func checkUserBudgetState() {
+        self.interactor?.playAnimationByCurrentBudgetState(
+            happyAnimation: {
+            self.view.playHappyAnimation()
+        }, sadAnimation: {
+            self.view.playSadAnimation()
+        })
+        
     }
 }
 

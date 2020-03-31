@@ -16,7 +16,8 @@ protocol FundsViewToPresenter {
 
 // MARK: - PRESENTER OUTPUT -
 protocol FundsPresenterToView {
-    
+    func playHappyAnimation()
+    func playSadAnimation()
 }
 
 // MARK: - INTERACTOR INPUT -
@@ -26,6 +27,8 @@ protocol FundsPresenterToInteractor {
     func getDailyValueAvailableFromDataBase() -> Double
     func getAlreadyUsedValueFromDataBase() -> Double
     func getUsefullyFunds() -> Double
+    func playAnimationByCurrentBudgetState(happyAnimation: @escaping () -> Void, sadAnimation: @escaping () -> Void)
+    func isUserAlreadySubmitedAllInformations() -> Bool
 }
 
 // MARK: - INTERACTOR OUTPUT -

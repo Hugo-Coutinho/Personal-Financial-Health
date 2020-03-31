@@ -23,7 +23,7 @@ class HomeInteractorTests: XCTestCase {
     }
     
     override func tearDown() {
-        self.blFinancial?.resetAppSalaryStorage()
+        self.blFinancial?.resetAppExpenseStorage()
     }
     
     func testResetFinancialInformation_shouldAssertEmptyDatabase() {

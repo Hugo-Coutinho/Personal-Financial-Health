@@ -14,6 +14,8 @@ class FundsPresenterTests: XCTestCase {
     // MARK: - PROPERTIES -
     private var worker: CoreDataWorkerInput?
     private var blFinancial: BLFinancial?
+    private var happyAnimationWasCalled: Bool?
+    private var sadAnimationWasCalled: Bool?
     
     override func setUp() {
         self.worker = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorSalary)
@@ -21,6 +23,8 @@ class FundsPresenterTests: XCTestCase {
         self.blFinancial = BLFinancial(worker: worker)
         self.resetExpenseStorage()
         self.resetSalaryStorage()
+        self.happyAnimationWasCalled = false
+        self.sadAnimationWasCalled = false
     }
     
     override func tearDown() {
@@ -97,9 +101,55 @@ class FundsPresenterTests: XCTestCase {
         // 3. THEN
         assert(result == 10.0)
     }
+    
+    func testCheckUserBudgetState_shouldAssertCallHappyAnimation() {
+        // 2. GIVEN
+        let presenter: FundsPresenterInput = FundsPresenter.make(view: self)
+        let salary = SalaryModel(net: 2500.0, usefully: 2000.0)
+        let salaryMO = salary.toManagedObject(in: self.worker!.context)
+        let itemModel = ExpenseItemModel(icon: "", name: "", expenseType: 1, subItems: [ExpenseSubItemModel(date: Date(), expended: 800.0)])
+        let itemMO = itemModel.toManagedObject(in: self.worker!.context)
+        // 2. WHEN
+        do {
+            try self.worker?.create(entity: itemMO)
+            try self.worker?.create(entity: salaryMO)
+        } catch {
+            assertionFailure()
+        }
+        presenter.checkUserBudgetState()
+        // 3. THEN
+        assert(self.happyAnimationWasCalled == true)
+        assert(self.sadAnimationWasCalled == false)
+    }
+    
+    func testCheckUserBudgetState_shouldAssertCallSadAnimation() {
+        // 2. GIVEN
+        let presenter: FundsPresenterInput = FundsPresenter.make(view: self)
+        let salary = SalaryModel(net: 2500.0, usefully: 2000.0)
+        let salaryMO = salary.toManagedObject(in: self.worker!.context)
+        let itemModel = ExpenseItemModel(icon: "", name: "", expenseType: 1, subItems: [ExpenseSubItemModel(date: Date(), expended: 2200.0)])
+        let itemMO = itemModel.toManagedObject(in: self.worker!.context)
+        // 2. WHEN
+        do {
+            try self.worker?.create(entity: itemMO)
+            try self.worker?.create(entity: salaryMO)
+        } catch {
+            assertionFailure()
+        }
+        presenter.checkUserBudgetState()
+        // 3. THEN
+        assert(self.happyAnimationWasCalled == false)
+        assert(self.sadAnimationWasCalled == true)
+    }
 }
 
 // MARK: - IMPLEMENTS PRESENTER -
 extension FundsPresenterTests: FundsPresenterToView {
+    func playHappyAnimation() {
+        self.happyAnimationWasCalled = true
+    }
     
+    func playSadAnimation() {
+        self.sadAnimationWasCalled = true
+    }
 }

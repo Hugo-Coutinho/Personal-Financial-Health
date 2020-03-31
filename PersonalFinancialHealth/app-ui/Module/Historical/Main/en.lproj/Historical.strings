@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "R$ 100,0"; ObjectID = "A0x-eC-qYg"; */
+"A0x-eC-qYg.text" = "R$ 100,0";
+
+/* Class = "UILabel"; text = "Last month"; ObjectID = "ktN-va-FQq"; */
+"ktN-va-FQq.text" = "Last month";
+
+/* Class = "UINavigationItem"; title = "Historical"; ObjectID = "vkx-Un-lcS"; */
+"vkx-Un-lcS.title" = "Historical";

@@ -10,7 +10,7 @@ import XCTest
 @testable import PersonalFinancialHealth
 
 class FundsInteractorTests: XCTestCase {
-
+    
     // MARK: - PROPERTIES -
     private var worker: CoreDataWorkerInput?
     private var blFinancial: BLFinancial?
@@ -112,6 +112,80 @@ class FundsInteractorTests: XCTestCase {
         let result = interactor.getUsefullyFunds()
         // 3. THEN
         assert(result == 10.0)
+    }
+    
+    func testIsUserAlreadySubmitedAllInformations_shouldAssertTrue() {
+        // 1. GIVEN
+        let interactor: FundsPresenterToInteractor = FundsInteractor.make(presenter: self)
+        let salary = SalaryModel(net: 5.0, usefully: 10.0)
+        let salaryMO = salary.toManagedObject(in: self.worker!.context)
+        let itemModel = ExpenseItemModel(icon: "", name: "", expenseType: 1, subItems: [ExpenseSubItemModel(date: Date(), expended: 10.0)])
+        let itemMO = itemModel.toManagedObject(in: self.worker!.context)
+        // 2. WHEN
+        do {
+            try self.worker?.create(entity: itemMO)
+            try self.worker?.create(entity: salaryMO)
+        } catch {
+            assertionFailure()
+        }
+        let result = interactor.isUserAlreadySubmitedAllInformations()
+        // 3. THEN
+        assert(result == true)
+    }
+    
+    func testIsUserAlreadySubmitedAllInformations_shouldAssertFalse() {
+        // 1. GIVEN
+        let interactor: FundsPresenterToInteractor = FundsInteractor.make(presenter: self)
+        // 2. WHEN
+        let result = interactor.isUserAlreadySubmitedAllInformations()
+        // 3. THEN
+        assert(result == false)
+    }
+    
+    func testPlayAnimationByCurrentBudgetState_shouldCallHappyAnimation() {
+        // 1. GIVEN
+        let interactor: FundsPresenterToInteractor = FundsInteractor.make(presenter: self)
+        let salary = SalaryModel(net: 2500.0, usefully: 2000.0)
+        let salaryMO = salary.toManagedObject(in: self.worker!.context)
+        let itemModel = ExpenseItemModel(icon: "", name: "", expenseType: 1, subItems: [ExpenseSubItemModel(date: Date(), expended: 800.0)])
+        let itemMO = itemModel.toManagedObject(in: self.worker!.context)
+        // 2. WHEN
+        do {
+            try self.worker?.create(entity: itemMO)
+            try self.worker?.create(entity: salaryMO)
+        } catch {
+            assertionFailure()
+        }
+        // 3. THEN
+        interactor.playAnimationByCurrentBudgetState(
+            happyAnimation: {
+                assert(true)
+        }, sadAnimation: {
+            assertionFailure()
+        })
+    }
+    
+    func testPlayAnimationByCurrentBudgetState_shouldCallSadAnimation() {
+        // 1. GIVEN
+        let interactor: FundsPresenterToInteractor = FundsInteractor.make(presenter: self)
+        let salary = SalaryModel(net: 5.0, usefully: 10.0)
+        let salaryMO = salary.toManagedObject(in: self.worker!.context)
+        let itemModel = ExpenseItemModel(icon: "", name: "", expenseType: 1, subItems: [ExpenseSubItemModel(date: Date(), expended: 10.0)])
+        let itemMO = itemModel.toManagedObject(in: self.worker!.context)
+        // 2. WHEN
+        do {
+            try self.worker?.create(entity: itemMO)
+            try self.worker?.create(entity: salaryMO)
+        } catch {
+            assertionFailure()
+        }
+        // 3. THEN
+        interactor.playAnimationByCurrentBudgetState(
+            happyAnimation: {
+                assertionFailure()
+        }, sadAnimation: {
+            assert(true)
+        })
     }
 }
 
