@@ -153,10 +153,13 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="0r3-8E-lfz"/>
             <connections>
+                <outlet property="chooseIconView" destination="Kme-k8-7d7" id="8n3-5g-OPS"/>
+                <outlet property="expendedMenuButton" destination="NDH-c6-x9y" id="45R-P4-rbW"/>
                 <outlet property="expendedTextField" destination="Zpa-ve-8ah" id="vds-2F-Iwm"/>
                 <outlet property="formStackView" destination="GPk-e6-37Z" id="eHq-2U-wQP"/>
                 <outlet property="iconImageView" destination="roc-vz-ybs" id="giW-3r-FGg"/>
                 <outlet property="nameTextField" destination="W1m-Xv-gWv" id="d7x-Es-kuN"/>
+                <outlet property="shortNameMenuButton" destination="c72-OZ-Ki6" id="R9h-VD-BPn"/>
             </connections>
             <point key="canvasLocation" x="-997" y="289"/>
         </view>

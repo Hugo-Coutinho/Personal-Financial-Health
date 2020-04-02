@@ -65,17 +65,17 @@ extension ConstantCollapseView {
 extension ConstantCollapseView {
     private func showArrowClosingCollapseAnimation() {
         UIView.animate(withDuration: 0.2, delay: 0.15, options: .curveEaseIn, animations: { () -> Void in
-            self.ivDownArrow.transform = CGAffineTransform(rotationAngle: CGFloat(CGFloat(Double.pi * 2)))
+            self.ivDownArrow.transform = CGAffineTransform(rotationAngle: CGFloat(CGFloat(Double.pi  * 1.5)))
         }) { (isAnimationComplete) in
         }
     }
     
     private func showArrowOpeningCollapseAnimation() {
         UIView.animate(withDuration:0.2, animations: { () -> Void in
-            self.ivDownArrow.transform = CGAffineTransform(rotationAngle: CGFloat(CGFloat(Double.pi)))
+            self.ivDownArrow.transform = CGAffineTransform(rotationAngle: CGFloat(CGFloat(Double.pi * 2)))
         })
         UIView.animate(withDuration: 0.2, delay: 0.15, options: .curveEaseIn, animations: { () -> Void in
-            self.ivDownArrow.transform = CGAffineTransform(rotationAngle: CGFloat(CGFloat(Double.pi)))
+            self.ivDownArrow.transform = CGAffineTransform(rotationAngle: CGFloat(CGFloat(Double.pi * 2)))
         }) { (isAnimationComplete) in
         }
     }

@@ -26,11 +26,13 @@ protocol CoreDataInput {
     var context: NSManagedObjectContext { get set }
     static func make() -> CoreDataInput
     func save() throws
+    func getEntityFromDatabase<T: NSFetchRequest<NSManagedObject>>(fetchRequest: T) -> NSManagedObject?
 }
 
 
 enum ErrorCoreData: Error {
     case notSave
+    case notDeleted
 }
 
 class MainCoreData: CoreDataInput {
@@ -51,7 +53,10 @@ class MainCoreData: CoreDataInput {
     static func make() -> CoreDataInput {
         return MainCoreData.init()
     }
-    
+}
+
+// MARK: - OPEN FUNCTIONS -
+extension MainCoreData {
     func save() throws {
         do {
             try self.saveDatabase()
@@ -59,9 +64,18 @@ class MainCoreData: CoreDataInput {
             throw ErrorCoreData.notSave
         }
     }
-}
-
-extension MainCoreData {
+    
+    func getEntityFromDatabase<T: NSFetchRequest<NSManagedObject>>(fetchRequest: T) -> NSManagedObject? {
+        do {
+            let results = try self.context.fetch(fetchRequest)
+            guard let result = results.first else { return nil }
+            return result
+        } catch {
+            assertionFailure()
+        }
+        return nil
+    }
+    
     private func saveDatabase() throws {
         do {
             try self.context.save()

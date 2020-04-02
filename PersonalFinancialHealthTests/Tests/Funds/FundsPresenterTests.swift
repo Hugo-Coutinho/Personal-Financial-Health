@@ -83,7 +83,7 @@ class FundsPresenterTests: XCTestCase {
         let result = presenter.fetchDailyValue()
         let assertResult = (600.0 - 300.0) / daysLeft
         // 3. THEN
-        assert(result == assertResult)
+        assert(result.rounded() == assertResult.rounded())
     }
     
     func testFetchAlreadyUsedValue_shouldAssertTen() {

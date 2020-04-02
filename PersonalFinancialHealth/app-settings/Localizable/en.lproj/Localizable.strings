@@ -30,6 +30,8 @@
 // MARK: - EXPENSE ITEM -
 "itemText" = "%@";
 "expenseValueLabel" = "$ %.02f";
+"ItemViewAlertTitle"= "Delete Item";
+"ItemViewAlertMessage"= "Are you shure do you want delete this item ?";
 
 // MARK: - EXPENSE SUB ITEMs -
 "dateLabel" = "%@";
@@ -46,6 +48,8 @@
 "alertInvalidInput" = "Please, input all the values correctly to create the expense.";
 "alertSomethingWentWrong" = "Sorry, something went wrong. Please, submit it again.";
 "alertExpenseSaved" = "Expense successfuly saved.";
+"alertExpenseTitleSuccess" = "Success";
+"alertExpenseTitleError" = "Error";
 
 // MARK: - EXPENSE CONFIRM VIEW -
 "newExpenseButton" = "New Expense";
@@ -63,3 +67,7 @@
 // MARK: - HOME -
 "homeAlertAppResetTitle" = "New month arrived";
 "homeAlertAppResetMessage" = "All of your information was reseted, therefore, the new month begins.";
+
+// MARK: - ALERT -
+"alertYesTitle" = "Yes";
+"alertNoTitle" = "No";

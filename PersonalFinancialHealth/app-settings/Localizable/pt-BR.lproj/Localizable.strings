@@ -32,6 +32,8 @@
 // MARK: - EXPENSE ITEM -
 "itemText" = "%@";
 "expenseValueLabel" = "R$ %.02f";
+"ItemViewAlertTitle"= "Deletar Item";
+"ItemViewAlertMessage"= "Deseja realmente remover esse gasto ?";
 
 // MARK: - EXPENSE SUB ITEMs -
 "dateLabel" = "%@";
@@ -48,6 +50,8 @@
 "alertInvalidInput" = "Por favor, insira os valores corretamente para que possa salva-lo";
 "alertSomethingWentWrong" = "Descuple, Algo deu errado. Por favor tente novamente.";
 "alertExpenseSaved" = "Gasto salvo com sucesso!";
+"alertExpenseTitleSuccess" = "Sucesso";
+"alertExpenseTitleError" = "Erro";
 
 // MARK: - EXPENSE CONFIRM VIEW -
 "newExpenseButton" = "Novo gasto";
@@ -63,10 +67,12 @@
 "financialShowAlertBudgetIsBlackMessage" = "Seu orçamento está no vermelho, tenha atenção com seus gastos";
 
 // MARK: - HOME -
-"homeAlertAppResetTitle" = "New month arrived";
-"homeAlertAppResetMessage" = "All of your information was reseted, therefore, the new month begins.";
+"homeAlertAppResetTitle" = "Novo mês tá ai!!";
+"homeAlertAppResetMessage" = "Todos os valores foram zerados para que possar contabilizar os gastos desse novo mês.";
 
-
+// MARK: - ALERT -
+"alertYesTitle" = "Sim";
+"alertNoTitle" = "Não";
 
 // use %d para numeros e %@ para strings
 

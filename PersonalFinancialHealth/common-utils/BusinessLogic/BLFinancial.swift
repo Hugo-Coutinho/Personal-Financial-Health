@@ -39,7 +39,7 @@ extension BLFinancial {
         do {
             try self.worker.context.save()
         } catch  {
-            
+            assertionFailure()
         }
     }
     
@@ -57,6 +57,13 @@ extension BLFinancial {
             assertionFailure()
         }
         return total
+    }
+    
+    func deleteItem(item: ExpenseItemModel) {
+        let expenseWorker = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorExpense)
+        let predicate = NSPredicate(format: "name == %@ AND expenseType == %d", item.name, item.expenseType)
+        guard let objectToDelete = self.worker.getEntityFromDatabase(entityType: ExpenseItemMO.self, predicate: predicate) else { return }
+        expenseWorker.delete(entity: objectToDelete)
     }
     
     func currentExpenseExist(newExpense: ExpenseItemModel) -> Bool {

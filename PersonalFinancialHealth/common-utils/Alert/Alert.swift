@@ -16,4 +16,23 @@ class Alert {
         alertController.addAction(OKAction)
         viewController.present(alertController, animated: true, completion:nil)
     }
+    
+    class func presentYesNoNativeAlert(title: String, message: String, viewController: UIViewController, yesClicked: @escaping () -> Void, noClicked: @escaping () -> Void) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let yes = NSLocalizedString("alertYesTitle", comment: "")
+        let no = NSLocalizedString("alertNoTitle", comment: "")
+        
+        
+        alertController.addAction(UIAlertAction(title: yes, style: .default, handler: { (action: UIAlertAction!) in
+            print("Yes clicked")
+            yesClicked()
+        }))
+        
+        alertController.addAction(UIAlertAction(title: no, style: .cancel, handler: { (action: UIAlertAction!) in
+            print("No clicked")
+            noClicked()
+        }))
+        viewController.present(alertController, animated: true, completion:nil)
+    }
+    
 }

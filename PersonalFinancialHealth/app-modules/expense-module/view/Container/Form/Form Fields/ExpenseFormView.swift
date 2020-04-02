@@ -17,12 +17,19 @@ class ExpenseFormView: UIView {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var expendedTextField: UITextField!
     @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var chooseIconView: UIView!
+    @IBOutlet weak var shortNameMenuButton: UIImageView!
+    @IBOutlet weak var expendedMenuButton: UIImageView!
+    
     
     // MARK: - PROPERTIES -
     private lazy var worker: CoreDataWorkerInput = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorExpense)
     private lazy var blFinancial: BLFinancial = BLFinancial(worker: self.worker)
     
     override func layoutSubviews() {
+        self.chooseIconView.isHidden = true
+        self.shortNameMenuButton.isHidden = true
+        self.expendedMenuButton.isHidden = true
         self.addConstraint(configureAspectRatio(toItem: self.formStackView, multiplierFirst: 2.0, multiplierSecond: 4.0))
     }
 }
@@ -40,7 +47,7 @@ extension ExpenseFormView {
 extension ExpenseFormView {
     private func invalidInput() {
         guard let currentViewController = UIViewController.getVisibileViewController(viewController: ExpenseViewController.self) else { self.ShowAlertSomethingWentWrong(); return }
-        Alert.presentOkNativeAlert(title: Constant.view.expenseView.alertExpenseTitleError, message: NSLocalizedString(Constant.view.expenseView.alertInvalidInput, comment: ""), viewController: currentViewController)
+        Alert.presentOkNativeAlert(title: NSLocalizedString(Constant.view.expenseView.alertExpenseTitleError, comment: ""), message: NSLocalizedString(Constant.view.expenseView.alertInvalidInput, comment: ""), viewController: currentViewController)
     }
     
     private func ShowAlertSomethingWentWrong() {
@@ -52,23 +59,16 @@ extension ExpenseFormView {
         guard let expense = self.getExpense(),
             let currentViewController = UIViewController.getVisibileViewController(viewController: ExpenseViewController.self) else { self.ShowAlertSomethingWentWrong(); return }
         self.blFinancial.updateExpense(newExpense: expense)
-        self.reloadStackView()
-        Alert.presentOkNativeAlert(title: Constant.view.expenseView.alertExpenseTitleSuccess, message: NSLocalizedString(Constant.view.expenseView.alertExpenseSaved, comment: ""), viewController: currentViewController)
+        UIViewController.reloadExpenseStackViewFromParent()
+        Alert.presentOkNativeAlert(title: NSLocalizedString(Constant.view.expenseView.alertExpenseTitleSuccess, comment: ""), message: NSLocalizedString(Constant.view.expenseView.alertExpenseSaved, comment: ""), viewController: currentViewController)
     }
     
     func createExpense() {
         guard let expense = self.getExpense(),
             let currentViewController = UIViewController.getVisibileViewController(viewController: ExpenseViewController.self) else { self.ShowAlertSomethingWentWrong(); return }
         self.blFinancial.createExpense(newExpense: expense)
-        self.reloadStackView()
-        Alert.presentOkNativeAlert(title: Constant.view.expenseView.alertExpenseTitleSuccess, message: NSLocalizedString(Constant.view.expenseView.alertExpenseSaved, comment: ""), viewController: currentViewController)
-    }
-    
-    private func reloadStackView() {
-        guard let expenseViewController = UIViewController.getVisibileViewController(viewController: ExpenseViewController.self) else { self.ShowAlertSomethingWentWrong(); return }
-        expenseViewController.addingListContainerView()
-        expenseViewController.didLoadEmptyViewManagment()
-        expenseViewController.mainStackView.reloadStackView()
+        UIViewController.reloadExpenseStackViewFromParent()
+        Alert.presentOkNativeAlert(title: NSLocalizedString(Constant.view.expenseView.alertExpenseTitleSuccess, comment: ""), message: NSLocalizedString(Constant.view.expenseView.alertExpenseSaved, comment: ""), viewController: currentViewController)
     }
     
     func expenseAlreadyExist() -> Bool {

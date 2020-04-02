@@ -9,7 +9,7 @@
 import Foundation
 
 enum ConstantExpenseView {
-    // MARK: - VIEW -
+    // MARK: - SUB VIEW NAME -
     static let expenseHeader = "ExpenseHeaderView"
     static let expenseBody = "ExpenseBodyView"
     static let expenseFormView = "ExpenseFormView"
@@ -21,15 +21,19 @@ enum ConstantExpenseView {
     static let expenseListItem = "ExpenseListItemView"
     static let expenseListSubitem = "ExpenseListSubItemView"
     
-    // MARK: - VIEW -
+    // MARK: - ALERT -
     static let alertInvalidInput = "alertInvalidInput"
     static let alertSomethingWentWrong = "alertSomethingWentWrong"
     static let alertExpenseSaved = "alertExpenseSaved"
-    static let alertExpenseTitleSuccess = "Success"
-    static let alertExpenseTitleError = "Error"
+    static let alertExpenseTitleSuccess = "alertExpenseTitleSuccess"
+    static let alertExpenseTitleError = "alertExpenseTitleError"
     
     
     // MARK: - PICKER VIEWS -
     static let constantExpense = "constantExpense"
     static let dailyExpense = "dailyExpense"
+    
+    // MARK: - ITEM VIEW  -
+    static let itemViewAlertTitle = "ItemViewAlertTitle"
+    static let itemViewAlertMessage = "ItemViewAlertMessage"
 }

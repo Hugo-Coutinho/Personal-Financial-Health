@@ -79,7 +79,7 @@ class FundsInteractorTests: XCTestCase {
         let result = interactor.getDailyValueAvailableFromDataBase()
         let assertResult = (600.0 - 300.0) / daysLeft
         // 3. THEN
-        assert(result == assertResult)
+        assert(result.rounded() == assertResult.rounded())
     }
     
     func testGetAlreadyUsedValueFromDataBase_shouldAssertTen() {

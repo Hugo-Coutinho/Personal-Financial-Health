@@ -22,4 +22,11 @@ extension UIViewController {
         let visibleViewController = nav.visibleViewController else { return T()}
             return  visibleViewController as? T
     }
+    
+    class func reloadExpenseStackViewFromParent() {
+        guard let expenseViewController = UIViewController.getVisibileViewController(viewController: ExpenseViewController.self) else { return }
+        expenseViewController.didLoadListContainerViewManagment()
+        expenseViewController.didLoadEmptyViewManagment()
+        expenseViewController.mainStackView.reloadStackView()
+    }
 }

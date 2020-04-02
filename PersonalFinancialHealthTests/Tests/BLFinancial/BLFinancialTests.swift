@@ -99,7 +99,6 @@ class BLFinancialTests: XCTestCase {
         let salaryMO = salaryModel.toManagedObject(in: self.worker!.context)
         let expenseModel = ExpenseItemModel(icon: "", name: "", expenseType: 0, subItems: [ExpenseSubItemModel(date: Date(), expended: 900.0)])
         let expenseMO = expenseModel.toManagedObject(in: self.worker!.context)
-
         // 2. WHEN
         do {
             try salaryWorker.create(entity: salaryMO)
@@ -148,5 +147,22 @@ class BLFinancialTests: XCTestCase {
         let result = self.blFinancial?.getUsefullyFunds()
         // 3. THEN
         assert(result == 10.0)
+    }
+    
+    func testDeleteItem_shouldAssertEmpty() {
+        // 1. GIVEN
+        let expenseModel = ExpenseItemModel(icon: "", name: "", expenseType: 0, subItems: [ExpenseSubItemModel(date: Date(), expended: 100.0)])
+        let expenseMO = expenseModel.toManagedObject(in: self.worker!.context)
+        
+        // 2. WHEN
+        do {
+            try self.worker?.create(entity: expenseMO)
+        } catch {
+            assertionFailure()
+        }
+        self.blFinancial?.deleteItem(item: expenseModel)
+        
+        // 3. THEN
+        assert(self.worker?.read(manageObjectType: ExpenseItemMO.self)!.isEmpty == true)
     }
 }

@@ -70,23 +70,31 @@ extension ExpenseViewController {
         self.mainStackView.initialize()
     }
     
-    private func configureSubViews() {
+    func configureSubViews() {
         self.subViews.append(ExpenseFormView())
         self.subViews.append(ConstantCollapseView())
         self.subViews.append(ConfirmView())
-        self.addingListContainerView()
+        self.didLoadListContainerViewManagment()
         self.didLoadEmptyViewManagment()
     }
     
-    func addingListContainerView() {
-        guard !self.subViews.contains(where: { $0 is ExpenseListContainerView }),
-            !self.presenter.expenseIsEmpty() else { return }
-        self.subViews.append(ExpenseListContainerView())
+    func didLoadListContainerViewManagment() {
+        guard !self.presenter.expenseIsEmpty() else { self.removeContainer(); return }
+        guard !self.subViews.contains(where: { $0 is ExpenseListContainerView }) else { return }
+        self.addContainer()
     }
     
     func didLoadEmptyViewManagment() {
-        guard !self.subViews.contains(where: { $0 is ExpenseListContainerView }) else { self.subViews.removeAll(where: { $0 is EmptyPageView }); return }
-        self.subViews.append(EmptyPageView())
+        guard !self.subViews.contains(where: { $0 is ExpenseListContainerView }) else { self.removeEmptySection(); return }
+        self.addEmptySection()
+    }
+    
+    private func addContainer() {
+        self.subViews.append(ExpenseListContainerView())
+    }
+    
+    private func removeContainer() {
+        self.subViews.removeAll(where: { $0 is ExpenseListContainerView })
     }
     
     private func addEmptySection() {

@@ -16,8 +16,9 @@ protocol CoreDataWorkerInput {
     func createEntities<T: NSManagedObject>(managedObjects: [T]) throws
     func create<T: NSManagedObject>(entity: T) throws
     func read<T: NSManagedObject>(manageObjectType: T.Type) -> [T]?
-    func delete<T: NSManagedObject>(entities: [T])
+    func delete<T: NSManagedObject>(entity: T)
     func resetAppStorage<T: NSManagedObject>(manageObjectType: T.Type)
+    func getEntityFromDatabase<T: NSManagedObject>(entityType: T.Type, predicate: NSPredicate) -> T?
 }
 
 class CoreDataWorker: CoreDataWorkerInput {
@@ -67,10 +68,23 @@ class CoreDataWorker: CoreDataWorkerInput {
         }
     }
     
-    func delete<T: NSManagedObject>(entities: [T]) {
-        entities.forEach { (current) in
-            self.context.delete(current)
+    func delete<T: NSManagedObject>(entity: T) {
+        self.context.delete(entity)
+        do {
+            try self.maincoreData.context.save()
+        } catch {
+            print(error.localizedDescription)
         }
+    }
+    
+    func getEntityFromDatabase<T: NSManagedObject>(entityType: T.Type, predicate: NSPredicate) -> T? {
+        let fetchRequest:NSFetchRequest<T> = T.fetchRequest() as! NSFetchRequest<T>
+        fetchRequest.predicate = predicate
+        fetchRequest.sortDescriptors = self.sortDescriptor
+        let fetchResultManaged = fetchRequest as! NSFetchRequest<NSManagedObject>
+        guard let object = self.maincoreData.getEntityFromDatabase(fetchRequest: fetchResultManaged),
+        let entityResult = object as? T else { return nil }
+        return entityResult
     }
     
     func resetAppStorage<T: NSManagedObject>(manageObjectType: T.Type) {

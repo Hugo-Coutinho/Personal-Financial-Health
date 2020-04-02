@@ -31,6 +31,7 @@ class ExpenseListItemView: UIView {
         self.subItemMainStackView.delegate = self
         self.subItemMainStackView.dataSource = self
         self.addGestureRecognizer()
+        self.addLongPressGestureRecognizer()
     }
     
     // MARK: - MAKE VIEW -
@@ -120,10 +121,32 @@ extension ExpenseListItemView {
         self.itemBackgroundView.addGestureRecognizer(tapGesture)
     }
     
+    private func addLongPressGestureRecognizer() {
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.LongpressClick))
+        self.itemBackgroundView.addGestureRecognizer(longPressRecognizer)
+    }
+    
     @objc private func didSelectItem() {
         self.animateArrow()
         guard self.subItemsIsHidden() else { self.removeSubItems(); return }
         self.showSubItems()
+    }
+    
+    @objc private func LongpressClick() {
+        let title = NSLocalizedString(Constant.view.expenseView.itemViewAlertTitle, comment: "")
+        let message = NSLocalizedString(Constant.view.expenseView.itemViewAlertMessage, comment: "")
+        
+        guard let currentViewController = UIViewController.getVisibileViewController(viewController: ExpenseViewController.self) else { return }
+        Alert.presentYesNoNativeAlert(title: title,
+                                      message: message,
+                                      viewController: currentViewController,
+                                      yesClicked: {
+                                        guard let item = self.item else { return }
+                                        self.blFinancial.deleteItem(item: item)
+                                        UIViewController.reloadExpenseStackViewFromParent()
+                                    }, noClicked: {
+
+                                    })
     }
     
     private func subItemsIsHidden() -> Bool {
