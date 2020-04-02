@@ -21,7 +21,7 @@
 "valueUsedDailyLabel" = "R$ %.02f";
 "valueAlreadyUsedLabel" = "R$ %.02f";
 "budgetIsGreateMessage" = "Está indo bem, parabéns!";
-"budgetIsNotGoingWell" = "Que isso rapaz, não gaste mais do que voçê pode.";
+"budgetIsNotGoingWell" = "Que isso rapaz, não gaste mais do que você pode.";
 
 
 // MARK: - EXPENSE SECTION -

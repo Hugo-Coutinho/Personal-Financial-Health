@@ -21,7 +21,7 @@ class BLFinancialTests: XCTestCase {
     }
 
     override func tearDown() {
-        self.blFinancial?.resetAppExpenseStorage()
+        self.blFinancial?.testResetAppExpenseStorage()
     }
 
     func testCalculateTheUsefullyFunds() {
@@ -86,7 +86,7 @@ class BLFinancialTests: XCTestCase {
         } catch {
             assertionFailure()
         }
-        business.resetAppExpenseStorage()
+        business.testResetAppExpenseStorage()
         // 3. THEN
         assert(expenseWorker.read(manageObjectType: ExpenseItemMO.self)!.isEmpty == true)
     }
@@ -143,7 +143,7 @@ class BLFinancialTests: XCTestCase {
         } catch {
             assertionFailure()
         }
-        self.blFinancial?.resetAppExpenseStorage()
+        self.blFinancial?.testResetAppExpenseStorage()
         let result = self.blFinancial?.getUsefullyFunds()
         // 3. THEN
         assert(result == 10.0)

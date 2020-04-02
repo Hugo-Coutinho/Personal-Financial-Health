@@ -1,18 +1,18 @@
 
 /* Class = "UINavigationItem"; title = "Net Salary"; ObjectID = "JtH-RA-DJQ"; */
-"JtH-RA-DJQ.title" = "Salário líquido";
+"JtH-RA-DJQ.title" = "Salário";
 
 /* Class = "UILabel"; text = "Type here your new net salary"; ObjectID = "M1q-0l-4DD"; */
-"M1q-0l-4DD.text" = "Digite o valor do seu salário líquido";
+"M1q-0l-4DD.text" = "Digite o valor do seu salário bruto";
 
 /* Class = "UILabel"; text = "R$ 100,0"; ObjectID = "gTm-3q-nao"; */
 "gTm-3q-nao.text" = "R$ 100,0";
 
 /* Class = "UILabel"; text = "Type here the amount you can use"; ObjectID = "lOy-0C-0k8"; */
-"lOy-0C-0k8.text" = "digite aqui o quanto voçê pode gastar";
+"lOy-0C-0k8.text" = "digite aqui o quanto você pode gastar";
 
 /* Class = "UILabel"; text = "We  does nothing with that value,\nthis page is just for your better control of your money."; ObjectID = "mnh-83-muw"; */
-"mnh-83-muw.text" = "A partir desse valor, \niremos calcular o quanto voçê poderá gastar no mês.";
+"mnh-83-muw.text" = "A partir desse valor, \niremos calcular o quanto você poderá gastar no mês.";
 
 /* Class = "UILabel"; text = "Your current net salary"; ObjectID = "rTu-Cp-yzj"; */
 "rTu-Cp-yzj.text" = "Atual valor disponibilizado para gasto";

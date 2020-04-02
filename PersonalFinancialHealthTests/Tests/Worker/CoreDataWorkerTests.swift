@@ -38,7 +38,7 @@ class CoreDataWorkerTests: XCTestCase {
     func resetExpenseStorage() {
         let expenseWorker = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorExpense)
         self.blFinancial = BLFinancial(worker: expenseWorker)
-        self.blFinancial?.resetAppExpenseStorage()
+        self.blFinancial?.testResetAppExpenseStorage()
     }
     
     func testCreateEntities_shouldAssertNotEmpty() {
@@ -86,7 +86,7 @@ class CoreDataWorkerTests: XCTestCase {
         }
         
         // 3. THEN
-        guard let _ = self.worker?.getEntityFromDatabase(entityType: ExpenseItemMO.self, predicate: predicate) else { assertionFailure(); return }
+        guard let _ = self.worker?.getEntitiesFromDatabase(entityType: ExpenseItemMO.self, predicate: predicate)?.first else { assertionFailure(); return }
     }
 
     func testDelete_shouldAssertEmpty() {
@@ -101,7 +101,7 @@ class CoreDataWorkerTests: XCTestCase {
         } catch {
             assertionFailure()
         }
-        guard let objectToDelete = self.worker?.getEntityFromDatabase(entityType: ExpenseItemMO.self, predicate: predicate) else { assertionFailure(); return }
+        guard let objectToDelete = self.worker?.getEntitiesFromDatabase(entityType: ExpenseItemMO.self, predicate: predicate)?.first else { assertionFailure(); return }
         self.worker?.delete(entity: objectToDelete)
         
         // 3. THEN

@@ -31,6 +31,15 @@ enum expenseSubViewEnum: Int {
     }
 }
 
+enum EnumExpenseItemViewType: Int {
+    case Constant = 0
+    case Daily = 1
+    
+    func getIndex() -> Int {
+        return self.rawValue
+    }
+}
+
 class ExpenseViewController: UIViewController {
     
     // MARK: - OUTLETS -
@@ -41,9 +50,6 @@ class ExpenseViewController: UIViewController {
     
     // MARK: - VARIABLES -
     private lazy var presenter: ExpensePresenterInput = ExpensePresenter.make(view: self)
-    private lazy var isOpen: Bool = false
-    private lazy var n = 0
-    private lazy var formView = ExpenseFormView()
     private lazy var subViews = [IExpenseSubView]()
 }
 

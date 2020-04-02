@@ -23,7 +23,7 @@ class HomeInteractorTests: XCTestCase {
     }
     
     override func tearDown() {
-        self.blFinancial?.resetAppExpenseStorage()
+        self.blFinancial?.testResetAppExpenseStorage()
     }
     
     func testResetFinancialInformation_shouldAssertEmptyDatabase() {
@@ -48,7 +48,7 @@ class HomeInteractorTests: XCTestCase {
         guard let salaryMORead = salaryWorker.read(manageObjectType: SalaryMO.self),
             let expenseItemMOReaded = self.worker?.read(manageObjectType: ExpenseItemMO.self) else { assertionFailure(); return }
         assert(salaryMORead.count == 0)
-        assert(expenseItemMOReaded.count == 0)
+        assert(expenseItemMOReaded.filter({ $0.expenseType != EnumExpenseItemViewType.Constant.getIndex() }).count == 0)
     }
 }
 

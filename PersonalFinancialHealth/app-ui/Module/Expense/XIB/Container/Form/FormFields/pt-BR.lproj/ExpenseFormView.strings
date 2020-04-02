@@ -1,9 +1,9 @@
 
 /* Class = "UILabel"; text = "short name:"; ObjectID = "QLC-wc-qwE"; */
-"QLC-wc-qwE.text" = "nome do gasto:";
+"QLC-wc-qwE.text" = "Nome do gasto:";
 
 /* Class = "UILabel"; text = "expended:"; ObjectID = "gGs-7c-XVG"; */
-"gGs-7c-XVG.text" = "valor gastado:";
+"gGs-7c-XVG.text" = "Valor gastado:";
 
 /* Class = "UILabel"; text = "choose icon:"; ObjectID = "r4Z-Ps-Ljy"; */
-"r4Z-Ps-Ljy.text" = "escolha o ícone:";
+"r4Z-Ps-Ljy.text" = "Escolha o ícone:";

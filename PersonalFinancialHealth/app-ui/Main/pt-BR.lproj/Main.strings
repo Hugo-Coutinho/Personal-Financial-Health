@@ -6,7 +6,7 @@
 "4Cw-gL-LzM.text" = "Controle de gastos";
 
 /* Class = "UILabel"; text = "Just for reminder, first day of every month the expenses will be erased, and all values will be calculated and the history update it too."; ObjectID = "9Ra-4O-sej"; */
-"9Ra-4O-sej.text" = "Lembre-se, todo mês os valores são atualizados e recalculado. Cheque o histório para ver valores de meses anteriores.";
+"9Ra-4O-sej.text" = "Lembre-se, todo mês os valores são atualizados e recalculado. Cheque o histórico para ver valores de meses anteriores.";
 
 /* Class = "UILabel"; text = "My expenses"; ObjectID = "aqy-zz-KbT"; */
 "aqy-zz-KbT.text" = "Gastos";

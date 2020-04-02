@@ -64,12 +64,12 @@
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu-button" translatesAutoresizingMaskIntoConstraints="NO" id="c72-OZ-Ki6">
                                     <rect key="frame" x="288" y="3" width="24" height="24"/>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="short name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="QLC-wc-qwE">
-                                    <rect key="frame" x="16" y="7.5" width="90" height="15"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="short name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QLC-wc-qwE">
+                                    <rect key="frame" x="16" y="2.5" width="90" height="25"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" secondItem="QLC-wc-qwE" secondAttribute="height" multiplier="6:1" id="obU-yp-drN"/>
+                                        <constraint firstAttribute="width" secondItem="QLC-wc-qwE" secondAttribute="height" multiplier="18:5" id="Zkj-nc-rfD"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="18"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W1m-Xv-gWv" userLabel="ShortNameTextField">
@@ -110,12 +110,12 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="expended:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="gGs-7c-XVG">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="expended:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gGs-7c-XVG">
                                     <rect key="frame" x="16" y="5" width="80" height="25"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="gGs-7c-XVG" secondAttribute="height" multiplier="16:5" id="ThG-oa-WfD"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>

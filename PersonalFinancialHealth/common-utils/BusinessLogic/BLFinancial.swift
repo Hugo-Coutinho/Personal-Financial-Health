@@ -62,7 +62,7 @@ extension BLFinancial {
     func deleteItem(item: ExpenseItemModel) {
         let expenseWorker = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorExpense)
         let predicate = NSPredicate(format: "name == %@ AND expenseType == %d", item.name, item.expenseType)
-        guard let objectToDelete = self.worker.getEntityFromDatabase(entityType: ExpenseItemMO.self, predicate: predicate) else { return }
+        guard let objectToDelete = self.worker.getEntitiesFromDatabase(entityType: ExpenseItemMO.self, predicate: predicate)?.first else { return }
         expenseWorker.delete(entity: objectToDelete)
     }
     
@@ -74,9 +74,16 @@ extension BLFinancial {
 
 // MARK: - CLEAN DATABASE -
 extension BLFinancial {
-    func resetAppExpenseStorage() {
+    func testResetAppExpenseStorage() {
         self.worker.resetAppStorage(manageObjectType: ExpenseItemMO.self)
-        
+    }
+    
+    func resetAppExpenseStorage() {
+        let constantExpenses = self.getConstantExpenses()
+        self.worker.resetAppStorage(manageObjectType: ExpenseItemMO.self)
+        constantExpenses.forEach { (currentItem) in
+            self.createExpense(newExpense: currentItem)
+        }
     }
     
     func resetAppSalaryStorage() {
@@ -96,6 +103,12 @@ extension BLFinancial {
 
 // MARK: - AUX FUNCTIONS -
 extension BLFinancial {
+    func getConstantExpenses() -> [ExpenseItemModel] {
+        let predicate = NSPredicate(format: "expenseType == %d", EnumExpenseItemViewType.Constant.getIndex())
+        guard let constantItemsMO = self.worker.getEntitiesFromDatabase(entityType: ExpenseItemMO.self, predicate: predicate) else { return [] }
+        return constantItemsMO.compactMap({ $0 }).map({ ExpenseItemModel.toEntity(mo: $0) })
+    }
+    
     func calculateTheUsefullyFunds(usefully: Double, totalExpended: Double) -> Double {
         return (usefully - totalExpended)
     }

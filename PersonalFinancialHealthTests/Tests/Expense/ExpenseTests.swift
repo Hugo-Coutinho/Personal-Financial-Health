@@ -22,7 +22,7 @@ class ExpenseTests: XCTestCase {
     }
     
     override func tearDown() {
-        self.blFinancial?.resetAppExpenseStorage()
+        self.blFinancial?.testResetAppExpenseStorage()
     }
 }
 

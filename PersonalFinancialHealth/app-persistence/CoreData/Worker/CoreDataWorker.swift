@@ -18,7 +18,7 @@ protocol CoreDataWorkerInput {
     func read<T: NSManagedObject>(manageObjectType: T.Type) -> [T]?
     func delete<T: NSManagedObject>(entity: T)
     func resetAppStorage<T: NSManagedObject>(manageObjectType: T.Type)
-    func getEntityFromDatabase<T: NSManagedObject>(entityType: T.Type, predicate: NSPredicate) -> T?
+    func getEntitiesFromDatabase<T: NSManagedObject>(entityType: T.Type, predicate: NSPredicate) -> [T]?
 }
 
 class CoreDataWorker: CoreDataWorkerInput {
@@ -77,14 +77,14 @@ class CoreDataWorker: CoreDataWorkerInput {
         }
     }
     
-    func getEntityFromDatabase<T: NSManagedObject>(entityType: T.Type, predicate: NSPredicate) -> T? {
+    func getEntitiesFromDatabase<T: NSManagedObject>(entityType: T.Type, predicate: NSPredicate) -> [T]? {
         let fetchRequest:NSFetchRequest<T> = T.fetchRequest() as! NSFetchRequest<T>
         fetchRequest.predicate = predicate
         fetchRequest.sortDescriptors = self.sortDescriptor
         let fetchResultManaged = fetchRequest as! NSFetchRequest<NSManagedObject>
-        guard let object = self.maincoreData.getEntityFromDatabase(fetchRequest: fetchResultManaged),
-        let entityResult = object as? T else { return nil }
-        return entityResult
+        let objects = self.maincoreData.getEntityFromDatabase(fetchRequest: fetchResultManaged).map({ $0 as? T })
+        guard !objects.isEmpty else { return nil }
+        return objects.compactMap({ $0 })
     }
     
     func resetAppStorage<T: NSManagedObject>(manageObjectType: T.Type) {

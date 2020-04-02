@@ -26,7 +26,7 @@ protocol CoreDataInput {
     var context: NSManagedObjectContext { get set }
     static func make() -> CoreDataInput
     func save() throws
-    func getEntityFromDatabase<T: NSFetchRequest<NSManagedObject>>(fetchRequest: T) -> NSManagedObject?
+    func getEntityFromDatabase<T: NSFetchRequest<NSManagedObject>>(fetchRequest: T) -> [NSManagedObject]
 }
 
 
@@ -37,12 +37,12 @@ enum ErrorCoreData: Error {
 
 class MainCoreData: CoreDataInput {
     
-     // MARK: - DECLARATIONS -
+    // MARK: - DECLARATIONS -
     let appDelegate: AppDelegate
     private var sortDescriptor: NSSortDescriptor
     var context: NSManagedObjectContext
     
-       // MARK: - INITIALIZATIONS -
+    // MARK: - INITIALIZATIONS -
     init() {
         self.appDelegate = UIApplication.shared.delegate as! AppDelegate
         self.sortDescriptor = NSSortDescriptor(key: "", ascending: true)
@@ -65,15 +65,14 @@ extension MainCoreData {
         }
     }
     
-    func getEntityFromDatabase<T: NSFetchRequest<NSManagedObject>>(fetchRequest: T) -> NSManagedObject? {
+    func getEntityFromDatabase<T: NSFetchRequest<NSManagedObject>>(fetchRequest: T) -> [NSManagedObject] {
+        var result: [NSManagedObject] = []
         do {
-            let results = try self.context.fetch(fetchRequest)
-            guard let result = results.first else { return nil }
-            return result
+            result = try self.context.fetch(fetchRequest)
         } catch {
             assertionFailure()
         }
-        return nil
+        return result
     }
     
     private func saveDatabase() throws {
