@@ -52,6 +52,7 @@
 "alertExpenseSaved" = "Gasto salvo com sucesso!";
 "alertExpenseTitleSuccess" = "Sucesso";
 "alertExpenseTitleError" = "Erro";
+"keyboardDoneButton" = "Finalizar";
 
 // MARK: - EXPENSE CONFIRM VIEW -
 "newExpenseButton" = "Novo gasto";

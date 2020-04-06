@@ -27,6 +27,8 @@ class ExpenseFormView: UIView {
     private lazy var blFinancial: BLFinancial = BLFinancial(worker: self.worker)
     
     override func layoutSubviews() {
+        self.nameTextField.delegate = self
+        self.setupTextfields()
         self.chooseIconView.isHidden = true
         self.shortNameMenuButton.isHidden = true
         self.expendedMenuButton.isHidden = true
@@ -40,6 +42,19 @@ extension ExpenseFormView {
         guard self.inputsIsValid() else { self.invalidInput(); return }
         guard !self.expenseAlreadyExist() else { self.updateExpense(); return }
         self.createExpense()
+    }
+}
+
+// MARK: - AUX SETUP TEXT FIELDS -
+extension ExpenseFormView: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    private func setupTextfields() {
+        self.expendedTextField.inputAccessoryView = UIToolbar.loadDoneButton()
     }
 }
 

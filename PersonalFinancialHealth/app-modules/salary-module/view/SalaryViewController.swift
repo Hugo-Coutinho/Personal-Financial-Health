@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AwesomeStackView
 
 class SalaryViewController: UIViewController {
     
@@ -16,15 +17,23 @@ class SalaryViewController: UIViewController {
     @IBOutlet weak var textFieldUsefullySalary: UITextField!
     @IBOutlet weak var netSalary: UILabel!
     @IBOutlet weak var usefullySalary: UILabel!
+    @IBOutlet weak var typeAvailableLabel: UILabel!
+    @IBOutlet weak var typeNetSalaryLabel: UILabel!
+    @IBOutlet weak var backgroundBlueView: UIView!
+    @IBOutlet weak var salaryMainstackView: AwesomeStackView!
+    @IBOutlet var formView: UIView!
+    @IBOutlet var blankView: UIView!
+
     
     // MARK: - VARIABLES -
     private lazy var presenter: SalaryPresenterInput = SalaryPresenter.make(view: self)
     private let zeroNetSalary = Constant.view.salaryView.zeroNetSalary
-    
+    private var stackViews: [UIView] = []
     
     // MARK: - OVERRIDE LIFECYCLE -
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupTextfields()
         GestureRecognizer.addGesture(view: self.reusableButton, target: self, action: #selector(self.saveSalary(_:)))
     }
     
@@ -34,6 +43,9 @@ class SalaryViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.loadNetSalary()
+        self.stackViews = [self.backgroundBlueView, self.formView]
+        self.salaryMainstackView.dataSource = self
+        self.salaryMainstackView.initialize()
     }
 }
 
@@ -68,6 +80,62 @@ extension SalaryViewController {
             let usefullySalaryResultDouble = Double(usefullySalary)  else { self.usefullySalary.text = self.zeroNetSalary; return }
         
         self.usefullySalary.text = String.localizedStringWithFormat(usefullySalaryFormatString, usefullySalaryResultDouble)
+    }
+}
+
+// MARK: -  STACK VIEW DATA SOURCE -
+extension SalaryViewController: AwesomeStackViewDataSource {
+    func stackView(_ stackView: UIStackView, numberOfRowsInSection section: Int) -> Int {
+        return self.stackViews.count
+    }
+    
+    func stackView(_ stackView: UIStackView, customSpacingForRow index: Int) -> Int {
+        return 0
+    }
+    
+    func stackView(_ stackView: UIStackView, viewForRowAt index: Int) -> UIView {
+        return self.stackViews[index]
+    }
+}
+
+// MARK: - TEXT FIELD MANAGMENT FUNCTIONS -
+extension SalaryViewController: UITextFieldDelegate {
+    private func setupTextfields() {
+        let toolbar = UIToolbar.loadDoneButton()
+        self.textFieldNetSalary.inputAccessoryView = toolbar
+        self.textFieldUsefullySalary.inputAccessoryView = toolbar
+        self.textFieldNetSalary.delegate = self
+        self.textFieldUsefullySalary.delegate = self
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.configureStackViewsUserDidBeginEditing()
+        self.salaryMainstackView.reloadStackView()
+        self.applyVisibilityUserIsTyping(textField)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.configureStackViewsUserDidEndEditing()
+        self.salaryMainstackView.reloadStackView()
+        self.userIsNotTypingVisibility()
+    }
+    
+    private func applyVisibilityUserIsTyping(_ textField: UITextField) {
+        if textField.tag == 1 {
+            self.typingNetSalaryVisibility()
+        } else {
+            self.typingUsefullySalaryVisibility()
+        }
+    }
+    
+    private func configureStackViewsUserDidBeginEditing() {
+        self.stackViews[0] = self.formView
+        self.stackViews[1] = self.blankView
+    }
+    
+    private func configureStackViewsUserDidEndEditing() {
+        self.stackViews[0] = self.backgroundBlueView
+        self.stackViews[1] = self.formView
     }
 }
 
@@ -106,5 +174,32 @@ extension SalaryViewController: SalaryPresenterToView {
     
     func showFailToSaveSalaryAlert() {
         Alert.presentOkNativeAlert(title: "Error", message: NSLocalizedString(Constant.view.salaryView.alertFailToSaveSalary, comment: "alert fail to save salary"), viewController: self)
+    }
+}
+
+// MARK: - SALARY VISIBILITYS -
+extension SalaryViewController {
+    private func typingNetSalaryVisibility() {
+        self.textFieldNetSalary.alpha = 1
+        self.textFieldUsefullySalary.alpha = 0
+        self.reusableButton.alpha = 0
+        self.typeNetSalaryLabel.alpha = 1
+        self.typeAvailableLabel.alpha = 0
+    }
+    
+    private func typingUsefullySalaryVisibility() {
+        self.textFieldNetSalary.alpha = 0
+        self.textFieldUsefullySalary.alpha = 1
+        self.reusableButton.alpha = 0
+        self.typeNetSalaryLabel.alpha = 0
+        self.typeAvailableLabel.alpha = 1
+    }
+    
+    private func userIsNotTypingVisibility() {
+        self.textFieldNetSalary.alpha = 1
+        self.textFieldUsefullySalary.alpha = 1
+        self.reusableButton.alpha = 1
+        self.typeNetSalaryLabel.alpha = 1
+        self.typeAvailableLabel.alpha = 1
     }
 }

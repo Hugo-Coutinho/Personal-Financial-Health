@@ -21,6 +21,9 @@ extension UIColor {
     class func ExpenseRed() -> UIColor { // #EC0028
         return UIColor(red: 236/255, green: 0/255, blue: 40/255, alpha: 0.60)
     }
-
+    
+    class func backgroundGrayColor() -> UIColor { // #E5E5E5
+        return UIColor(red: 229/255, green: 229/255, blue: 229/255, alpha: 1.0)
+    }
 }
 

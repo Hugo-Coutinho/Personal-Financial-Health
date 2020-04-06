@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import PersonalFinancialHealth
+@testable import AwesomeStackView
 
 class ExpenseTests: XCTestCase {
     
@@ -36,7 +37,7 @@ extension ExpenseTests {
     private func instantiateExpense() -> ExpenseViewController {
         let storyboard = UIStoryboard(name: "Expense", bundle: nil)
         let expenseView = storyboard.instantiateViewController(withIdentifier: "ExpenseViewController") as! ExpenseViewController
-        expenseView.mainStackView = StackViewController()
+        expenseView.mainStackView = AwesomeStackView()
         return expenseView
     }
 }
