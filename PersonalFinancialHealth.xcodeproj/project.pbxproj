@@ -53,7 +53,6 @@
 		639E7F2E242EA1C800496F14 /* HistoricalContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 639E7F2D242EA1C800496F14 /* HistoricalContainerView.xib */; };
 		639E7F32242EA20600496F14 /* HistoricalContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E7F31242EA20600496F14 /* HistoricalContainerView.swift */; };
 		639FA05622D6337C00983497 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639FA05522D6337C00983497 /* UIViewController.swift */; };
-		63A56BB422FA6A0F008C7093 /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A56BB322FA6A0F008C7093 /* StackViewController.swift */; };
 		63A615E224337AEE005A7A68 /* Historical.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63A615E424337AEE005A7A68 /* Historical.storyboard */; };
 		63B30DAB242FA0DD0019AD39 /* ConstantHistoricalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B30DAA242FA0DD0019AD39 /* ConstantHistoricalView.swift */; };
 		63B30DAE242FE0180019AD39 /* EmptyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B30DAD242FE0180019AD39 /* EmptyPageView.swift */; };
@@ -169,7 +168,6 @@
 		639E7F2D242EA1C800496F14 /* HistoricalContainerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoricalContainerView.xib; sourceTree = "<group>"; };
 		639E7F31242EA20600496F14 /* HistoricalContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalContainerView.swift; sourceTree = "<group>"; };
 		639FA05522D6337C00983497 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
-		63A56BB322FA6A0F008C7093 /* StackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewController.swift; sourceTree = "<group>"; };
 		63A615E12433788D005A7A68 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Salary.strings; sourceTree = "<group>"; };
 		63A615E324337AEE005A7A68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Historical.storyboard; sourceTree = "<group>"; };
 		63A615E624337AF2005A7A68 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Historical.strings; sourceTree = "<group>"; };
@@ -722,7 +720,6 @@
 				63085A762432147500CC87BF /* Lottie */,
 				639B9DA82417DC3800F4DBCD /* Alert */,
 				6390A05223FE3E6000CF2095 /* GestureRecognizer */,
-				63A56BB222FA698E008C7093 /* StackViewController */,
 				63CE3FC822D51E3E000E90ED /* Extension */,
 				63B56C8222D5126200D14C24 /* BusinessLogic */,
 				63B56C7322D5078400D14C24 /* Constant */,
@@ -928,14 +925,6 @@
 				639E7F31242EA20600496F14 /* HistoricalContainerView.swift */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		63A56BB222FA698E008C7093 /* StackViewController */ = {
-			isa = PBXGroup;
-			children = (
-				63A56BB322FA6A0F008C7093 /* StackViewController.swift */,
-			);
-			path = StackViewController;
 			sourceTree = "<group>";
 		};
 		63AE89C022FC683B00FE3D6A /* PopupMenu */ = {
@@ -1572,7 +1561,6 @@
 				63B6C49D2323E70300BA16ED /* ExpenseListSubItemView.swift in Sources */,
 				63EA77152326A1AD00DADC63 /* ExpenseFormView.swift in Sources */,
 				6390A05423FE3E8600CF2095 /* GestureRecognizer.swift in Sources */,
-				63A56BB422FA6A0F008C7093 /* StackViewController.swift in Sources */,
 				6350AD8B22FB95D600433C70 /* PopupMenu.swift in Sources */,
 				63EEEB7323FF7C0D00A2D408 /* SalaryProtocols.swift in Sources */,
 				637B0BBC22D647A200FF8BD0 /* UIView.swift in Sources */,

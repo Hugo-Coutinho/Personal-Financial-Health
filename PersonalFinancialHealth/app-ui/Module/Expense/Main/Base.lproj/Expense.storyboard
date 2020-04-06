@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +22,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SWr-KX-MN4">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ofT-9d-dKO" customClass="StackViewController" customModule="PersonalFinancialHealth" customModuleProvider="target">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ofT-9d-dKO" customClass="AwesomeStackView" customModule="AwesomeStackView">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                             </stackView>
                                         </subviews>
@@ -59,7 +57,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="My Expenses" id="ZZk-OS-ivU"/>
                     <connections>
-                        <outlet property="mainStackView" destination="ofT-9d-dKO" id="kRF-Ow-ePR"/>
+                        <outlet property="mainStackView" destination="ofT-9d-dKO" id="JZT-u7-rNJ"/>
                         <outlet property="scrollView" destination="OIz-mn-A7a" id="Ov7-CN-Je1"/>
                     </connections>
                 </viewController>

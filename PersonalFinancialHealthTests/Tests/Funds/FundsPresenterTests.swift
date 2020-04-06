@@ -2,8 +2,8 @@
 //  FundsPresenterTests.swift
 //  PersonalFinancialHealthTests
 //
-//  Created by BRQ on 24/03/20.
-//  Copyright © 2020 BRQ. All rights reserved.
+//  Created by Hugo on 24/03/20.
+//  Copyright © 2020 Hugo. All rights reserved.
 //
 
 import XCTest

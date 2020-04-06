@@ -2,11 +2,12 @@
 //  ExpenseListContainerView.swift
 //  PersonalFinancialHealth
 //
-//  Created by BRQ on 23/08/19.
-//  Copyright © 2019 BRQ. All rights reserved.
+//  Created by Hugo on 23/08/19.
+//  Copyright © 2019 Hugo. All rights reserved.
 //
 
 import UIKit
+import AwesomeStackView
 
 protocol IExpenseContainerSubView {
     func instanceExpenseContainerSubViewFromNib() -> UIView
@@ -16,7 +17,8 @@ protocol IExpenseContainerSubView {
 class ExpenseListContainerView: UIView {
     
     // MARK: - OUTLET -
-    @IBOutlet weak var listContainerStackView: StackViewController!
+    
+    @IBOutlet weak var listcontainerStackView: AwesomeStackView!
     
     // MARK: - PROPERTIES -
     lazy var arrangedSubviews: [IExpenseContainerSubView] = [
@@ -28,13 +30,13 @@ class ExpenseListContainerView: UIView {
     // MARK: - OVERRIDE -
     override func awakeFromNib() {
         self.setupActiveExpenses()
-        self.listContainerStackView.dataSource = self
-        self.listContainerStackView.initialize()
+        self.listcontainerStackView.dataSource = self
+        self.listcontainerStackView.initialize()
     }
 }
 
 // MARK: - STACKVIEW DATASOURCE -
-extension ExpenseListContainerView: StackViewDataSource {
+extension ExpenseListContainerView: AwesomeStackViewDataSource {
     func stackView(_ stackView: UIStackView, customSpacingForRow index: Int) -> Int {
         return 64
     }
@@ -83,7 +85,7 @@ extension ExpenseListContainerView {
 
 // MARK: - IMPLEMENTS PROTOCOL EXPENSE SUBVIEWS -
 extension ExpenseListContainerView: IExpenseSubView {
-    func didSelectRow(mainStack: StackViewController) {
+    func didSelectRow(mainStack: AwesomeStackView) {
         
     }
     

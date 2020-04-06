@@ -2,11 +2,12 @@
 //  ExpenseListItemView.swift
 //  PersonalFinancialHealth
 //
-//  Created by BRQ on 07/09/19.
-//  Copyright © 2019 BRQ. All rights reserved.
+//  Created by Hugo on 07/09/19.
+//  Copyright © 2019 Hugo. All rights reserved.
 //
 
 import UIKit
+import AwesomeStackView
 
 class ExpenseListItemView: UIView {
     
@@ -17,7 +18,7 @@ class ExpenseListItemView: UIView {
     @IBOutlet weak var arrowImage: UIImageView!
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var expenseValueLabel: UILabel!
-    @IBOutlet weak var subItemMainStackView: StackViewController!
+    @IBOutlet weak var subItemMainStackView: AwesomeStackView!
     
     // MARK: - VARIABLE -
     private var item: ExpenseItemModel?
@@ -50,7 +51,7 @@ class ExpenseListItemView: UIView {
 }
 
 // MARK: - STACK VIEW DATA SOURCE -
-extension ExpenseListItemView: StackViewDataSource {
+extension ExpenseListItemView: AwesomeStackViewDataSource {
     func stackView(_ stackView: UIStackView, customSpacingForRow index: Int) -> Int {
         return 0
     }
@@ -65,7 +66,7 @@ extension ExpenseListItemView: StackViewDataSource {
 }
 
 // MARK: - STACKVIEW DELEGATE -
-extension ExpenseListItemView: StackViewDelegate {
+extension ExpenseListItemView: AwesomeStackViewDelegate {
 
 }
 

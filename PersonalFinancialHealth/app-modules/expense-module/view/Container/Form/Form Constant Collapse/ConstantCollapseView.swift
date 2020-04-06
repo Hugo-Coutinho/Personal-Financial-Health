@@ -2,12 +2,13 @@
 //  ConstantCollapseView.swift
 //  PersonalFinancialHealth
 //
-//  Created by BRQ on 09/09/19.
-//  Copyright © 2019 BRQ. All rights reserved.
+//  Created by Hugo on 09/09/19.
+//  Copyright © 2019 Hugo. All rights reserved.
 //
 
 import Foundation
 import UIKit
+import AwesomeStackView
 
 class ConstantCollapseView: UIView {
     
@@ -17,7 +18,7 @@ class ConstantCollapseView: UIView {
     @IBOutlet weak var expenseTypeLabel: UILabel!
     
     // MARK: - PROPERTIES -     
-    private lazy var mainStack: StackViewController = self.getExpenseArrangedSubViews()
+    private lazy var mainStack: AwesomeStackView = self.getExpenseArrangedSubViews()
     
     override func layoutSubviews() {
         self.showArrowClosingCollapseAnimation()
@@ -28,8 +29,8 @@ class ConstantCollapseView: UIView {
 
 // MARK: - AUX FUNCTIONS -
 extension ConstantCollapseView {
-    private func getExpenseArrangedSubViews() -> StackViewController {
-        guard let expenseViewController = UIViewController.getVisibileViewController(viewController: ExpenseViewController.self) else { return StackViewController() }
+    private func getExpenseArrangedSubViews() -> AwesomeStackView {
+        guard let expenseViewController = UIViewController.getVisibileViewController(viewController: ExpenseViewController.self) else { return AwesomeStackView() }
         return expenseViewController.mainStackView
     }
     
@@ -83,7 +84,7 @@ extension ConstantCollapseView {
 
 // MARK: - IMPLEMENTS PROTOCOL EXPENSE SUBVIEWS -
 extension ConstantCollapseView: IExpenseSubView {
-    func didSelectRow(mainStack: StackViewController) {
+    func didSelectRow(mainStack: AwesomeStackView) {
         self.didSelectCollapseView()
     }
     

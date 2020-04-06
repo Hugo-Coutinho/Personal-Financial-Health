@@ -2,12 +2,13 @@
 //  ConstantPickerView.swift
 //  PersonalFinancialHealth
 //
-//  Created by BRQ on 09/09/19.
-//  Copyright © 2019 BRQ. All rights reserved.
+//  Created by Hugo on 09/09/19.
+//  Copyright © 2019 Hugo. All rights reserved.
 //
 
 import Foundation
 import UIKit
+import AwesomeStackView
 
 class ConstantPickerView: UIView {
     
@@ -49,7 +50,7 @@ extension ConstantPickerView: UIPickerViewDataSource {
 
 // MARK: - IMPLEMENTS PROTOCOL EXPENSE SUBVIEWS -
 extension ConstantPickerView: IExpenseSubView {
-    func didSelectRow(mainStack: StackViewController) {
+    func didSelectRow(mainStack: AwesomeStackView) {
         
     }
     

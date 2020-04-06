@@ -2,8 +2,8 @@
 //  ExpenseSubItem.swift
 //  PersonalFinancialHealth
 //
-//  Created by BRQ on 14/02/20.
-//  Copyright © 2020 BRQ. All rights reserved.
+//  Created by Hugo on 14/02/20.
+//  Copyright © 2020 Hugo. All rights reserved.
 //
 
 import Foundation

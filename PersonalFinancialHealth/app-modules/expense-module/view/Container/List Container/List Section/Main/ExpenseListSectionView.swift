@@ -2,11 +2,12 @@
 //  ExpenseListSectionView.swift
 //  PersonalFinancialHealth
 //
-//  Created by BRQ on 07/09/19.
-//  Copyright © 2019 BRQ. All rights reserved.
+//  Created by Hugo on 07/09/19.
+//  Copyright © 2019 Hugo. All rights reserved.
 //
 
 import UIKit
+import AwesomeStackView
 
 class ExpenseListSectionView: UIView {
     
@@ -15,8 +16,7 @@ class ExpenseListSectionView: UIView {
     @IBOutlet weak var totalExpendedLabel: UILabel!
     @IBOutlet weak var expenseTypeLabel: UILabel!
     @IBOutlet weak var totalExpendedView: UIView!
-    
-    @IBOutlet weak var itemMainStackView: StackViewController!
+    @IBOutlet weak var itemMainStackView: AwesomeStackView!
     
     // MARK: - VARIABLE -
     private lazy var arrangedItemModels: [ExpenseItemModel] = []
@@ -46,7 +46,7 @@ class ExpenseListSectionView: UIView {
 }
 
 // MARK: - STACKVIEW DATASOURCE -
-extension ExpenseListSectionView: StackViewDataSource {
+extension ExpenseListSectionView: AwesomeStackViewDataSource {
     func stackView(_ stackView: UIStackView, customSpacingForRow index: Int) -> Int {
         return 0
     }

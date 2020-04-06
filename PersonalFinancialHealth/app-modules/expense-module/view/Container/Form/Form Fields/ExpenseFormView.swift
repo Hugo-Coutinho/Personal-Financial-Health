@@ -2,13 +2,13 @@
 //  ExpenseFormView.swift
 //  PersonalFinancialHealth
 //
-//  Created by BRQ on 09/09/19.
-//  Copyright © 2019 BRQ. All rights reserved.
+//  Created by Hugo on 09/09/19.
+//  Copyright © 2019 Hugo. All rights reserved.
 //
 
 import UIKit
 import Foundation
-
+import AwesomeStackView
 
 class ExpenseFormView: UIView {
     
@@ -103,7 +103,7 @@ extension ExpenseFormView {
 
 // MARK: - IMPLEMENTS PROTOCOL EXPENSE SUBVIEWS -
 extension ExpenseFormView: IExpenseSubView {
-    func didSelectRow(mainStack: StackViewController) {
+    func didSelectRow(mainStack: AwesomeStackView) {
         
     }
     

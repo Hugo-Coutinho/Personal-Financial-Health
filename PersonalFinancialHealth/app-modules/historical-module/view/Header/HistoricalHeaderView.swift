@@ -2,11 +2,12 @@
 //  HistoricalHeaderView.swift
 //  PersonalFinancialHealth
 //
-//  Created by BRQ on 27/03/20.
-//  Copyright © 2020 BRQ. All rights reserved.
+//  Created by Hugo on 27/03/20.
+//  Copyright © 2020 Hugo. All rights reserved.
 //
 
 import UIKit
+import AwesomeStackView
 
 class HistoricalHeaderView: UIView {
 
@@ -26,7 +27,7 @@ extension HistoricalHeaderView: IHistoricalView {
         return HistoricalContainerView.instanceFromNib(nibName: Constant.view.historicalView.historicalHeaderView)
     }
     
-    func didSelectHistoricalRow(mainStack: StackViewController) {
+    func didSelectHistoricalRow(mainStack: AwesomeStackView) {
         
     }
 }

@@ -2,11 +2,12 @@
 //  EmptyPage.swift
 //  PersonalFinancialHealth
 //
-//  Created by BRQ on 28/03/20.
-//  Copyright © 2020 BRQ. All rights reserved.
+//  Created by Hugo on 28/03/20.
+//  Copyright © 2020 Hugo. All rights reserved.
 //
 
 import UIKit
+import AwesomeStackView
 
 class EmptyPageView: UIView {
     
@@ -27,21 +28,20 @@ extension EmptyPageView: IHistoricalView {
         return HistoricalContainerView.instanceFromNib(nibName: "EmptyPageView")
     }
     
-    func didSelectHistoricalRow(mainStack: StackViewController) {
+    func didSelectHistoricalRow(mainStack: AwesomeStackView) {
         
     }
 }
 
 // MARK: - EXPENSE -
 extension EmptyPageView: IExpenseSubView {
-    func didSelectRow(mainStack: StackViewController) {
+    func didSelectRow(mainStack: AwesomeStackView) {
         
     }
     
     func instanceExpenseSubViewFromNib() -> UIView {
         let emptyView = EmptyPageView().instanceHistoricalViewFromNib() as! EmptyPageView
         emptyView.MessageLabel.text = NSLocalizedString("expenseEmptyMessageLabel", comment: "")
-        emptyView.heightAnchor.constraint(equalToConstant: CGFloat(180.0))
         return emptyView
     }
 }

@@ -2,8 +2,8 @@
 //  HistoricalViewController.swift
 //  PersonalFinancialHealth
 //
-//  Created by BRQ on 27/03/20.
-//  Copyright © 2020 BRQ. All rights reserved.
+//  Created by Hugo on 27/03/20.
+//  Copyright © 2020 Hugo. All rights reserved.
 //
 
 import UIKit
@@ -12,7 +12,7 @@ import AwesomeStackView
 // MARK: - EXPENSE SUBVIEW INTERFACE -
 protocol IHistoricalView {
     func instanceHistoricalViewFromNib() -> UIView
-    func didSelectHistoricalRow(mainStack: StackViewController)
+    func didSelectHistoricalRow(mainStack: AwesomeStackView)
 }
 
 

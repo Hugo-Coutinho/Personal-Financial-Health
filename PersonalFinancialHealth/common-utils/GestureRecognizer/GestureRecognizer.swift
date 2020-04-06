@@ -2,8 +2,8 @@
 //  GestureRecognizer.swift
 //  PersonalFinancialHealth
 //
-//  Created by BRQ on 20/02/20.
-//  Copyright © 2020 BRQ. All rights reserved.
+//  Created by Hugo on 20/02/20.
+//  Copyright © 2020 Hugo. All rights reserved.
 //
 
 import UIKit

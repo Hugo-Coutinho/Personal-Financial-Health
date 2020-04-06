@@ -2,21 +2,22 @@
 //  EpenseViewController.swift
 //  PersonalFinancialHealth
 //
-//  Created by BRQ on 09/07/19.
-//  Copyright © 2019 BRQ. All rights reserved.
+//  Created by Hugo on 09/07/19.
+//  Copyright © 2019 Hugo. All rights reserved.
 //
 
 import UIKit
+import AwesomeStackView
 
 // MARK: - EXPENSE SUBVIEW INTERFACE -
 protocol IExpenseSubView {
     func instanceExpenseSubViewFromNib() -> UIView
-    func didSelectRow(mainStack: StackViewController)
+    func didSelectRow(mainStack: AwesomeStackView)
 }
 
 // MARK: - EXPENSE VIEW DATA -
 struct ExpenseParentViewData {
-    var stack: StackViewController
+    var stack: AwesomeStackView
 }
 
 // MARK: - ENUMS -
@@ -43,7 +44,8 @@ enum EnumExpenseItemViewType: Int {
 class ExpenseViewController: UIViewController {
     
     // MARK: - OUTLETS -
-    @IBOutlet var mainStackView: StackViewController!
+    
+    @IBOutlet weak var mainStackView: AwesomeStackView!
     @IBOutlet weak var scrollView: UIScrollView!
     
     // MARK: - CONSTANTS -
@@ -113,7 +115,7 @@ extension ExpenseViewController {
 }
 
 // MARK: - STACKVIEW DATASOURCE -
-extension ExpenseViewController: StackViewDataSource {
+extension ExpenseViewController: AwesomeStackViewDataSource {
     func stackView(_ stackView: UIStackView, customSpacingForRow index: Int) -> Int {
         guard self.isCurrentViewEqualToConfirmView(index: index) else { return 8 }
         return 32
@@ -130,7 +132,7 @@ extension ExpenseViewController: StackViewDataSource {
 }
 
 // MARK: - STACKVIEW DELEGATE -
-extension ExpenseViewController: StackViewDelegate {
+extension ExpenseViewController: AwesomeStackViewDelegate {
     func stackView(_ stackView: UIStackView, didSelectRowAt index: Int, view: UIView) {
         guard self.currentViewExist(index: index) else { return }
         self.subViews[index].didSelectRow(mainStack: self.mainStackView)

@@ -2,8 +2,8 @@
 //  ConstantExpenseView.swift
 //  PersonalFinancialHealth
 //
-//  Created by BRQ on 17/01/20.
-//  Copyright © 2020 BRQ. All rights reserved.
+//  Created by Hugo on 17/01/20.
+//  Copyright © 2020 Hugo. All rights reserved.
 //
 
 import Foundation

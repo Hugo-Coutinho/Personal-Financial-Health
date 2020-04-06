@@ -2,8 +2,8 @@
 //  ExpenseListSubItemView.swift
 //  PersonalFinancialHealth
 //
-//  Created by BRQ on 07/09/19.
-//  Copyright © 2019 BRQ. All rights reserved.
+//  Created by Hugo on 07/09/19.
+//  Copyright © 2019 Hugo. All rights reserved.
 //
 
 import UIKit
