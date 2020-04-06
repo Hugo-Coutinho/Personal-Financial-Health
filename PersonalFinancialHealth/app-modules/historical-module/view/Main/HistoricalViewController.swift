@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AwesomeStackView
 
 // MARK: - EXPENSE SUBVIEW INTERFACE -
 protocol IHistoricalView {
@@ -18,7 +19,8 @@ protocol IHistoricalView {
 class HistoricalViewController: UIViewController {
     
     // MARK: - OUTLETS -
-    @IBOutlet weak var mainStackView: StackViewController!
+    
+    @IBOutlet weak var mainStackView: AwesomeStackView!
     @IBOutlet weak var scrollView: UIScrollView!
     
     // MARK: - VARIABLES -
@@ -37,7 +39,7 @@ extension HistoricalViewController {
 }
 
 // MARK: - STACKVIEW DATASOURCE -
-extension HistoricalViewController: StackViewDataSource {
+extension HistoricalViewController: AwesomeStackViewDataSource {
     func stackView(_ stackView: UIStackView, numberOfRowsInSection section: Int) -> Int {
         return self.subViews.count
     }
@@ -47,13 +49,12 @@ extension HistoricalViewController: StackViewDataSource {
     }
     
     func stackView(_ stackView: UIStackView, viewForRowAt index: Int) -> UIView {
-//        return self.subViews[index].instanceExpenseSubViewFromNib()
         return self.getViewforRow(index: index)
     }
 }
 
 // MARK: - STACKVIEW DELEGATE -
-extension HistoricalViewController: StackViewDelegate {
+extension HistoricalViewController: AwesomeStackViewDelegate {
 }
 
 

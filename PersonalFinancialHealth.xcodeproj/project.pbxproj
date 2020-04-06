@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B00C3B1F6E96C84AFD02E1F /* libPods-PersonalFinancialHealthTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E08630525C11507ABE05A339 /* libPods-PersonalFinancialHealthTests.a */; };
 		63085A792432149400CC87BF /* check-mark.json in Resources */ = {isa = PBXBuildFile; fileRef = 63085A782432149400CC87BF /* check-mark.json */; };
 		63106E9E22FD04970059D21E /* PopupSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63106E9D22FD04970059D21E /* PopupSelectView.swift */; };
 		63106EA122FD0EAC0059D21E /* PopupEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63106EA022FD0EAC0059D21E /* PopupEditView.swift */; };
@@ -99,9 +100,7 @@
 		63FD7315240D52F2003E0DD1 /* FundsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD7314240D52F2003E0DD1 /* FundsProtocols.swift */; };
 		63FD7317240D531D003E0DD1 /* FundsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD7316240D531D003E0DD1 /* FundsInteractor.swift */; };
 		63FD7319240D5335003E0DD1 /* FundsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD7318240D5335003E0DD1 /* FundsPresenter.swift */; };
-		8CC53C927FD64C8A3B5B97F2 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		CAE7348DF8A78B4C93FCB052 /* libPods-PersonalFinancialHealthTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC9621ECA87BE5CA40DED264 /* libPods-PersonalFinancialHealthTests.a */; };
-		EC309ABE5950C17A2EEF4CDA /* libPods-PersonalFinancialHealth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A72B080D3CC667803F29623 /* libPods-PersonalFinancialHealth.a */; };
+		7E11B7F834A0168F7FC377C3 /* libPods-PersonalFinancialHealth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C96022511C7970B3969B26F2 /* libPods-PersonalFinancialHealth.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,8 +114,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		22B3E5265EC105425AEF1A9C /* Pods-PersonalFinancialHealthTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonalFinancialHealthTests.release.xcconfig"; path = "Target Support Files/Pods-PersonalFinancialHealthTests/Pods-PersonalFinancialHealthTests.release.xcconfig"; sourceTree = "<group>"; };
-		22F1326F1005777BA8C3E3F3 /* Pods-PersonalFinancialHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonalFinancialHealth.debug.xcconfig"; path = "Target Support Files/Pods-PersonalFinancialHealth/Pods-PersonalFinancialHealth.debug.xcconfig"; sourceTree = "<group>"; };
+		47772C16661260B51D6D39B1 /* Pods-PersonalFinancialHealthTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonalFinancialHealthTests.debug.xcconfig"; path = "Target Support Files/Pods-PersonalFinancialHealthTests/Pods-PersonalFinancialHealthTests.debug.xcconfig"; sourceTree = "<group>"; };
+		53759C1D5C1D900B1229391D /* Pods-PersonalFinancialHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonalFinancialHealth.debug.xcconfig"; path = "Target Support Files/Pods-PersonalFinancialHealth/Pods-PersonalFinancialHealth.debug.xcconfig"; sourceTree = "<group>"; };
+		588FCBBC4B5AD76950213658 /* Pods-PersonalFinancialHealthTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonalFinancialHealthTests.release.xcconfig"; path = "Target Support Files/Pods-PersonalFinancialHealthTests/Pods-PersonalFinancialHealthTests.release.xcconfig"; sourceTree = "<group>"; };
+		5BF569B12C956A6B8EC8E483 /* Pods-PersonalFinancialHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonalFinancialHealth.release.xcconfig"; path = "Target Support Files/Pods-PersonalFinancialHealth/Pods-PersonalFinancialHealth.release.xcconfig"; sourceTree = "<group>"; };
 		63085A782432149400CC87BF /* check-mark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "check-mark.json"; sourceTree = "<group>"; };
 		63106E9D22FD04970059D21E /* PopupSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupSelectView.swift; sourceTree = "<group>"; };
 		63106EA022FD0EAC0059D21E /* PopupEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupEditView.swift; sourceTree = "<group>"; };
@@ -231,10 +232,8 @@
 		63FD7314240D52F2003E0DD1 /* FundsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsProtocols.swift; sourceTree = "<group>"; };
 		63FD7316240D531D003E0DD1 /* FundsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsInteractor.swift; sourceTree = "<group>"; };
 		63FD7318240D5335003E0DD1 /* FundsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsPresenter.swift; sourceTree = "<group>"; };
-		7A72B080D3CC667803F29623 /* libPods-PersonalFinancialHealth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PersonalFinancialHealth.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8380A2E547A2322221CC023E /* Pods-PersonalFinancialHealthTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonalFinancialHealthTests.debug.xcconfig"; path = "Target Support Files/Pods-PersonalFinancialHealthTests/Pods-PersonalFinancialHealthTests.debug.xcconfig"; sourceTree = "<group>"; };
-		BC9621ECA87BE5CA40DED264 /* libPods-PersonalFinancialHealthTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PersonalFinancialHealthTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD0C6090933C4E45740473D0 /* Pods-PersonalFinancialHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonalFinancialHealth.release.xcconfig"; path = "Target Support Files/Pods-PersonalFinancialHealth/Pods-PersonalFinancialHealth.release.xcconfig"; sourceTree = "<group>"; };
+		C96022511C7970B3969B26F2 /* libPods-PersonalFinancialHealth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PersonalFinancialHealth.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E08630525C11507ABE05A339 /* libPods-PersonalFinancialHealthTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PersonalFinancialHealthTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,7 +241,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAE7348DF8A78B4C93FCB052 /* libPods-PersonalFinancialHealthTests.a in Frameworks */,
+				5B00C3B1F6E96C84AFD02E1F /* libPods-PersonalFinancialHealthTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,8 +249,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC309ABE5950C17A2EEF4CDA /* libPods-PersonalFinancialHealth.a in Frameworks */,
-				8CC53C927FD64C8A3B5B97F2 /* (null) in Frameworks */,
+				7E11B7F834A0168F7FC377C3 /* libPods-PersonalFinancialHealth.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,8 +261,8 @@
 			children = (
 				632785902432954500415DCD /* liblottie-ios.a */,
 				6327858C243294E700415DCD /* liblottie-ios.a */,
-				7A72B080D3CC667803F29623 /* libPods-PersonalFinancialHealth.a */,
-				BC9621ECA87BE5CA40DED264 /* libPods-PersonalFinancialHealthTests.a */,
+				C96022511C7970B3969B26F2 /* libPods-PersonalFinancialHealth.a */,
+				E08630525C11507ABE05A339 /* libPods-PersonalFinancialHealthTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1337,10 +1335,10 @@
 		83151C6AA2E8EEF350116005 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				22F1326F1005777BA8C3E3F3 /* Pods-PersonalFinancialHealth.debug.xcconfig */,
-				CD0C6090933C4E45740473D0 /* Pods-PersonalFinancialHealth.release.xcconfig */,
-				8380A2E547A2322221CC023E /* Pods-PersonalFinancialHealthTests.debug.xcconfig */,
-				22B3E5265EC105425AEF1A9C /* Pods-PersonalFinancialHealthTests.release.xcconfig */,
+				53759C1D5C1D900B1229391D /* Pods-PersonalFinancialHealth.debug.xcconfig */,
+				5BF569B12C956A6B8EC8E483 /* Pods-PersonalFinancialHealth.release.xcconfig */,
+				47772C16661260B51D6D39B1 /* Pods-PersonalFinancialHealthTests.debug.xcconfig */,
+				588FCBBC4B5AD76950213658 /* Pods-PersonalFinancialHealthTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1352,7 +1350,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 637A8A1923F39D6400688E6C /* Build configuration list for PBXNativeTarget "PersonalFinancialHealthTests" */;
 			buildPhases = (
-				3FE6A53A883DB61DCAE53489 /* [CP] Check Pods Manifest.lock */,
+				CC81C9C8457128A1AA053629 /* [CP] Check Pods Manifest.lock */,
 				637A8A0E23F39D6400688E6C /* Sources */,
 				637A8A0F23F39D6400688E6C /* Frameworks */,
 				637A8A1023F39D6400688E6C /* Resources */,
@@ -1371,7 +1369,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6391370F22CBE3490018B65F /* Build configuration list for PBXNativeTarget "PersonalFinancialHealth" */;
 			buildPhases = (
-				D1CF39FD76D0075846488FB9 /* [CP] Check Pods Manifest.lock */,
+				722A6630EEF53DF71D33C055 /* [CP] Check Pods Manifest.lock */,
 				639136F922CBE3470018B65F /* Sources */,
 				639136FA22CBE3470018B65F /* Frameworks */,
 				639136FB22CBE3470018B65F /* Resources */,
@@ -1465,29 +1463,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3FE6A53A883DB61DCAE53489 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PersonalFinancialHealthTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D1CF39FD76D0075846488FB9 /* [CP] Check Pods Manifest.lock */ = {
+		722A6630EEF53DF71D33C055 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1503,6 +1479,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-PersonalFinancialHealth-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC81C9C8457128A1AA053629 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PersonalFinancialHealthTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1699,7 +1697,7 @@
 /* Begin XCBuildConfiguration section */
 		637A8A1A23F39D6400688E6C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8380A2E547A2322221CC023E /* Pods-PersonalFinancialHealthTests.debug.xcconfig */;
+			baseConfigurationReference = 47772C16661260B51D6D39B1 /* Pods-PersonalFinancialHealthTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1720,7 +1718,7 @@
 		};
 		637A8A1B23F39D6400688E6C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 22B3E5265EC105425AEF1A9C /* Pods-PersonalFinancialHealthTests.release.xcconfig */;
+			baseConfigurationReference = 588FCBBC4B5AD76950213658 /* Pods-PersonalFinancialHealthTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1861,7 +1859,7 @@
 		};
 		6391371022CBE3490018B65F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 22F1326F1005777BA8C3E3F3 /* Pods-PersonalFinancialHealth.debug.xcconfig */;
+			baseConfigurationReference = 53759C1D5C1D900B1229391D /* Pods-PersonalFinancialHealth.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1880,7 +1878,7 @@
 		};
 		6391371122CBE3490018B65F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CD0C6090933C4E45740473D0 /* Pods-PersonalFinancialHealth.release.xcconfig */;
+			baseConfigurationReference = 5BF569B12C956A6B8EC8E483 /* Pods-PersonalFinancialHealth.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

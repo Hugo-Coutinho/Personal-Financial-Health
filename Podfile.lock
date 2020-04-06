@@ -1,16 +1,29 @@
 PODS:
+  - AwesomeStackView (0.1)
   - lottie-ios (3.1.6)
 
 DEPENDENCIES:
+  - AwesomeStackView (from `https://github.com/Hugo-Coutinho/AwesomeStackView.git`, branch `master`)
   - lottie-ios
 
 SPEC REPOS:
   trunk:
     - lottie-ios
 
+EXTERNAL SOURCES:
+  AwesomeStackView:
+    :branch: master
+    :git: https://github.com/Hugo-Coutinho/AwesomeStackView.git
+
+CHECKOUT OPTIONS:
+  AwesomeStackView:
+    :commit: 754d937d59becbf6626be85f957ae177a8aa711c
+    :git: https://github.com/Hugo-Coutinho/AwesomeStackView.git
+
 SPEC CHECKSUMS:
+  AwesomeStackView: fbf507482bb3cde269e6ff5c6c3a3dbe38c50c62
   lottie-ios: 85ce835dd8c53e02509f20729fc7d6a4e6645a0a
 
-PODFILE CHECKSUM: 0cab8a5d99613021143ac3179a15a711331e0fcb
+PODFILE CHECKSUM: 9709543be054b1a40fac13cd560cff4a0421fd30
 
 COCOAPODS: 1.8.4
