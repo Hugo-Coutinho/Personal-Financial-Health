@@ -22,8 +22,6 @@ class ExpenseListItemView: UIView {
     
     // MARK: - VARIABLE -
     private var item: ExpenseItemModel?
-//    private lazy var arrangedItens: [ExpenseItemModel] = [
-//    ]
     private lazy var worker: CoreDataWorkerInput = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorExpense)
     private lazy var blFinancial: BLFinancial = BLFinancial(worker: self.worker)
     
@@ -41,7 +39,7 @@ class ExpenseListItemView: UIView {
         let expenseValueFormatString = NSLocalizedString("expenseValueLabel", comment: "")
         
         self.itemText.text = String.localizedStringWithFormat(itemTextFormatString, itemModel.name)
-//        self.iconImage.image = UIImage(named: itemModel.icon)
+        self.iconImage.image = UIImage(named: itemModel.icon)
         self.expenseValueLabel.text = String.localizedStringWithFormat(expenseValueFormatString, self.getItemExpense(itemModel: itemModel))
         self.financialStateUpdateTotalViewColor(itemModel: [itemModel])
         self.updateArrangedSubItems(itemModel: itemModel)

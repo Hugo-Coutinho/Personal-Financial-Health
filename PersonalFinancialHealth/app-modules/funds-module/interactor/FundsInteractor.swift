@@ -57,9 +57,6 @@ class FundsInteractor: FundsInteractorInput, FundsPresenterToInteractor {
     }
     
     func playAnimationByCurrentBudgetState(happyAnimation: @escaping () -> Void, sadAnimation: @escaping () -> Void) {
-        // verificar se o usuario ja realizou algum gasto
-        // verificar se o usuario ja setou seu salario
-        // playAnimationHappy senao o sad.
         guard self.isUserAlreadySubmitedAllInformations() else { return }
         self.blFinancial.getUsefullyFundsRecalculated(usefullyFund: { (budget) in
             guard budget > 0 else { sadAnimation(); return }

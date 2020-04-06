@@ -21,9 +21,7 @@ class ExpenseListContainerView: UIView {
     @IBOutlet weak var listcontainerStackView: AwesomeStackView!
     
     // MARK: - PROPERTIES -
-    lazy var arrangedSubviews: [IExpenseContainerSubView] = [
-//    ExpenseListSectionView()
-    ]
+    lazy var arrangedSubviews: [IExpenseContainerSubView] = []
     private lazy var worker: CoreDataWorkerInput = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorExpense)
     private lazy var blFinancial: BLFinancial = BLFinancial(worker: self.worker)
     

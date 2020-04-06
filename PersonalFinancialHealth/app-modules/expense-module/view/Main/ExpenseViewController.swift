@@ -45,7 +45,7 @@ class ExpenseViewController: UIViewController {
     
     // MARK: - OUTLETS -
     
-    @IBOutlet weak var mainStackView: AwesomeStackView!
+    @IBOutlet var mainStackView: AwesomeStackView!
     @IBOutlet weak var scrollView: UIScrollView!
     
     // MARK: - CONSTANTS -

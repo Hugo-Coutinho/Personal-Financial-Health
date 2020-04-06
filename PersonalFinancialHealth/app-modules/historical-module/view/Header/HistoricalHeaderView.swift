@@ -16,7 +16,7 @@ class HistoricalHeaderView: UIView {
 
     // MARK: - LIFE CYCLE -
     override func awakeFromNib() {
-    // get last month valueb
+    
     }
 }
 

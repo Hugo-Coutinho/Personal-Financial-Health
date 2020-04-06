@@ -28,7 +28,6 @@ class ReusableButton: UIView {
         guard let view = loadViewFromNib() else { return }
         view.frame = self.bounds
         self.addSubview(view)
-//        contentView = view
     }
     func loadViewFromNib() -> UIView? {
         let bundle = Bundle(for: type(of: self))

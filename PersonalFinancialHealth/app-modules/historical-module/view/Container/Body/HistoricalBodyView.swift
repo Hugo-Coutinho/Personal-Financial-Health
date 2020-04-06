@@ -16,7 +16,7 @@ class HistoricalBodyView: UIView {
     
     // MARK: - LIFE CYCLE -
     override func awakeFromNib() {
-        //
+        
     }
 }
 

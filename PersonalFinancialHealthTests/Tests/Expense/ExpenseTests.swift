@@ -46,7 +46,7 @@ extension ExpenseTests {
 extension ExpenseTests {
     
     // MARK: - EXPENSE FORM VIEW -
-    func testsInputsIsValid_shouldReturnTrue() {
+    func testsInputsIsValid_shouldAssertTrue() {
         // 1. GIVEN
         let formView = ExpenseFormView.instanceFromNib(nibName: Constant.view.expenseView.expenseFormView) as? ExpenseFormView
         // 2. WHEN
@@ -57,7 +57,7 @@ extension ExpenseTests {
         assert(result == true)
     }
     
-    func testsInputsIsValid_shouldReturnFalse() {
+    func testsInputsIsValid_shouldAssertFalse() {
         // 1. GIVEN
         let formView = ExpenseFormView.instanceFromNib(nibName: Constant.view.expenseView.expenseFormView) as? ExpenseFormView
         // 2. WHEN
@@ -68,7 +68,7 @@ extension ExpenseTests {
         assert(result == false)
     }
     
-    func testGetExpense_shouldReturnExpense() {
+    func testGetExpense_shouldAssertNotNil() {
         // 1. GIVEN
         let formView = ExpenseFormView.instanceFromNib(nibName: Constant.view.expenseView.expenseFormView) as? ExpenseFormView
         // 2. WHEN
@@ -80,7 +80,7 @@ extension ExpenseTests {
         assert(result != nil)
     }
     
-    func testGetExpense_shouldReturnNil() {
+    func testGetExpense_shouldAssertNil() {
         // 1. GIVEN
         let formView = ExpenseFormView.instanceFromNib(nibName: Constant.view.expenseView.expenseFormView) as? ExpenseFormView
         // 2. WHEN
@@ -91,7 +91,7 @@ extension ExpenseTests {
         assert(result == nil)
     }
     
-    func testExpenseAlreadyExist_shouldReturnFalse() {
+    func testExpenseAlreadyExist_shouldAssertFalse() {
         // 1. GIVEN
         let formView = ExpenseFormView.instanceFromNib(nibName: Constant.view.expenseView.expenseFormView) as? ExpenseFormView
         // 2. WHEN
@@ -102,7 +102,7 @@ extension ExpenseTests {
         assert(result == false)
     }
     
-    func testExpenseAlreadyExist_shouldReturnTrue() {
+    func testExpenseAlreadyExist_shouldAssertTrue() {
         // 1. GIVEN
         let formViewCreateExpense = ExpenseFormView.instanceFromNib(nibName: Constant.view.expenseView.expenseFormView) as? ExpenseFormView
         let formView = ExpenseFormView.instanceFromNib(nibName: Constant.view.expenseView.expenseFormView) as? ExpenseFormView
@@ -120,7 +120,7 @@ extension ExpenseTests {
         assert(result == true)
     }
     
-    func testInstanceExpenseSubViewFromNib_shouldResultLikeExpenseFormView() {
+    func testInstanceExpenseSubViewFromNib_shouldAssertNotNil() {
         // 1. GIVEN
         let formView = ExpenseFormView.instanceFromNib(nibName: Constant.view.expenseView.expenseFormView)
         // 2. WHEN
@@ -129,7 +129,7 @@ extension ExpenseTests {
         assert(result != nil)
     }
     
-    func testInstanceExpenseSubViewFromNib_shouldResultNil() {
+    func testInstanceExpenseSubViewFromNib_shouldAssertNil() {
         // 1. GIVEN
         let formView = ExpenseFormView.instanceFromNib(nibName: Constant.view.expenseView.expenseFormView)
         // 2. WHEN
@@ -139,7 +139,7 @@ extension ExpenseTests {
     }
     
     // MARK: - EXPENSE LIST CONTAINER VIEW -
-    func testSetupActiveExpenses_ShouldReturnArrangedSubviewsCountZero() {
+    func testSetupActiveExpenses_ShouldAssertArrangedSubviewsCountZero() {
         // 1. GIVEN
         let containerView = ExpenseListContainerView.instanceFromNib(nibName: Constant.view.expenseView.expenseListcontainer) as? ExpenseListContainerView
         // 2. WHEN
@@ -148,7 +148,7 @@ extension ExpenseTests {
         assert(containerView?.arrangedSubviews.count == 0)
     }
     
-    func testSetupActiveExpenses_ShouldReturnArrangedSubviewsCountTwo() {
+    func testSetupActiveExpenses_ShouldAssertArrangedSubviewsCountTwo() {
         // 1. GIVEN
         let containerView = ExpenseListContainerView.instanceFromNib(nibName: Constant.view.expenseView.expenseListcontainer) as? ExpenseListContainerView
         let item = ExpenseItemModel(icon: "", name: "fla", expenseType: 1, subItems: [ExpenseSubItemModel(date: Date(), expended: 2.0)]).toManagedObject(in: self.worker!.context)
@@ -165,7 +165,7 @@ extension ExpenseTests {
     
     // MARK: - EXPENSE SECTION VIEW -
     
-    func testGetExpenseType_shouldReturnZero() {
+func testGetExpenseType_shouldAssertZero() {
         // 1. GIVEN
         let sectionView = ExpenseListSectionView.instanceFromNib(nibName: Constant.view.expenseView.expenseSection) as? ExpenseListSectionView
         let itemModel = [ExpenseItemModel(icon: "", name: "", expenseType: 0, subItems: [ExpenseSubItemModel(date: Date(), expended: 0.0)])]
@@ -175,7 +175,7 @@ extension ExpenseTests {
         assert(result == 0)
     }
     
-    func testGetExpenseType_shouldReturnOne() {
+    func testGetExpenseType_shouldAssertOne() {
         // 1. GIVEN
         let sectionView = ExpenseListSectionView.instanceFromNib(nibName: Constant.view.expenseView.expenseSection) as? ExpenseListSectionView
         let itemModel = [ExpenseItemModel(icon: "", name: "", expenseType: 1, subItems: [ExpenseSubItemModel(date: Date(), expended: 0.0)])]
@@ -185,7 +185,7 @@ extension ExpenseTests {
         assert(result == 1)
     }
     
-    func testGetTotalDailyExpended_shouldReturnThree() {
+    func testGetTotalDailyExpended_shouldAssertThree() {
         // 1. GIVEN
         let sectionView = ExpenseListSectionView.instanceFromNib(nibName: Constant.view.expenseView.expenseSection) as? ExpenseListSectionView
         let itemModel = [ExpenseItemModel(icon: "", name: "", expenseType: 1, subItems: [ExpenseSubItemModel(date: Date(), expended: 3.0)])]
@@ -196,7 +196,7 @@ extension ExpenseTests {
         assert(finalResult == 3.0)
     }
     
-    func testGetTotalConstantExpended_shouldReturnFour() {
+    func testGetTotalConstantExpended_shouldAssertFour() {
         // 1. GIVEN
         let sectionView = ExpenseListSectionView.instanceFromNib(nibName: Constant.view.expenseView.expenseSection) as? ExpenseListSectionView
         let itemModel = [ExpenseItemModel(icon: "", name: "", expenseType: 0, subItems: [ExpenseSubItemModel(date: Date(), expended: 4.0)])]
@@ -207,7 +207,7 @@ extension ExpenseTests {
         assert(finalResult == 4.0)
     }
     
-    func testGetTotalExpendedToConstantExpense_shouldReturnTen() {
+    func testGetTotalExpendedToConstantExpense_shouldAssertTen() {
         // 1. GIVEN
         let sectionView = ExpenseListSectionView.instanceFromNib(nibName: Constant.view.expenseView.expenseSection) as? ExpenseListSectionView
         let itemModel = [ExpenseItemModel(icon: "", name: "", expenseType: 0, subItems: [ExpenseSubItemModel(date: Date(), expended: 10.0)])]
@@ -218,7 +218,7 @@ extension ExpenseTests {
         assert(finalResult == 10.0)
     }
     
-    func testGetTotalExpendedToDailyExpense_shouldReturnTen() {
+    func testGetTotalExpendedToDailyExpense_shouldAssertTen() {
         // 1. GIVEN
         let sectionView = ExpenseListSectionView.instanceFromNib(nibName: Constant.view.expenseView.expenseSection) as? ExpenseListSectionView
         let itemModel = [ExpenseItemModel(icon: "", name: "", expenseType: 1, subItems: [ExpenseSubItemModel(date: Date(), expended: 10.0)])]
