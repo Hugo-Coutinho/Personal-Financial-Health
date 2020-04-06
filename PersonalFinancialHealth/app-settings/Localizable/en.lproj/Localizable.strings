@@ -72,3 +72,5 @@
 // MARK: - ALERT -
 "alertYesTitle" = "Yes";
 "alertNoTitle" = "No";
+"alertSubmitSalaryTitle" = "Submit salary";
+"alertSubmitSalaryMessage" = "Please, to use the app, submit the values we are gonna need.";

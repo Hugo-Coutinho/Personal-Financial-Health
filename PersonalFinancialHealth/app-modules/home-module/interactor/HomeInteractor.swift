@@ -28,4 +28,8 @@ class HomeInteractor: HomePresenterToInteractor {
         salaryFinancial.resetAppSalaryStorage()
         self.blFinancial.resetAppExpenseStorage()
     }
+    
+    func isUserSubmitSalary() -> Bool {
+        return self.blFinancial.getUsefullyFunds() > 0.0
+    }
 }

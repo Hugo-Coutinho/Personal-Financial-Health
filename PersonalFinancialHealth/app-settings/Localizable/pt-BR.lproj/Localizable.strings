@@ -74,6 +74,8 @@
 // MARK: - ALERT -
 "alertYesTitle" = "Sim";
 "alertNoTitle" = "Não";
+"alertSubmitSalaryTitle" = "Preencha o salário";
+"alertSubmitSalaryMessage" = "Por favor, para usar o app nos diga os valores que serao utilizados para a gestão de seus gastos.";
 
 // use %d para numeros e %@ para strings
 

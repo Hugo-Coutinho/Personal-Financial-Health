@@ -37,6 +37,7 @@ extension HomeViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.configureNavigationItem(hidesBackButton: true)
+        self.presenter.checkUserAlreadyInputSalary()
     }
 }
 
@@ -61,6 +62,13 @@ extension HomeViewController {
         self.myExpensesView.tag = HomeOptionsEnum.myExpensesView.getIndex()
         self.netSalaryView.tag = HomeOptionsEnum.netSalaryView.getIndex()
         self.historicalView.tag = HomeOptionsEnum.historicalView.getIndex()
+    }
+    
+    func showAlertSubmitSalary() {
+        let title = NSLocalizedString("alertSubmitSalaryTitle", comment: "")
+        let message = NSLocalizedString("alertSubmitSalaryMessage", comment: "")
+        
+        Alert.presentOkNativeAlert(title: title, message: message, viewController: self)
     }
 }
 

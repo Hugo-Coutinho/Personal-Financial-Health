@@ -6,6 +6,7 @@ protocol HomePresenterInput {
     func redirectToNewScreenBy(index: Int)
     func checkFinancialBudget()
     func checkCalendarToResetInformation()
+    func checkUserAlreadyInputSalary()
 }
 
 class HomePresenter: HomeViewToPresenter, HomePresenterInput {
@@ -27,6 +28,7 @@ class HomePresenter: HomeViewToPresenter, HomePresenterInput {
     
     // MARK: - METHODS -
     func redirectToNewScreenBy(index: Int) {
+        self.checkUserAlreadyInputSalary()
         switch index {
         case HomeOptionsEnum.availableFunds.getIndex():
             BaseRouter.goTo(module: BaseRouter.createModule(viewController: FundsViewController.self))
@@ -49,6 +51,13 @@ class HomePresenter: HomeViewToPresenter, HomePresenterInput {
         guard Date.IsTodayANewMonth() else { return }
         self.interactor?.resetFinancialInformation()
         self.view.showAlertAppWasReseted()
+    }
+    
+    func checkUserAlreadyInputSalary() {
+        guard let interactor = self.interactor,
+            !interactor.isUserSubmitSalary() else { return }
+        BaseRouter.goTo(module: BaseRouter.createModule(viewController: SalaryViewController.self))
+        self.view.showAlertSubmitSalary()
     }
 }
 

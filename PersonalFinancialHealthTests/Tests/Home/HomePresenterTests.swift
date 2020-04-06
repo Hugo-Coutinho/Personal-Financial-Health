@@ -1,22 +1,25 @@
 //
-//  HomeInteractorTests.swift
+//  HomePresenterTests.swift
 //  PersonalFinancialHealthTests
 //
-//  Created by BRQ on 29/03/20.
+//  Created by BRQ on 04/04/20.
 //  Copyright © 2020 BRQ. All rights reserved.
 //
 
 import XCTest
 @testable import PersonalFinancialHealth
 
-class HomeInteractorTests: XCTestCase {
+class HomePresenterTests: XCTestCase {
 
     // MARK: - PROPERTIES -
     private var worker: CoreDataWorkerInput?
     private var blFinancial: BLFinancial?
+    private lazy var showAlertSubmitSalaryCalled: Bool = false
+    private lazy var showAlertAppWasResetedCalled: Bool = false
+    
     
     override func setUp() {
-        self.worker = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorExpense)
+        self.worker = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorSalary)
         guard let worker = self.worker else { assertionFailure(); return }
         self.blFinancial = BLFinancial(worker: worker)
         self.resetExpenseStorage()
@@ -26,6 +29,8 @@ class HomeInteractorTests: XCTestCase {
     override func tearDown() {
         self.resetExpenseStorage()
         self.resetSalaryStorage()
+        self.showAlertSubmitSalaryCalled = false
+        self.showAlertAppWasResetedCalled = false
     }
     
     // MARK: - AUX METHODS -
@@ -41,36 +46,20 @@ class HomeInteractorTests: XCTestCase {
         self.blFinancial?.resetAppExpenseStorage()
     }
     
-    func testResetFinancialInformation_shouldAssertEmptyDatabase() {
+    func testCheckUserAlreadyInputSalary_shouldCallAlert() {
         // 1. GIVEN
         let presenter = HomePresenter(view: self)
-        let interactor = HomeInteractor.make(presenter: presenter)
-        let salaryWorker: CoreDataWorkerInput = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorSalary)
-        let salaryModel = SalaryModel(net: 2500.0, usefully: 2000.0)
-        let salaryMO = salaryModel.toManagedObject(in: self.worker!.context)
-        let expenseModel = ExpenseItemModel(icon: "", name: "", expenseType: 0, subItems: [ExpenseSubItemModel(date: Date(), expended: 900.0)])
-        let expenseMO = expenseModel.toManagedObject(in: self.worker!.context)
-        
+
         // 2. WHEN
-        do {
-            try salaryWorker.create(entity: salaryMO)
-            try self.worker?.create(entity: expenseMO)
-        } catch {
-            assertionFailure()
-        }
-        interactor.resetFinancialInformation()
+        presenter.checkUserAlreadyInputSalary()
         
         // 3. THEN
-        guard let salaryMORead = salaryWorker.read(manageObjectType: SalaryMO.self),
-            let expenseItemMOReaded = self.worker?.read(manageObjectType: ExpenseItemMO.self) else { assertionFailure(); return }
-        assert(salaryMORead.count == 0)
-        assert(expenseItemMOReaded.filter({ $0.expenseType != EnumExpenseItemViewType.Constant.getIndex() }).count == 0)
+        assert(self.showAlertSubmitSalaryCalled == true)
     }
     
-    func testIsUserSubmitSalary_shouldAssertTrue() {
+    func testCheckUserAlreadyInputSalary_shouldNotCallAlert() {
         // 1. GIVEN
         let presenter = HomePresenter(view: self)
-        let interactor = HomeInteractor.make(presenter: presenter)
         let salaryWorker: CoreDataWorkerInput = CoreDataWorker.make(sortDescriptionKey: Constant.persistence.sortDescriptorSalary)
         let salaryModel = SalaryModel(net: 2500.0, usefully: 2000.0)
         let salaryMO = salaryModel.toManagedObject(in: self.worker!.context)
@@ -81,17 +70,17 @@ class HomeInteractorTests: XCTestCase {
         } catch {
             assertionFailure()
         }
-        let result = interactor.isUserSubmitSalary()
+        presenter.checkUserAlreadyInputSalary()
         
         // 3. THEN
-        assert(result == true)
+        assert(self.showAlertSubmitSalaryCalled == false)
     }
 }
 
 // MARK: - IMPLEMENTS HOME PRESENTER -
-extension HomeInteractorTests: HomePresenterToView {
+extension HomePresenterTests: HomePresenterToView {
     func showAlertSubmitSalary() {
-        
+        self.showAlertSubmitSalaryCalled = true
     }
     
     public func showAlertAppWasReseted() {

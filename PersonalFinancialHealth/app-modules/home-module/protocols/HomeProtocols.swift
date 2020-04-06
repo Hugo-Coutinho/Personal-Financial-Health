@@ -6,21 +6,20 @@ protocol HomeViewToPresenter {
 }
 
 protocol HomePresenterToView {
-func showAlertAppWasReseted()
+    func showAlertAppWasReseted()
+    func showAlertSubmitSalary()
 }
 
-protocol HomePresenterToRouter {
-//    static func createModule()-> NoticeViewController
-//    func pushToMovieScreen(navigationConroller:UINavigationController)
-}
+protocol HomePresenterToRouter { }
 
 protocol HomePresenterToInteractor {
     var presenter:HomeInteractorToPresenter {get set}
     static func make(presenter: HomeInteractorToPresenter) -> HomePresenterToInteractor
     func checkFinancialBudget()
     func resetFinancialInformation()
+    func isUserSubmitSalary() -> Bool
 }
 
 protocol HomeInteractorToPresenter {
-
+    
 }
