@@ -49,6 +49,22 @@ class SalaryViewController: UIViewController {
     }
 }
 
+// MARK: -  STACK VIEW DATA SOURCE -
+extension SalaryViewController: AwesomeStackViewDataSource {
+    func stackView(_ stackView: UIStackView, numberOfRowsInSection section: Int) -> Int {
+        return self.stackViews.count
+    }
+    
+    func stackView(_ stackView: UIStackView, customSpacingForRow index: Int) -> Int {
+        return 0
+    }
+    
+    func stackView(_ stackView: UIStackView, viewForRowAt index: Int) -> UIView {
+        return getViewForRow(index)
+    }
+}
+
+
 // MARK: - AUX METHODS -
 extension SalaryViewController {
     @objc private func saveSalary(_ sender: Any) {
@@ -81,19 +97,19 @@ extension SalaryViewController {
         
         self.usefullySalary.text = String.localizedStringWithFormat(usefullySalaryFormatString, usefullySalaryResultDouble)
     }
-}
-
-// MARK: -  STACK VIEW DATA SOURCE -
-extension SalaryViewController: AwesomeStackViewDataSource {
-    func stackView(_ stackView: UIStackView, numberOfRowsInSection section: Int) -> Int {
-        return self.stackViews.count
+    
+    private func configureFormViewSetupVisibility(_ index: Int) {
+        guard self.stackViews[index] == self.formView,
+            !(self.isUserVisibilityIsTyping(index)) else { return }
+            self.defaultVisibility()
     }
     
-    func stackView(_ stackView: UIStackView, customSpacingForRow index: Int) -> Int {
-        return 0
+    private func isUserVisibilityIsTyping(_ index: Int) -> Bool {
+        return index == 0
     }
     
-    func stackView(_ stackView: UIStackView, viewForRowAt index: Int) -> UIView {
+    private func getViewForRow(_ index: Int) -> UIView {
+        self.configureFormViewSetupVisibility(index)
         return self.stackViews[index]
     }
 }
@@ -117,7 +133,6 @@ extension SalaryViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         self.configureStackViewsUserDidEndEditing()
         self.salaryMainstackView.reloadStackView()
-        self.userIsNotTypingVisibility()
     }
     
     private func applyVisibilityUserIsTyping(_ textField: UITextField) {
@@ -129,13 +144,23 @@ extension SalaryViewController: UITextFieldDelegate {
     }
     
     private func configureStackViewsUserDidBeginEditing() {
-        self.stackViews[0] = self.formView
-        self.stackViews[1] = self.blankView
+        [self.formView: 0, self.blankView: 1].forEach { (arg0) in
+            let (key, currentIndex) = arg0
+            guard let currentView = key else { return }
+            self.addViewForIndex(view: currentView, index: currentIndex)
+        }
     }
     
     private func configureStackViewsUserDidEndEditing() {
-        self.stackViews[0] = self.backgroundBlueView
-        self.stackViews[1] = self.formView
+        [self.backgroundBlueView: 0, self.formView: 1].forEach { (arg0) in
+            let (key, currentIndex) = arg0
+            guard let currentView = key else { return }
+            self.addViewForIndex(view: currentView, index: currentIndex)
+        }
+    }
+    
+    private func addViewForIndex(view: UIView, index: Int) {
+        self.stackViews[index] = view
     }
 }
 
@@ -195,7 +220,7 @@ extension SalaryViewController {
         self.typeAvailableLabel.alpha = 1
     }
     
-    private func userIsNotTypingVisibility() {
+    private func defaultVisibility() {
         self.textFieldNetSalary.alpha = 1
         self.textFieldUsefullySalary.alpha = 1
         self.reusableButton.alpha = 1
